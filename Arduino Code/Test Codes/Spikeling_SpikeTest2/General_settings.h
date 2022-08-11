@@ -110,7 +110,8 @@ int Stim_steps = 0;              // Number of steps required for half a stimulus
 int Stim_DutyCycle = 500;        // Default stinulus duty cycle value
 int Stim_minDutyCycle = 10;      // Minimum loop steps the stimulus duty cycle cannot fall under
 
-int I_Stim = 0;
+int CurrentIn_Value              // Stimulus Current-In value read for the voltage clamp
+int I_Stim = 0;                  // Patch Current-In current
 
 
 // // // // // // // // // // // // // // // // // // // // // // // //
