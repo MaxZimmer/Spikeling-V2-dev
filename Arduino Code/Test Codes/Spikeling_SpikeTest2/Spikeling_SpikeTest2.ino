@@ -154,6 +154,9 @@ void loop() {
     Stim_steps = round ( Stim_DutyCycle + ( (StimFre * Stim_DutyCycle) / 100 ) ) + Stim_minDutyCycle;  // Define the stimulus duty cycle period proportional to the stimulus frequency potentiometer value
   }
 
+  CurrentIn_Value = analogRead(pinCurrentIn);         // Reads Current in value
+  I_Stim = CurrentIn_Value * CurrentInScaling;        // Scales this value from parameters and determines Current In current
+  
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                      Spikeling computation running on Izhikevich mmodel                               */
