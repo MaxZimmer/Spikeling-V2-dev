@@ -138,24 +138,37 @@ void HardwareSettings(){
   pinMode(pinVmPot,INPUT);
   pinMode(pinLEDVm,OUTPUT);
   pinMode(pinSpike,OUTPUT);
+  
   pinMode(pinSyn1_D,INPUT);
   pinMode(pinSyn1_A,INPUT);
   pinMode(pinSyn1Pot,INPUT);
+  
   pinMode(pinSyn2_D,INPUT);
   pinMode(pinSyn2_A,INPUT);
   pinMode(pinSyn2Pot,INPUT);
+  
   pinMode(pinAxon_D,OUTPUT);
   pinMode(pinAxon_A,OUTPUT);
+  
   pinMode(pinPDPot,INPUT);
   pinMode(pinPD,INPUT);
+  
   pinMode(pinModeButton,INPUT);
+  
   pinMode(pinStimStrPot,INPUT);
   pinMode(pinStimFrePot,INPUT);
+  pinMode(pinStim_D,OUTPUT);
+  pinMode(pinStim_A,OUTPUT);
+  pinMode(pinCurrentIn,INPUT);
+  
   pinMode(pinNoisePot,INPUT);
   
+
   
   digitalWrite(pinLEDVm,LOW);
   digitalWrite(pinSpike,LOW);
   digitalWrite(pinAxon_D,LOW);
   digitalWrite(pinAxon_A,LOW);
+  digitalWrite(pinStim_D,LOW);
+  digitalWrite(pinStim_A,LOW);
 }
