@@ -8,16 +8,16 @@ float u; // recovery variable in Izhikevich model
 
 
 void setup() {
+  Serial.begin(BaudRate);
   HardwareSettings();
   Mode_opening(); 
   Izhikevich_opening();
 }
 
 void loop() {
-  
+
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                     Define Spikeling Mode                                             */
-
   ModeState = digitalRead(pinModeButton);         // Read the mode button state
   if (ModeState == HIGH){                         // If the mode button is pushed:
     Mode += 1;                                      // Increment the Mode by 1
@@ -42,14 +42,12 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                               Setting Voltage membrane clamp value                                    */
-
   Vm_Clamp = analogRead(pinVmPot) - bits/2;       // Reads Vm potentiometer value and scales it to -2048 to 2048
   I_Vm = Vm_Clamp / VmPotScaling;                 // Generates "current" value from the reading and scales it from parameters 
 
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                          Noise Generator                                              */
-
   Noise_Gain = analogRead(pinNoisePot);           // Reads Noise potentiometer value from 0 to 4095
   Noise_Amp = Noise_Gain / NoiseScaling;          // Generates current value from the reading and scales it from parameters
   I_Noise = random( -Noise_Amp/2, Noise_Amp/2 );  // Generates random current value from the reading and scales it from parameters
@@ -57,7 +55,6 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*              Reading PhotoDiode value and setting PhotoDiode gain for generating input current        */
- 
   PD_Value = analogRead(pinPD);                   // Reads Photodiode value from 0 to ~400
   
   if ( PD_counter < PD_avg ){                     // If, for this void loop, the PD counter has not reached the max count number:
@@ -89,10 +86,9 @@ void loop() {
     PD_Amp += PD_Recovery;                        // Recovers by constant % per iteration
   }
 
-  
+     
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                             Synapse 1                                                 */
-
   SpikeIn1State = digitalRead(pinSyn1_D);         // Reads Synapse 1 digital input
 
   Syn1_Gain = analogRead(pinSyn1Pot) - bits/2;    // Reads Synaptic Gain 1 potentiometer value and scales it to -2048 to 2048
@@ -107,7 +103,6 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                             Synapse 2                                                 */
-
   SpikeIn2State = digitalRead(pinSyn2_D);         // Reads Synapse 2 digital input
 
   Syn2_Gain = analogRead(pinSyn2Pot) - bits/2;    // Reads Synaptic Gain 2 potentiometer value and scales it to -2048 to 2048
@@ -122,27 +117,26 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                        Stimulus generator                                             */
-
   StimStr_Value = analogRead(pinStimStrPot);          // Reads Stimulus Strength potentiometer value
   StimStr = map(StimStr_Value, 0, bits, 0 , 100);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
 
   if (StimStr < Stim_minStr){                         // If the Stimulus strength is below 5%:
     Stim_val_D = 0;                                     // The stimulus digital output value is null
   }
-  else (StimStr >= 5){                                // Otherwise,
+  else {                                              // Otherwise,
     Stim_val_D = StimStr * Stim_LEDScaling;             // The stimulus digital output value is proportional to the potentiometer reading and scaled from parameters
   }
-  Stim_val_A = Stim_Str * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
+  Stim_val_A = StimStr * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
   
   StimFre_Value = analogRead(pinStimFrePot);          // Reads Stimulus Frequency potentiometer value
   StimFre = map(StimFre_Value, 0, bits, -100 , 100);  // Map this value from -100 to 100 
    
-  if ( Stim_counter < Stim_steps/2 ){                   // If the number of void loops has not reached half the stimulus duty cycle:
+  if ( Stim_counter < Stim_steps/2 ){                // If the number of void loops has not reached half the stimulus duty cycle:
     analogWrite(pinStim_D, Stim_val_D);                 // Applies the stimulus digital output value to the stimulating LED
-    analogWrite(pinStim_A, Stim_val_A);                 // Applies the stimulus analog output value to the Current in
+    //analogWrite(pinStim_A, Stim_val_A);                 // Applies the stimulus analog output value to the Current in
     Stim_State = 1;                                     // Register stimulus ON
   }
-  else{                                               // Otherwise (if number of void loops has exceeded half the stimulus duty cycle period):
+  if ( Stim_counter > Stim_steps/2 ){                 // If number of void loops has exceeded half the stimulus duty cycle period:
     analogWrite(pinStim_D, 0);                          // Nothing is sent throught the digital output
     analogWrite(pinStim_A, 0);                          // Nothing is sent throught the analog output
     Stim_State = 0;                                     // Register stimulus OFF
@@ -157,11 +151,12 @@ void loop() {
   CurrentIn_Value = analogRead(pinCurrentIn);         // Reads Current in value
   I_Stim = CurrentIn_Value * CurrentInScaling;        // Scales this value from parameters and determines Current In current
   
-
+Serial.print(Stim_counter);
+Serial.print("  ");
+Serial.println(Stim_State);
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                      Spikeling computation running on Izhikevich mmodel                               */
-
-  I_Total = I_Vm;// + I_PD + I_Stim + I_Synapse1 + I_Synapse2 + I_Noise;                       // Sum up all input currents
+  I_Total = I_Vm;// + I_PD + I_Stim + I_Synapse1 + I_Synapse2 + I_Noise; // Sum up all input currents
   
   v = v + timestep_ms*(0.04 * sq(v) + 5*v + 140 - u + I_Total);   // Compute the voltage variable
   u = u + timestep_ms*(a_Izhikevich * (b_Izhikevich * v - u));    // Compute the recovery variable
@@ -178,7 +173,6 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                               Axon                                                    */
-
   spike = false;                                                 // Reset spike registration 
  
   if  (v >= Vm_spike) {                                          // If voltage goes above the spike value ( -30mV by default)
@@ -190,7 +184,7 @@ void loop() {
     digitalWrite(pinSpike, LOW);                                   // Keep buzzer silent
     //digitalWrite(pinAxon_D, LOW);                                  // Keep the digital pin in a LOW state
   }    
- 
+
 // if ( spike == true){                                           // If spike is registered
 //    digitalWrite(pinAxon_D, HIGH);                                 // Send digital output thourgh the Axon digital pin
 //  }
@@ -201,17 +195,18 @@ void loop() {
 
 
  
-  analogWrite(pinLEDVm, map(v, Vm_min, 20, bits/4 ,bits));
+  //analogWrite(pinLEDVm, map(v, Vm_min, 20, bits/4 ,bits));
 
-  Serial.print("Spike output = ");
-  Serial.print(spike);
-  Serial.print("\t");
+//  Serial.print("Spike output = ");
+//  Serial.print(spike);
+//  Serial.print("\t");
 
-  OutputStr  = v;               // Ch1: voltage
-  OutputStr += ", ";
-  OutputStr += I_total;         // Ch2: Total input current
-  OutputStr += ", ";
-  OutputStr += Stim_State;      // Ch3: Internal Stimulus State (if Synapse 1 mode >0)
-  OutputStr += ", ";
-  Serial.println(OutputStr);
+//  OutputStr  = v;               // Ch1: voltage
+//  OutputStr += ", ";
+//  OutputStr += I_Total;         // Ch2: Total input current
+//  OutputStr += ", ";
+//  OutputStr += Stim_State;      // Ch3: Internal Stimulus State (if Synapse 1 mode >0)
+//  OutputStr += ", ";
+//  OutputStr += "\r";
+//  Serial.println("v");
 }

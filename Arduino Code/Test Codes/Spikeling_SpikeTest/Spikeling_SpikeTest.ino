@@ -1,7 +1,7 @@
 #include <analogWrite.h>
-//#include <Izhikevich_parameters.h>
-#include <Settings.h>
-#include <Mode_LEDS.h>
+#include "Izhikevich_parameters.h"
+#include "Settings.h"
+#include "Mode_LEDS.h"
 
 
 float v; // voltage in Iziekevich model

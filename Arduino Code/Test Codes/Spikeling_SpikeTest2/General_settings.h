@@ -4,7 +4,6 @@
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                          Pin Definition                           */
-
 int pinVmPot       =  12;        // Voltage clamp potentiometer pin
 int pinLEDVm       =  18;        // Spike Red LED pin
 int pinSpike       =  19;        // Green & Blue LEDs + Buzzer pin
@@ -25,7 +24,7 @@ int pinPDPot       =   2;        // Photodiode Gain potentiometer pin
 
 int pinModeButton  =  21;        // Mode Button pin
 int pinStim_D      =  22;        // Output Digital pin for the stimulating LED
-int pinStim_A      =   1;        // Output Analog pin for the stimnulating Current Input pin
+int pinStim_A      =   1;        // Output Analog pin for the stimulating Current Input pin
 int pinStimStrPot  =  34;        // Stimulus amplitude potentiometer pin
 int pinStimFrePot  =  35;        // Stimulus frequency potentiometer pin
 int pinCurrentIn   =   3;        // Input Analog pin for CurrentIn stimuli
@@ -34,7 +33,6 @@ int pinNoisePot    =  13;        // Noise generator potentiometer pin
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                         Neuron parameters                         */
-
 int      Vm_min    = -90;        // Minimum voltage value the v variable from Izhikevich can take
 int      Vm_spike  = -30;        // Voltage value above which the neuron will spike
 int      Vm_peak   =  30;        // Voltage peak value from which the v variable will start its recovery
@@ -44,7 +42,6 @@ float    I_Total;                // Sum of all applied current to the neuron (I_
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                     Voltage Clamp parameters                      */
-
 int   Vm_Clamp;                  // Vm potentiometer value
 int   VmPotScaling =  10;        // Vm_Clamp value scaling - The lower, the stronger the impact of the Vm potentiometer
 float I_Vm;                      // "Current" value generated from the two previous variables in order to modify the holding voltage value
@@ -52,7 +49,6 @@ float I_Vm;                      // "Current" value generated from the two previ
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Synapse1 parameters                         */
-
 int SpikeIn1State;               // Synapse 1 digital input
 int Syn1_Gain;                   // Synapse 1 gain potentiometer value
 int Syn1PotScaling =  10;        // Synapse 1 gain sacaling - The lower, the stronger the impact of the Syn1_Potentiometer.  Default = 2
@@ -63,7 +59,6 @@ int Synapse1_decay = 0.995;      // Synpase 1 decay rate. The difference to 1 ma
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Synapse2 parameters                         */
-
 int SpikeIn2State;               // Synapse 2 digital input
 int Syn2_Gain;                   // Synapse 2 gain potentiometer value
 int Syn2PotScaling =  10;        // Synapse 2 gain sacaling - The lower, the stronger the impact of the Syn2_Potentiometer.  Default = 2
@@ -74,7 +69,6 @@ int Synapse2_decay = 0.990;      // Synpase 2 decay rate. The difference to 1 ma
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                      PhotoDiode parameters                        */
-
 int PDPotScaling  = 100;    // the lower, the stronger the impact of the Vm poti.  Default = 2
 int PD_Gain;
 int PD_Amp;
@@ -93,7 +87,6 @@ float I_PD;
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                        Stimuli parameters                         */
-
 int StimStr_Value;               // Stimulus Strength potentiometer value
 int StimStr;                     // Scaled stimulus strength
 int Stim_minStr         = 5;     // Minimum stength value percentage below which the digital output is equal to 0
@@ -110,13 +103,14 @@ int Stim_steps = 0;              // Number of steps required for half a stimulus
 int Stim_DutyCycle = 500;        // Default stinulus duty cycle value
 int Stim_minDutyCycle = 10;      // Minimum loop steps the stimulus duty cycle cannot fall under
 
-int CurrentIn_Value              // Stimulus Current-In value read for the voltage clamp
+int Stim_State;
+int CurrentIn_Value;             // Stimulus Current-In value read for the voltage clamp
+int CurrentInScaling = 1000;
 int I_Stim = 0;                  // Patch Current-In current
 
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                         Noise parameters                          */
-
 int   Noise_Gain;                // Noise potentiometer value
 int   NoiseScaling = 1000;       // Noise gain scaling - The lower, the stronger the impact of the Noise_Potentiometer.  Default = 1000
 int   Noise_Amp;                 // Noise applied gain
@@ -125,15 +119,15 @@ float I_Noise;                   // Noise current
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Hardware parameters                         */
-int BaudRate = 9600;
+int BaudRate = 115200;
 int bits = 4095;//1023;
 int Mode = 0;
 int ModeState = 0;
 
-
+String   OutputStr;
 
 void HardwareSettings(){
-  Serial.begin(BaudRate);
+  //Serial.begin(BaudRate);
 
   pinMode(pinVmPot,INPUT);
   pinMode(pinLEDVm,OUTPUT);
@@ -162,7 +156,6 @@ void HardwareSettings(){
   pinMode(pinCurrentIn,INPUT);
   
   pinMode(pinNoisePot,INPUT);
-  
 
   
   digitalWrite(pinLEDVm,LOW);

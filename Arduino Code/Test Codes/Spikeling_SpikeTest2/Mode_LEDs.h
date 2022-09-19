@@ -8,7 +8,6 @@ where n is the number of pins used (here,  4^2 - 3 = 16 - 3 = 13 LEDs using only
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                    General CharliePlexing settings                                    */
-
 int pinCP1 = 5;                                   // CharliePlexing LED pin 1
 int pinCP2 = 17;                                  // CharliePlexing LED pin 2
 int pinCP3 = 16;                                  // CharliePlexing LED pin 3
@@ -22,7 +21,6 @@ int Mode_delay     = 500;                         // Delay between two button pu
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                     Define CharliePlexing Matrix                                      */
-
 #define PIN_CONFIG 0
 #define PIN_STATE 1
 #define LED_Num 12
@@ -48,7 +46,6 @@ int matrix[LED_Num][2][4] = {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                    Fucntion that turns on single declared LED and turns off others                    */
-
 void lightOn( int led ) {
   pinMode( pinCP1, matrix[led][PIN_CONFIG][0] );       // Set CP pin 1 mode for the declared LED
   pinMode( pinCP2, matrix[led][PIN_CONFIG][1] );       // Set CP pin 2 mode for the declared LED
@@ -64,7 +61,6 @@ void lightOn( int led ) {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                     Fucntion that lights up all LEDs in sequence while powering up                    */
-
 void Mode_opening() {
   for( int l = 0; l < nModes; l++ ) {                  // For each LED within the number of total LEDs,
     lightOn( l );                                        // Turn on declared LED while turning off the others
