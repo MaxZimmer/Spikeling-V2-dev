@@ -3986,7 +3986,7 @@
       (reference "C2") (unit 1) (value "1 μF") (footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm")
     )
     (path "/b90f6322-6799-44cc-99f6-e44b7821d220"
-      (reference "C3") (unit 1) (value "1nF RC") (footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm")
+      (reference "C3") (unit 1) (value "1nF") (footprint "Capacitor_THT:CP_Radial_D4.0mm_P2.00mm")
     )
     (path "/e5bf6b7f-db21-4cc2-91bb-57c71ff09372"
       (reference "D1") (unit 1) (value "Photodiode") (footprint "LED_THT:LED_D5.0mm")
@@ -4046,31 +4046,31 @@
       (reference "J5") (unit 1) (value "Stimulus Out") (footprint "Audio_Module:Spikeling Audio Jack 3.5mm")
     )
     (path "/deca3f52-5128-468d-a162-494fab62d1d8"
-      (reference "R1") (unit 1) (value "10Ω RC") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R1") (unit 1) (value "10Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/630b33e6-a970-4881-a369-7a4f8c2a5466"
-      (reference "R2") (unit 1) (value "10kΩ PD pull-down") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R2") (unit 1) (value "10kΩ") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/7a7e0b32-9c81-4f98-a69c-9ed144e15f8c"
-      (reference "R3") (unit 1) (value "100Ω Stim-LED") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R3") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/06af95d7-3fe5-474c-83a2-071fedd0d03c"
-      (reference "R4") (unit 1) (value "100Ω Spike-LED") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R4") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/f151c247-9543-46e1-8382-87918920d73b"
-      (reference "R5") (unit 1) (value "10kΩ SW pull-down") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R5") (unit 1) (value "10kΩ") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/da90b7de-8911-46f4-9bf6-8bf93086a23a"
-      (reference "R6") (unit 1) (value "100Ω_CharliePlex1") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R6") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/c799659d-ff9e-4338-8648-58ab626d7c53"
-      (reference "R7") (unit 1) (value "100Ω_CharliePlex2") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R7") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/cf71981a-2a7b-42a1-9fe0-c44cd5ed7575"
-      (reference "R8") (unit 1) (value "100Ω_CharliePlex3") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R8") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/493425ad-b804-4107-a0b9-5667e9af7159"
-      (reference "R9") (unit 1) (value "100Ω_CharliePlex4") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+      (reference "R9") (unit 1) (value "100Ω") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/aa18d6fa-55a2-4386-8414-a0ffe38a1dd0"
       (reference "RV1") (unit 1) (value "Synapse 1 Gain") (footprint "Potentiometer_THT:Spikeling Potentiometer")
