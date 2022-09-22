@@ -523,7 +523,7 @@
   (footprint "Audio_Module:Spikeling_Photoreceptor" (layer "F.Cu")
     (tedit 0) (tstamp 2c63b93b-2939-4949-bd16-bb4f488c658e)
     (at 159.6 122.9)
-    (fp_text reference "Photodiode Gain" (at 0 -0.5 unlocked) (layer "F.SilkS")
+    (fp_text reference "Photodiode Gain" (at 0.4 -8.6 unlocked) (layer "F.SilkS")
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 5ed9c3cd-a213-4635-811d-86fb0a3d1b9f)
     )
