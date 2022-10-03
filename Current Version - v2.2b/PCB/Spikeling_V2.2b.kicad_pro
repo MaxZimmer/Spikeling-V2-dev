@@ -333,7 +333,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Spikeling_V2.2.kicad_pro",
+    "filename": "Spikeling_V2.2b.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -367,7 +367,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Rendering/Populated_Board.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

@@ -176,7 +176,7 @@
     (pad "4" thru_hole oval (at 3.81 0 90) (size 1.07 1.8) (drill 0.9) (layers *.Cu *.Mask)
       (net 16 "/12") (pinfunction "BA") (pintype "passive") (tstamp ffa833d7-9235-4e07-aa4b-c255c4bf2d90))
     (model "${KICAD6_3DMODEL_DIR}/LED_THT.3dshapes/LED_D5.0mm-4_RGB.wrl"
-      (offset (xyz 0 0 0))
+      (offset (xyz 0 0 -3))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -458,10 +458,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp b919e9f7-e1c6-46bb-97b2-b0f17e1b02df))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp d9779a3c-c26f-4b71-a6c7-5ab4261426c5))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp f543b8eb-add9-4aa2-80f6-dfca4e8411ae))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -513,10 +513,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp 14bd533d-8125-4588-a025-4c4b28ed4ba5))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 4902b91e-58d9-4a95-8a34-3b2fb6e69710))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp a663fa5d-2138-44f0-ac18-8637d5445a54))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -9848,7 +9848,7 @@
       (net 7 "GNDREF") (pintype "passive") (tstamp 4b4c79ca-70b5-4a46-bc6d-a75b3bc32b48))
     (pad "T" thru_hole roundrect (at 5 8.5 180) (size 1.5 0.8) (drill oval 1.2 0.5) (layers *.Cu *.Mask) (roundrect_rratio 0.25)
       (net 13 "/35") (pintype "passive") (tstamp c0c8fbf5-2e3a-46e6-aad5-eabce9472b45))
-    (model "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-WROOM-32U.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Audio connector/ST-111.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -9890,7 +9890,7 @@
       (net 7 "GNDREF") (pintype "passive") (tstamp b1e24779-b448-4964-840c-f582cdfbbe74))
     (pad "T" thru_hole roundrect (at 5 8.5) (size 1.5 0.8) (drill oval 1.2 0.5) (layers *.Cu *.Mask) (roundrect_rratio 0.25)
       (net 25 "/15") (pintype "passive") (tstamp 877c1f4f-0ce7-481e-92c5-7ede4c92084f))
-    (model "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-WROOM-32U.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Audio connector/ST-111.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -9945,10 +9945,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp 48370599-b98c-4424-8b19-1e0c1e2b6e61))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 518380ef-baad-460d-8062-4bba10df2bac))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 74cbba9c-7b4e-43ee-a6ab-9108de91a538))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -10312,10 +10312,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp eda53639-828a-4e19-9588-966831d22d52))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 24ee027e-b0a5-4b61-a13c-7766d2907885))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp c76f00bd-7e7d-48c0-8ea2-222c2cb16e57))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -10633,7 +10633,7 @@
       (net 7 "GNDREF") (pintype "passive") (tstamp 44eb3a58-3452-4deb-990c-663969202eb0))
     (pad "T" thru_hole roundrect (at 5 8.5 270) (size 1.5 0.8) (drill oval 1.2 0.5) (layers *.Cu *.Mask) (roundrect_rratio 0.25)
       (net 59 "Net-(R3-Pad2)") (pintype "passive") (tstamp 9fe9dcc6-fb31-44e8-97fb-023f1cc2858a))
-    (model "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-WROOM-32U.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Audio connector/ST-111.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -11166,7 +11166,7 @@
     (pad "2" thru_hole circle (at 1.27 0) (size 1.8 1.8) (drill 0.9) (layers *.Cu *.Mask)
       (net 38 "/202") (pinfunction "A") (pintype "passive") (tstamp fd3ab87e-eb50-4f64-9ca7-b758158c2eee))
     (model "${KICAD6_3DMODEL_DIR}/LED_THT.3dshapes/LED_D5.0mm_Clear.wrl"
-      (offset (xyz 0 0 -3))
+      (offset (xyz -1.25 0 -3))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -11220,10 +11220,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp 150d7a0e-7d8c-4788-bc30-4a3682bf4d09))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 76cd264d-ac26-44e5-b8c7-b3763a003f83))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp a3d2c628-5444-44a6-824a-e2ff92759819))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -11275,10 +11275,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp 3054b643-550e-4254-b771-3a57e36b1bae))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 8af406e5-cf85-44da-9ddd-548fbdc5deca))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp f9c03149-fcbb-478b-b489-4419c8d39ac3))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -11317,7 +11317,7 @@
       (net 7 "GNDREF") (pintype "passive") (tstamp afb1459d-09a8-4d95-a3de-46082641feaa))
     (pad "T" thru_hole roundrect (at 5 8.5 180) (size 1.5 0.8) (drill oval 1.2 0.5) (layers *.Cu *.Mask) (roundrect_rratio 0.25)
       (net 12 "/34") (pintype "passive") (tstamp 97dee035-eaf7-4067-8ef4-1c28fe9102ce))
-    (model "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-WROOM-32U.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Audio connector/ST-111.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -11464,7 +11464,7 @@
       (net 7 "GNDREF") (pintype "passive") (tstamp d28682ad-65ed-41b3-8e5a-9924311572c2))
     (pad "T" thru_hole roundrect (at 5 8.5 270) (size 1.5 0.8) (drill oval 1.2 0.5) (layers *.Cu *.Mask) (roundrect_rratio 0.25)
       (net 32 "unconnected-(J4-PadT)") (pintype "passive+no_connect") (tstamp a018a10c-11cf-4df2-8bc9-8077dff35668))
-    (model "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-WROOM-32U.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Audio connector/ST-111.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -11615,10 +11615,10 @@
       (net 34 "VCC") (pinfunction "3") (pintype "passive") (tstamp b51eff7f-0d44-46c8-8550-8d19992a71db))
     (pad "MP" thru_hole roundrect (at -0.5 4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 37b02ea1-7782-4b0a-81a9-867073b2262f))
     (pad "MP" thru_hole roundrect (at -0.5 -4.4 270) (size 4 3) (drill oval 2.1 1.8) (layers *.Cu *.Mask) (roundrect_rratio 0.25) (tstamp 43ed0aab-6a5f-44d8-8eec-244107c0ea7d))
-    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Alps_RK09K_Single_Vertical.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Alps Alpine RK09K11310KB Pot v2.step"
+      (offset (xyz -6 5 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz 0 0 90))
     )
   )
 
@@ -11805,11 +11805,11 @@
     (tags "kb_params=eyJBbGlnbm1lbnRDaG9pY2UiOiAiQ2VudGVyIiwgIkNhcExlZnRDaG9pY2UiOiAiKCIsICJDYXBSaWdodENob2ljZSI6ICIpIiwgIkZvbnRDb21ib0JveCI6ICJVYnVudHVNb25vLUIiLCAiSGVpZ2h0Q3RybCI6ICIxLjUiLCAiTGF5ZXJDb21ib0JveCI6ICJGLlNpbGtTIiwgIk11bHRpTGluZVRleHQiOiAiU3Bpa2VsaW5nIHYyLjIiLCAiUGFkZGluZ0JvdHRvbUN0cmwiOiAiNSIsICJQYWRkaW5nTGVmdEN0cmwiOiAiNSIsICJQYWRkaW5nUmlnaHRDdHJsIjogIjUiLCAiUGFkZGluZ1RvcEN0cmwiOiAiNSIsICJXaWR0aEN0cmwiOiAiMjUifQ==")
     (attr board_only exclude_from_pos_files exclude_from_bom)
     (fp_text reference "kibuzzard-633362FE" (at 0 -4.570413) (layer "F.SilkS") hide
-      (effects (font (size 0 0)))
+      (effects (font (size 0 0) (thickness 0.15)))
       (tstamp 67c46f8a-8ebb-479c-86bc-a810cd66bb92)
     )
     (fp_text value "G***" (at 0 4.570413) (layer "F.SilkS") hide
-      (effects (font (size 0 0)))
+      (effects (font (size 0 0) (thickness 0.15)))
       (tstamp d9578c44-559c-4121-9098-135bc34b67fb)
     )
     (fp_poly (pts
@@ -15614,7 +15614,7 @@
     (pad "2" thru_hole circle (at -3.24 2.25 90) (size 2 2) (drill 1.1) (layers *.Cu *.Mask)
       (net 34 "VCC") (pinfunction "2") (pintype "passive") (tstamp 93c82583-7ca4-47b9-81d3-24b1eb689576))
     (model "${KICAD6_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_PUSH_6mm_H13mm.wrl"
-      (offset (xyz 0 0 0))
+      (offset (xyz -3.25 2.25 0.5))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -15727,6 +15727,11 @@
       (net 5 "unconnected-(U1-Pad37)") (pinfunction "SD0") (pintype "bidirectional+no_connect") (tstamp 423b473d-19cb-4bbd-8ad6-6d302a48b4e6))
     (pad "38" thru_hole circle locked (at 12.7 25.96 180) (size 1.56 1.56) (drill 1.04) (layers *.Cu *.Mask)
       (net 6 "unconnected-(U1-Pad38)") (pinfunction "CLK") (pintype "input+no_connect") (tstamp cbb6e1b7-a7ba-479e-bce8-eaa179cfc851))
+    (model "${KICAD6_3DMODEL_DIR}/ESP/centre origin/ESP32Wroom4.stp"
+      (offset (xyz -0.9 -6.25 3.5))
+      (scale (xyz 1 1 1.115))
+      (rotate (xyz -90 0 -90))
+    )
   )
 
   (footprint "LED_THT:LED_D3.0mm" (layer "F.Cu")
