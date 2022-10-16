@@ -367,7 +367,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "Rendering/Populated_Board.step",
+      "step": "../../../../../Desktop/Populated_Board.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
