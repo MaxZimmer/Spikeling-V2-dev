@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Spikeling</class>
+ <widget class="QMainWindow" name="Spikeling">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>793</height>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,24 +20,36 @@
       <x>0</x>
       <y>0</y>
       <width>1280</width>
-      <height>700</height>
+      <height>720</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
     <property name="autoFillBackground">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(131, 148, 150);
 background-color: rgb(7, 54, 66);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="TabSpikeling">
      <attribute name="title">
       <string>Spikeling</string>
      </attribute>
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="NeuronParametersBox">
       <property name="geometry">
        <rect>
         <x>1070</x>
@@ -52,7 +64,7 @@ background-color: rgb(7, 54, 66);</string>
       <property name="title">
        <string>Neuron parameters</string>
       </property>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLabel" name="Synapse1Label">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -68,7 +80,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Synapse 1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="Synapse2Label">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -84,7 +96,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Synapse 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="Line" name="line_3">
+      <widget class="Line" name="NeuronParametersLine2">
        <property name="geometry">
         <rect>
          <x>1</x>
@@ -97,7 +109,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QLabel" name="label_20">
+      <widget class="QLabel" name="VoltageClampLabel">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -113,7 +125,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Voltage Clamp&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="Line" name="line_4">
+      <widget class="Line" name="NeuronParametersLine1">
        <property name="geometry">
         <rect>
          <x>1</x>
@@ -126,7 +138,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_10">
+      <widget class="QLineEdit" name="MembranePotentialValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -157,7 +169,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_2">
+      <widget class="QCheckBox" name="Synapse1DecayCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -170,7 +182,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Decay</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_3">
+      <widget class="QCheckBox" name="Synapse1RecoveryCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -183,7 +195,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Recovery</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_4">
+      <widget class="QCheckBox" name="Synapse2RecoveryCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -196,7 +208,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Recovery</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_5">
+      <widget class="QCheckBox" name="Synapse2DecayCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -209,7 +221,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Decay</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_5">
+      <widget class="QLineEdit" name="Synapse2RecoveryValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -228,7 +240,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_6">
+      <widget class="QLineEdit" name="Synapse2DecayValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -244,7 +256,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_6">
+      <widget class="QCheckBox" name="SynapticGain1CheckBox_2">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -257,7 +269,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Synaptic Gain</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_10">
+      <widget class="QCheckBox" name="MembranePotentialCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -278,7 +290,7 @@ background-color: rgb(7, 54, 66);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_7">
+      <widget class="QCheckBox" name="SynapticGain1CheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -320,7 +332,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_14">
+      <widget class="QCheckBox" name="NoiseLevelCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -349,7 +361,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>QSlider::TicksBelow</enum>
        </property>
       </widget>
-      <widget class="QLabel" name="label_17">
+      <widget class="QLabel" name="mVLabel">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -368,7 +380,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>mV</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_19">
+      <widget class="QLabel" name="Noise0Label">
        <property name="geometry">
         <rect>
          <x>6</x>
@@ -384,7 +396,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_22">
+      <widget class="QLabel" name="NoiseMaxLabel">
        <property name="geometry">
         <rect>
          <x>170</x>
@@ -400,7 +412,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="Synapse1DecayValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -416,7 +428,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="Synapse1RecoveryValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -435,7 +447,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider_6">
+      <widget class="QSlider" name="SynapticGain1Slider_2">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -457,7 +469,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>QSlider::TicksBelow</enum>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider_5">
+      <widget class="QSlider" name="SynapticGain1Slider">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -483,11 +495,11 @@ background-color: rgb(7, 54, 66);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_21">
+     <widget class="QLabel" name="LicenseTab1">
       <property name="geometry">
        <rect>
         <x>770</x>
-        <y>650</y>
+        <y>670</y>
         <width>500</width>
         <height>20</height>
        </rect>
@@ -499,7 +511,7 @@ background-color: rgb(7, 54, 66);</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;This project is licensed under the GNU General Public License v3.0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="StimulationParametersBox">
       <property name="geometry">
        <rect>
         <x>860</x>
@@ -514,7 +526,7 @@ background-color: rgb(7, 54, 66);</string>
       <property name="title">
        <string>Stimulation parameters</string>
       </property>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="StimulusLabel">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -530,7 +542,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Stimulus&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="PhotoReceptorLabel">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -546,7 +558,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Photo-Receptor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="Line" name="line">
+      <widget class="Line" name="StimulationParametersLine1">
        <property name="geometry">
         <rect>
          <x>1</x>
@@ -559,7 +571,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QWidget" name="widget" native="true">
+      <widget class="QWidget" name="CustomStimuliDisplay" native="true">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -575,7 +587,7 @@ background-color: rgb(7, 54, 66);</string>
         <string notr="true">background-color: rgb(0, 30, 38);</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="CustomStimulusCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -588,7 +600,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Custom Stimulus</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_8">
+      <widget class="QCheckBox" name="StimStrCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -601,7 +613,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Stimulus Strenght</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_9">
+      <widget class="QCheckBox" name="StimFreCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -614,7 +626,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Stimulus Frequency</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_11">
+      <widget class="QCheckBox" name="PhotoGainCheckBox">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -627,7 +639,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Photo-Gain</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_12">
+      <widget class="QCheckBox" name="PRRecoveryCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -640,7 +652,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Recovery</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_13">
+      <widget class="QCheckBox" name="PRDecayCheckBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -653,7 +665,7 @@ background-color: rgb(7, 54, 66);</string>
         <string>Decay</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_11">
+      <widget class="QLineEdit" name="PRRecoveryValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -672,7 +684,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_12">
+      <widget class="QLineEdit" name="PRDecayValue">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -691,7 +703,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="StimStrImage">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -710,7 +722,7 @@ background-color: rgb(7, 54, 66);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="StimFreImage">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -729,7 +741,7 @@ background-color: rgb(7, 54, 66);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="CustomStimuluComboBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -739,7 +751,7 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QLabel" name="label_18">
+      <widget class="QLabel" name="StimStr0Label">
        <property name="geometry">
         <rect>
          <x>95</x>
@@ -755,7 +767,7 @@ background-color: rgb(7, 54, 66);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider_2">
+      <widget class="QSlider" name="StimStrSlider">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -780,7 +792,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>QSlider::TicksBelow</enum>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider">
+      <widget class="QSlider" name="StimFreSlider">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -805,7 +817,7 @@ background-color: rgb(7, 54, 66);</string>
         <enum>QSlider::TicksBelow</enum>
        </property>
       </widget>
-      <widget class="QSlider" name="horizontalSlider_3">
+      <widget class="QSlider" name="PhotoGainSlider">
        <property name="geometry">
         <rect>
          <x>5</x>
@@ -828,7 +840,7 @@ background-color: rgb(7, 54, 66);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="Oscilloscope" native="true">
+     <widget class="QWidget" name="Oscilloscope1" native="true">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -844,7 +856,7 @@ background-color: rgb(7, 54, 66);</string>
        <string notr="true">
 background-color: rgb(0, 30, 38);</string>
       </property>
-      <widget class="QCheckBox" name="checkBox_15">
+      <widget class="QCheckBox" name="Osc1VmCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -869,7 +881,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_16">
+      <widget class="QCheckBox" name="Osc1InputCurrentCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -894,7 +906,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_17">
+      <widget class="QCheckBox" name="Osc1StimulusCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -919,7 +931,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_18">
+      <widget class="QCheckBox" name="Osc1Syn1VmCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -944,7 +956,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_19">
+      <widget class="QCheckBox" name="Osc1Syn1InputCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -969,7 +981,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_20">
+      <widget class="QCheckBox" name="Osc1Syn2VmCheckbox">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -994,7 +1006,7 @@ background-color: rgb(0, 30, 38);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_21">
+      <widget class="QCheckBox" name="Osc1Syn1InputCheckbox_2">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -1020,7 +1032,7 @@ background-color: rgb(0, 30, 38);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QGroupBox" name="groupBox_3">
+     <widget class="QGroupBox" name="DataRecordingBox">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1035,7 +1047,7 @@ background-color: rgb(0, 30, 38);</string>
       <property name="title">
        <string>Data Recording</string>
       </property>
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="RecordingComboBox">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1060,7 +1072,7 @@ background-color: rgb(0, 30, 38);</string>
         </property>
        </item>
       </widget>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="RecordPushButton">
        <property name="geometry">
         <rect>
          <x>300</x>
@@ -1081,7 +1093,7 @@ background-color: rgb(0, 30, 38);</string>
         <string>Record</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_9">
+      <widget class="QLineEdit" name="RecordFolderValue">
        <property name="geometry">
         <rect>
          <x>630</x>
@@ -1091,7 +1103,7 @@ background-color: rgb(0, 30, 38);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="RecordFolderBrowsePushButton">
        <property name="geometry">
         <rect>
          <x>760</x>
@@ -1104,7 +1116,7 @@ background-color: rgb(0, 30, 38);</string>
         <string>Browse</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_16">
+      <widget class="QLabel" name="SelectRecordFolderLabel">
        <property name="geometry">
         <rect>
          <x>590</x>
@@ -1115,16 +1127,6 @@ background-color: rgb(0, 30, 38);</string>
        </property>
        <property name="text">
         <string>Select</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_7">
-       <property name="geometry">
-        <rect>
-         <x>11</x>
-         <y>125</y>
-         <width>133</width>
-         <height>22</height>
-        </rect>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -1140,7 +1142,7 @@ background-color: rgb(0, 30, 38);</string>
         <string>Browse</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_8">
+      <widget class="QLineEdit" name="NumberOfLoopsValue">
        <property name="geometry">
         <rect>
          <x>110</x>
@@ -1156,7 +1158,7 @@ background-color: rgb(0, 30, 38);</string>
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_15">
+      <widget class="QLabel" name="NumberOfLoopsLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1170,7 +1172,7 @@ background-color: rgb(0, 30, 38);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QComboBox" name="comboBox_4">
+     <widget class="QComboBox" name="SelectPortComboBox">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -1190,7 +1192,7 @@ background-color: rgb(0, 30, 38);</string>
        </property>
       </item>
      </widget>
-     <widget class="QLabel" name="label_25">
+     <widget class="QLabel" name="SelectPortLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1229,13 +1231,13 @@ background-color: rgb(0, 30, 38);</string>
        <string>Connected</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="BadenLabLogoTab1">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>645</y>
-        <width>120</width>
-        <height>30</height>
+        <width>170</width>
+        <height>45</height>
        </rect>
       </property>
       <property name="text">
@@ -1248,13 +1250,13 @@ background-color: rgb(0, 30, 38);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_26">
+     <widget class="QLabel" name="ONLogoTab1">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>650</y>
-        <width>151</width>
-        <height>16</height>
+        <x>170</x>
+        <y>655</y>
+        <width>201</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -1267,13 +1269,13 @@ background-color: rgb(0, 30, 38);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_28">
+     <widget class="QLabel" name="TrendLogoTab1">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>645</y>
-        <width>40</width>
-        <height>26</height>
+        <x>390</x>
+        <y>648</y>
+        <width>51</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -1286,7 +1288,7 @@ background-color: rgb(0, 30, 38);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="NeuronModeLabel">
       <property name="geometry">
        <rect>
         <x>250</x>
@@ -1302,7 +1304,7 @@ background-color: rgb(0, 30, 38);</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Neuron Mode&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="NeuronModeComboBox">
       <property name="geometry">
        <rect>
         <x>430</x>
@@ -1376,29 +1378,29 @@ font: 12pt &quot;Segoe UI&quot;;</string>
        </property>
       </item>
      </widget>
-     <zorder>label_28</zorder>
-     <zorder>label_4</zorder>
-     <zorder>label_21</zorder>
-     <zorder>groupBox_2</zorder>
+     <zorder>TrendLogoTab1</zorder>
+     <zorder>BadenLabLogoTab1</zorder>
+     <zorder>LicenseTab1</zorder>
+     <zorder>NeuronParametersBox</zorder>
      <zorder>layoutWidget_5</zorder>
-     <zorder>Oscilloscope</zorder>
-     <zorder>groupBox_3</zorder>
-     <zorder>groupBox</zorder>
-     <zorder>comboBox_4</zorder>
-     <zorder>label_25</zorder>
+     <zorder>Oscilloscope1</zorder>
+     <zorder>DataRecordingBox</zorder>
+     <zorder>StimulationParametersBox</zorder>
+     <zorder>SelectPortComboBox</zorder>
+     <zorder>SelectPortLabel</zorder>
      <zorder>radioButton</zorder>
-     <zorder>label_26</zorder>
+     <zorder>ONLogoTab1</zorder>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="TabNeuronGenerator">
      <attribute name="title">
       <string>Neuron mode generator</string>
      </attribute>
-     <widget class="QLabel" name="label_23">
+     <widget class="QLabel" name="LicenseTab2">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>650</y>
-        <width>1270</width>
+        <x>889</x>
+        <y>670</y>
+        <width>381</width>
         <height>20</height>
        </rect>
       </property>
@@ -1418,9 +1420,9 @@ font: 12pt &quot;Segoe UI&quot;;</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(0, 30, 38);</string>
       </property>
-      <widget class="QCheckBox" name="checkBox_23">
+      <widget class="QCheckBox" name="Osc2StimulusCheckbox_2">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="geometry">
         <rect>
@@ -1444,9 +1446,9 @@ background-color: rgb(0, 30, 38);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_22">
+      <widget class="QCheckBox" name="Osc2VmCheckbox">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="geometry">
         <rect>
@@ -1470,10 +1472,10 @@ background-color: rgb(0, 30, 38);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>checkBox_22</zorder>
-      <zorder>checkBox_23</zorder>
+      <zorder>Osc2VmCheckbox</zorder>
+      <zorder>Osc2StimulusCheckbox_2</zorder>
      </widget>
-     <widget class="QGroupBox" name="groupBox_4">
+     <widget class="QGroupBox" name="IzhikevichParameters">
       <property name="geometry">
        <rect>
         <x>820</x>
@@ -1485,7 +1487,7 @@ background-color: rgb(0, 30, 38);</string>
       <property name="title">
        <string>Izhikevich parameters</string>
       </property>
-      <widget class="QLabel" name="label_10">
+      <widget class="QLabel" name="aLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1589,7 +1591,7 @@ background-color: rgb(0, 30, 38);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QPushButton" name="DisplayNeuron">
+      <widget class="QPushButton" name="DisplayNeuronPushButton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -1614,7 +1616,7 @@ background-color: rgb(0, 30, 38);</string>
         <string>Display Neuron</string>
        </property>
       </widget>
-      <widget class="QTextBrowser" name="textBrowser_3">
+      <widget class="QTextBrowser" name="Tab2Text3">
        <property name="geometry">
         <rect>
          <x>165</x>
@@ -1631,23 +1633,23 @@ background-color: rgb(0, 30, 38);</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt; a&lt;/span&gt; describes the time scale of the recovery variable u. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Smaller values result in slower recovery. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is a = 0.02.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;b&lt;/span&gt; describes the sensitivity of the recovery variable u to the subthreshold fluctuations of the membrane potential v.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Greater values couple v and u more strongly resulting in possible subthreshold oscillations and low-threshold spiking dynamics. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is b = 0.2. &lt;/span&gt;The case b &amp;lt; a(b &amp;gt; a) corresponds to saddle-node (Andronov–Hopf) bifurcation of the resting state&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;c&lt;/span&gt; describes the after-spike reset value of the membrane potential v caused by the fast high-threshold K+ conductances. &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is c = -65 (mV).&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;d&lt;/span&gt; describes after-spike reset of the recovery variable u caused by slow high-threshold Na+ and K+ conductances.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is d = 2.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt; a&lt;/span&gt; describes the time scale of the recovery variable u. &lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Smaller values result in slower recovery. &lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is a = 0.02.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  &lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;b&lt;/span&gt; describes the sensitivity of the recovery variable u to the subthreshold fluctuations of the membrane potential v.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Greater values couple v and u more strongly resulting in possible subthreshold oscillations and low-threshold spiking dynamics. &lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is b = 0.2. &lt;/span&gt;The case b &amp;lt; a(b &amp;gt; a) corresponds to saddle-node (Andronov–Hopf) bifurcation of the resting state&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;c&lt;/span&gt; describes the after-spike reset value of the membrane potential v caused by the fast high-threshold K+ conductances. &lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is c = -65 (mV).&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The parameter &lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;d&lt;/span&gt; describes after-spike reset of the recovery variable u caused by slow high-threshold Na+ and K+ conductances.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A typical value is d = 2.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="bLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1660,11 +1662,11 @@ p, li { white-space: pre-wrap; }
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;b&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_12">
+      <widget class="QLabel" name="cLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>315</y>
+         <y>312</y>
          <width>16</width>
          <height>25</height>
         </rect>
@@ -1673,7 +1675,7 @@ p, li { white-space: pre-wrap; }
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;c&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="dLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -1686,7 +1688,7 @@ p, li { white-space: pre-wrap; }
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="SaveNeuron">
+      <widget class="QPushButton" name="SaveNeuronPushButton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -1712,7 +1714,7 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="Tab2Title">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1728,7 +1730,7 @@ p, li { white-space: pre-wrap; }
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Spikeling is built on the Izhikevich model&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser">
+     <widget class="QTextBrowser" name="Tab2Text1">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1755,7 +1757,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Synaptic currents or injected DC-currents are delivered via the variable&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="textBrowser_2">
+     <widget class="QTextBrowser" name="Tab2Text2">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1775,13 +1777,13 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;As most real neurons, the model does not have a fixed threshold: Depending on the history of the membrane potential prior to the spike, the threshold potential can be as low as -55 mV or as high as -40mV&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_27">
+     <widget class="QLabel" name="BadenLabLogoTab2">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>645</y>
-        <width>120</width>
-        <height>30</height>
+        <width>170</width>
+        <height>45</height>
        </rect>
       </property>
       <property name="text">
@@ -1794,13 +1796,13 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_29">
+     <widget class="QLabel" name="TrendLogoTab2">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>645</y>
-        <width>40</width>
-        <height>26</height>
+        <x>390</x>
+        <y>648</y>
+        <width>51</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
@@ -1813,13 +1815,13 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_30">
+     <widget class="QLabel" name="ONLogoTab2">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>650</y>
-        <width>151</width>
-        <height>16</height>
+        <x>170</x>
+        <y>655</y>
+        <width>201</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -1832,12 +1834,41 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="IzhikImage">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>70</y>
+        <width>241</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>Pictures &amp; Logos/izhik.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>Tab2Text1</zorder>
+     <zorder>TrendLogoTab2</zorder>
+     <zorder>LicenseTab2</zorder>
+     <zorder>Oscilloscope2</zorder>
+     <zorder>IzhikevichParameters</zorder>
+     <zorder>Tab2Title</zorder>
+     <zorder>Tab2Text2</zorder>
+     <zorder>BadenLabLogoTab2</zorder>
+     <zorder>ONLogoTab2</zorder>
+     <zorder>IzhikImage</zorder>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="TabStimulusGenerator">
      <attribute name="title">
       <string>Stimulus generator</string>
      </attribute>
-     <widget class="QLabel" name="label_24">
+     <widget class="QLabel" name="LicenseTab3">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -1864,12 +1895,15 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4">
+    <widget class="QWidget" name="TabDataAnalysis">
      <attribute name="title">
       <string>Data Analysis</string>
      </attribute>
     </widget>
-    <widget class="QWidget" name="tab_5">
+    <widget class="QWidget" name="TabAbout">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(7, 54, 66);</string>
+     </property>
      <attribute name="title">
       <string>About</string>
      </attribute>
@@ -1885,8 +1919,18 @@ p, li { white-space: pre-wrap; }
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(7, 54, 66);</string>
+   </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
   <customwidget>
