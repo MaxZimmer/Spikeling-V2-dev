@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QFileDialog
 from pyqtgraph import PlotWidget, GraphicsView
 import numpy as np
 
@@ -91,9 +92,10 @@ class Ui_Spikeling(object):
         self.Synapse2DecayValue.setGeometry(QtCore.QRect(110, 590, 75, 20))
         self.Synapse2DecayValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse2DecayValue.setObjectName("Synapse2DecayValue")
-        self.SynapticGain1CheckBox_2 = QtWidgets.QCheckBox(self.NeuronParametersBox)
-        self.SynapticGain1CheckBox_2.setGeometry(QtCore.QRect(5, 520, 190, 20))
-        self.SynapticGain1CheckBox_2.setObjectName("SynapticGain1CheckBox_2")
+        self.SynapticGain2CheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
+        self.SynapticGain2CheckBox.setEnabled(True)
+        self.SynapticGain2CheckBox.setGeometry(QtCore.QRect(5, 520, 190, 20))
+        self.SynapticGain2CheckBox.setObjectName("SynapticGain2CheckBox")
         self.MembranePotentialCheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
         self.MembranePotentialCheckBox.setGeometry(QtCore.QRect(5, 60, 161, 21))
         font = QtGui.QFont()
@@ -116,11 +118,12 @@ class Ui_Spikeling(object):
         self.NoiseLevelCheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
         self.NoiseLevelCheckBox.setGeometry(QtCore.QRect(5, 200, 190, 20))
         self.NoiseLevelCheckBox.setObjectName("NoiseLevelCheckBox")
-        self.horizontalSlider_4 = QtWidgets.QSlider(self.NeuronParametersBox)
-        self.horizontalSlider_4.setGeometry(QtCore.QRect(5, 220, 190, 27))
-        self.horizontalSlider_4.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.horizontalSlider_4.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
-        self.horizontalSlider_4.setObjectName("horizontalSlider_4")
+        self.NoiseLevelSlider = QtWidgets.QSlider(self.NeuronParametersBox)
+        self.NoiseLevelSlider.setEnabled(False)
+        self.NoiseLevelSlider.setGeometry(QtCore.QRect(5, 220, 190, 27))
+        self.NoiseLevelSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.NoiseLevelSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
+        self.NoiseLevelSlider.setObjectName("NoiseLevelSlider")
         self.mVLabel = QtWidgets.QLabel(self.NeuronParametersBox)
         self.mVLabel.setGeometry(QtCore.QRect(150, 87, 25, 16))
         font = QtGui.QFont()
@@ -146,13 +149,14 @@ class Ui_Spikeling(object):
         self.Synapse1RecoveryValue.setGeometry(QtCore.QRect(110, 440, 75, 20))
         self.Synapse1RecoveryValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse1RecoveryValue.setObjectName("Synapse1RecoveryValue")
-        self.SynapticGain1Slider_2 = QtWidgets.QSlider(self.NeuronParametersBox)
-        self.SynapticGain1Slider_2.setGeometry(QtCore.QRect(5, 540, 190, 27))
-        self.SynapticGain1Slider_2.setMinimum(-50)
-        self.SynapticGain1Slider_2.setMaximum(50)
-        self.SynapticGain1Slider_2.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.SynapticGain1Slider_2.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
-        self.SynapticGain1Slider_2.setObjectName("SynapticGain1Slider_2")
+        self.SynapticGain2Slider = QtWidgets.QSlider(self.NeuronParametersBox)
+        self.SynapticGain2Slider.setEnabled(False)
+        self.SynapticGain2Slider.setGeometry(QtCore.QRect(5, 540, 190, 27))
+        self.SynapticGain2Slider.setMinimum(-50)
+        self.SynapticGain2Slider.setMaximum(50)
+        self.SynapticGain2Slider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.SynapticGain2Slider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
+        self.SynapticGain2Slider.setObjectName("SynapticGain2Slider")
         self.SynapticGain1Slider = QtWidgets.QSlider(self.NeuronParametersBox)
         self.SynapticGain1Slider.setEnabled(False)
         self.SynapticGain1Slider.setGeometry(QtCore.QRect(5, 360, 190, 27))
@@ -162,7 +166,7 @@ class Ui_Spikeling(object):
         self.SynapticGain1Slider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.SynapticGain1Slider.setObjectName("SynapticGain1Slider")
         self.LicenseTab1 = QtWidgets.QLabel(self.TabSpikeling)
-        self.LicenseTab1.setGeometry(QtCore.QRect(770, 650, 500, 20))
+        self.LicenseTab1.setGeometry(QtCore.QRect(770, 670, 500, 20))
         self.LicenseTab1.setStyleSheet("color: rgb(131, 148, 150);")
         self.LicenseTab1.setObjectName("LicenseTab1")
         self.StimulationParametersBox = QtWidgets.QGroupBox(self.TabSpikeling)
@@ -228,6 +232,7 @@ class Ui_Spikeling(object):
         self.StimFreImage.setScaledContents(True)
         self.StimFreImage.setObjectName("StimFreImage")
         self.CustomStimuluComboBox = QtWidgets.QComboBox(self.StimulationParametersBox)
+        self.CustomStimuluComboBox.setEnabled(False)
         self.CustomStimuluComboBox.setGeometry(QtCore.QRect(10, 370, 180, 22))
         self.CustomStimuluComboBox.setObjectName("CustomStimuluComboBox")
         self.StimStr0Label = QtWidgets.QLabel(self.StimulationParametersBox)
@@ -251,6 +256,7 @@ class Ui_Spikeling(object):
         self.StimFreSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.StimFreSlider.setObjectName("StimFreSlider")
         self.PhotoGainSlider = QtWidgets.QSlider(self.StimulationParametersBox)
+        self.PhotoGainSlider.setEnabled(False)
         self.PhotoGainSlider.setGeometry(QtCore.QRect(5, 540, 190, 27))
         self.PhotoGainSlider.setMinimum(-50)
         self.PhotoGainSlider.setMaximum(50)
@@ -367,23 +373,26 @@ class Ui_Spikeling(object):
         self.radioButton.setFont(font)
         self.radioButton.setObjectName("radioButton")
         self.BadenLabLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
-        self.BadenLabLogoTab1.setGeometry(QtCore.QRect(10, 645, 120, 30))
+        self.BadenLabLogoTab1.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab1.setText("")
         self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab1.setScaledContents(True)
         self.BadenLabLogoTab1.setObjectName("BadenLabLogoTab1")
         self.ONLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
-        self.ONLogoTab1.setGeometry(QtCore.QRect(120, 650, 151, 16))
+        self.ONLogoTab1.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab1.setText("")
         self.ONLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/ON Logo.png"))
         self.ONLogoTab1.setScaledContents(True)
         self.ONLogoTab1.setObjectName("ONLogoTab1")
         self.TrendLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
-        self.TrendLogoTab1.setGeometry(QtCore.QRect(280, 645, 40, 26))
+        self.TrendLogoTab1.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab1.setText("")
         self.TrendLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab1.setScaledContents(True)
         self.TrendLogoTab1.setObjectName("TrendLogoTab1")
+        self.NeuronBrowsePushButton = QtWidgets.QPushButton(self.TabSpikeling)
+        self.NeuronBrowsePushButton.setGeometry(QtCore.QRect(700, 35, 75, 30))
+        self.NeuronBrowsePushButton.setObjectName("NeuronBrowsePushButton")
         self.NeuronModeLabel = QtWidgets.QLabel(self.TabSpikeling)
         self.NeuronModeLabel.setGeometry(QtCore.QRect(250, 35, 160, 26))
         self.NeuronModeLabel.setStyleSheet("color: rgb(147, 161, 161);")
@@ -416,15 +425,16 @@ class Ui_Spikeling(object):
         self.SelectPortLabel.raise_()
         self.radioButton.raise_()
         self.ONLogoTab1.raise_()
+        self.NeuronBrowsePushButton.raise_()
         self.tabWidget.addTab(self.TabSpikeling, "")
         self.TabNeuronGenerator = QtWidgets.QWidget()
         self.TabNeuronGenerator.setObjectName("TabNeuronGenerator")
         self.LicenseTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
-        self.LicenseTab2.setGeometry(QtCore.QRect(0, 650, 1270, 20))
+        self.LicenseTab2.setGeometry(QtCore.QRect(889, 670, 381, 20))
         self.LicenseTab2.setObjectName("LicenseTab2")
         self.Oscilloscope2 = PlotWidget(self.TabNeuronGenerator)
         self.Oscilloscope2.setGeometry(QtCore.QRect(10, 250, 800, 335))
-        self.Oscilloscope2.setBackground(DarkSolarized[0])
+        self.Oscilloscope2.setStyleSheet("background-color: rgb(0, 30, 38);")
         self.Oscilloscope2.setObjectName("Oscilloscope2")
         self.Osc2StimulusCheckbox_2 = QtWidgets.QCheckBox(self.Oscilloscope2)
         self.Osc2StimulusCheckbox_2.setEnabled(False)
@@ -486,7 +496,6 @@ class Ui_Spikeling(object):
         self.DisplayNeuronPushButton = QtWidgets.QPushButton(self.IzhikevichParameters)
         self.DisplayNeuronPushButton.setEnabled(True)
         self.DisplayNeuronPushButton.setGeometry(QtCore.QRect(30, 530, 130, 30))
-        self.DisplayNeuronPushButton.clicked.connect(lambda: self.DrawNeuron())
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
@@ -528,23 +537,39 @@ class Ui_Spikeling(object):
         self.Tab2Text2.setStyleSheet("color: rgb(147, 161, 161);")
         self.Tab2Text2.setObjectName("Tab2Text2")
         self.BadenLabLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
-        self.BadenLabLogoTab2.setGeometry(QtCore.QRect(10, 645, 120, 30))
+        self.BadenLabLogoTab2.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab2.setText("")
         self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab2.setScaledContents(True)
         self.BadenLabLogoTab2.setObjectName("BadenLabLogoTab2")
         self.TrendLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
-        self.TrendLogoTab2.setGeometry(QtCore.QRect(280, 645, 40, 26))
+        self.TrendLogoTab2.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab2.setText("")
         self.TrendLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab2.setScaledContents(True)
         self.TrendLogoTab2.setObjectName("TrendLogoTab2")
         self.ONLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
-        self.ONLogoTab2.setGeometry(QtCore.QRect(120, 650, 151, 16))
+        self.ONLogoTab2.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab2.setText("")
         self.ONLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/ON Logo.png"))
         self.ONLogoTab2.setScaledContents(True)
         self.ONLogoTab2.setObjectName("ONLogoTab2")
+        self.label = QtWidgets.QLabel(self.TabNeuronGenerator)
+        self.label.setGeometry(QtCore.QRect(580, 70, 201, 141))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("Pictures & Logos/izhik.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.Tab2Text1.raise_()
+        self.TrendLogoTab2.raise_()
+        self.LicenseTab2.raise_()
+        self.Oscilloscope2.raise_()
+        self.IzhikevichParameters.raise_()
+        self.Tab2Title.raise_()
+        self.Tab2Text2.raise_()
+        self.BadenLabLogoTab2.raise_()
+        self.ONLogoTab2.raise_()
+        self.label.raise_()
         self.tabWidget.addTab(self.TabNeuronGenerator, "")
         self.TabStimulusGenerator = QtWidgets.QWidget()
         self.TabStimulusGenerator.setObjectName("TabStimulusGenerator")
@@ -573,18 +598,31 @@ class Ui_Spikeling(object):
         self.menubar.setStyleSheet("background-color: rgb(7, 54, 66);")
         self.menubar.setObjectName("menubar")
         Spikeling.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(Spikeling)
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        self.statusbar.setFont(font)
-        self.statusbar.setAutoFillBackground(True)
-        self.statusbar.setStyleSheet("background-color: rgb(7, 54, 66);")
-        self.statusbar.setObjectName("statusbar")
-        Spikeling.setStatusBar(self.statusbar)
 
         self.retranslateUi(Spikeling)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Spikeling)
+
+        self.Oscilloscope2.setBackground(DarkSolarized[0])
+        self.DisplayNeuronPushButton.clicked.connect(lambda: self.DrawNeuron())
+
+        self.RecordFolderBrowsePushButton.clicked.connect(lambda: self.BrowseRecordFolder())
+
+        self.StimFreCheckBox.toggled.connect(lambda: self.ActivateStimFre())
+        self.StimStrCheckBox.toggled.connect(lambda: self.ActivateStimStr())
+        self.CustomStimulusCheckBox.toggled.connect(lambda: self.ActivateCustomStimulus())
+        self.PhotoGainCheckBox.toggled.connect(lambda: self.ActivatePhotoGain())
+        self.PRDecayCheckBox.toggled.connect(lambda: self.ActivatePRDecay())
+        self.PRRecoveryCheckBox.toggled.connect(lambda: self.ActivatePRRecovery())
+
+        self.MembranePotentialCheckBox.toggled.connect(lambda: self.ActivateMembranePotential())
+        self.NoiseLevelCheckBox.toggled.connect(lambda: self.ActivateNoiseLevel())
+        self.SynapticGain1CheckBox.toggled.connect(lambda: self.ActivateSynapticGain1())
+        self.Synapse1DecayCheckBox.toggled.connect(lambda: self.ActivateSynapse1Decay())
+        self.Synapse1RecoveryCheckBox.toggled.connect(lambda: self.ActivateSynapse1Recovery())
+        self.SynapticGain2CheckBox.toggled.connect(lambda: self.ActivateSynapticGain2())
+        self.Synapse2DecayCheckBox.toggled.connect(lambda: self.ActivateSynapse2Decay())
+        self.Synapse2RecoveryCheckBox.toggled.connect(lambda: self.ActivateSynapse2Recovery())
 
     def retranslateUi(self, Spikeling):
         _translate = QtCore.QCoreApplication.translate
@@ -599,7 +637,8 @@ class Ui_Spikeling(object):
         self.Synapse2RecoveryCheckBox.setText(_translate("Spikeling", "Recovery"))
         self.Synapse2DecayCheckBox.setText(_translate("Spikeling", "Decay"))
         self.Synapse2RecoveryValue.setText(_translate("Spikeling", "0.990"))
-        self.SynapticGain1CheckBox_2.setText(_translate("Spikeling", "Synaptic Gain"))
+        self.Synapse2DecayValue.setText(_translate("Spikeling", "0.001"))
+        self.SynapticGain2CheckBox.setText(_translate("Spikeling", "Synaptic Gain"))
         self.MembranePotentialCheckBox.setText(_translate("Spikeling", "Membrane potential "))
         self.SynapticGain1CheckBox.setText(_translate("Spikeling", "Synaptic Gain"))
         self.label_6.setText(_translate("Spikeling", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Noise</span></p></body></html>"))
@@ -607,6 +646,7 @@ class Ui_Spikeling(object):
         self.mVLabel.setText(_translate("Spikeling", "mV"))
         self.Noise0Label.setText(_translate("Spikeling", "0"))
         self.NoiseMaxLabel.setText(_translate("Spikeling", "max"))
+        self.Synapse1DecayValue.setText(_translate("Spikeling", "0.001"))
         self.Synapse1RecoveryValue.setText(_translate("Spikeling", "0.995"))
         self.LicenseTab1.setText(_translate("Spikeling", "<html><head/><body><p align=\"right\">This project is licensed under the GNU General Public License v3.0</p></body></html>"))
         self.StimulationParametersBox.setTitle(_translate("Spikeling", "Stimulation parameters"))
@@ -642,6 +682,7 @@ class Ui_Spikeling(object):
         self.SelectPortComboBox.setItemText(1, _translate("Spikeling", "COM11"))
         self.SelectPortLabel.setText(_translate("Spikeling", "Select Port :"))
         self.radioButton.setText(_translate("Spikeling", "Connected"))
+        self.NeuronBrowsePushButton.setText(_translate("Spikeling", "Browse"))
         self.NeuronModeLabel.setText(_translate("Spikeling", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Neuron Mode</span></p></body></html>"))
         self.NeuronModeComboBox.setItemText(0, _translate("Spikeling", "Tonic Spiking"))
         self.NeuronModeComboBox.setItemText(1, _translate("Spikeling", "Phasic Spiking"))
@@ -712,6 +753,7 @@ class Ui_Spikeling(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabDataAnalysis), _translate("Spikeling", "Data Analysis"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabAbout), _translate("Spikeling", "About"))
 
+
     def DrawNeuron(self):
             self.Oscilloscope2.clear()
             a = float(self.a_Izhikevich.text())
@@ -752,6 +794,111 @@ class Ui_Spikeling(object):
             self.Oscilloscope2.plot(nt, nstim, pen=(DarkSolarized[3]))
             self.Oscilloscope2.plot(nt, vs, pen=(DarkSolarized[2]))
             self.Oscilloscope2.setBackground(DarkSolarized[0])
+
+    def BrowseRecordFolder(self):
+            #fname = QFileDialog.getOpenFileName(self, "Open File", "/home", "All Files (*)")
+            if fname:
+                    self.RecordFolderValue.setText(str(fname))
+
+    def ActivateStimFre(self):
+            if self.StimFreCheckBox.isChecked():
+                    self.StimFreSlider.setEnabled(True)
+            else:
+                    self.StimFreSlider.setEnabled(False)
+                    self.StimFreSlider.setValue(0)
+
+    def ActivateStimStr(self):
+            if self.StimStrCheckBox.isChecked():
+                    self.StimStrSlider.setEnabled(True)
+            else:
+                    self.StimStrSlider.setEnabled(False)
+                    self.StimStrSlider.setValue(0)
+
+    def ActivateCustomStimulus(self):
+            if self.CustomStimulusCheckBox.isChecked():
+                    self.CustomStimuluComboBox.setEnabled(True)
+            else:
+                    self.CustomStimuluComboBox.setEnabled(False)
+
+    def ActivatePhotoGain(self):
+            if self.PhotoGainCheckBox.isChecked():
+                    self.PhotoGainSlider.setEnabled(True)
+            else:
+                    self.PhotoGainSlider.setEnabled(False)
+                    self.PhotoGainSlider.setValue(0)
+
+    def ActivatePRDecay(self):
+            if self.PRDecayCheckBox.isChecked():
+                    self.PRDecayValue.setEnabled(True)
+            else:
+                    self.PRDecayValue.setEnabled(False)
+                    self.PRDecayValue.setText("0.001")
+
+    def ActivatePRRecovery(self):
+            if self.PRRecoveryCheckBox.isChecked():
+                    self.PRRecoveryValue.setEnabled(True)
+            else:
+                    self.PRRecoveryValue.setEnabled(False)
+                    self.PRRecoveryValue.setText("0.025")
+
+    def ActivateMembranePotential(self):
+            if self.MembranePotentialCheckBox.isChecked():
+                    self.MembranePotentialValue.setEnabled(True)
+            else:
+                    self.MembranePotentialValue.setEnabled(False)
+                    self.MembranePotentialValue.setText("-70")
+
+    def ActivateNoiseLevel(self):
+            if self.NoiseLevelCheckBox.isChecked():
+                    self.NoiseLevelSlider.setEnabled(True)
+            else:
+                    self.NoiseLevelSlider.setEnabled(False)
+                    self.NoiseLevelSlider.setValue(0)
+
+    def ActivateSynapticGain1(self):
+            if self.SynapticGain1CheckBox.isChecked():
+                    self.SynapticGain1Slider.setEnabled(True)
+            else:
+                    self.SynapticGain1Slider.setEnabled(False)
+                    self.SynapticGain1Slider.setValue(0)
+
+    def ActivateSynapse1Decay(self):
+            if self.Synapse1DecayCheckBox.isChecked():
+                    self.Synapse1DecayValue.setEnabled(True)
+            else:
+                    self.Synapse1DecayValue.setEnabled(False)
+                    self.Synapse1DecayValue.setText("0.001")
+
+    def ActivateSynapse1Recovery(self):
+            if self.Synapse1RecoveryCheckBox.isChecked():
+                    self.Synapse1RecoveryValue.setEnabled(True)
+            else:
+                    self.Synapse1RecoveryValue.setEnabled(False)
+                    self.Synapse1RecoveryValue.setText("0.995")
+
+    def ActivateSynapticGain2(self):
+            if self.SynapticGain2CheckBox.isChecked():
+                    self.SynapticGain2Slider.setEnabled(True)
+            else:
+                    self.SynapticGain2Slider.setEnabled(False)
+                    self.SynapticGain2Slider.setValue(0)
+
+    def ActivateSynapse2Decay(self):
+            if self.Synapse2DecayCheckBox.isChecked():
+                    self.Synapse2DecayValue.setEnabled(True)
+            else:
+                    self.Synapse2DecayValue.setEnabled(False)
+                    self.Synapse2DecayValue.setText("0.001")
+
+    def ActivateSynapse2Recovery(self):
+            if self.Synapse2RecoveryCheckBox.isChecked():
+                    self.Synapse2RecoveryValue.setEnabled(True)
+            else:
+                    self.Synapse2RecoveryValue.setEnabled(False)
+                    self.Synapse2RecoveryValue.setText("0.990")
+
+
+
 
 if __name__ == "__main__":
     import sys
