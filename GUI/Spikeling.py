@@ -782,7 +782,7 @@ class Ui_Spikeling(QWidget):
 
 
 
-        def DrawNeuron(self):
+    def DrawNeuron(self):
             self.Oscilloscope2.clear()
             a = float(self.a_Izhikevich.text())
             b = float(self.b_Izhikevich.text())
