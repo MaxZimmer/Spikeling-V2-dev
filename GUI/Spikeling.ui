@@ -33,7 +33,7 @@
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(131, 148, 150);
@@ -1073,7 +1073,7 @@ background-color: rgb(0, 30, 38);</string>
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>250</width>
+         <width>190</width>
          <height>22</height>
         </rect>
        </property>
@@ -1096,7 +1096,46 @@ background-color: rgb(0, 30, 38);</string>
       <widget class="QPushButton" name="RecordPushButton">
        <property name="geometry">
         <rect>
-         <x>300</x>
+         <x>675</x>
+         <y>50</y>
+         <width>150</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(250, 250, 250);
+background-color: rgb(220, 50, 47);</string>
+       </property>
+       <property name="text">
+        <string>Record</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RecordFolderValue">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>20</y>
+         <width>200</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="RecordFolderDirPushButton">
+       <property name="geometry">
+        <rect>
+         <x>750</x>
          <y>20</y>
          <width>75</width>
          <height>24</height>
@@ -1105,49 +1144,24 @@ background-color: rgb(0, 30, 38);</string>
        <property name="font">
         <font>
          <pointsize>10</pointsize>
+         <bold>true</bold>
         </font>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(147, 161, 161);</string>
-       </property>
        <property name="text">
-        <string>Record</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="RecordFolderValue">
-       <property name="geometry">
-        <rect>
-         <x>630</x>
-         <y>20</y>
-         <width>113</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="RecordFolderBrowsePushButton">
-       <property name="geometry">
-        <rect>
-         <x>760</x>
-         <y>20</y>
-         <width>75</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Browse</string>
+        <string>Dir.</string>
        </property>
       </widget>
       <widget class="QLabel" name="SelectRecordFolderLabel">
        <property name="geometry">
         <rect>
-         <x>590</x>
+         <x>400</x>
          <y>20</y>
-         <width>31</width>
-         <height>16</height>
+         <width>131</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Select</string>
+        <string>Data Logging: Filename</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -1166,30 +1180,52 @@ background-color: rgb(0, 30, 38);</string>
       <widget class="QLineEdit" name="NumberOfLoopsValue">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>60</y>
-         <width>50</width>
+         <x>120</x>
+         <y>50</y>
+         <width>75</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>1</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="NumberOfLoopsLabel">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>60</y>
+         <y>52</y>
          <width>101</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
-        <string>Number of loops</string>
+        <string>Number of loops :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="SelectedFolderLabel">
+       <property name="geometry">
+        <rect>
+         <x>198</x>
+         <y>50</y>
+         <width>471</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </widget>
@@ -1412,11 +1448,12 @@ font: 12pt &quot;Segoe UI&quot;;</string>
        </property>
       </item>
      </widget>
+     <zorder>NeuronModeLabel</zorder>
+     <zorder>NeuronModeComboBox</zorder>
      <zorder>TrendLogoTab1</zorder>
      <zorder>BadenLabLogoTab1</zorder>
      <zorder>LicenseTab1</zorder>
      <zorder>NeuronParametersBox</zorder>
-     <zorder>layoutWidget_5</zorder>
      <zorder>Oscilloscope1</zorder>
      <zorder>DataRecordingBox</zorder>
      <zorder>StimulationParametersBox</zorder>
@@ -1770,8 +1807,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>10</x>
         <y>50</y>
-        <width>800</width>
-        <height>191</height>
+        <width>581</width>
+        <height>201</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1784,8 +1821,8 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Bifurcation methodologies enable us to reduce many biophysically accurate Hodgkin–Huxley-type neuronal models to a two-dimensional (2-D) system of ordinary differential equations of the form:&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v' = 0.04v&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt; + 5v + 140 - u + I                    &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;                    u' = a(bv - u)&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;with the auxiliary after-spike resetting:&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;if &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v &amp;gt;= 30 mV&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, then &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v = c&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;u = u + d&lt;/span&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;with the auxiliary after-spike resetting:       if &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v &amp;gt;= 30 mV&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, then &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v = c&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;u = u + d&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:700;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Here, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are dimensionless variables, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;a&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are dimensionless parameters, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;'= d/dt&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, where &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;t&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is the time. &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The variable v represents the membrane potential of the neuron and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; represents a membrane recovery variable, which accounts for the activation of K+ ionic currents and inactivation of Na+ ionic currents, and it provides negative feedback to &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;After the spike reaches its apex (+30 mV), the membrane voltage and the recovery variable are reset. &lt;/span&gt;&lt;/p&gt;
@@ -1869,13 +1906,13 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="IzhikImage">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>70</y>
-        <width>201</width>
-        <height>141</height>
+        <x>590</x>
+        <y>50</y>
+        <width>221</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="text">
@@ -1888,6 +1925,7 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>IzhikImage</zorder>
      <zorder>Tab2Text1</zorder>
      <zorder>TrendLogoTab2</zorder>
      <zorder>LicenseTab2</zorder>
@@ -1897,7 +1935,6 @@ p, li { white-space: pre-wrap; }
      <zorder>Tab2Text2</zorder>
      <zorder>BadenLabLogoTab2</zorder>
      <zorder>ONLogoTab2</zorder>
-     <zorder>label</zorder>
     </widget>
     <widget class="QWidget" name="TabStimulusGenerator">
      <attribute name="title">
@@ -1960,7 +1997,7 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="autoFillBackground">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(7, 54, 66);</string>
