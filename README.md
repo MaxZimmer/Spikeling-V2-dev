@@ -7,8 +7,8 @@ It is an artificial neuron that can receive different inputs, integrate them and
 
 Technically, it consists on a microcontroller (an ESP32) running the computationally efficient Izhikevich model of a spiking neuron.
 
-<img align="left" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/tree/main/Images/Spikeling_hardware.png">
-<img align="right" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/tree/main/Images/GUI_main_screen.png">
+<img align="left" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
+<img align="right" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/GUI_main_screen.png">
 
 
 
@@ -18,7 +18,16 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 
 
 
-## development log
+## Development log
+
+#### Working Issues
+
+GUI
+
+Live plotting has a cumulative delay and does not live update the spikeling routine
+-Tried pyQtGraph
+-Tried pySerial fast plotting
+
 
 Currently working on the 2.2 version.
 It only incorporates slight component modification compared to version 2.1. These components are more widely found and a bit cheaper, therefore the modification.
