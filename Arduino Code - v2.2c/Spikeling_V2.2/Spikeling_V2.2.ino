@@ -187,7 +187,7 @@ void loop() {
     digitalWrite(pinSpike, LOW);                                   // Keep buzzer silent
     digitalWrite(pinLEDSpike1,HIGH);
     digitalWrite(pinLEDSpike2,HIGH);
-    analogWrite(pinLEDVm,map(v, Vm_min, Vm_peak, 300 , 0));
+    analogWrite(pinLEDVm,map(v, Vm_min, Vm_peak, 0 , bits9));
   }    
 
  if ( spike == true){                                           // If spike is registered
