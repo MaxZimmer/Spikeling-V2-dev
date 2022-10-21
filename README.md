@@ -3,19 +3,29 @@
 
 Spikeling V2.0 is an educational tool for neuroscience students and enthusiasts!
 
+<p style='text-align: justify;'>
 It is an artificial neuron that can receive different inputs, integrate them and send and outputs its computation, just like a spiking neuron would!
 
 Technically, it consists on a microcontroller (an ESP32) running the computationally efficient Izhikevich model of a spiking neuron.
+</p>
 
-<img align="left" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
-<img align="right" width="325" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/GUI_main_screen.png">
+<div>
 
+<p style='text-align: justify;'>
+<img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
+<img align="right" width="369" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/GUI_main_screen.png">
+</p>
 
+</div>
 
+***
+
+<p style='text-align: justify;'>
+<br>
 If this all sounds familiar to you, it is because this project is a derivative (and update) of the Spikeling project started at the [BadenLab](https://badenlab.org/). With feedback from users and students, we are developing this version, which has added capabilities, and also revisits how lessons can be taught, and what kind of experiments can be done with it!
 
 While this is not a stable version just yet, enthusiasts and potential collaborators can soure the electronic bits for this project from [KitSpace](#)
-
+</p
 
 
 ## Development log
