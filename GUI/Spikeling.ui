@@ -724,7 +724,7 @@ background-color: rgb(7, 54, 66);</string>
          <x>10</x>
          <y>260</y>
          <width>180</width>
-         <height>30</height>
+         <height>50</height>
         </rect>
        </property>
        <property name="text">
@@ -743,7 +743,7 @@ background-color: rgb(7, 54, 66);</string>
          <x>10</x>
          <y>130</y>
          <width>180</width>
-         <height>15</height>
+         <height>25</height>
         </rect>
        </property>
        <property name="text">
@@ -860,8 +860,27 @@ background-color: rgb(7, 54, 66);</string>
         <enum>QSlider::TicksBelow</enum>
        </property>
       </widget>
+      <zorder>StimulusLabel</zorder>
+      <zorder>PhotoReceptorLabel</zorder>
+      <zorder>StimulationParametersLine1</zorder>
+      <zorder>CustomStimuliDisplay</zorder>
+      <zorder>CustomStimulusCheckBox</zorder>
+      <zorder>StimStrCheckBox</zorder>
+      <zorder>StimFreCheckBox</zorder>
+      <zorder>PhotoGainCheckBox</zorder>
+      <zorder>PRRecoveryCheckBox</zorder>
+      <zorder>PRDecayCheckBox</zorder>
+      <zorder>PRRecoveryValue</zorder>
+      <zorder>PRDecayValue</zorder>
+      <zorder>StimStrImage</zorder>
+      <zorder>CustomStimuluComboBox</zorder>
+      <zorder>StimStr0Label</zorder>
+      <zorder>StimStrSlider</zorder>
+      <zorder>StimFreSlider</zorder>
+      <zorder>PhotoGainSlider</zorder>
+      <zorder>StimFreImage</zorder>
      </widget>
-     <widget class="QWidget" name="Oscilloscope1" native="true">
+     <widget class="PlotWidget" name="Oscilloscope1" native="true">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1084,11 +1103,6 @@ background-color: rgb(0, 30, 38);</string>
        </item>
        <item>
         <property name="text">
-         <string>Grab</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
          <string>Loop</string>
         </property>
        </item>
@@ -1193,7 +1207,7 @@ background-color: rgb(220, 50, 47);</string>
         </font>
        </property>
        <property name="text">
-        <string>1</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1238,16 +1252,6 @@ background-color: rgb(220, 50, 47);</string>
         <height>22</height>
        </rect>
       </property>
-      <item>
-       <property name="text">
-        <string>COM4</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>COM11</string>
-       </property>
-      </item>
      </widget>
      <widget class="QLabel" name="SelectPortLabel">
       <property name="geometry">
@@ -1301,7 +1305,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/Lab Logo.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/Lab Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1320,7 +1324,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/ON Logo.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/ON Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1339,7 +1343,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/TReND Logo 2.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/TReND Logo 2.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1862,7 +1866,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/Lab Logo.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/Lab Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1881,7 +1885,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/TReND Logo 2.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/TReND Logo 2.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1900,7 +1904,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/ON Logo.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/ON Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1919,7 +1923,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>Pictures &amp; Logos/izhik.png</pixmap>
+       <pixmap>../../.designer/backup/Pictures &amp; Logos/izhik.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>

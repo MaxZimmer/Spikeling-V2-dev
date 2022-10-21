@@ -24,41 +24,7 @@ for port in ports:
         portList.append(port.portName())
 
 
-class MyFigureCanvas(FigureCanvas):
-    def __init__(self,x_len:int,y_range:list, interval:int) -> None:
-            super().__init__(mpl.figure.Figure())
-        # Range settings
-            self._x_len_ = x_len
-            self._y_range_ = y_range
-        # Store two lists _x_ and _y_
-            self._x_ = list(range(0,x_len))
-            self._y_ = [0] * x_len
-        # Store a figure ax
-            self._ax_ = self.figure.subplots()
-            self._ax_.set_ylim(ymin=self._y_range_[0], ymax=self._y_range_[1])
-            self._line_, = self._ax_.plot(self._x_, self._y_)
-            self.draw()
-            return
-        # Initiate the timer
-            self._timer_ = self.new_timer(interval, [(self._update_canvas_, (), {})])
-            self._timer_.start()
-            return
-    def _update_canvas_(self, i, y):
-        y.append(round(get_next_datapoint(), 2))
-        y = y[-self.x_len_:]
-        self._line_.set_ydata(self._y_)
-        self._ax_.draw_artist(self._ax_.patch)
-        self._ax_.draw_artist(self._line_)
-        self.update()
-        self.flush_events()
-        return
-
-
-
-
-
 class Ui_Spikeling(QWidget):
-
     def setupUi(self, Spikeling):
         Spikeling.setObjectName("Spikeling")
         Spikeling.resize(1280, 720)
@@ -265,15 +231,15 @@ class Ui_Spikeling(QWidget):
         self.PRDecayValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.PRDecayValue.setObjectName("PRDecayValue")
         self.StimStrImage = QtWidgets.QLabel(self.StimulationParametersBox)
-        self.StimStrImage.setGeometry(QtCore.QRect(10, 260, 180, 30))
+        self.StimStrImage.setGeometry(QtCore.QRect(10, 260, 180, 50))
         self.StimStrImage.setText("")
-        self.StimStrImage.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/StimStrenght.png"))
+        self.StimStrImage.setPixmap(QtGui.QPixmap("Pictures & Logos/StimStrenght.png"))
         self.StimStrImage.setScaledContents(True)
         self.StimStrImage.setObjectName("StimStrImage")
         self.StimFreImage = QtWidgets.QLabel(self.StimulationParametersBox)
-        self.StimFreImage.setGeometry(QtCore.QRect(10, 130, 180, 15))
+        self.StimFreImage.setGeometry(QtCore.QRect(10, 130, 180, 25))
         self.StimFreImage.setText("")
-        self.StimFreImage.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/StimFrequency.png"))
+        self.StimFreImage.setPixmap(QtGui.QPixmap("Pictures & Logos/StimFrequency.png"))
         self.StimFreImage.setScaledContents(True)
         self.StimFreImage.setObjectName("StimFreImage")
         self.CustomStimuluComboBox = QtWidgets.QComboBox(self.StimulationParametersBox)
@@ -308,6 +274,25 @@ class Ui_Spikeling(QWidget):
         self.PhotoGainSlider.setOrientation(QtCore.Qt.Horizontal)
         self.PhotoGainSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
         self.PhotoGainSlider.setObjectName("PhotoGainSlider")
+        self.StimulusLabel.raise_()
+        self.PhotoReceptorLabel.raise_()
+        self.StimulationParametersLine1.raise_()
+        self.CustomStimuliDisplay.raise_()
+        self.CustomStimulusCheckBox.raise_()
+        self.StimStrCheckBox.raise_()
+        self.StimFreCheckBox.raise_()
+        self.PhotoGainCheckBox.raise_()
+        self.PRRecoveryCheckBox.raise_()
+        self.PRDecayCheckBox.raise_()
+        self.PRRecoveryValue.raise_()
+        self.PRDecayValue.raise_()
+        self.StimStrImage.raise_()
+        self.CustomStimuluComboBox.raise_()
+        self.StimStr0Label.raise_()
+        self.StimStrSlider.raise_()
+        self.StimFreSlider.raise_()
+        self.PhotoGainSlider.raise_()
+        self.StimFreImage.raise_()
         self.Oscilloscope1 = PlotWidget(self.TabSpikeling)
         self.Oscilloscope1.setGeometry(QtCore.QRect(10, 70, 840, 480))
         self.Oscilloscope1.setAutoFillBackground(False)
@@ -419,9 +404,6 @@ class Ui_Spikeling(QWidget):
         self.SelectPortComboBox = QtWidgets.QComboBox(self.TabSpikeling)
         self.SelectPortComboBox.setGeometry(QtCore.QRect(110, 5, 161, 22))
         self.SelectPortComboBox.setObjectName("SelectPortComboBox")
-        for i in range(len(ports)+1):
-            self.SelectPortComboBox.addItem("")
-
         self.SelectPortLabel = QtWidgets.QLabel(self.TabSpikeling)
         self.SelectPortLabel.setGeometry(QtCore.QRect(10, 5, 81, 20))
         font = QtGui.QFont()
@@ -438,19 +420,19 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.BadenLabLogoTab1.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab1.setText("")
-        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
+        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//Lab Logo.png"))
         self.BadenLabLogoTab1.setScaledContents(True)
         self.BadenLabLogoTab1.setObjectName("BadenLabLogoTab1")
         self.ONLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.ONLogoTab1.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab1.setText("")
-        self.ONLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
+        self.ONLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//ON Logo.png"))
         self.ONLogoTab1.setScaledContents(True)
         self.ONLogoTab1.setObjectName("ONLogoTab1")
         self.TrendLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.TrendLogoTab1.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab1.setText("")
-        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
+        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//TReND Logo 2.png"))
         self.TrendLogoTab1.setScaledContents(True)
         self.TrendLogoTab1.setObjectName("TrendLogoTab1")
         self.NeuronBrowsePushButton = QtWidgets.QPushButton(self.TabSpikeling)
@@ -604,25 +586,25 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.BadenLabLogoTab2.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab2.setText("")
-        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
+        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//Lab Logo.png"))
         self.BadenLabLogoTab2.setScaledContents(True)
         self.BadenLabLogoTab2.setObjectName("BadenLabLogoTab2")
         self.TrendLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.TrendLogoTab2.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab2.setText("")
-        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
+        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//TReND Logo 2.png"))
         self.TrendLogoTab2.setScaledContents(True)
         self.TrendLogoTab2.setObjectName("TrendLogoTab2")
         self.ONLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.ONLogoTab2.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab2.setText("")
-        self.ONLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
+        self.ONLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//ON Logo.png"))
         self.ONLogoTab2.setScaledContents(True)
         self.ONLogoTab2.setObjectName("ONLogoTab2")
         self.IzhikImage = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.IzhikImage.setGeometry(QtCore.QRect(590, 50, 221, 191))
         self.IzhikImage.setText("")
-        self.IzhikImage.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/izhik.png"))
+        self.IzhikImage.setPixmap(QtGui.QPixmap("Pictures & Logos/izhik.png"))
         self.IzhikImage.setScaledContents(True)
         self.IzhikImage.setObjectName("IzhikImage")
         self.IzhikImage.raise_()
@@ -668,6 +650,10 @@ class Ui_Spikeling(QWidget):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Spikeling)
 
+        for i in range(len(ports)):
+            self.SelectPortComboBox.addItem("")
+
+
         self.serial_port = None
         self.SelectPortComboBox.currentIndexChanged.connect(lambda: self.ChangePort())
 
@@ -698,7 +684,6 @@ class Ui_Spikeling(QWidget):
         self.SynapticGain2CheckBox.toggled.connect(lambda: self.ActivateSynapticGain2())
         self.Synapse2DecayCheckBox.toggled.connect(lambda: self.ActivateSynapse2Decay())
         self.Synapse2RecoveryCheckBox.toggled.connect(lambda: self.ActivateSynapse2Recovery())
-
 
     def retranslateUi(self, Spikeling):
         _translate = QtCore.QCoreApplication.translate
@@ -826,7 +811,6 @@ class Ui_Spikeling(QWidget):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabAbout), _translate("Spikeling", "About"))
         self.RecordFolderValue.setPlaceholderText(_translate("Spikeling", "Select a directory folder "))
         self.NumberOfLoopsValue.setPlaceholderText(_translate("Spikeling", "#"))
-        self.SelectPortComboBox.setItemText(0, _translate("Spikeling", "Select a COM port"))
         for i in range (len(ports)):
             self.SelectPortComboBox.setItemText(i+1, _translate("Spikeling", str(portList[i])))
 
