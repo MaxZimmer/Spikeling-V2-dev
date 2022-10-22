@@ -30,8 +30,10 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 
 ***
 
-<img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
-<img align="left" width="369" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
+<img align="left" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
+
+
+<img align="left" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 </p>
 
 ## Development log
