@@ -117,8 +117,8 @@ void loop() {
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                        Stimulus generator                                             */
   StimStr_Value = ADC1.readADC(pinStimStrPot);          // Reads Stimulus Strength potentiometer value
-  StimStrD = map(StimStr_Value, 0, bits, 0 , 100);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
-  StimStrA = map(StimStr_Value, 0, bits, -100, 100);
+  StimStrD = map(StimStr_Value, 0, bits, 100 , 0);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
+  StimStrA = map(StimStr_Value, 0, bits, 100, -100);
   
   Stim_val_D = StimStrD * StimLED_scaling + StimLED_offset;             // The stimulus digital output value is proportional to the potentiometer reading and scaled from parameters
   Stim_val_A = abs(StimStrA) * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
@@ -207,7 +207,6 @@ void loop() {
   Serial.print(Stim_State);Serial.print(',');
   Serial.println(I_Total);
   delay(10);
-//  Serial.print("v = "); Serial.print(v); Serial.println("\t");
 
 
 
