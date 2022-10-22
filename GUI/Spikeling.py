@@ -7,7 +7,7 @@ import numpy
 import serial
 import collections
 
-BaudRate = 115200
+BaudRate = 9600
 portList = []
 ports = QSerialPortInfo().availablePorts()
 for port in ports:
@@ -862,59 +862,50 @@ class Ui_Spikeling(QWidget):
                 serial_port.close()
 
 
+
     def ReadSerial(self):
-            sampleinterval = 0.001
-            timewindow = 50.
             self.Oscilloscope1.clear()
             COM = self.SelectPortComboBox.currentText()
-            serial_port = serial.Serial(port=COM,
-                                        baudrate=BaudRate,
-                                        parity=serial.PARITY_NONE,
-                                        stopbits=serial.STOPBITS_ONE,
-                                        rtscts=True,
-                                        timeout=0.01)
-            while True:
-                #rx = serial_port.readline()
-                #rx_serial = str(rx, "utf-8").strip()
-                #data = rx_serial.split(",")
-                #v = data[0]
-                #print(rx)
+            serial_port = serial.Serial(port=COM,baudrate=BaudRate)
 
-                self._interval = int(sampleinterval * 1000)
-                self._bufsize = int(timewindow / sampleinterval)
-                self.databuffer = collections.deque([0.0] * self._bufsize, self._bufsize)
-                self.x = numpy.linspace(-timewindow, 0.0, self._bufsize)
-                self.y = numpy.zeros(self._bufsize, dtype=float)
-                # PyQtGraph stuff
-                self.Oscilloscope1.showGrid(x=True, y=True)
-                self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
-                self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
-                self.Oscilloscope1.plot(self.x, self.y, pen=(DarkSolarized[2]))
-                # QTimer
-                self.timer = QtCore.QTimer()
-                self.timer.timeout.connect(self.updateplot)
-                self.timer.start(self._interval)
+            sampleinterval = 0.01
+            timewindow = 15.
+            self._interval = int(sampleinterval * 1000)
+            self._bufsize = int(timewindow / sampleinterval)
+            self.databuffer = collections.deque([0.0] * self._bufsize, self._bufsize)
+            self.x = numpy.linspace(-timewindow, 0.0, self._bufsize)
+            self.y0 = numpy.zeros(self._bufsize, dtype=float)
+            self.y1 = numpy.zeros(self._bufsize, dtype=float)
+            # PyQtGraph stuff
+            self.Oscilloscope1.showGrid(x=True, y=True)
+            self.Oscilloscope1.setRange(yRange=[-90,30])
+            self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
+            self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
+            self.curve = self.Oscilloscope1.plot(self.x, self.y0, pen=(DarkSolarized[3]))
+            self.curve = self.Oscilloscope1.plot(self.x, self.y1, pen=(DarkSolarized[2]))
 
-    def getdata(self):
-        COM = self.SelectPortComboBox.currentText()
-        serial_port = serial.Serial(port=COM,
-                                    baudrate=BaudRate,
-                                    parity=serial.PARITY_NONE,
-                                    stopbits=serial.STOPBITS_ONE,
-                                    rtscts=True,
-                                    timeout=0.01)
-        rx = serial_port.readline()
-        rx_serial = str(rx, 'utf8').strip()
-        data = rx_serial.split(',')
-        v = data[0]
-        print(v)
-        return v
+            def getdata():
+                    rx = serial_port.readline()
+                    rx_serial = str(rx, 'utf8').strip()
+                    data = rx_serial.split(',')
+                    v = data[0]
+                    stim = data[1]*10
+                    return v
+                    return stim
 
-    def updateplot(self):
-        self.databuffer.append( self.getdata() )
-        self.y[:] = self.databuffer
-        self.curve.setData(self.x, self.y)
-        self.app.processEvents()
+            def updateplot():
+                    self.databuffer.append(getdata())
+                    self.y0[:] = self.databuffer
+                    self.y1[:] = self.databuffer
+                    self.curve.setData(self.x, self.y0)
+                    self.curve.setData(self.x, self.y1)
+            # QTimer
+            self.timer = QtCore.QTimer()
+            self.timer.timeout.connect(lambda:updateplot())
+            self.timer.start(self._interval)
+
+
+
 
     def BrowseRecordFolder(self):
             FolderName = QFileDialog.getExistingDirectory(self, 'Hey! Select the folder where your experiment will be saved')
