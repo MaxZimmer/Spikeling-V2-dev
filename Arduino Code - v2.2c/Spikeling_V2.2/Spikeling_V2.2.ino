@@ -118,13 +118,13 @@ void loop() {
 /*                                        Stimulus generator                                             */
   StimStr_Value = ADC1.readADC(pinStimStrPot);          // Reads Stimulus Strength potentiometer value
   StimStrD = map(StimStr_Value, 0, bits, 100 , 0);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
-  StimStrA = map(StimStr_Value, 0, bits, 100, -100);
+  StimStrA = map(StimStr_Value, 0, bits, -100, 100);
   
   Stim_val_D = StimStrD * StimLED_scaling + StimLED_offset;             // The stimulus digital output value is proportional to the potentiometer reading and scaled from parameters
   Stim_val_A = abs(StimStrA) * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
   
   StimFre_Value = ADC1.readADC(pinStimFrePot);          // Reads Stimulus Frequency potentiometer value
-  StimFre = map(StimFre_Value, 0, bits, -100 , 100);  // Map this value from -100 to 100 
+  StimFre = map(StimFre_Value, 0, bits, 100 , -100);  // Map this value from -100 to 100 
    
   if ( Stim_counter < Stim_steps/2 ){                // If the number of void loops has not reached half the stimulus duty cycle:
     analogWrite(pinStim_D, Stim_val_D);                 // Applies the stimulus digital output value to the stimulating LED
