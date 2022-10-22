@@ -1,27 +1,20 @@
-from PyQt5 import QtCore, QtGui, QtWidgets, QtSerialPort
-from PyQt5.QtCore import QIODevice, QTimer
-from PyQt5.QtWidgets import QFileDialog, QWidget
-from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
+from PyQt6 import QtCore, QtGui, QtWidgets, QtSerialPort
+from PyQt6.QtCore import QIODevice, QTimer
+from PyQt6.QtWidgets import QFileDialog, QWidget
+from PyQt6.QtSerialPort import QSerialPort, QSerialPortInfo
 from pyqtgraph import PlotWidget, GraphicsView
 import numpy
-
-import matplotlib as mpl
-import matplotlib.figure as mpl_fig
-import matplotlib.animation as anim
-from matplotlib.backends.backend_qt5agg import FigureCanvas
-
 import serial
-import time
-
-
-DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210]]
-
+import collections
 
 BaudRate = 115200
 portList = []
 ports = QSerialPortInfo().availablePorts()
 for port in ports:
         portList.append(port.portName())
+
+DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210]]
+
 
 
 class Ui_Spikeling(QWidget):
@@ -36,7 +29,7 @@ class Ui_Spikeling(QWidget):
         font.setPointSize(11)
         font.setBold(True)
         self.tabWidget.setFont(font)
-        self.tabWidget.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.tabWidget.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setStyleSheet("color: rgb(131, 148, 150);\n"
 "background-color: rgb(7, 54, 66);")
@@ -58,8 +51,8 @@ class Ui_Spikeling(QWidget):
         self.Synapse2Label.setObjectName("Synapse2Label")
         self.NeuronParametersLine2 = QtWidgets.QFrame(self.NeuronParametersBox)
         self.NeuronParametersLine2.setGeometry(QtCore.QRect(1, 460, 198, 20))
-        self.NeuronParametersLine2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.NeuronParametersLine2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.NeuronParametersLine2.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.NeuronParametersLine2.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.NeuronParametersLine2.setObjectName("NeuronParametersLine2")
         self.VoltageClampLabel = QtWidgets.QLabel(self.NeuronParametersBox)
         self.VoltageClampLabel.setGeometry(QtCore.QRect(5, 20, 190, 31))
@@ -67,8 +60,8 @@ class Ui_Spikeling(QWidget):
         self.VoltageClampLabel.setObjectName("VoltageClampLabel")
         self.NeuronParametersLine1 = QtWidgets.QFrame(self.NeuronParametersBox)
         self.NeuronParametersLine1.setGeometry(QtCore.QRect(1, 140, 198, 3))
-        self.NeuronParametersLine1.setFrameShape(QtWidgets.QFrame.HLine)
-        self.NeuronParametersLine1.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.NeuronParametersLine1.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.NeuronParametersLine1.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.NeuronParametersLine1.setObjectName("NeuronParametersLine1")
         self.MembranePotentialValue = QtWidgets.QLineEdit(self.NeuronParametersBox)
         self.MembranePotentialValue.setEnabled(False)
@@ -79,7 +72,7 @@ class Ui_Spikeling(QWidget):
         self.MembranePotentialValue.setFont(font)
         self.MembranePotentialValue.setMaxLength(100)
         self.MembranePotentialValue.setFrame(True)
-        self.MembranePotentialValue.setAlignment(QtCore.Qt.AlignCenter)
+        self.MembranePotentialValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.MembranePotentialValue.setObjectName("MembranePotentialValue")
         self.Synapse1DecayCheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
         self.Synapse1DecayCheckBox.setGeometry(QtCore.QRect(10, 410, 100, 20))
@@ -96,12 +89,12 @@ class Ui_Spikeling(QWidget):
         self.Synapse2RecoveryValue = QtWidgets.QLineEdit(self.NeuronParametersBox)
         self.Synapse2RecoveryValue.setEnabled(False)
         self.Synapse2RecoveryValue.setGeometry(QtCore.QRect(110, 620, 75, 20))
-        self.Synapse2RecoveryValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.Synapse2RecoveryValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse2RecoveryValue.setObjectName("Synapse2RecoveryValue")
         self.Synapse2DecayValue = QtWidgets.QLineEdit(self.NeuronParametersBox)
         self.Synapse2DecayValue.setEnabled(False)
         self.Synapse2DecayValue.setGeometry(QtCore.QRect(110, 590, 75, 20))
-        self.Synapse2DecayValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.Synapse2DecayValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse2DecayValue.setObjectName("Synapse2DecayValue")
         self.SynapticGain2CheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
         self.SynapticGain2CheckBox.setEnabled(True)
@@ -123,8 +116,8 @@ class Ui_Spikeling(QWidget):
         self.label_6.setObjectName("label_6")
         self.line_2 = QtWidgets.QFrame(self.NeuronParametersBox)
         self.line_2.setGeometry(QtCore.QRect(0, 280, 198, 16))
-        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.line_2.setObjectName("line_2")
         self.NoiseLevelCheckBox = QtWidgets.QCheckBox(self.NeuronParametersBox)
         self.NoiseLevelCheckBox.setGeometry(QtCore.QRect(5, 200, 190, 20))
@@ -132,8 +125,8 @@ class Ui_Spikeling(QWidget):
         self.NoiseLevelSlider = QtWidgets.QSlider(self.NeuronParametersBox)
         self.NoiseLevelSlider.setEnabled(False)
         self.NoiseLevelSlider.setGeometry(QtCore.QRect(5, 220, 190, 27))
-        self.NoiseLevelSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.NoiseLevelSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.NoiseLevelSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.NoiseLevelSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.NoiseLevelSlider.setObjectName("NoiseLevelSlider")
         self.mVLabel = QtWidgets.QLabel(self.NeuronParametersBox)
         self.mVLabel.setGeometry(QtCore.QRect(150, 87, 25, 16))
@@ -144,37 +137,37 @@ class Ui_Spikeling(QWidget):
         self.mVLabel.setObjectName("mVLabel")
         self.Noise0Label = QtWidgets.QLabel(self.NeuronParametersBox)
         self.Noise0Label.setGeometry(QtCore.QRect(6, 245, 10, 16))
-        self.Noise0Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.Noise0Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.Noise0Label.setObjectName("Noise0Label")
         self.NoiseMaxLabel = QtWidgets.QLabel(self.NeuronParametersBox)
         self.NoiseMaxLabel.setGeometry(QtCore.QRect(170, 245, 25, 16))
-        self.NoiseMaxLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.NoiseMaxLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.NoiseMaxLabel.setObjectName("NoiseMaxLabel")
         self.Synapse1DecayValue = QtWidgets.QLineEdit(self.NeuronParametersBox)
         self.Synapse1DecayValue.setEnabled(False)
         self.Synapse1DecayValue.setGeometry(QtCore.QRect(110, 410, 75, 20))
-        self.Synapse1DecayValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.Synapse1DecayValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse1DecayValue.setObjectName("Synapse1DecayValue")
         self.Synapse1RecoveryValue = QtWidgets.QLineEdit(self.NeuronParametersBox)
         self.Synapse1RecoveryValue.setEnabled(False)
         self.Synapse1RecoveryValue.setGeometry(QtCore.QRect(110, 440, 75, 20))
-        self.Synapse1RecoveryValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.Synapse1RecoveryValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.Synapse1RecoveryValue.setObjectName("Synapse1RecoveryValue")
         self.SynapticGain2Slider = QtWidgets.QSlider(self.NeuronParametersBox)
         self.SynapticGain2Slider.setEnabled(False)
         self.SynapticGain2Slider.setGeometry(QtCore.QRect(5, 540, 190, 27))
         self.SynapticGain2Slider.setMinimum(-50)
         self.SynapticGain2Slider.setMaximum(50)
-        self.SynapticGain2Slider.setOrientation(QtCore.Qt.Horizontal)
-        self.SynapticGain2Slider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.SynapticGain2Slider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.SynapticGain2Slider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.SynapticGain2Slider.setObjectName("SynapticGain2Slider")
         self.SynapticGain1Slider = QtWidgets.QSlider(self.NeuronParametersBox)
         self.SynapticGain1Slider.setEnabled(False)
         self.SynapticGain1Slider.setGeometry(QtCore.QRect(5, 360, 190, 27))
         self.SynapticGain1Slider.setMinimum(-50)
         self.SynapticGain1Slider.setMaximum(50)
-        self.SynapticGain1Slider.setOrientation(QtCore.Qt.Horizontal)
-        self.SynapticGain1Slider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.SynapticGain1Slider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.SynapticGain1Slider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.SynapticGain1Slider.setObjectName("SynapticGain1Slider")
         self.LicenseTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.LicenseTab1.setGeometry(QtCore.QRect(770, 670, 500, 20))
@@ -194,8 +187,8 @@ class Ui_Spikeling(QWidget):
         self.PhotoReceptorLabel.setObjectName("PhotoReceptorLabel")
         self.StimulationParametersLine1 = QtWidgets.QFrame(self.StimulationParametersBox)
         self.StimulationParametersLine1.setGeometry(QtCore.QRect(1, 460, 198, 16))
-        self.StimulationParametersLine1.setFrameShape(QtWidgets.QFrame.HLine)
-        self.StimulationParametersLine1.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.StimulationParametersLine1.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.StimulationParametersLine1.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.StimulationParametersLine1.setObjectName("StimulationParametersLine1")
         self.CustomStimuliDisplay = QtWidgets.QWidget(self.StimulationParametersBox)
         self.CustomStimuliDisplay.setEnabled(False)
@@ -223,12 +216,12 @@ class Ui_Spikeling(QWidget):
         self.PRRecoveryValue = QtWidgets.QLineEdit(self.StimulationParametersBox)
         self.PRRecoveryValue.setEnabled(False)
         self.PRRecoveryValue.setGeometry(QtCore.QRect(110, 620, 75, 20))
-        self.PRRecoveryValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.PRRecoveryValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.PRRecoveryValue.setObjectName("PRRecoveryValue")
         self.PRDecayValue = QtWidgets.QLineEdit(self.StimulationParametersBox)
         self.PRDecayValue.setEnabled(False)
         self.PRDecayValue.setGeometry(QtCore.QRect(110, 590, 75, 20))
-        self.PRDecayValue.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.PRDecayValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.PRDecayValue.setObjectName("PRDecayValue")
         self.StimStrImage = QtWidgets.QLabel(self.StimulationParametersBox)
         self.StimStrImage.setGeometry(QtCore.QRect(10, 260, 180, 50))
@@ -248,31 +241,31 @@ class Ui_Spikeling(QWidget):
         self.CustomStimuluComboBox.setObjectName("CustomStimuluComboBox")
         self.StimStr0Label = QtWidgets.QLabel(self.StimulationParametersBox)
         self.StimStr0Label.setGeometry(QtCore.QRect(95, 245, 10, 16))
-        self.StimStr0Label.setAlignment(QtCore.Qt.AlignCenter)
+        self.StimStr0Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.StimStr0Label.setObjectName("StimStr0Label")
         self.StimStrSlider = QtWidgets.QSlider(self.StimulationParametersBox)
         self.StimStrSlider.setEnabled(False)
         self.StimStrSlider.setGeometry(QtCore.QRect(5, 220, 190, 27))
         self.StimStrSlider.setMinimum(-50)
         self.StimStrSlider.setMaximum(50)
-        self.StimStrSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.StimStrSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.StimStrSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.StimStrSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.StimStrSlider.setObjectName("StimStrSlider")
         self.StimFreSlider = QtWidgets.QSlider(self.StimulationParametersBox)
         self.StimFreSlider.setEnabled(False)
         self.StimFreSlider.setGeometry(QtCore.QRect(5, 80, 190, 27))
         self.StimFreSlider.setMinimum(-50)
         self.StimFreSlider.setMaximum(50)
-        self.StimFreSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.StimFreSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.StimFreSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.StimFreSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.StimFreSlider.setObjectName("StimFreSlider")
         self.PhotoGainSlider = QtWidgets.QSlider(self.StimulationParametersBox)
         self.PhotoGainSlider.setEnabled(False)
         self.PhotoGainSlider.setGeometry(QtCore.QRect(5, 540, 190, 27))
         self.PhotoGainSlider.setMinimum(-50)
         self.PhotoGainSlider.setMaximum(50)
-        self.PhotoGainSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.PhotoGainSlider.setTickPosition(QtWidgets.QSlider.TicksBelow)
+        self.PhotoGainSlider.setOrientation(QtCore.Qt.Orientation.Horizontal)
+        self.PhotoGainSlider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksBelow)
         self.PhotoGainSlider.setObjectName("PhotoGainSlider")
         self.StimulusLabel.raise_()
         self.PhotoReceptorLabel.raise_()
@@ -391,7 +384,7 @@ class Ui_Spikeling(QWidget):
         font.setBold(True)
         self.NumberOfLoopsValue.setFont(font)
         self.NumberOfLoopsValue.setText("")
-        self.NumberOfLoopsValue.setAlignment(QtCore.Qt.AlignCenter)
+        self.NumberOfLoopsValue.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.NumberOfLoopsValue.setObjectName("NumberOfLoopsValue")
         self.NumberOfLoopsLabel = QtWidgets.QLabel(self.DataRecordingBox)
         self.NumberOfLoopsLabel.setGeometry(QtCore.QRect(10, 52, 101, 16))
@@ -399,11 +392,12 @@ class Ui_Spikeling(QWidget):
         self.SelectedFolderLabel = QtWidgets.QLabel(self.DataRecordingBox)
         self.SelectedFolderLabel.setGeometry(QtCore.QRect(198, 50, 471, 24))
         self.SelectedFolderLabel.setText("")
-        self.SelectedFolderLabel.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.SelectedFolderLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.SelectedFolderLabel.setObjectName("SelectedFolderLabel")
         self.SelectPortComboBox = QtWidgets.QComboBox(self.TabSpikeling)
         self.SelectPortComboBox.setGeometry(QtCore.QRect(110, 5, 161, 22))
         self.SelectPortComboBox.setObjectName("SelectPortComboBox")
+        self.SelectPortComboBox.addItem("")
         self.SelectPortLabel = QtWidgets.QLabel(self.TabSpikeling)
         self.SelectPortLabel.setGeometry(QtCore.QRect(10, 5, 81, 20))
         font = QtGui.QFont()
@@ -420,19 +414,19 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.BadenLabLogoTab1.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab1.setText("")
-        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//Lab Logo.png"))
+        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab1.setScaledContents(True)
         self.BadenLabLogoTab1.setObjectName("BadenLabLogoTab1")
         self.ONLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.ONLogoTab1.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab1.setText("")
-        self.ONLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//ON Logo.png"))
+        self.ONLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
         self.ONLogoTab1.setScaledContents(True)
         self.ONLogoTab1.setObjectName("ONLogoTab1")
         self.TrendLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.TrendLogoTab1.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab1.setText("")
-        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos//TReND Logo 2.png"))
+        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab1.setScaledContents(True)
         self.TrendLogoTab1.setObjectName("TrendLogoTab1")
         self.NeuronBrowsePushButton = QtWidgets.QPushButton(self.TabSpikeling)
@@ -514,7 +508,7 @@ class Ui_Spikeling(QWidget):
         font.setBold(True)
         self.a_Izhikevich.setFont(font)
         self.a_Izhikevich.setFrame(True)
-        self.a_Izhikevich.setAlignment(QtCore.Qt.AlignCenter)
+        self.a_Izhikevich.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.a_Izhikevich.setObjectName("a_Izhikevich")
         self.b_Izhikevich = QtWidgets.QLineEdit(self.IzhikevichParameters)
         self.b_Izhikevich.setGeometry(QtCore.QRect(30, 150, 130, 30))
@@ -522,7 +516,7 @@ class Ui_Spikeling(QWidget):
         font.setPointSize(12)
         font.setBold(True)
         self.b_Izhikevich.setFont(font)
-        self.b_Izhikevich.setAlignment(QtCore.Qt.AlignCenter)
+        self.b_Izhikevich.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.b_Izhikevich.setObjectName("b_Izhikevich")
         self.c_Izhikevich = QtWidgets.QLineEdit(self.IzhikevichParameters)
         self.c_Izhikevich.setGeometry(QtCore.QRect(30, 315, 130, 30))
@@ -530,7 +524,7 @@ class Ui_Spikeling(QWidget):
         font.setPointSize(12)
         font.setBold(True)
         self.c_Izhikevich.setFont(font)
-        self.c_Izhikevich.setAlignment(QtCore.Qt.AlignCenter)
+        self.c_Izhikevich.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.c_Izhikevich.setObjectName("c_Izhikevich")
         self.d_Izhikevich = QtWidgets.QLineEdit(self.IzhikevichParameters)
         self.d_Izhikevich.setGeometry(QtCore.QRect(30, 400, 130, 30))
@@ -538,7 +532,7 @@ class Ui_Spikeling(QWidget):
         font.setPointSize(12)
         font.setBold(True)
         self.d_Izhikevich.setFont(font)
-        self.d_Izhikevich.setAlignment(QtCore.Qt.AlignCenter)
+        self.d_Izhikevich.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.d_Izhikevich.setObjectName("d_Izhikevich")
         self.DisplayNeuronPushButton = QtWidgets.QPushButton(self.IzhikevichParameters)
         self.DisplayNeuronPushButton.setEnabled(True)
@@ -586,25 +580,25 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.BadenLabLogoTab2.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab2.setText("")
-        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//Lab Logo.png"))
+        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab2.setScaledContents(True)
         self.BadenLabLogoTab2.setObjectName("BadenLabLogoTab2")
         self.TrendLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.TrendLogoTab2.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab2.setText("")
-        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//TReND Logo 2.png"))
+        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab2.setScaledContents(True)
         self.TrendLogoTab2.setObjectName("TrendLogoTab2")
         self.ONLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.ONLogoTab2.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab2.setText("")
-        self.ONLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos//ON Logo.png"))
+        self.ONLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
         self.ONLogoTab2.setScaledContents(True)
         self.ONLogoTab2.setObjectName("ONLogoTab2")
         self.IzhikImage = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.IzhikImage.setGeometry(QtCore.QRect(590, 50, 221, 191))
         self.IzhikImage.setText("")
-        self.IzhikImage.setPixmap(QtGui.QPixmap("Pictures & Logos/izhik.png"))
+        self.IzhikImage.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/izhik.png"))
         self.IzhikImage.setScaledContents(True)
         self.IzhikImage.setObjectName("IzhikImage")
         self.IzhikImage.raise_()
@@ -650,14 +644,13 @@ class Ui_Spikeling(QWidget):
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Spikeling)
 
-        for i in range(len(ports)):
-            self.SelectPortComboBox.addItem("")
 
 
-        self.serial_port = None
+
+
         self.SelectPortComboBox.currentIndexChanged.connect(lambda: self.ChangePort())
 
-        self.radioButton.clicked.connect(lambda:self.CheckSerial())
+        self.radioButton.clicked.connect(lambda:self.ReadSerial())
 
         self.FolderNameLabel = QtWidgets.QLabel(self.DataRecordingBox)
         self.FolderNameLabel.setObjectName("FolderNameLabel")
@@ -737,6 +730,7 @@ class Ui_Spikeling(QWidget):
         self.SelectRecordFolderLabel.setText(_translate("Spikeling", "Data Logging: Filename"))
         self.pushButton.setText(_translate("Spikeling", "Browse"))
         self.NumberOfLoopsLabel.setText(_translate("Spikeling", "Number of loops :"))
+        self.SelectPortComboBox.setItemText(0, _translate("Spikeling", "Select a COM port:"))
         self.SelectPortLabel.setText(_translate("Spikeling", "Select Port :"))
         self.radioButton.setText(_translate("Spikeling", "Connected"))
         self.NeuronBrowsePushButton.setText(_translate("Spikeling", "Browse"))
@@ -809,10 +803,14 @@ class Ui_Spikeling(QWidget):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabStimulusGenerator), _translate("Spikeling", "Stimulus generator"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabDataAnalysis), _translate("Spikeling", "Data Analysis"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.TabAbout), _translate("Spikeling", "About"))
+
         self.RecordFolderValue.setPlaceholderText(_translate("Spikeling", "Select a directory folder "))
         self.NumberOfLoopsValue.setPlaceholderText(_translate("Spikeling", "#"))
+        for i in range(len(ports)):
+            self.SelectPortComboBox.addItem("")
         for i in range (len(ports)):
             self.SelectPortComboBox.setItemText(i+1, _translate("Spikeling", str(portList[i])))
+
 
     def DrawNeuron(self):
             self.Oscilloscope2.clear()
@@ -858,31 +856,65 @@ class Ui_Spikeling(QWidget):
 
     def ChangePort(self):
             COM = self.SelectPortComboBox.currentText()
-            serial_port = serial.Serial(COM,BaudRate)
+            serial_port = serial.Serial(COM, BaudRate)
             if serial_port.is_open:
-                    self.radioButton.setEnabled(True)
-                    serial_port.close()
+                self.radioButton.setEnabled(True)
+                serial_port.close()
 
-    def CheckSerial(self):
-            if not self.serial_port:
-                COM = self.SelectPortComboBox.currentText()
-                try:
-                    self.serial_port = serial.Serial(port=COM,
-                                                     baudrate=BaudRate,
-                                                     parity=serial.PARITY_NONE,
-                                                     stopbits=serial.STOPBITS_ONE,
-                                                     rtscts=True,
-                                                     timeout=0.01)
-                except serial.SerialException:
-                    raise Exception("Could not open the serial port" + COM)
 
-            if self.serial_port.is_open:
-                while True:
-                    rx = self.serial_port.readline()
-                    rx_serial = str(rx, "utf-8").strip()
-                    v = rx_serial.split(",")
-                    self.Oscilloscope1 = MyFigureCanvas(x_len=200, y_range=[-80, 40], interval=0.01)
+    def ReadSerial(self):
+            sampleinterval = 0.001
+            timewindow = 50.
+            self.Oscilloscope1.clear()
+            COM = self.SelectPortComboBox.currentText()
+            serial_port = serial.Serial(port=COM,
+                                        baudrate=BaudRate,
+                                        parity=serial.PARITY_NONE,
+                                        stopbits=serial.STOPBITS_ONE,
+                                        rtscts=True,
+                                        timeout=0.01)
+            while True:
+                #rx = serial_port.readline()
+                #rx_serial = str(rx, "utf-8").strip()
+                #data = rx_serial.split(",")
+                #v = data[0]
+                #print(rx)
 
+                self._interval = int(sampleinterval * 1000)
+                self._bufsize = int(timewindow / sampleinterval)
+                self.databuffer = collections.deque([0.0] * self._bufsize, self._bufsize)
+                self.x = numpy.linspace(-timewindow, 0.0, self._bufsize)
+                self.y = numpy.zeros(self._bufsize, dtype=float)
+                # PyQtGraph stuff
+                self.Oscilloscope1.showGrid(x=True, y=True)
+                self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
+                self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
+                self.Oscilloscope1.plot(self.x, self.y, pen=(DarkSolarized[2]))
+                # QTimer
+                self.timer = QtCore.QTimer()
+                self.timer.timeout.connect(self.updateplot)
+                self.timer.start(self._interval)
+
+    def getdata(self):
+        COM = self.SelectPortComboBox.currentText()
+        serial_port = serial.Serial(port=COM,
+                                    baudrate=BaudRate,
+                                    parity=serial.PARITY_NONE,
+                                    stopbits=serial.STOPBITS_ONE,
+                                    rtscts=True,
+                                    timeout=0.01)
+        rx = serial_port.readline()
+        rx_serial = str(rx, 'utf8').strip()
+        data = rx_serial.split(',')
+        v = data[0]
+        print(v)
+        return v
+
+    def updateplot(self):
+        self.databuffer.append( self.getdata() )
+        self.y[:] = self.databuffer
+        self.curve.setData(self.x, self.y)
+        self.app.processEvents()
 
     def BrowseRecordFolder(self):
             FolderName = QFileDialog.getExistingDirectory(self, 'Hey! Select the folder where your experiment will be saved')
@@ -994,15 +1026,7 @@ class Ui_Spikeling(QWidget):
                     self.Synapse2RecoveryValue.setEnabled(False)
                     self.Synapse2RecoveryValue.setText("0.990")
 
-n = numpy.linspace(0, 499, 500)
-d = 50 + 25 * (numpy.sin(n / 8.3)) + 10 * (numpy.sin(n / 7.5)) - 5 * (numpy.sin(n / 1.5))
-i = 0
-def get_next_datapoint():
-    global i
-    i += 1
-    if i > 499:
-        i = 0
-    return d[i]
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
