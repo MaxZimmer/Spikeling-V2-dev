@@ -30,6 +30,7 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 
 ***
 
+<p style='text-align: justify;'>
 <img align="left" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
 
 
