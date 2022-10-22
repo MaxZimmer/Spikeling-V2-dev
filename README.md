@@ -47,7 +47,7 @@ GUI
 
 Main issue concerns the live reading from the serial which is extremely slow (compared to the serial monitor on the arduion IDE). After trying for a time with the parent QtSerial, I switched to the most universal PySerial. Still the reading is waayyyyy too slow:
 
-'''python
+```python
 COM = self.SelectPortComboBox.currentText()
 serial_port = serial.Serial(port=COM,
                             baudrate=BaudRate,
@@ -56,12 +56,12 @@ serial_port = serial.Serial(port=COM,
                             rtscts=True,
                             timeout=0.01)
 while True:
-    #rx = serial_port.readline()
-    #rx_serial = str(rx, "utf-8").strip()
-    #data = rx_serial.split(",")
-    #v = data[0]
-    #print(rx)
-'''
+    rx = serial_port.readline()
+    rx_serial = str(rx, "utf-8").strip()
+    data = rx_serial.split(",")
+    v = data[0]
+    print(rx)
+```
 
 subsequently the live plotting is affected
 
