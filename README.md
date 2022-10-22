@@ -38,17 +38,34 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 </p>
 
  ***
- 
+
 ## Development log
 
 #### Working Issues
 
 GUI
 
-Live plotting has a cumulative delay and does not live update the spikeling routine
--Tried pyQtGraph
--Tried pySerial fast plotting
+Main issue concerns the live reading from the serial which is extremely slow (compared to the serial monitor on the arduion IDE). After trying for a time with the parent QtSerial, I switched to the most universal PySerial. Still the reading is waayyyyy too slow:
 
+'''python
+COM = self.SelectPortComboBox.currentText()
+serial_port = serial.Serial(port=COM,
+                            baudrate=BaudRate,
+                            parity=serial.PARITY_NONE,
+                            stopbits=serial.STOPBITS_ONE,
+                            rtscts=True,
+                            timeout=0.01)
+while True:
+    #rx = serial_port.readline()
+    #rx_serial = str(rx, "utf-8").strip()
+    #data = rx_serial.split(",")
+    #v = data[0]
+    #print(rx)
+'''
+
+subsequently the live plotting is affected
+
+***
 
 Currently working on the 2.2 version.
 It only incorporates slight component modification compared to version 2.1. These components are more widely found and a bit cheaper, therefore the modification.
