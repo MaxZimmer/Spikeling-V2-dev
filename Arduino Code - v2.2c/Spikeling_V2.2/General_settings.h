@@ -7,7 +7,7 @@ MCP3208 ADC2;
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Hardware parameters                         */
-int BaudRate = 115200;
+int BaudRate = 9600;
 int bits8 = 255;
 int bits9 = 511;
 int bits10 = 1023;

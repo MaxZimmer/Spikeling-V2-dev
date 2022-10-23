@@ -205,7 +205,7 @@ void loop() {
 
   Serial.print(v); Serial.print(',');
   Serial.print(Stim_State);Serial.print(',');
-  Serial.println(I_Total);
+  Serial.print(I_Total);Serial.println(',');
   delay(10);
 
 
