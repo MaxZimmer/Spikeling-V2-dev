@@ -13,7 +13,7 @@ ports = QSerialPortInfo().availablePorts()
 for port in ports:
         portList.append(port.portName())
 
-DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210]]
+DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0]]
 
 
 
@@ -869,36 +869,64 @@ class Ui_Spikeling(QWidget):
             serial_port = serial.Serial(port=COM,baudrate=BaudRate)
 
             sampleinterval = 0.01
-            timewindow = 15.
+            timewindow = 10.
+            min_range = -90
+            max_range = 30
+            stimrange = ((-min_range) + max_range)/2
+
             self._interval = int(sampleinterval * 1000)
             self._bufsize = int(timewindow / sampleinterval)
-            self.databuffer = collections.deque([0.0] * self._bufsize, self._bufsize)
+
+            self.databuffer0 = collections.deque([0.0] * self._bufsize, self._bufsize)
+            self.databuffer1 = collections.deque([0.0] * self._bufsize, self._bufsize)
+            self.databuffer2 = collections.deque([0.0] * self._bufsize, self._bufsize)
+
             self.x = numpy.linspace(-timewindow, 0.0, self._bufsize)
             self.y0 = numpy.zeros(self._bufsize, dtype=float)
             self.y1 = numpy.zeros(self._bufsize, dtype=float)
-            # PyQtGraph stuff
+            self.y2 = numpy.zeros(self._bufsize, dtype=float)
+
             self.Oscilloscope1.showGrid(x=True, y=True)
             self.Oscilloscope1.setRange(yRange=[-90,30])
             self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
             self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
-            self.curve = self.Oscilloscope1.plot(self.x, self.y0, pen=(DarkSolarized[3]))
-            self.curve = self.Oscilloscope1.plot(self.x, self.y1, pen=(DarkSolarized[2]))
 
-            def getdata():
+            self.curve2 = self.Oscilloscope1.plot(self.x, self.y2, pen=(DarkSolarized[4]))
+            self.curve1 = self.Oscilloscope1.plot(self.x, self.y1, pen=(DarkSolarized[3]))
+            self.curve0 = self.Oscilloscope1.plot(self.x, self.y0, pen=(DarkSolarized[2]))
+
+            def getdata0():
                     rx = serial_port.readline()
                     rx_serial = str(rx, 'utf8').strip()
                     data = rx_serial.split(',')
                     v = data[0]
-                    stim = data[1]*10
                     return v
-                    return stim
+            def getdata1():
+                    rx = serial_port.readline()
+                    rx_serial = str(rx, 'utf8').strip()
+                    data = rx_serial.split(',')
+                    s = data[1]
+                    return s
+            def getdata2():
+                    rx = serial_port.readline()
+                    rx_serial = str(rx, 'utf8').strip()
+                    data = rx_serial.split(',')
+                    i = data[2]
+                    return i
+
 
             def updateplot():
-                    self.databuffer.append(getdata())
-                    self.y0[:] = self.databuffer
-                    self.y1[:] = self.databuffer
-                    self.curve.setData(self.x, self.y0)
-                    self.curve.setData(self.x, self.y1)
+                    self.databuffer0.append(getdata0())
+                    self.databuffer1.append(getdata1())
+                    self.databuffer2.append(getdata2())
+
+                    self.y0[:] = self.databuffer0
+                    self.y1[:] = self.databuffer1
+                    self.y2[:] = self.databuffer2
+
+                    self.curve0.setData(self.x, self.y0)
+                    self.curve1.setData(self.x, self.y1 * stimrange - 80)
+                    self.curve2.setData(self.x, self.y2)
             # QTimer
             self.timer = QtCore.QTimer()
             self.timer.timeout.connect(lambda:updateplot())
