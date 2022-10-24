@@ -56,7 +56,6 @@ Another major upgrade concerns the use of the two DAC GPIO from the ESP32. These
 ***
 
 <div>
-
 <img align="left" width="450" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 <p style='text-align: justify;'>
 
@@ -78,7 +77,46 @@ Finally, the last box contains all experimental tools allowing stimuli generatio
 </div>
 
 
----
+***
+
+<div>
+<img align="left" width="450" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/GUI_main_screen.png">
+<p style='text-align: justify;'>
+
+Spikeling now possesses its own GUI, written in python and using the latest pyQt6 library. The script then uses pyInstall so it can be translated into a desktop app, ready to be easily distributed to users.
+
+The GUI is divided (for the moment) into distinct tabs. The first one is the main GUI window where the user connects the board to the computer, can choose to either select the neuron mode on the board directly or through the GUI (note that custom modes will have to be selected from here, and in this instance the GUI takes priority over the board commands).
+
+The main window display the Spikeling activity (Neuron Vm, total current input from all sources & stimulus state). If connected to other spikeling, the GUI can display fore both synaptic input, their incoming neuron Vm and their spiking event, which will be translated into input current for the main neuron. Traces can be selected through checkbox and superimposed over the same graph with a common timeline.
+
+Below the main window, Spikeling traces can be recorded either live or for only a fixed amount of stimulation loop.
+
+On the right hand side two control columns can be found. For all commands, when the checkbox is clicked, the GUI takes over the potentiometer and controls directly the Spikeling variable. This allow advanced user to finely design an experimental protocol for example.
+
+Below the stimulus frequency and strength sliders can be found a custom stimulus display. Here the user can choose to use instead of the classical square wave, either a stimulus from a pre-design library (comprising sine wave, chirp, white noise, etc.), or either a custom made stimulus generated from the GUI "stimulus generator" tab.
+
+One the first Spikeling version, if the user wanted to change the set variable for the photoreceptor and synaptic set variable (gain, decay, recovery, polarity, etc.), one had to manually reupload the arduino code with these changes, and no proper experimental protocol could be establish. Here by clicking the checkbox, the user had the opportunity to change these value directly and therefore is able to play further with each Spikeling parameter, opening the way for teacher to come up with their own personal exercises.
+
+
+</p>
+</div>
+
+***
+
+<div>
+<img align="left" width="450" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/GUI_neuron_screen.png">
+<p style='text-align: justify;'>
+
+In this tab, the user can play directly with the Izhikevich model. A short text from Izhikevich publications explain the role of each variable (later upgrade will include hyperlink to these publication along with pop up window detailing further what the code is actually doing).
+
+The main window computes the code with a current input of +15 (as in Izhikevich publication). User can change the 4 variable of the code and display the resulting "neuron mode". This is also where user can come up with its own neuronal modes to experiment on if the 12 pre-set one are not enough. This is also where teachers can generate their own custom made neuron, save them, and impose them as experimental model for i.e. homework exercises.
+
+</p>
+</div>
+
+***
+
+Stimulus generator and data analysis tabs needs to be finished (cf. development part) but they will include ... a stimulus generator, allowing the user to come up with custom made stimulation loop, and ... a data analysis routine for early computation course where student could upload their recorded traces and extract information from it, generating raster plot, computing data and generate basic statistics. For advanced courses an integrated python exercise manual (no IGOR !!!) will guide students through creating a data analysis pipeline using .csv files saved from the main window.
 
 <br>
 <div>
@@ -110,6 +148,12 @@ Currently the GUI functions are being reimplemented with the PySerial readWrite 
 > The resistance of the 4 CharliePlex and the SpikeLed resistors must be adjusted to the acrylic material chosen for the front cover. The current 100 Ohm is sufficient for opaque PMMA, but clear transparent ones should have 1 kOhm soldered below so that the LEDs do not affect the user vision.
 
 - The CharliePlex footprint orientation (+/-) is not labeled
+
+- Stimulus generation tab to be reimplemented
+
+- Data Analysis tab to be reimplemented
+
+- About tab to be created
 
 ##### Acrylic sheet
 
