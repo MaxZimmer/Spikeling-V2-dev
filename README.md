@@ -12,9 +12,9 @@ Technically, it consists on a microcontroller (an ESP32) running the computation
 <div>
 
 
-<img align="left" width="400" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
+<img align="left" width="400" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
 
-<img align="left" width="400" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
+<img align="left" width="400" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
 
 
 </div>
