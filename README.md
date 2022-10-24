@@ -18,16 +18,16 @@ Technically, it consists on a microcontroller (an ESP32) running the computation
 
 
 </div>
+<br>
+<br/>
 
 ***
 
 
 <p style='text-align: justify;'>
+If this all sounds familiar to you, it is because this project is a derivative (and update) of the Spikeling project started at the <a href="https://badenlab.org">BadenLab </a>. With feedback from users and students, we are developing this version, which has added capabilities, and also revisits how lessons can be taught, and what kind of experiments can be done with it!
 
-<br>
-If this all sounds familiar to you, it is because this project is a derivative (and update) of the Spikeling project started at the [BadenLab](https://badenlab.org/). With feedback from users and students, we are developing this version, which has added capabilities, and also revisits how lessons can be taught, and what kind of experiments can be done with it!
-
-While this is not a stable version just yet, enthusiasts and potential collaborators can source the electronic bits for this project from [KitSpace](#)
+While this is not a stable version just yet, enthusiasts and potential collaborators can source the electronic bits for this project from <a href="https://kitspace.org/boards/github.com/maxzimmer/spikeling-v2/">KitSpace </a>
 
 </p
 
