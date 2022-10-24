@@ -32,7 +32,7 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 
 <div>
 <p style='text-align: justify;'>
-<img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
+<img align="left" width="450" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
 
 <p style='text-align: justify;'>
 The main upgrade on the PCB concerns the use of an ESP32 module and 2 ADC 8bit expander chips that together allow spikeling to compute more input output with specific input/output ports and dedicated potentiometer. The previous version had limited ports and potentiometers and different functions had to be encoded on the arduino code hence impacting the versatility of the model.
@@ -57,7 +57,7 @@ Another major upgrade concerns the use of the two DAC GPIO from the ESP32. These
 
 <div>
 
-<img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
+<img align="left" width="450" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 <p style='text-align: justify;'>
 
 The entire layout of the Spikeling board has been reconceived and a laser-cut acrylic sheet repesenting a neuron now sit on top of the board. All ports and potentiometers are now strategically placed.
