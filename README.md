@@ -38,6 +38,10 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 <p style='text-align: justify;'>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
 
+<p style='text-align: justify;'>
+The main upgrade on the PCB concerns the use of an ESP32 module and 2 ADC 8bit expander chips that together allow spikeling to compute more input output with specific input/output ports and dedicated potentiometer.
+
+>The previous version had limited ports and potentiometers and different functions had to be encoded on the arduino code hence impacting the versatility of the model.
 
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 </p>
@@ -68,7 +72,7 @@ Currently the GUI functions are being reimplemented with the PySerial readWrite 
 
 > The resistance of the 4 CharliePlex and the SpikeLed resistors must be adjusted to the acrylic material chosen for the front cover. The current 100 Ohm is sufficient for opaque PMMA, but clear transparent ones should have 1 kOhm soldered below so that the LEDs do not affect the user vision.
 
-
+- The CharliePlex footprint orientation (+/-) is not labeled
 
 </div>
 
