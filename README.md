@@ -12,24 +12,29 @@ Technically, it consists on a microcontroller (an ESP32) running the computation
 <div>
 
 
-<img align="left" width="390" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
+<img align="left" width="400" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
 
-<img align="left" width="390" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
+<img align="left" width="400" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
 
 
 </div>
 
 ***
 
+
 <p style='text-align: justify;'>
+
 <br>
 If this all sounds familiar to you, it is because this project is a derivative (and update) of the Spikeling project started at the [BadenLab](https://badenlab.org/). With feedback from users and students, we are developing this version, which has added capabilities, and also revisits how lessons can be taught, and what kind of experiments can be done with it!
 
 While this is not a stable version just yet, enthusiasts and potential collaborators can source the electronic bits for this project from [KitSpace](#)
+
 </p
 
 
+
 ***
+
 
 <p style='text-align: justify;'>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
