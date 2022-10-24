@@ -14,7 +14,7 @@ Technically, it consists on a microcontroller (an ESP32) running the computation
 <p style='text-align: justify;'>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
 
-<img align="left" width="369" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_GUI.gif">
+<img align="left" width="369" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
 </p>
 
 </div>
