@@ -12,9 +12,9 @@ Technically, it consists on a microcontroller (an ESP32) running the computation
 <div>
 
 
-<img align="left" width="385" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
+<img align="left" width="390" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
 
-<img align="left" width="385" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
+<img align="left" width="390" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
 
 
 </div>
@@ -47,22 +47,6 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 
 GUI
 
-Main issue concerns the live reading from the serial which is extremely slow (compared to the serial monitor on the arduion IDE). After trying for a time with the parent QtSerial, I switched to the most universal PySerial. Still the reading is waayyyyy too slow:
-
-Here's just a few line that I run and that still gives me a slow serial read
-
-```python
-import serial
-
-serialport = serial.Serial("COM11", 115200)
-while True:
-    rx = serialport.readline()
-    rx_serial = str(rx, "utf-8").strip()
-    v = rx_serial.split(",")
-    print(v)
-```
-
-subsequently the live plotting is affected
 
 ***
 
