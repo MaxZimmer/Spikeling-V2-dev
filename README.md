@@ -9,19 +9,15 @@ It is an artificial neuron that can receive different inputs, integrate them and
 Technically, it consists on a microcontroller (an ESP32) running the computationally efficient Izhikevich model of a spiking neuron.
 </p>
 
+<br>
+
 <div>
-
-
 <img align="left" width="405" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_hardware.png">
 
 <img align="left" width="405" height="250" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/GUI/Pictures%20%26%20Logos/Spikeling_GUI.gif">
-
-
 </div>
-<br><br/>
 
-***
-<br><br/>
+<br>
 
 <div>
 <p style='text-align: justify;'>
@@ -56,6 +52,8 @@ Another major upgrade concerns the use of the two DAC GPIO from the ESP32. These
 
 </p>
 </div>
+
+***
 
 <div>
 
