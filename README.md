@@ -38,13 +38,21 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 <p style='text-align: justify;'>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
 
-<br>
 <p style='text-align: justify;'>
-The main upgrade on the PCB concerns the use of an ESP32 module and 2 ADC 8bit expander chips that together allow spikeling to compute more input output with specific input/output ports and dedicated potentiometer.
+The main upgrade on the PCB concerns the use of an ESP32 module and 2 ADC 8bit expander chips that together allow spikeling to compute more input output with specific input/output ports and dedicated potentiometer. The previous version had limited ports and potentiometers and different functions had to be encoded on the arduino code hence impacting the versatility of the model.
 
->The previous version had limited ports and potentiometers and different functions had to be encoded on the arduino code hence impacting the versatility of the model.
+Stereo (3-ways) audio jacks 3.5mm replace the previous BNC cable. Both ports and cables are therefore cheaper, also ports are less bulky and cables more flexible. Moreover, now one single port can carry two distinct information. In this case digital and analog input/output.
 
-<br>
+Since the user cannot access the microcontroler board anymore (acrylic sheet on top of the board), a reset button has been added to the back of the board.
+
+Previously, "modes" were encoded manually on the microcontroler, and the user could check the set mode number by the amount of flashes the microcontroller built-in LED was providing at the begining of the routine.
+Now, the microcontroller is pre-set with 12 distinct "neuron modes" that the user can switch through, 12 proxy LED indicate continuously which mode is currently being set.
+
+The buzzer is now smaller and is powered by the ESP32 3.3V (instead of the 5v from the arduino), making its clicking noise quieter, which is more pleasant for the user ear, especially after a couple of minutes using the device.
+
+A couple of functions have been added to the board and can now be controlled through potentiometers (synaptic polarity(inhibitory/excitatory), photoreceptor gain and polarity, stimulus strength and polarity(only for current input not LED stimulation))
+
+
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 </p>
 
