@@ -2,6 +2,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets, QtSerialPort
 from PyQt6.QtCore import QIODevice, QTimer
 from PyQt6.QtWidgets import QFileDialog, QWidget
 from PyQt6.QtSerialPort import QSerialPort, QSerialPortInfo
+import pyqtgraph
 from pyqtgraph import PlotWidget, GraphicsView
 import numpy
 import serial
@@ -414,19 +415,19 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.BadenLabLogoTab1.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab1.setText("")
-        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
+        self.BadenLabLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab1.setScaledContents(True)
         self.BadenLabLogoTab1.setObjectName("BadenLabLogoTab1")
         self.ONLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.ONLogoTab1.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab1.setText("")
-        self.ONLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
+        self.ONLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/ON Logo.png"))
         self.ONLogoTab1.setScaledContents(True)
         self.ONLogoTab1.setObjectName("ONLogoTab1")
         self.TrendLogoTab1 = QtWidgets.QLabel(self.TabSpikeling)
         self.TrendLogoTab1.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab1.setText("")
-        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
+        self.TrendLogoTab1.setPixmap(QtGui.QPixmap("Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab1.setScaledContents(True)
         self.TrendLogoTab1.setObjectName("TrendLogoTab1")
         self.NeuronBrowsePushButton = QtWidgets.QPushButton(self.TabSpikeling)
@@ -580,25 +581,25 @@ class Ui_Spikeling(QWidget):
         self.BadenLabLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.BadenLabLogoTab2.setGeometry(QtCore.QRect(10, 645, 170, 45))
         self.BadenLabLogoTab2.setText("")
-        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/Lab Logo.png"))
+        self.BadenLabLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/Lab Logo.png"))
         self.BadenLabLogoTab2.setScaledContents(True)
         self.BadenLabLogoTab2.setObjectName("BadenLabLogoTab2")
         self.TrendLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.TrendLogoTab2.setGeometry(QtCore.QRect(390, 648, 51, 41))
         self.TrendLogoTab2.setText("")
-        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/TReND Logo 2.png"))
+        self.TrendLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/TReND Logo 2.png"))
         self.TrendLogoTab2.setScaledContents(True)
         self.TrendLogoTab2.setObjectName("TrendLogoTab2")
         self.ONLogoTab2 = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.ONLogoTab2.setGeometry(QtCore.QRect(170, 655, 201, 21))
         self.ONLogoTab2.setText("")
-        self.ONLogoTab2.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/ON Logo.png"))
+        self.ONLogoTab2.setPixmap(QtGui.QPixmap("Pictures & Logos/ON Logo.png"))
         self.ONLogoTab2.setScaledContents(True)
         self.ONLogoTab2.setObjectName("ONLogoTab2")
         self.IzhikImage = QtWidgets.QLabel(self.TabNeuronGenerator)
         self.IzhikImage.setGeometry(QtCore.QRect(590, 50, 221, 191))
         self.IzhikImage.setText("")
-        self.IzhikImage.setPixmap(QtGui.QPixmap("../../.designer/backup/Pictures & Logos/izhik.png"))
+        self.IzhikImage.setPixmap(QtGui.QPixmap("Pictures & Logos/izhik.png"))
         self.IzhikImage.setScaledContents(True)
         self.IzhikImage.setObjectName("IzhikImage")
         self.IzhikImage.raise_()
@@ -890,10 +891,29 @@ class Ui_Spikeling(QWidget):
             self.Oscilloscope1.setRange(yRange=[-90,30])
             self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
             self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
+            self.Oscilloscope1.setLabel('right', 'Current Input', 'a.u.')
 
-            self.curve2 = self.Oscilloscope1.plot(self.x, self.y2, pen=(DarkSolarized[4]))
+            self.p2 = pyqtgraph.ViewBox()
+            self.Oscilloscope1.scene().addItem(self.p2)
+            self.p2.setXLink(self.Oscilloscope1)
+            self.p2.setRange(yRange=[-75,75])
+            self.Oscilloscope1.getAxis("right").linkToView(self.p2)
+
+
+
+            #self.curve2 = self.Oscilloscope1.plot(self.x, self.y2, pen=(DarkSolarized[4]))
             self.curve1 = self.Oscilloscope1.plot(self.x, self.y1, pen=(DarkSolarized[3]))
             self.curve0 = self.Oscilloscope1.plot(self.x, self.y0, pen=(DarkSolarized[2]))
+
+            self.curve2 = pyqtgraph.PlotCurveItem(self.x, self.y2, pen=(DarkSolarized[4]))
+            self.p2.addItem(self.curve2)
+            def updateViews():
+                    #global self.p2
+                    self.p2.setGeometry(self.Oscilloscope1.getViewBox().sceneBoundingRect())
+                    self.p2.linkedViewChanged(self.Oscilloscope1.getViewBox(), self.p2.XAxis)
+
+            updateViews()
+            self.Oscilloscope1.getViewBox().sigResized.connect(updateViews)
 
             def getdata0():
                     rx = serial_port.readline()
