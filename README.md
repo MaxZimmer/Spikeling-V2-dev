@@ -38,11 +38,13 @@ While this is not a stable version just yet, enthusiasts and potential collabora
 <p style='text-align: justify;'>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/PCB.png">
 
+<br>
 <p style='text-align: justify;'>
 The main upgrade on the PCB concerns the use of an ESP32 module and 2 ADC 8bit expander chips that together allow spikeling to compute more input output with specific input/output ports and dedicated potentiometer.
 
 >The previous version had limited ports and potentiometers and different functions had to be encoded on the arduino code hence impacting the versatility of the model.
 
+<br>
 <img align="left" width="370" height="225" src="https://github.com/MaxZimmer/Spikeling-V2/blob/main/Images/Spikeling_front.png">
 </p>
 
