@@ -162,6 +162,8 @@ Currently the GUI functions are being reimplemented with the PySerial readWrite 
 
 The custom 1, 2, 3 text has to be changed to the last three neuron mode implemented on the arduino code
 
+> FIXED
+
 </div>
 
 
