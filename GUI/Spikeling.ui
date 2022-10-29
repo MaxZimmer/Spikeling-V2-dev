@@ -182,32 +182,6 @@ background-color: rgb(7, 54, 66);</string>
         <string>Decay</string>
        </property>
       </widget>
-      <widget class="QCheckBox" name="Synapse1RecoveryCheckBox">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>440</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Recovery</string>
-       </property>
-      </widget>
-      <widget class="QCheckBox" name="Synapse2RecoveryCheckBox">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>620</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Recovery</string>
-       </property>
-      </widget>
       <widget class="QCheckBox" name="Synapse2DecayCheckBox">
        <property name="geometry">
         <rect>
@@ -219,25 +193,6 @@ background-color: rgb(7, 54, 66);</string>
        </property>
        <property name="text">
         <string>Decay</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="Synapse2RecoveryValue">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>620</y>
-         <width>75</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>0.990</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <widget class="QLineEdit" name="Synapse2DecayValue">
@@ -253,7 +208,7 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
        <property name="text">
-        <string>0.001</string>
+        <string>0.990</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -434,25 +389,6 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
        <property name="text">
-        <string>0.001</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="Synapse1RecoveryValue">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>440</y>
-         <width>75</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
         <string>0.995</string>
        </property>
        <property name="alignment">
@@ -507,6 +443,54 @@ background-color: rgb(7, 54, 66);</string>
        </property>
        <property name="tickPosition">
         <enum>QSlider::TicksBelow</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="NoiseLabel">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>200</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Syn1Label">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>340</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Syn2Label">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>520</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </widget>
@@ -798,10 +782,10 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-75</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>75</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -823,10 +807,16 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-100</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>25</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -848,16 +838,70 @@ background-color: rgb(7, 54, 66);</string>
         </rect>
        </property>
        <property name="minimum">
-        <number>-50</number>
+        <number>-100</number>
        </property>
        <property name="maximum">
-        <number>50</number>
+        <number>100</number>
+       </property>
+       <property name="singleStep">
+        <number>10</number>
+       </property>
+       <property name="pageStep">
+        <number>25</number>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="tickPosition">
         <enum>QSlider::TicksBelow</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="StimFreLabel">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>60</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="StimStrLabel">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>200</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="PhotoGainLabel">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>520</y>
+         <width>60</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
       <zorder>StimulusLabel</zorder>
@@ -879,6 +923,9 @@ background-color: rgb(7, 54, 66);</string>
       <zorder>StimFreSlider</zorder>
       <zorder>PhotoGainSlider</zorder>
       <zorder>StimFreImage</zorder>
+      <zorder>StimFreLabel</zorder>
+      <zorder>StimStrLabel</zorder>
+      <zorder>PhotoGainLabel</zorder>
      </widget>
      <widget class="PlotWidget" name="Oscilloscope1" native="true">
       <property name="geometry">
@@ -954,7 +1001,7 @@ background-color: rgb(0, 30, 38);</string>
         <rect>
          <x>165</x>
          <y>0</y>
-         <width>100</width>
+         <width>71</width>
          <height>20</height>
         </rect>
        </property>
@@ -1252,6 +1299,11 @@ background-color: rgb(220, 50, 47);</string>
         <height>22</height>
        </rect>
       </property>
+      <item>
+       <property name="text">
+        <string>Select a COM port:</string>
+       </property>
+      </item>
      </widget>
      <widget class="QLabel" name="SelectPortLabel">
       <property name="geometry">
@@ -1305,7 +1357,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../.designer/backup/Pictures &amp; Logos/Lab Logo.png</pixmap>
+       <pixmap>Pictures &amp; Logos/Lab Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1324,7 +1376,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../.designer/backup/Pictures &amp; Logos/ON Logo.png</pixmap>
+       <pixmap>Pictures &amp; Logos/ON Logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1343,7 +1395,7 @@ background-color: rgb(220, 50, 47);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../.designer/backup/Pictures &amp; Logos/TReND Logo 2.png</pixmap>
+       <pixmap>Pictures &amp; Logos/TReND Logo 2.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1391,6 +1443,11 @@ background-color: rgb(220, 50, 47);</string>
        <string notr="true">color: rgb(131, 148, 150);
 font: 12pt &quot;Segoe UI&quot;;</string>
       </property>
+      <item>
+       <property name="text">
+        <string>Select Neuron Mode</string>
+       </property>
+      </item>
       <item>
        <property name="text">
         <string>Tonic Spiking</string>
@@ -1923,7 +1980,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../.designer/backup/Pictures &amp; Logos/izhik.png</pixmap>
+       <pixmap>Pictures &amp; Logos/izhik.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
