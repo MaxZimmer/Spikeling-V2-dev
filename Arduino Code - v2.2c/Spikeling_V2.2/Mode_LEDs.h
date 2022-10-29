@@ -74,3 +74,12 @@ void Mode_opening() {
   delay(Mode_delay);                                   // Wait the "time of a push"
   lightOn(0);                                          // Turn on the first mode LEDs
 }
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
+/*                                   Fucntion that turns off all LEDs                                    */
+void lightOff() {
+  pinMode(pinCP1,INPUT);                               // Turn all mode LEDs off
+  pinMode(pinCP2,INPUT);                               // Turn all mode LEDs off
+  pinMode(pinCP3,INPUT);                               // Turn all mode LEDs off
+  pinMode(pinCP4,INPUT);                               // Turn all mode LEDs off
+}

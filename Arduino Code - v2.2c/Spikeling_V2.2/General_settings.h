@@ -7,7 +7,7 @@ MCP3208 ADC2;
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Hardware parameters                         */
-int BaudRate = 9600;
+int BaudRate = 115200;
 int bits8 = 255;
 int bits9 = 511;
 int bits10 = 1023;
@@ -80,7 +80,7 @@ float Syn1_Amp;                    // Synapse 1 applied gain
 int Syn1_offset = 100;
 float I_Synapse1 = 0.0;                  // Synapse 1 input current
 float Synapse1_decay = 0.995;      // Synpase 1 decay rate. The difference to 1 matters - the smaller the difference, the slower the decay. Default  = 0.995
-
+int Syn1_Vm;
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                       Synapse2 parameters                         */
@@ -91,20 +91,20 @@ float Syn2_Amp;                    // Synapse 2 applied gain
 int Syn2_offset = 100;
 float I_Synapse2 = 0.0;                  // Synapse 2 input current
 float Synapse2_decay = 0.990;      // Synpase 2 decay rate. The difference to 1 matters - the smaller the difference, the slower the decay. Default  = 0.990
-
+int Syn2_Vm;
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                         Axon parameters                           */
 int Axon_AnalogOutput;
 float Axon_AnalogScalling;
-float Axon_AnalogInputValue;
-float Axon_AnalogInput;
+float Axon_AnalogInput1;
+float Axon_AnalogInput2;
 float Axon_AnalogOffset = -6.75;
 
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                      PhotoDiode parameters                        */
-float PDPotScaling  = bits/10;    // the lower, the stronger the impact of the Vm poti.  Default = 2
+float PDPotScaling  = bits/25;    // the lower, the stronger the impact on PD_Gain
 float PD_Gain=1.0;
 float PD_PotValue;
 float PD_Amp;
@@ -156,6 +156,26 @@ int   NoiseScaling = 25;         // Noise gain scaling - The lower, the stronger
 int   Noise_Amp;                 // Noise applied gain
 float I_Noise;                   // Noise current
 
+// // // // // // // // // // // // // // // // // // // // // // // //
+/*                         Rx Tx parameters                          */
+  String RxStimFre = "None";
+  String RxStimStr = "None";
+  String RxStimCus = "None";
+  String RxPDGain = "None";
+  String RxPDDecay = "None";
+  String RxPDRecovery = "None";
+  String RxVm = "None";
+  String RxNoise = "None";
+  String RxSyn1Gain = "None";
+  String RxSyn1Decay = "None";
+  String RxSyn2Gain = "None";
+  String RxSyn2Decay = "None";
+  String RxMode = "None";
+  String Rxa = "None";
+  String Rxb = "None";
+  String Rxc = "None";
+  String Rxd = "None";
+  
 
 String   OutputStr;
 
