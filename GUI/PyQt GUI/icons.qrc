@@ -1,0 +1,21 @@
+<RCC>
+  <qresource prefix="images">
+    <file>Pictures &amp; Logos/izhik.png</file>
+    <file>Pictures &amp; Logos/Lab Logo.svg</file>
+    <file>Pictures &amp; Logos/ON Logo.svg</file>
+    <file>Pictures &amp; Logos/spikeling.svg</file>
+    <file>Pictures &amp; Logos/StimFrequency.png</file>
+    <file>Pictures &amp; Logos/StimStrenght.png</file>
+    <file>Pictures &amp; Logos/TReND Logo.svg</file>
+    <file>Pictures &amp; Logos/under_construction.svg</file>
+    <file>Icons/2Photon.png</file>
+    <file>Icons/Close.png</file>
+    <file>Icons/DropMenu.png</file>
+    <file>Icons/Exit.png</file>
+    <file>Icons/Expand.png</file>
+    <file>Icons/Menu.png</file>
+    <file>Icons/Reduce.png</file>
+    <file>Icons/Spikeling.png</file>
+    <file>Icons/Tutorial.png</file>
+  </qresource>
+</RCC>

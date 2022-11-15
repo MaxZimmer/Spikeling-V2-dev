@@ -4,6 +4,8 @@ import pyqtgraph
 import collections
 import serial
 import numpy as np
+import pandas as pd
+import Data_recording
 
 BaudRate = 115200
 DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[203,75,22],[42,161,152],[181,137,0],[108,113,196]]
@@ -35,17 +37,27 @@ SerialTx = [TxStimFre,TxStimStr,TxStimCus,
 
 
 def ReadSerial(self):
-    self.Oscilloscope1.clear()
-    COM = self.SelectPortComboBox.currentText()
+    self.recordflag = False
+    self.Dataset0 = Data_recording.DynamicArray()
+    self.Dataset1 = Data_recording.DynamicArray()
+    self.Dataset2 = Data_recording.DynamicArray()
+    self.Dataset3 = Data_recording.DynamicArray()
+    self.Dataset4 = Data_recording.DynamicArray()
+    self.Dataset5 = Data_recording.DynamicArray()
+    self.Dataset6 = Data_recording.DynamicArray()
+
+    self.ui.Spikeling_Oscilloscope_widget.clear()
+    COM = self.ui.Spikeling_SelectPortComboBox.currentText()
     serial_port = serial.Serial(port=COM, baudrate=BaudRate)
 
-    sampleinterval = 0.01
-    timewindow = 5.
+
+    sampleinterval = 1
+    timewindow = 750.
     min_range = -90
     max_range = 30
     stimrange = ((-min_range) + max_range) / 2
 
-    self._interval = int(sampleinterval * 1000)
+    self._interval = int(sampleinterval)
     self._bufsize = int(timewindow / sampleinterval)
 
     self.databuffer0 = collections.deque([0.0] * self._bufsize, self._bufsize)
@@ -65,25 +77,25 @@ def ReadSerial(self):
     self.y5 = np.zeros(self._bufsize, dtype=float)
     self.y6 = np.zeros(self._bufsize, dtype=float)
 
-    self.Oscilloscope1.showGrid(x=True, y=True)
-    self.Oscilloscope1.setRange(yRange=[-90, 30])
-    self.Oscilloscope1.setLabel('left', 'Membrane potential', 'mV')
-    self.Oscilloscope1.setLabel('bottom', 'time', 'ms')
-    self.Oscilloscope1.setLabel('right', 'Current Input', 'a.u.')
+    self.ui.Spikeling_Oscilloscope_widget.showGrid(x=True, y=True)
+    self.ui.Spikeling_Oscilloscope_widget.setRange(yRange=[-90, 30])
+    self.ui.Spikeling_Oscilloscope_widget.setLabel('left', 'Membrane potential', 'mV')
+    self.ui.Spikeling_Oscilloscope_widget.setLabel('bottom', 'time', 'ms')
+    self.ui.Spikeling_Oscilloscope_widget.setLabel('right', 'Current Input', 'a.u.')
 
     self.CurrentPlots = pyqtgraph.ViewBox()
-    self.Oscilloscope1.scene().addItem(self.CurrentPlots)
-    self.CurrentPlots.setXLink(self.Oscilloscope1)
+    self.ui.Spikeling_Oscilloscope_widget.scene().addItem(self.CurrentPlots)
+    self.CurrentPlots.setXLink(self.ui.Spikeling_Oscilloscope_widget)
     self.CurrentPlots.setRange(yRange=[-100, 100])
-    self.Oscilloscope1.getAxis("right").linkToView(self.CurrentPlots)
+    self.ui.Spikeling_Oscilloscope_widget.getAxis("right").linkToView(self.CurrentPlots)
 
-    self.curve5 = self.Oscilloscope1.plot(self.x, self.y5, pen=(DarkSolarized[7]))
+    self.curve5 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y5, pen=(DarkSolarized[7]))
     self.curve5.clear()
-    self.curve3 = self.Oscilloscope1.plot(self.x, self.y3, pen=(DarkSolarized[5]))
+    self.curve3 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y3, pen=(DarkSolarized[5]))
     self.curve3.clear()
-    self.curve1 = self.Oscilloscope1.plot(self.x, self.y1, pen=(DarkSolarized[3]))
+    self.curve1 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y1, pen=(DarkSolarized[3]))
     self.curve1.clear()
-    self.curve0 = self.Oscilloscope1.plot(self.x, self.y0, pen=(DarkSolarized[2]))
+    self.curve0 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y0, pen=(DarkSolarized[2]))
     self.curve0.clear()
 
     self.curve6 = pyqtgraph.PlotCurveItem(self.x, self.y6, pen=(DarkSolarized[8]))
@@ -98,10 +110,10 @@ def ReadSerial(self):
     self.CurrentPlots.addItem(self.curve2)
 
     def updateViews():
-        self.CurrentPlots.setGeometry(self.Oscilloscope1.getViewBox().sceneBoundingRect())
-        self.CurrentPlots.linkedViewChanged(self.Oscilloscope1.getViewBox(), self.CurrentPlots.XAxis)
+        self.CurrentPlots.setGeometry(self.ui.Spikeling_Oscilloscope_widget.getViewBox().sceneBoundingRect())
+        self.CurrentPlots.linkedViewChanged(self.ui.Spikeling_Oscilloscope_widget.getViewBox(), self.CurrentPlots.XAxis)
 
-    self.Oscilloscope1.getViewBox().sigResized.connect(updateViews)
+    self.ui.Spikeling_Oscilloscope_widget.getViewBox().sigResized.connect(updateViews)
 
 
     def getdata0():
@@ -153,117 +165,117 @@ def ReadSerial(self):
         i3 = data[6]
         return i3
 
+
     def updateplot():
-        if self.StimFreCheckBox.isChecked():
-            SerialTx[0] = str(-(self.StimFreSlider.value()))
+        if self.ui.Spikeling_StimFre_checkBox.isChecked():
+            SerialTx[0] = str(-(self.ui.Spikeling_StimFre_slider.value()))
         else:
             SerialTx[0] = "None"
 
-        if self.StimStrCheckBox.isChecked():
-            SerialTx[1] = str((self.StimStrSlider.value()))
+        if self.ui.Spikeling_StimStr_checkBox.isChecked():
+            SerialTx[1] = str((self.ui.Spikeling_StimStrSlider.value()))
         else:
             SerialTx[1] = "None"
 
-        if self.CustomStimulusCheckBox.isChecked():
+        if self.ui.Spikeling_CustomStimulus_checkBox.isChecked():
             SerialTx[2] = "None"
         else:
             SerialTx[2] = "None"
 
-        if self.PhotoGainCheckBox.isChecked():
-            SerialTx[3] = str(self.PhotoGainSlider.value())
+        if self.ui.Spikeling_PR_PhotoGain_checkBox.isChecked():
+            SerialTx[3] = str(self.ui.Spikeling_PR_PhotoGain_slider.value())
         else:
             SerialTx[3] = "None"
 
-        if self.PRDecayCheckBox.isChecked():
-            SerialTx[4] = str(self.PRDecayValue.text())
+        if self.ui.Spikeling_PR_Decay_checkBox.isChecked():
+            SerialTx[4] = str(self.ui.Spikeling_PR_Decay_value.text())
         else:
             SerialTx[4] = "None"
 
-        if self.PRRecoveryCheckBox.isChecked():
-            SerialTx[5] = str(self.PRRecoveryValue.text())
+        if self.ui.Spikeling_PR_Recovery_checkBox.isChecked():
+            SerialTx[5] = str(self.ui.Spikeling_PR_Recovery_value.text())
         else:
             SerialTx[5] = "None"
 
-        if self.MembranePotentialCheckBox.isChecked():
-            SerialTx[6] = str(self.MembranePotentialValue.text())
+        if self.ui.Spikeling_Vm_checkBox.isChecked():
+            SerialTx[6] = str(self.ui.Spikeling_Vm_mV_value.text())
         else:
             SerialTx[6] = "None"
 
-        if self.NoiseLevelCheckBox.isChecked():
-            SerialTx[7] = str(self.NoiseLevelSlider.value())
+        if self.ui.Spikeling_Noise_checkBox.isChecked():
+            SerialTx[7] = str(self.ui.Spikeling_Noise_slider.value())
         else:
             SerialTx[7] = "None"
 
-        if self.SynapticGain1CheckBox.isChecked():
-            SerialTx[8] = str(self.SynapticGain1Slider.value())
+        if self.ui.Spikeling_Synapse1_checkBox.isChecked():
+            SerialTx[8] = str(self.ui.Spikeling_Synapse1_slider.value())
         else:
             SerialTx[8] = "None"
 
-        if self.Synapse1DecayCheckBox.isChecked():
-            SerialTx[9] = str(self.Synapse1DecayValue.text())
+        if self.ui.Spikeling_Synapse1_Decay_checkBox.isChecked():
+            SerialTx[9] = str(self.ui.Spikeling_Synapse1_Decay_value.text())
         else:
             SerialTx[9] = "None"
 
-        if self.SynapticGain2CheckBox.isChecked():
-            SerialTx[10] = str(self.SynapticGain2Slider.value())
+        if self.ui.Spikeling_Synapse2_checkBox.isChecked():
+            SerialTx[10] = str(self.ui.Spikeling_Synapse2_slider.value())
         else:
             SerialTx[10] = "None"
 
-        if self.Synapse2DecayCheckBox.isChecked():
-            SerialTx[11] = str(self.Synapse2DecayValue.text())
+        if self.ui.Spikeling_Synapse2_Decay_checkBox.isChecked():
+            SerialTx[11] = str(self.ui.Spikeling_Synapse2_Decay_value.text())
         else:
             SerialTx[11] = "None"
 
-        if self.Osc1VmCheckbox.isChecked():
+        if self.ui.Spikeling_VmCheckbox.isChecked():
             self.databuffer0.append(getdata0())
             self.y0[:] = self.databuffer0
             self.curve0.setData(self.x, self.y0)
         else:
             self.curve0.clear()
 
-        if self.Osc1StimulusCheckbox.isChecked():
+        if self.ui.Spikeling_StimulusCheckbox.isChecked():
             self.databuffer1.append(getdata1())
             self.y1[:] = self.databuffer1
             self.curve1.setData(self.x, self.y1 * stimrange - 80)
         else:
             self.curve1.clear()
 
-        if self.Osc1InputCurrentCheckbox.isChecked():
+        if self.ui.Spikeling_InputCurrentCheckbox.isChecked():
             self.databuffer2.append(getdata2())
             self.y2[:] = self.databuffer2
             self.curve2.setData(self.x, self.y2)
         else:
             self.curve2.clear()
 
-        if self.Osc1Syn1VmCheckbox.isChecked():
+        if self.ui.Spikeling_Syn1VmCheckbox.isChecked():
             self.databuffer3.append(getdata3())
             self.y3[:] = self.databuffer3
             self.curve3.setData(self.x, self.y3)
         else:
             self.curve3.clear()
 
-        if self.Osc1Syn1InputCheckbox.isChecked():
+        if self.ui.Spikeling_Syn1InputCheckbox.isChecked():
             self.databuffer4.append(getdata4())
             self.y4[:] = self.databuffer4
             self.curve4.setData(self.x, self.y4)
         else:
             self.curve4.clear()
 
-        if self.Osc1Syn2VmCheckbox.isChecked():
+        if self.ui.Spikeling_Syn2VmCheckbox.isChecked():
             self.databuffer5.append(getdata5())
             self.y5[:] = self.databuffer5
             self.curve5.setData(self.x, self.y5)
         else:
             self.curve5.clear()
 
-        if self.Osc1Syn2InputCheckbox.isChecked():
+        if self.ui.Spikeling_Syn2InputCheckbox.isChecked():
             self.databuffer6.append(getdata6())
             self.y6[:] = self.databuffer6
             self.curve6.setData(self.x, self.y6)
         else:
             self.curve6.clear()
 
-        # tx = ';'.join(SerialTx)
         tx0 = SerialTx[0]
         Tx0 = tx0 + ';'
         serial_port.write(Tx0.encode())
@@ -332,12 +344,39 @@ def ReadSerial(self):
         Tx16 = tx16 + ';'
         serial_port.write(Tx16.encode())
 
-        rx = serial_port.readline()
-        rx_serial = str(rx, 'utf8').strip()
-        data = rx_serial.split(',')
-        print(data[5])
+        # rx = serial_port.readline()
+        # rx_serial = str(rx, 'utf8').strip()
+        # data = rx_serial.split(',')
 
+        if self.ui.Spikeling_DataRecording_Record_pushButton.isChecked() == False and self.recordflag == True:
+            self.Dataset = np.empty([7, len(self.Dataset0)], dtype=float)
+            for i in range(len(self.Dataset0)):
+                self.Dataset[0][i] = self.Dataset0[i]
+                self.Dataset[1][i] = self.Dataset1[i]
+                self.Dataset[2][i] = self.Dataset2[i]
+                self.Dataset[3][i] = self.Dataset3[i]
+                self.Dataset[4][i] = self.Dataset4[i]
+                self.Dataset[5][i] = self.Dataset5[i]
+                self.Dataset[6][i] = self.Dataset6[i]
 
+            dict = {'Spikeling Vm': self.Dataset[0], 'Stimulus': self.Dataset[1], 'Total Current Input': self.Dataset[2],
+                    'Synapse 1 Vm': self.Dataset[3], 'Synapse 1 Input': self.Dataset[4],
+                    'Synapse 2 Vm': self.Dataset[5], 'Synapse 2 Input': self.Dataset[6]}
+            df = pd.DataFrame(dict)
+            self.RecordingFileName = str(self.ui.Spikeling_SelectedFolderLabel.text())
+            df.to_csv(self.RecordingFileName + '.csv', index=False)
+            self.recordflag = False
+
+        if self.ui.Spikeling_DataRecording_Record_pushButton.isChecked() == True:
+            self.recordflag = True
+
+            self.Dataset0.append(self.y0[-1])
+            self.Dataset1.append(self.y1[-1])
+            self.Dataset2.append(self.y2[-1])
+            self.Dataset3.append(self.y3[-1])
+            self.Dataset4.append(self.y4[-1])
+            self.Dataset5.append(self.y5[-1])
+            self.Dataset6.append(self.y6[-1])
 
 
     # QTimer
