@@ -121,7 +121,7 @@ void loop() {
     PD_Decay = 0.001;
   }
   else if (RxPDDecay != "None"){
-    PD_Decay = RxPDDecay.toInt();
+    PD_Decay = RxPDDecay.toFloat();
   }
   
   if (PD_Gain > PD_gain_mini){                     // When PD_amp is above the minimum value:
@@ -135,7 +135,7 @@ void loop() {
     PD_Recovery = 0.025;
   }
   else if (RxPDRecovery != "None"){
-    PD_Recovery = RxPDRecovery.toInt();
+    PD_Recovery = RxPDRecovery.toFloat();
   }
   if (PD_Gain < 1.0){
     PD_Gain += PD_Recovery;                        // Recovers by constant % per iteration
@@ -206,11 +206,11 @@ void loop() {
   }
   else{
     StimStr_Value = ADC1.readADC(pinStimStrPot);          // Reads Stimulus Strength potentiometer value
-    StimStrD = map(StimStr_Value, 0, bits, 100 , 0);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
+    StimStrD = map(StimStr_Value -bits/2, -bits/2, bits/2, -100 , 100);     // Map this value from 0 to 100 that will correspond to the stimulus strength %
     StimStrA = map(StimStr_Value, 0, bits, -100, 100);
   }  
-  Stim_val_D = StimStrD * StimLED_scaling + StimLED_offset;             // The stimulus digital output value is proportional to the potentiometer reading and scaled from parameters
-  Stim_val_A = abs(StimStrA) * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
+  Stim_val_D = abs(StimStrD * StimLED_scaling)+ StimLED_offset;             // The stimulus digital output value is proportional to the potentiometer reading and scaled from parameters
+  Stim_val_A = StimStrA * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
 
  
   if (RxStimFre == "None"){
@@ -308,6 +308,6 @@ void loop() {
   Serial.print(I_Synapse2);   Serial.println(',');
 
 
-  delay(10);
+  delay(5);
 
 }
