@@ -18,11 +18,18 @@ from untitled import Ui_MainWindow
 import Page000, Page101, Page103, Page301
 import Spikeling_graph
 import icons_rc
+
+        
 BaudRate = 115200
 portList = []
 ports = QSerialPortInfo().availablePorts()
 for port in ports:
-        portList.append(port.portName())
+        if sys.platform == "linux" or sys.platform == "linux2":
+            portList.append(port.systemLocation())
+            print(port.systemLocation())
+        else:
+            portList.append(port.portName())
+            
 
 
 class MainWindow:

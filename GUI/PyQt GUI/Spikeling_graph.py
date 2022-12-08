@@ -229,6 +229,7 @@ def ReadSerial(self):
 
         if self.ui.Spikeling_VmCheckbox.isChecked():
             self.databuffer0.append(getdata0())
+            #print(self.databuffer0)
             self.y0[:] = self.databuffer0
             self.curve0.setData(self.x, self.y0)
         else:

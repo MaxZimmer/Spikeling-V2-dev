@@ -1,12 +1,19 @@
 from PyQt6.QtSerialPort import QSerialPort, QSerialPortInfo
 from PyQt6.QtWidgets import QFileDialog, QWidget
 import serial
+from sys import platform
 
 BaudRate = 115200
 portList = []
 ports = QSerialPortInfo().availablePorts()
 for port in ports:
-        portList.append(port.portName())
+        if platform == "linux" or platform == "linux2":
+            portList.append(port.systemLocation())
+            print(port.systemLocation())
+        else:
+            portList.append(port.portName())
+            
+        
 serial_port = None
 
 DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[42,161,152],[203,75,22],[108,113,196],[181,137,0]]
