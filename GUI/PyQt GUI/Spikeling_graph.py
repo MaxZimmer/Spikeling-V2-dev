@@ -1,5 +1,5 @@
-from PyQt6 import QtCore, QtGui, QtWidgets, QtSerialPort
-from PyQt6.QtCore import QIODevice, QTimer
+from PyQt6 import QtCore#, QtSerialPort,QtGui,QtWidgets
+#from PyQt6.QtCore import QIODevice, QTimer
 import pyqtgraph
 import collections
 import serial

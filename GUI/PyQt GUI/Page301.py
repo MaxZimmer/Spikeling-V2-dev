@@ -1,5 +1,5 @@
 import numpy as np
-import pyqtgraph
+#import pyqtgraph
 
 DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[42,161,152],[203,75,22],[108,113,196],[181,137,0]]
 

@@ -1,14 +1,14 @@
-from PyQt6.QtWidgets import QFileDialog, QWidget
+from PyQt6.QtWidgets import QFileDialog #,QWidget
 import numpy as np
 import pandas as pd
-import pyqtgraph as pg
-from pyqtgraph.Qt import QtGui, QtCore
+#import pyqtgraph as pg
+#from pyqtgraph.Qt import QtGui, QtCore
 
-from scipy import random
+#from numpy import random
 
-from pyqtgraph.Qt import QtGui, QtCore
-from pyqtgraph import MultiPlotWidget
-from pyqtgraph.metaarray import *
+#from pyqtgraph.Qt import QtGui, QtCore
+#from pyqtgraph import MultiPlotWidget
+#from pyqtgraph.metaarray import *
 
 DarkSolarized = [[0, 30, 38], [131, 148, 150],
                  [220, 50, 47], [38, 139, 210], [133, 153, 0],

@@ -1,2 +1,5 @@
 *pycache
 *.ipynb_checkpoints/
+*build*
+*dist*
+*.pkg

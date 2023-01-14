@@ -7,9 +7,9 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QFileDialog, QWidget, QMainWindow
 
-class Ui_MainWindow(QWidget):
+
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1280, 720)
@@ -72,6 +72,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
+        font.setWeight(75)
         self.maintitle_label.setFont(font)
         self.maintitle_label.setStyleSheet("\n"
 "color: rgb(147, 161, 161);")
@@ -95,11 +96,12 @@ class Ui_MainWindow(QWidget):
         font.setPointSize(11)
         font.setBold(True)
         font.setItalic(False)
+        font.setWeight(75)
         self.slidemenu_toolbox.setFont(font)
         self.slidemenu_toolbox.setStyleSheet("")
         self.slidemenu_toolbox.setObjectName("slidemenu_toolbox")
         self.Neuron_page = QtWidgets.QWidget()
-        self.Neuron_page.setGeometry(QtCore.QRect(0, 0, 162, 450))
+        self.Neuron_page.setGeometry(QtCore.QRect(0, 0, 170, 432))
         self.Neuron_page.setObjectName("Neuron_page")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.Neuron_page)
         self.verticalLayout_7.setContentsMargins(0, 10, 0, 10)
@@ -118,6 +120,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.Neuron_pushButton.setFont(font)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../../.designer/backup/Icons/Spikeling.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -129,6 +132,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.NeuronTutorial_pushButton.setFont(font)
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("../../.designer/backup/Icons/Tutorial.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -140,6 +144,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.NeuronDataAnalysis_pushButton.setFont(font)
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("../../.designer/backup/Icons/Exit.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -152,7 +157,7 @@ class Ui_MainWindow(QWidget):
         icon3.addPixmap(QtGui.QPixmap("../../.designer/backup/Icons/Drop.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.slidemenu_toolbox.addItem(self.Neuron_page, icon3, "")
         self.TwoPhoton_page = QtWidgets.QWidget()
-        self.TwoPhoton_page.setGeometry(QtCore.QRect(0, 0, 162, 450))
+        self.TwoPhoton_page.setGeometry(QtCore.QRect(0, 0, 170, 432))
         self.TwoPhoton_page.setObjectName("TwoPhoton_page")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.TwoPhoton_page)
         self.verticalLayout_10.setContentsMargins(0, 10, 0, 10)
@@ -176,6 +181,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.TwoPhoton_pushButton.setFont(font)
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("../../.designer/backup/Icons/2Photon.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -192,6 +198,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.TwoPhotonTutorial_pushButton.setFont(font)
         self.TwoPhotonTutorial_pushButton.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.TwoPhotonTutorial_pushButton.setIcon(icon1)
@@ -202,6 +209,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.TwoPhotonDataAnalysis_pushButton.setFont(font)
         self.TwoPhotonDataAnalysis_pushButton.setIcon(icon2)
         self.TwoPhotonDataAnalysis_pushButton.setIconSize(QtCore.QSize(32, 32))
@@ -210,7 +218,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_10.addWidget(self.TwoPhoton_frame, 0, QtCore.Qt.AlignmentFlag.AlignTop)
         self.slidemenu_toolbox.addItem(self.TwoPhoton_page, icon3, "")
         self.NeuronGenerator_page = QtWidgets.QWidget()
-        self.NeuronGenerator_page.setGeometry(QtCore.QRect(0, 0, 162, 450))
+        self.NeuronGenerator_page.setGeometry(QtCore.QRect(0, 0, 170, 432))
         self.NeuronGenerator_page.setStyleSheet("")
         self.NeuronGenerator_page.setObjectName("NeuronGenerator_page")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.NeuronGenerator_page)
@@ -231,6 +239,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.NeuronGenerator_pushButton.setFont(font)
         self.NeuronGenerator_pushButton.setIcon(icon1)
         self.NeuronGenerator_pushButton.setIconSize(QtCore.QSize(32, 32))
@@ -239,11 +248,11 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_15.addWidget(self.NeuronGenerator_frame, 0, QtCore.Qt.AlignmentFlag.AlignTop)
         self.slidemenu_toolbox.addItem(self.NeuronGenerator_page, icon3, "")
         self.StimulusGenerator_page = QtWidgets.QWidget()
-        self.StimulusGenerator_page.setGeometry(QtCore.QRect(0, 0, 162, 450))
+        self.StimulusGenerator_page.setGeometry(QtCore.QRect(0, 0, 170, 432))
         self.StimulusGenerator_page.setObjectName("StimulusGenerator_page")
         self.slidemenu_toolbox.addItem(self.StimulusGenerator_page, icon3, "")
         self.Exercises_page = QtWidgets.QWidget()
-        self.Exercises_page.setGeometry(QtCore.QRect(0, 0, 162, 450))
+        self.Exercises_page.setGeometry(QtCore.QRect(0, 0, 170, 432))
         self.Exercises_page.setObjectName("Exercises_page")
         self.slidemenu_toolbox.addItem(self.Exercises_page, icon3, "")
         self.verticalLayout_6.addWidget(self.slidemenu_toolbox)
@@ -695,6 +704,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.Spikeling_DataRecording_NumberOfLoops_value.setFont(font)
         self.Spikeling_DataRecording_NumberOfLoops_value.setText("")
         self.Spikeling_DataRecording_NumberOfLoops_value.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -729,6 +739,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.Spikeling_DataRecording_RecordFolderDir_pushButton.setFont(font)
         self.Spikeling_DataRecording_RecordFolderDir_pushButton.setObjectName("Spikeling_DataRecording_RecordFolderDir_pushButton")
         self.horizontalLayout_56.addWidget(self.Spikeling_DataRecording_RecordFolderDir_pushButton)
@@ -758,6 +769,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
+        font.setWeight(75)
         self.Spikeling_DataRecording_Record_pushButton.setFont(font)
         self.Spikeling_DataRecording_Record_pushButton.setStyleSheet("color: rgb(250, 250, 250);\n"
 "background-color: rgb(220, 50, 47);")
@@ -1242,6 +1254,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
+        font.setWeight(75)
         self.Spikeling_Vm_mV_value.setFont(font)
         self.Spikeling_Vm_mV_value.setMaxLength(100)
         self.Spikeling_Vm_mV_value.setFrame(True)
@@ -1253,6 +1266,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
+        font.setWeight(75)
         self.Spikeling_Vm_mV_label.setFont(font)
         self.Spikeling_Vm_mV_label.setObjectName("Spikeling_Vm_mV_label")
         self.horizontalLayout_87.addWidget(self.Spikeling_Vm_mV_label)
@@ -1771,6 +1785,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_43.setSpacing(0)
         self.verticalLayout_43.setObjectName("verticalLayout_43")
         self.DataAnalysis_Oscilloscope_widget2_1_0 = PlotWidget(self.page_103_2_2)
+        self.DataAnalysis_Oscilloscope_widget2_1_0.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1785,6 +1800,7 @@ class Ui_MainWindow(QWidget):
         self.line_16.setObjectName("line_16")
         self.verticalLayout_43.addWidget(self.line_16)
         self.DataAnalysis_Oscilloscope_widget2_1_1 = PlotWidget(self.page_103_2_2)
+        self.DataAnalysis_Oscilloscope_widget2_1_1.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1799,6 +1815,7 @@ class Ui_MainWindow(QWidget):
         self.line_15.setObjectName("line_15")
         self.verticalLayout_43.addWidget(self.line_15)
         self.DataAnalysis_Oscilloscope_widget2_1_2 = PlotWidget(self.page_103_2_2)
+        self.DataAnalysis_Oscilloscope_widget2_1_2.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1813,6 +1830,7 @@ class Ui_MainWindow(QWidget):
         self.line_12.setObjectName("line_12")
         self.verticalLayout_43.addWidget(self.line_12)
         self.DataAnalysis_Oscilloscope_widget2_1_3 = PlotWidget(self.page_103_2_2)
+        self.DataAnalysis_Oscilloscope_widget2_1_3.setEnabled(False)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -2637,6 +2655,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
+        font.setWeight(75)
         self.a_value.setFont(font)
         self.a_value.setStyleSheet("")
         self.a_value.setFrame(True)
@@ -2696,6 +2715,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
+        font.setWeight(75)
         self.b_value.setFont(font)
         self.b_value.setStyleSheet("")
         self.b_value.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -2753,6 +2773,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
+        font.setWeight(75)
         self.c_value.setFont(font)
         self.c_value.setStyleSheet("")
         self.c_value.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -2810,6 +2831,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setBold(True)
+        font.setWeight(75)
         self.d_value.setFont(font)
         self.d_value.setStyleSheet("")
         self.d_value.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -2860,6 +2882,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         self.DisplayNeuronPushButton.setFont(font)
         self.DisplayNeuronPushButton.setMouseTracking(True)
         self.DisplayNeuronPushButton.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
@@ -2882,6 +2905,7 @@ class Ui_MainWindow(QWidget):
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
+        font.setWeight(75)
         font.setStrikeOut(False)
         self.SaveNeuronPushButton.setFont(font)
         self.SaveNeuronPushButton.setStyleSheet("color: rgb(147, 161, 161);")
@@ -2966,7 +2990,7 @@ class Ui_MainWindow(QWidget):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.slidemenu_toolbox.setCurrentIndex(4)
+        self.slidemenu_toolbox.setCurrentIndex(0)
         self.mainbody_stackedWidget.setCurrentIndex(3)
         self.DataAnalysis_Display_StackedWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -3077,17 +3101,17 @@ class Ui_MainWindow(QWidget):
         self.DataAnalysis_SpikeRate_Save_pushButton.setText(_translate("MainWindow", "Export .csv"))
         self.NeuronGenerator_subframe1_title_label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">Spikeling is built on the Izhikevich model</span></p></body></html>"))
         self.NeuronGenerator_subframe1_Izhik_textbrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Segoe UI\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Bifurcation methodologies enable us to reduce many biophysically accurate Hodgkin–Huxley-type neuronal models to a two-dimensional (2-D) system of ordinary differential equations of the form:</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:696;\">v\' = 0.04v</span><span style=\" font-size:11pt; font-weight:696; vertical-align:super;\">2</span><span style=\" font-size:11pt; font-weight:696;\"> + 5v + 140 - u + I                    </span><span style=\" font-size:11pt;\">&amp;</span><span style=\" font-size:11pt; font-weight:696;\">                    u\' = a(bv - u)</span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">with the auxiliary after-spike resetting:   if </span><span style=\" font-size:11pt; font-weight:696;\">v &gt;= 30 mV</span><span style=\" font-size:10pt;\">, then </span><span style=\" font-size:11pt; font-weight:696;\">v = c</span><span style=\" font-size:10pt;\"> and</span><span style=\" font-size:11pt;\"> </span><span style=\" font-size:11pt; font-weight:696;\">u = u + d</span></p>\n"
-"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:696;\"><br /></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Here, </span><span style=\" font-size:11pt; font-weight:696;\">v</span><span style=\" font-size:10pt;\"> and </span><span style=\" font-size:11pt; font-weight:696;\">u</span><span style=\" font-size:10pt;\"> are dimensionless variables, and </span><span style=\" font-size:11pt; font-weight:696;\">a</span><span style=\" font-size:10pt;\">, </span><span style=\" font-size:11pt; font-weight:696;\">b</span><span style=\" font-size:10pt;\">, </span><span style=\" font-size:11pt; font-weight:696;\">c</span><span style=\" font-size:10pt;\">, and </span><span style=\" font-size:11pt; font-weight:696;\">d</span><span style=\" font-size:10pt;\"> are dimensionless parameters, and </span><span style=\" font-size:11pt; font-weight:696;\">\'= d/dt</span><span style=\" font-size:10pt;\">, where </span><span style=\" font-size:11pt; font-weight:696;\">t</span><span style=\" font-size:10pt;\"> is the time. </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">The variable v represents the membrane potential of the neuron and </span><span style=\" font-size:11pt; font-weight:696;\">u</span><span style=\" font-size:10pt;\"> represents a membrane recovery variable, which accounts for the activation of K+ ionic currents and inactivation of Na+ ionic currents, and it provides negative feedback to </span><span style=\" font-size:11pt; font-weight:696;\">v</span><span style=\" font-size:10pt;\">. </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">After the spike reaches its apex (+30 mV), the membrane voltage and the recovery variable are reset. </span></p>\n"
-"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Synaptic currents or injected DC-currents are delivered via the variable</span><span style=\" font-size:10pt; font-weight:696;\"> </span><span style=\" font-size:11pt; font-weight:696;\">I</span><span style=\" font-size:10pt;\">.</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">Bifurcation methodologies enable us to reduce many biophysically accurate Hodgkin–Huxley-type neuronal models to a two-dimensional (2-D) system of ordinary differential equations of the form:</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">v\' = 0.04v</span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696; vertical-align:super;\">2</span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\"> + 5v + 140 - u + I                    </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt;\">&amp;</span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">                    u\' = a(bv - u)</span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">with the auxiliary after-spike resetting:   if </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">v &gt;= 30 mV</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">, then </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">v = c</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> and</span><span style=\" font-family:\'Segoe UI\'; font-size:11pt;\"> </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">u = u + d</span></p>\n"
+"<p align=\"justify\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\"><br /></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">Here, </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">v</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> and </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">u</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> are dimensionless variables, and </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">a</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">, </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">b</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">, </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">c</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">, and </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">d</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> are dimensionless parameters, and </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">\'= d/dt</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">, where </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">t</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> is the time. </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">The variable v represents the membrane potential of the neuron and </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">u</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\"> represents a membrane recovery variable, which accounts for the activation of K+ ionic currents and inactivation of Na+ ionic currents, and it provides negative feedback to </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">v</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">. </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">After the spike reaches its apex (+30 mV), the membrane voltage and the recovery variable are reset. </span></p>\n"
+"<p align=\"justify\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">Synaptic currents or injected DC-currents are delivered via the variable</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt; font-weight:696;\"> </span><span style=\" font-family:\'Segoe UI\'; font-size:11pt; font-weight:696;\">I</span><span style=\" font-family:\'Segoe UI\'; font-size:10pt;\">.</span></p></body></html>"))
         self.NeuronGenerator_subframe1_Oscilloscope_widget_stimulus_checkbox.setText(_translate("MainWindow", "Stimulus"))
         self.NeuronGenerator_subframe1_Oscilloscope_widget_Vm_checkbox.setText(_translate("MainWindow", "Vm"))
         self.NeuronGenerator_subframe1_bottom_label.setText(_translate("MainWindow", "<html><head/><body><p>As most real neurons, the model does not have a fixed threshold: Depending on the history of the membrane potential prior to the spike, the threshold potential can be as low as -55 mV or as high as -40mV</p></body></html>"))

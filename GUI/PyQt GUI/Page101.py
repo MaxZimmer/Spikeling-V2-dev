@@ -1,5 +1,5 @@
-from PyQt6.QtSerialPort import QSerialPort, QSerialPortInfo
-from PyQt6.QtWidgets import QFileDialog, QWidget
+from PyQt6.QtSerialPort import  QSerialPortInfo#, QSerialPort
+from PyQt6.QtWidgets import QFileDialog#, QWidget
 import serial
 from sys import platform
 

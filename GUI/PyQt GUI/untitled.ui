@@ -152,6 +152,7 @@ background-color: rgb(11, 30, 38);</string>
                <property name="font">
                 <font>
                  <pointsize>14</pointsize>
+                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -199,6 +200,7 @@ color: rgb(147, 161, 161);</string>
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
                  <italic>false</italic>
                  <bold>true</bold>
                 </font>
@@ -207,15 +209,15 @@ color: rgb(147, 161, 161);</string>
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>4</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="Neuron_page">
                 <property name="geometry">
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>162</width>
-                  <height>450</height>
+                  <width>170</width>
+                  <height>432</height>
                  </rect>
                 </property>
                 <attribute name="icon">
@@ -273,6 +275,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -296,6 +299,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -319,6 +323,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -347,8 +352,8 @@ color: rgb(147, 161, 161);</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>162</width>
-                  <height>450</height>
+                  <width>170</width>
+                  <height>432</height>
                  </rect>
                 </property>
                 <attribute name="icon">
@@ -412,6 +417,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -441,6 +447,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -467,6 +474,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -495,8 +503,8 @@ color: rgb(147, 161, 161);</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>162</width>
-                  <height>450</height>
+                  <width>170</width>
+                  <height>432</height>
                  </rect>
                 </property>
                 <property name="styleSheet">
@@ -563,6 +571,7 @@ color: rgb(147, 161, 161);</string>
                       <property name="font">
                        <font>
                         <pointsize>10</pointsize>
+                        <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
@@ -591,8 +600,8 @@ color: rgb(147, 161, 161);</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>162</width>
-                  <height>450</height>
+                  <width>170</width>
+                  <height>432</height>
                  </rect>
                 </property>
                 <attribute name="icon">
@@ -608,8 +617,8 @@ color: rgb(147, 161, 161);</string>
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>162</width>
-                  <height>450</height>
+                  <width>170</width>
+                  <height>432</height>
                  </rect>
                 </property>
                 <attribute name="icon">
@@ -1797,6 +1806,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
                                      <property name="font">
                                       <font>
                                        <pointsize>10</pointsize>
+                                       <weight>75</weight>
                                        <bold>true</bold>
                                       </font>
                                      </property>
@@ -1872,6 +1882,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
                                   <property name="font">
                                    <font>
                                     <pointsize>10</pointsize>
+                                    <weight>75</weight>
                                     <bold>true</bold>
                                    </font>
                                   </property>
@@ -1919,6 +1930,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
                                   <property name="font">
                                    <font>
                                     <pointsize>12</pointsize>
+                                    <weight>75</weight>
                                     <bold>true</bold>
                                    </font>
                                   </property>
@@ -3200,6 +3212,7 @@ background-color: rgb(220, 50, 47);</string>
                                   <property name="font">
                                    <font>
                                     <pointsize>11</pointsize>
+                                    <weight>75</weight>
                                     <bold>true</bold>
                                    </font>
                                   </property>
@@ -3225,6 +3238,7 @@ background-color: rgb(220, 50, 47);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>11</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -4395,6 +4409,9 @@ background-color: rgb(220, 50, 47);</string>
                        </layout>
                       </widget>
                       <widget class="QWidget" name="page_103_2_2">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
                        <layout class="QVBoxLayout" name="verticalLayout_43">
                         <property name="spacing">
                          <number>0</number>
@@ -4413,6 +4430,9 @@ background-color: rgb(220, 50, 47);</string>
                         </property>
                         <item>
                          <widget class="PlotWidget" name="DataAnalysis_Oscilloscope_widget2_1_0" native="true">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                             <horstretch>0</horstretch>
@@ -4433,6 +4453,9 @@ background-color: rgb(220, 50, 47);</string>
                         </item>
                         <item>
                          <widget class="PlotWidget" name="DataAnalysis_Oscilloscope_widget2_1_1" native="true">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                             <horstretch>0</horstretch>
@@ -4453,6 +4476,9 @@ background-color: rgb(220, 50, 47);</string>
                         </item>
                         <item>
                          <widget class="PlotWidget" name="DataAnalysis_Oscilloscope_widget2_1_2" native="true">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                             <horstretch>0</horstretch>
@@ -4473,6 +4499,9 @@ background-color: rgb(220, 50, 47);</string>
                         </item>
                         <item>
                          <widget class="PlotWidget" name="DataAnalysis_Oscilloscope_widget2_1_3" native="true">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                             <horstretch>0</horstretch>
@@ -5848,17 +5877,17 @@ background-color: rgb(220, 50, 47);</string>
                                </property>
                                <property name="html">
                                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Bifurcation methodologies enable us to reduce many biophysically accurate Hodgkin–Huxley-type neuronal models to a two-dimensional (2-D) system of ordinary differential equations of the form:&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;v' = 0.04v&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt; + 5v + 140 - u + I                    &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;                    u' = a(bv - u)&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;with the auxiliary after-spike resetting:   if &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;v &amp;gt;= 30 mV&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, then &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;v = c&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;u = u + d&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:696;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Here, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are dimensionless variables, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;a&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are dimensionless parameters, and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;'= d/dt&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, where &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;t&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is the time. &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The variable v represents the membrane potential of the neuron and &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; represents a membrane recovery variable, which accounts for the activation of K+ ionic currents and inactivation of Na+ ionic currents, and it provides negative feedback to &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;After the spike reaches its apex (+30 mV), the membrane voltage and the recovery variable are reset. &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Synaptic currents or injected DC-currents are delivered via the variable&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:696;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:696;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;Bifurcation methodologies enable us to reduce many biophysically accurate Hodgkin–Huxley-type neuronal models to a two-dimensional (2-D) system of ordinary differential equations of the form:&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;v' = 0.04v&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt; + 5v + 140 - u + I                    &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;                    u' = a(bv - u)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;with the auxiliary after-spike resetting:   if &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;v &amp;gt;= 30 mV&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;, then &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;v = c&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; and&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;u = u + d&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;Here, &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; are dimensionless variables, and &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;a&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;, and &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;d&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; are dimensionless parameters, and &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;'= d/dt&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;, where &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;t&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; is the time. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;The variable v represents the membrane potential of the neuron and &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;u&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; represents a membrane recovery variable, which accounts for the activation of K+ ionic currents and inactivation of Na+ ionic currents, and it provides negative feedback to &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;v&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;After the spike reaches its apex (+30 mV), the membrane voltage and the recovery variable are reset. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;Synaptic currents or injected DC-currents are delivered via the variable&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:696;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; font-weight:696;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                </property>
                               </widget>
                              </item>
@@ -6279,6 +6308,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>12</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -6426,6 +6456,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>12</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -6567,6 +6598,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>12</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -6708,6 +6740,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>12</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -6825,6 +6858,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>10</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                 </font>
                                </property>
@@ -6877,6 +6911,7 @@ background-color: rgb(0, 30, 38);</string>
                                <property name="font">
                                 <font>
                                  <pointsize>10</pointsize>
+                                 <weight>75</weight>
                                  <bold>true</bold>
                                  <strikeout>false</strikeout>
                                 </font>
@@ -7102,7 +7137,7 @@ background-color: rgb(11,30,38 );
  </customwidgets>
  <resources>
   <include location="icons.qrc"/>
-  <include location="../../.designer/backup/icons.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>
