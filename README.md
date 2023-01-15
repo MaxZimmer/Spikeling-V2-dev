@@ -124,6 +124,17 @@ Stimulus generator and data analysis tabs needs to be finished (cf. development 
 <br>
 <div>
 
+
+## Dependencies:
+
+### Arduino:
+ - https://github.com/erropix/ESP32_AnalogWrite (can be installed via the Arduino library manager. Look for ESP32 analogwrite library by erropix)
+
+### GUI:
+ - pyQt6
+ 
+ 
+
 # Development log
 
 ### Working Issues
