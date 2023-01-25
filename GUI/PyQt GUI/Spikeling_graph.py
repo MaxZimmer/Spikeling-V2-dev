@@ -1,32 +1,36 @@
-from PyQt6 import QtCore, QtGui, QtWidgets, QtSerialPort
-from PyQt6.QtCore import QIODevice, QTimer
+#from PyQt6 import QtCore, QtGui, QtWidgets, QtSerialPort
+#from PyQt6.QtCore import QIODevice, QTimer
+from PyQt5 import QtCore, QtGui, QtWidgets, QtSerialPort
+from PyQt5.QtCore import QIODevice, QTimer
+#from PySide2.QtCore import QIODevice, QTimer
 import pyqtgraph
 import collections
 import serial
 import numpy as np
 import pandas as pd
 import Data_recording
+import Settings
 
 BaudRate = 115200
-DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[203,75,22],[42,161,152],[181,137,0],[108,113,196]]
 
-TxStimFre = "None"
-TxStimStr = "None"
-TxStimCus = "None"
-TxPDGain = "None"
-TxPDDecay = "None"
-TxPDRecovery = "None"
-TxVm = "None"
-TxNoise = "None"
-TxSyn1Gain = "None"
-TxSyn1Decay = "None"
-TxSyn2Gain = "None"
-TxSyn2Decay = "None"
-TxMode = "None"
-Txa = "None"
-Txb = "None"
-Txc = "None"
-Txd = "None"
+
+TxStimFre = "F"
+TxStimStr = "F"
+TxStimCus = "F"
+TxPDGain = "F"
+TxPDDecay = "F"
+TxPDRecovery = "F"
+TxVm = "F"
+TxNoise = "F"
+TxSyn1Gain = "F"
+TxSyn1Decay = "F"
+TxSyn2Gain = "F"
+TxSyn2Decay = "F"
+TxMode = "F"
+Txa = "F"
+Txb = "F"
+Txc = "F"
+Txd = "F"
 
 SerialTx = [TxStimFre,TxStimStr,TxStimCus,
             TxPDGain,TxPDDecay,TxPDRecovery,
@@ -89,20 +93,20 @@ def ReadSerial(self):
     self.CurrentPlots.setRange(yRange=[-100, 100])
     self.ui.Spikeling_Oscilloscope_widget.getAxis("right").linkToView(self.CurrentPlots)
 
-    self.curve5 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y5, pen=(DarkSolarized[7]))
+    self.curve5 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y5, pen=(Settings.DarkSolarized[8]))
     self.curve5.clear()
-    self.curve3 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y3, pen=(DarkSolarized[5]))
+    self.curve3 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y3, pen=(Settings.DarkSolarized[6]))
     self.curve3.clear()
-    self.curve1 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y1, pen=(DarkSolarized[3]))
+    self.curve1 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y1, pen=(Settings.DarkSolarized[5]))
     self.curve1.clear()
-    self.curve0 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y0, pen=(DarkSolarized[2]))
+    self.curve0 = self.ui.Spikeling_Oscilloscope_widget.plot(self.x, self.y0, pen=(Settings.DarkSolarized[3]))
     self.curve0.clear()
 
-    self.curve6 = pyqtgraph.PlotCurveItem(self.x, self.y6, pen=(DarkSolarized[8]))
+    self.curve6 = pyqtgraph.PlotCurveItem(self.x, self.y6, pen=(Settings.DarkSolarized[9]))
     self.curve6.clear()
-    self.curve4 = pyqtgraph.PlotCurveItem(self.x, self.y4, pen=(DarkSolarized[6]))
+    self.curve4 = pyqtgraph.PlotCurveItem(self.x, self.y4, pen=(Settings.DarkSolarized[7]))
     self.curve4.clear()
-    self.curve2 = pyqtgraph.PlotCurveItem(self.x, self.y2, pen=(DarkSolarized[4]))
+    self.curve2 = pyqtgraph.PlotCurveItem(self.x, self.y2, pen=(Settings.DarkSolarized[4]))
     self.curve2.clear()
 
     self.CurrentPlots.addItem(self.curve6)
@@ -114,7 +118,6 @@ def ReadSerial(self):
         self.CurrentPlots.linkedViewChanged(self.ui.Spikeling_Oscilloscope_widget.getViewBox(), self.CurrentPlots.XAxis)
 
     self.ui.Spikeling_Oscilloscope_widget.getViewBox().sigResized.connect(updateViews)
-
 
     def getdata0():
         rx = serial_port.readline()
@@ -165,71 +168,69 @@ def ReadSerial(self):
         i3 = data[6]
         return i3
 
-
     def updateplot():
         if self.ui.Spikeling_StimFre_checkBox.isChecked():
             SerialTx[0] = str(-(self.ui.Spikeling_StimFre_slider.value()))
         else:
-            SerialTx[0] = "None"
+            SerialTx[0] = "F"
 
         if self.ui.Spikeling_StimStr_checkBox.isChecked():
             SerialTx[1] = str((self.ui.Spikeling_StimStrSlider.value()))
         else:
-            SerialTx[1] = "None"
+            SerialTx[1] = "F"
 
         if self.ui.Spikeling_CustomStimulus_checkBox.isChecked():
-            SerialTx[2] = "None"
+            SerialTx[2] = "F"
         else:
-            SerialTx[2] = "None"
+            SerialTx[2] = "F"
 
         if self.ui.Spikeling_PR_PhotoGain_checkBox.isChecked():
             SerialTx[3] = str(self.ui.Spikeling_PR_PhotoGain_slider.value())
         else:
-            SerialTx[3] = "None"
+            SerialTx[3] = "F"
 
         if self.ui.Spikeling_PR_Decay_checkBox.isChecked():
             SerialTx[4] = str(self.ui.Spikeling_PR_Decay_value.text())
         else:
-            SerialTx[4] = "None"
+            SerialTx[4] = "F"
 
         if self.ui.Spikeling_PR_Recovery_checkBox.isChecked():
             SerialTx[5] = str(self.ui.Spikeling_PR_Recovery_value.text())
         else:
-            SerialTx[5] = "None"
+            SerialTx[5] = "F"
 
-        if self.ui.Spikeling_Vm_checkBox.isChecked():
-            SerialTx[6] = str(self.ui.Spikeling_Vm_mV_value.text())
+        if self.ui.Spikeling_PatchClamp_checkBox.isChecked():
+            SerialTx[6] = str(self.ui.Spikeling_PatchClamp_slider.value())
         else:
-            SerialTx[6] = "None"
+            SerialTx[6] = "F"
 
         if self.ui.Spikeling_Noise_checkBox.isChecked():
             SerialTx[7] = str(self.ui.Spikeling_Noise_slider.value())
         else:
-            SerialTx[7] = "None"
+            SerialTx[7] = "F"
 
         if self.ui.Spikeling_Synapse1_checkBox.isChecked():
             SerialTx[8] = str(self.ui.Spikeling_Synapse1_slider.value())
         else:
-            SerialTx[8] = "None"
+            SerialTx[8] = "F"
 
         if self.ui.Spikeling_Synapse1_Decay_checkBox.isChecked():
             SerialTx[9] = str(self.ui.Spikeling_Synapse1_Decay_value.text())
         else:
-            SerialTx[9] = "None"
+            SerialTx[9] = "F"
 
         if self.ui.Spikeling_Synapse2_checkBox.isChecked():
             SerialTx[10] = str(self.ui.Spikeling_Synapse2_slider.value())
         else:
-            SerialTx[10] = "None"
+            SerialTx[10] = "F"
 
         if self.ui.Spikeling_Synapse2_Decay_checkBox.isChecked():
             SerialTx[11] = str(self.ui.Spikeling_Synapse2_Decay_value.text())
         else:
-            SerialTx[11] = "None"
+            SerialTx[11] = "F"
 
         if self.ui.Spikeling_VmCheckbox.isChecked():
             self.databuffer0.append(getdata0())
-            #print(self.databuffer0)
             self.y0[:] = self.databuffer0
             self.curve0.setData(self.x, self.y0)
         else:
@@ -261,6 +262,7 @@ def ReadSerial(self):
             self.y4[:] = self.databuffer4
             self.curve4.setData(self.x, self.y4)
         else:
+
             self.curve4.clear()
 
         if self.ui.Spikeling_Syn2VmCheckbox.isChecked():
@@ -276,6 +278,7 @@ def ReadSerial(self):
             self.curve6.setData(self.x, self.y6)
         else:
             self.curve6.clear()
+
 
         tx0 = SerialTx[0]
         Tx0 = tx0 + ';'
@@ -378,7 +381,6 @@ def ReadSerial(self):
             self.Dataset4.append(self.y4[-1])
             self.Dataset5.append(self.y5[-1])
             self.Dataset6.append(self.y6[-1])
-
 
     # QTimer
     self.timer = QtCore.QTimer()

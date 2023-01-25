@@ -1,9 +1,10 @@
 from PyQt6.QtSerialPort import QSerialPort, QSerialPortInfo
 from PyQt6.QtWidgets import QFileDialog, QWidget
+import Settings
 import serial
 from sys import platform
 
-BaudRate = 115200
+
 portList = []
 ports = QSerialPortInfo().availablePorts()
 for port in ports:
@@ -12,24 +13,18 @@ for port in ports:
             print(port.systemLocation())
         else:
             portList.append(port.portName())
-            
-        
 serial_port = None
-
-DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[42,161,152],[203,75,22],[108,113,196],[181,137,0]]
-
-
 
 class Spikeling101():
 
     def ShowPage(self):
         self.ui.mainbody_stackedWidget.setCurrentWidget(self.ui.page_101)
-        self.ui.Spikeling_Oscilloscope_widget.setBackground(DarkSolarized[0])
+        self.ui.Spikeling_Oscilloscope_widget.setBackground(Settings.DarkSolarized[0])
 
     # Serial Port Functions
     def ChangePort(self):
             COM = self.ui.Spikeling_SelectPortComboBox.currentText()
-            serial_port = serial.Serial(COM, BaudRate)
+            serial_port = serial.Serial(COM, Settings.BaudRate)
             if serial_port.is_open:
                 self.ui.Spikeling_ConnectButton.setEnabled(True)
                 serial_port.close()
@@ -114,11 +109,11 @@ class Spikeling101():
                     self.ui.Spikeling_PR_Recovery_value.setText("0.025")
 
     def ActivateMembranePotential(self):
-            if self.ui.Spikeling_Vm_checkBox.isChecked():
-                    self.ui.Spikeling_Vm_mV_value.setEnabled(True)
+            if self.ui.Spikeling_PatchClamp_checkBox.isChecked():
+                    self.ui.Spikeling_PatchClamp_slider.setEnabled(True)
             else:
-                    self.ui.Spikeling_Vm_mV_value.setEnabled(False)
-                    self.ui.Spikeling_Vm_mV_value.setText("-70")
+                    self.ui.Spikeling_PatchClamp_slider.setEnabled(False)
+                    self.ui.Spikeling_PatchClamp_slider.setValue(0)
 
     def ActivateNoiseLevel(self):
             if self.ui.Spikeling_Noise_checkBox.isChecked():

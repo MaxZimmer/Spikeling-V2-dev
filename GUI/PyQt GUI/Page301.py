@@ -1,11 +1,11 @@
 import numpy as np
 import pyqtgraph
+import Settings
 
-DarkSolarized = [[0,30,38],[131,148,150],[220,50,47],[38,139,210],[133,153,0],[42,161,152],[203,75,22],[108,113,196],[181,137,0]]
 
-def show_page301(self):
+def ShowPage(self):
     self.ui.mainbody_stackedWidget.setCurrentWidget(self.ui.page_301)
-    self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setBackground(DarkSolarized[0])
+    self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setBackground(Settings.DarkSolarized[0])
 
 
 
@@ -48,7 +48,11 @@ class NeuronGenerator():
         nstim[:] = -80
         nstim[ntime1:ntime2] = -20
 
-        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.plot(nt, nstim, pen=(DarkSolarized[3]))
-        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.plot(nt, vs, pen=(DarkSolarized[2]))
-        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setBackground(DarkSolarized[0])
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.plot(nt, nstim, pen=(Settings.DarkSolarized[4]))
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.plot(nt, vs, pen=(Settings.DarkSolarized[3]))
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setBackground(Settings.DarkSolarized[0])
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setLabel('left', 'Membrane potential', 'mV')
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setLabel('bottom', 'time', 'ms')
+        self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.setLabel('right', 'Current Input', 'a.u.')
         self.ui.NeuronGenerator_subframe1_Oscilloscope_widget.showGrid(x=True, y=True)
+        

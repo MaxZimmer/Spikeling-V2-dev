@@ -1,0 +1,120 @@
+{
+	"QMainWindow":[
+		{
+			"tittle":"Spikeling V2.2 GUI",
+			"icon":":/resources/resources/Spikeling.ico",
+			"frameless": true,
+			"transluscentBg": true,
+			"sizeGrip": "sizegrip",
+			"navigation":[
+				{
+					"minimize":"reduce_pushButton",
+					"close": "exit_pushButton",
+					"restore":[
+						{
+							"buttonName": "expand_pushButton",
+							"normalIcon": ":/resources/resources/Expand.png",
+							"maximizedIcon": ":/resources/resources/Reduce.png"
+						}
+					],
+					"moveWindow": "header_widget",
+					"tittleBar": "header_widget"
+				}
+			]
+		}
+	],
+	"QCustomSlideMenu": [{
+		"name": "leftMenuContainer",
+		"defaultSize": [{
+			"width": 40,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 40,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 180,
+			"height": "parent"
+		}],
+		"toggleButton": [{
+			"buttonName": "menu_pushButton",
+			"icons": [{
+				"whenMenuIsCollapsed": ":/resources/resources/MenuLeft.png",
+				"whenMenuIsExpanded": ":/resources/resources/DropMenuLeft.png"
+			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 250,
+			"animationEasingCurve": "Linear"
+		}]
+	},
+
+	{
+		"name": "centerMenuContainer",
+		"defaultSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 250,
+			"animationEasingCurve": "Linear"
+		}]
+	},
+
+	{
+		"name": "Spikeling_rightMenuContainer",
+		"defaultSize": [{
+			"width": 40,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 40,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
+		}],
+		"toggleButton": [{
+			"buttonName": "Spikeling_rightMenuSubContainer_pushButton",
+			"icons": [{
+				"whenMenuIsCollapsed": ":/resources/resources/MenuRight.png",
+				"whenMenuIsExpanded": ":/resources/resources/DropMenuRight.png"
+			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 250,
+			"animationEasingCurve": "Linear"
+		}]
+	},
+
+	{
+		"name": "Spikeling_CenterMenuContainer",
+		"defaultSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 175,
+			"height": "parent"
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 250,
+			"animationEasingCurve": "Linear"
+		}]
+	}]
+}
+
