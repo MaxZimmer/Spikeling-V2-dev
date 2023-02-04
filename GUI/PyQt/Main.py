@@ -5,20 +5,23 @@
 
 import sys
 import os
+import platform
 import serial
 
 # Import QT libraries
-from PySide6 import QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets, QtSerialPort
+from PySide6.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide6.QtWidgets import *
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
-
-from Custom_Widgets.Widgets import *
 
 # Import GUI .ui file
 from Spikeling_UI import Ui_MainWindow
+from Settings import *
 
 # Import GUI page scripts
 import Page000, Page101, Page102, Page103, Page301
-import Settings, Spikeling_graph
+import Spikeling_graph
 
 
 # Setting UART parameters
@@ -42,39 +45,79 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-    # Apply JsonStyle sheet
-        loadJsonStyle(self, self.ui)
+        # Custom Navigation bar buttons
+        self.icon_expand = QIcon()
+        self.icon_expand.addFile(u":/resources/resources/Expand.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_reduce = QIcon()
+        self.icon_reduce.addFile(u":/resources/resources/Reduce.png", QSize(), QIcon.Normal, QIcon.Off)
 
-    ########################################################################
+        # MOVE WINDOW
+        def moveWindow(event):
+            # RESTORE BEFORE MOVE
+            if UIFunctions.returnStatus() == 1:
+                UIFunctions.maximize_restore(self)
+
+            # IF LEFT CLICK MOVE WINDOW
+            if event.buttons() == Qt.LeftButton:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+
+
+        # Custom Navigation bar movement
+        self.ui.header_widget.mouseMoveEvent = moveWindow
+
+        ## ==> SET UI DEFINITIONS
+        UIFunctions.uiDefinitions(self)
+
+
+
+        ########################################################################
     # Set menu/navigation buttons
 
+        # Main Menu Container
+        self.icon_DropMenuLeft = QIcon()
+        self.icon_DropMenuLeft.addFile(u":/resources/resources/DropMenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_MenuLeft = QIcon()
+        self.icon_MenuLeft.addFile(u":/resources/resources/MenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ui.centerMenuContainer.setMaximumSize(QSize(0, 16777215))
+        self.ui.menu_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.leftMenuContainer, leftMenu_min, leftMenu_max, animation_speed,
+                                                                               self.ui.menu_pushButton, self.icon_MenuLeft, self.icon_DropMenuLeft, True))
+
+
         # Left Menu Container
-        self.ui.SpikelingMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.SpikelingMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.SpikelingMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Spikeling_SubMenu_page))
-        self.ui.ImagingMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.ImagingMenu_pushButton.clicked.connect(lambda:  UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.ImagingMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Imaging_SubMenu_page))
-        self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.collapseMenu())
-        #self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.NeuronGenerator_SubMenu_page))
+        self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: Page301.ShowPage(self))
-        self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.StimulusGenerator_SubMenu_page))
-        self.ui.ExercisesMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.ExercisesMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.ExercisesMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Exercises_SubMenu_page))
-        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.SettingsMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Settings_SubMenu_page))
-        self.ui.AboutMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.AboutMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.AboutMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.About_SubMenu_page))
-        self.ui.HelpMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.HelpMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.HelpMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Help_SubMenu_page))
-        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.expandMenu())
+        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.GitHubMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.GitHub_SubMenu_page))
-        self.ui.centerMenuSubContainer_exit_pushButton.clicked.connect(lambda: self.ui.centerMenuContainer.collapseMenu())
+        self.ui.centerMenuSubContainer_exit_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
 
 
         # Spikeling 101 parameters navigation button
-        self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_CenterMenuContainer.expandMenu())
-        self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_CenterMenuContainer.expandMenu())
-        self.ui.Spikeling_parameter_exit_pushButton.clicked.connect(lambda: self.ui.Spikeling_CenterMenuContainer.collapseMenu())
+        self.icon_SpikelingDropMenuRight = QIcon()
+        self.icon_SpikelingDropMenuRight.addFile(u":/resources/resources/DropMenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.icon_SpikelingMenuRight = QIcon()
+        self.icon_SpikelingMenuRight.addFile(u":/resources/resources/MenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ui.Spikeling_CenterMenuContainer.setMaximumSize(QSize(0, 16777215))
+        self.ui.Spikeling_rightMenuSubContainer_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.Spikeling_rightMenuContainer, spikerightMenu_min, spikerightMenu_max, animation_speed,
+                                                                                                          self.ui.Spikeling_rightMenuSubContainer_pushButton, self.icon_SpikelingMenuRight, self.icon_SpikelingDropMenuRight, True))
+        self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
+        self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
+        self.ui.Spikeling_parameter_exit_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
 
 
     ########################################################################
@@ -84,6 +127,7 @@ class MainWindow(QMainWindow):
         self.GifMovie = QtGui.QMovie(":/resources/resources/spikeling.gif")
         self.ui.mainbody_content_SpikelingGif.setMovie(self.GifMovie)
         self.GifMovie.start()
+        self.ui.appTitle_pushButton.clicked.connect(lambda: self.ui.mainbody_stackedWidget.setCurrentWidget(self.ui.page_000))
 
     # Spikeling Page - page101
 
@@ -113,7 +157,6 @@ class MainWindow(QMainWindow):
 
         # Stimulation parameters
         # Display stimulation parameter page when StimulusParameter button is clicked
-        self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_CenterMenuContainer.expandMenu())
         self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_parameter_stackedwidget.setCurrentWidget(self.ui.StimulusParameter_page))
         self.ui.Spikeling_StimFre_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateStimFre(self))
         self.ui.Spikeling_StimFre_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetStimFreSliderValue(self))
@@ -126,7 +169,6 @@ class MainWindow(QMainWindow):
 
         # Neuron parameters
         # Display neuron parameter page when NeuronParameter button is clicked
-        self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_CenterMenuContainer.expandMenu())
         self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_parameter_stackedwidget.setCurrentWidget(self.ui.NeuronParameter_page))
         self.ui.Spikeling_PatchClamp_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateMembranePotential(self))
         self.ui.Spikeling_Noise_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateNoiseLevel(self))
@@ -195,6 +237,10 @@ class MainWindow(QMainWindow):
     # Display
         self.show()
 
+    ## APP EVENTS
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+
 
 
 ########################################################################
@@ -203,7 +249,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 ########################################################################
 ## END===>
 ########################################################################  

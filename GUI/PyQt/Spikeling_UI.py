@@ -3,19 +3,25 @@
 ################################################################################
 ## Form generated from reading UI file 'Spikeling_UI.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
+    QGroupBox, QHBoxLayout, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QRadioButton, QSizePolicy,
+    QSlider, QSpacerItem, QStackedWidget, QTextBrowser,
+    QVBoxLayout, QWidget)
 
 from pyqtgraph import PlotWidget
-from Custom_Widgets.Widgets import QCustomSlideMenu
-
 import resources_rc
 
 class Ui_MainWindow(QWidget):
@@ -81,6 +87,18 @@ class Ui_MainWindow(QWidget):
 "	background-color: rgb(7, 54, 66);\n"
 "}\n"
 "\n"
+"#Spikeling_DataRecording_box{\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"}\n"
+"#Spikeling_DataRecording_box QLineEdit{\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"    background-color: rgb(7, 54, 66);\n"
+"}\n"
+"#Spikeling_DataRecording_box QComboBox{\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"	background-color: rgb(7, 54, 66);\n"
+"}\n"
+"\n"
 "\n"
 "#Spikeling_rightMenuSubContainer QPushButton{\n"
 "	text-align: left;\n"
@@ -98,7 +116,8 @@ class Ui_MainWindow(QWidget):
 "}\n"
 "\n"
 "#Spikeling_parameter_exit_frame{\n"
-"	background-color: rgb(11, 30, 38);\n"
+"	background-color: rgb(11, 30, 38"
+                        ");\n"
 "	border-top-left-radius:10px;\n"
 "	border-bottom-left-radius: 10px;\n"
 "}\n"
@@ -112,13 +131,41 @@ class Ui_MainWindow(QWidget):
 "#NeuronGenerator_subframe2 QPushButton{\n"
 "	background-color: rgb(7, 54, 66);\n"
 "	border: 2px solid rgb(147,161,161);\n"
-""
-                        "	border-radius: 10px;\n"
+"	border-radius: 10px;\n"
 "	padding: 5px;\n"
 "}\n"
 "#NeuronGenerator_subframe1_Izhik_frame QTextBrowser{\n"
 "	background-color: rgb(7, 54, 66);\n"
 "	border: 2px solid rgb(147,161,161);\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"#DataAnalysis_groupBox{\n"
+"	background-color: rgb(7,54,66);\n"
+"    border: 2px solid rgb(147,161,161);\n"
+"}\n"
+"#DataAnalysis_groupBox QPushButton{\n"
+"	background-color: rgb(0, 43, 54);\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"	border-radius: 10px;\n"
+"	padding: 2px;\n"
+"}\n"
+"#DataAnalysis_groupBox QLineEdit{\n"
+"    border: 2px solid rgb(147,161,161);\n"
+"}\n"
+"#DataAnalysis_groupBox Line{\n"
+"    border: 1px solid rgb(147,161,161);\n"
+"}\n"
+""
+                        "\n"
+"#DataAnalysis_Display_frame QPushButton{\n"
+"	background-color: rgb(7,54,66);\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"	border-radius: 10px;\n"
+"	padding: 2px;\n"
 "}\n"
 "")
         self.centralwidget = QWidget(MainWindow)
@@ -128,7 +175,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.leftMenuContainer = QCustomSlideMenu(self.centralwidget)
+        self.leftMenuContainer = QWidget(self.centralwidget)
         self.leftMenuContainer.setObjectName(u"leftMenuContainer")
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -299,7 +346,7 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout.addWidget(self.leftMenuContainer)
 
-        self.centerMenuContainer = QCustomSlideMenu(self.centralwidget)
+        self.centerMenuContainer = QWidget(self.centralwidget)
         self.centerMenuContainer.setObjectName(u"centerMenuContainer")
         self.centerMenuContainer.setStyleSheet(u"")
         self.verticalLayout_7 = QVBoxLayout(self.centerMenuContainer)
@@ -656,9 +703,9 @@ class Ui_MainWindow(QWidget):
         self.header_widget.setObjectName(u"header_widget")
         self.header_widget.setStyleSheet(u"")
         self.horizontalLayout_2 = QHBoxLayout(self.header_widget)
-        self.horizontalLayout_2.setSpacing(6)
+        self.horizontalLayout_2.setSpacing(5)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_2.setContentsMargins(2, 2, 2, 2)
         self.app_ID_frame = QFrame(self.header_widget)
         self.app_ID_frame.setObjectName(u"app_ID_frame")
         self.app_ID_frame.setFrameShape(QFrame.StyledPanel)
@@ -669,24 +716,10 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_78.setContentsMargins(0, 0, 0, 0)
         self.appTitle_pushButton = QPushButton(self.app_ID_frame)
         self.appTitle_pushButton.setObjectName(u"appTitle_pushButton")
-        icon12 = QIcon()
-        icon12.addFile(u":/Images/Icons/Spikeling.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.appTitle_pushButton.setIcon(icon12)
+        self.appTitle_pushButton.setIcon(icon1)
         self.appTitle_pushButton.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_78.addWidget(self.appTitle_pushButton, 0, Qt.AlignLeft)
-
-        self.appTitle_label = QLabel(self.app_ID_frame)
-        self.appTitle_label.setObjectName(u"appTitle_label")
-        font2 = QFont()
-        font2.setPointSize(10)
-        font2.setBold(False)
-        font2.setItalic(True)
-        font2.setUnderline(True)
-        font2.setKerning(False)
-        self.appTitle_label.setFont(font2)
-
-        self.horizontalLayout_78.addWidget(self.appTitle_label, 0, Qt.AlignTop)
 
 
         self.horizontalLayout_2.addWidget(self.app_ID_frame, 0, Qt.AlignLeft)
@@ -701,27 +734,27 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.reduce_pushButton = QPushButton(self.app_frame)
         self.reduce_pushButton.setObjectName(u"reduce_pushButton")
-        icon13 = QIcon()
-        icon13.addFile(u":/resources/resources/Artboard 1.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.reduce_pushButton.setIcon(icon13)
+        icon12 = QIcon()
+        icon12.addFile(u":/resources/resources/Artboard 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.reduce_pushButton.setIcon(icon12)
         self.reduce_pushButton.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_4.addWidget(self.reduce_pushButton)
 
         self.expand_pushButton = QPushButton(self.app_frame)
         self.expand_pushButton.setObjectName(u"expand_pushButton")
-        icon14 = QIcon()
-        icon14.addFile(u":/resources/resources/Expand.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.expand_pushButton.setIcon(icon14)
+        icon13 = QIcon()
+        icon13.addFile(u":/resources/resources/Expand.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.expand_pushButton.setIcon(icon13)
         self.expand_pushButton.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_4.addWidget(self.expand_pushButton)
 
         self.exit_pushButton = QPushButton(self.app_frame)
         self.exit_pushButton.setObjectName(u"exit_pushButton")
-        icon15 = QIcon()
-        icon15.addFile(u":/resources/resources/Exit.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.exit_pushButton.setIcon(icon15)
+        icon14 = QIcon()
+        icon14.addFile(u":/resources/resources/Exit.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.exit_pushButton.setIcon(icon14)
         self.exit_pushButton.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_4.addWidget(self.exit_pushButton)
@@ -1009,9 +1042,9 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_DataRecording_box.setMaximumSize(QSize(16777215, 100))
         self.Spikeling_DataRecording_box.setStyleSheet(u"")
         self.horizontalLayout_52 = QHBoxLayout(self.Spikeling_DataRecording_box)
-        self.horizontalLayout_52.setSpacing(0)
+        self.horizontalLayout_52.setSpacing(20)
         self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
-        self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_52.setContentsMargins(5, 5, 5, 5)
         self.Spikeling_DataRecording_left_frame = QFrame(self.Spikeling_DataRecording_box)
         self.Spikeling_DataRecording_left_frame.setObjectName(u"Spikeling_DataRecording_left_frame")
         self.Spikeling_DataRecording_left_frame.setFrameShape(QFrame.StyledPanel)
@@ -1072,10 +1105,10 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_81.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_DataRecording_NumberOfLoops_value = QLineEdit(self.Spikeling_DataRecording_numberofloop_frame)
         self.Spikeling_DataRecording_NumberOfLoops_value.setObjectName(u"Spikeling_DataRecording_NumberOfLoops_value")
-        font3 = QFont()
-        font3.setPointSize(10)
-        font3.setBold(True)
-        self.Spikeling_DataRecording_NumberOfLoops_value.setFont(font3)
+        font2 = QFont()
+        font2.setPointSize(10)
+        font2.setBold(True)
+        self.Spikeling_DataRecording_NumberOfLoops_value.setFont(font2)
         self.Spikeling_DataRecording_NumberOfLoops_value.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_81.addWidget(self.Spikeling_DataRecording_NumberOfLoops_value)
@@ -1118,7 +1151,7 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_DataRecording_RecordFolderDir_pushButton = QPushButton(self.Spikeling_DataRecording_directory_frame)
         self.Spikeling_DataRecording_RecordFolderDir_pushButton.setObjectName(u"Spikeling_DataRecording_RecordFolderDir_pushButton")
-        self.Spikeling_DataRecording_RecordFolderDir_pushButton.setFont(font3)
+        self.Spikeling_DataRecording_RecordFolderDir_pushButton.setFont(font2)
 
         self.horizontalLayout_56.addWidget(self.Spikeling_DataRecording_RecordFolderDir_pushButton)
 
@@ -1149,10 +1182,10 @@ class Ui_MainWindow(QWidget):
         sizePolicy6.setHeightForWidth(self.Spikeling_DataRecording_Record_pushButton.sizePolicy().hasHeightForWidth())
         self.Spikeling_DataRecording_Record_pushButton.setSizePolicy(sizePolicy6)
         self.Spikeling_DataRecording_Record_pushButton.setMinimumSize(QSize(150, 0))
-        font4 = QFont()
-        font4.setPointSize(12)
-        font4.setBold(True)
-        self.Spikeling_DataRecording_Record_pushButton.setFont(font4)
+        font3 = QFont()
+        font3.setPointSize(12)
+        font3.setBold(True)
+        self.Spikeling_DataRecording_Record_pushButton.setFont(font3)
         self.Spikeling_DataRecording_Record_pushButton.setStyleSheet(u"color: rgb(250, 250, 250);\n"
 "background-color: rgb(220, 50, 47);")
 
@@ -1176,9 +1209,9 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_34.addWidget(self.Spikeling_widget)
 
-        self.Spikeling_CenterMenuContainer = QCustomSlideMenu(self.page_101)
+        self.Spikeling_CenterMenuContainer = QWidget(self.page_101)
         self.Spikeling_CenterMenuContainer.setObjectName(u"Spikeling_CenterMenuContainer")
-        self.Spikeling_CenterMenuContainer.setMinimumSize(QSize(175, 0))
+        self.Spikeling_CenterMenuContainer.setMinimumSize(QSize(0, 0))
         self.Spikeling_CenterMenuContainer.setMaximumSize(QSize(175, 16777215))
         self.verticalLayout_54 = QVBoxLayout(self.Spikeling_CenterMenuContainer)
         self.verticalLayout_54.setSpacing(0)
@@ -1194,9 +1227,9 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_86.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_parameter_exit_pushButton = QPushButton(self.Spikeling_parameter_exit_frame)
         self.Spikeling_parameter_exit_pushButton.setObjectName(u"Spikeling_parameter_exit_pushButton")
-        icon16 = QIcon()
-        icon16.addFile(u":/resources/resources/DropMenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Spikeling_parameter_exit_pushButton.setIcon(icon16)
+        icon15 = QIcon()
+        icon15.addFile(u":/resources/resources/DropMenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Spikeling_parameter_exit_pushButton.setIcon(icon15)
         self.Spikeling_parameter_exit_pushButton.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_86.addWidget(self.Spikeling_parameter_exit_pushButton)
@@ -2143,7 +2176,7 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_34.addWidget(self.Spikeling_CenterMenuContainer)
 
-        self.Spikeling_rightMenuContainer = QCustomSlideMenu(self.page_101)
+        self.Spikeling_rightMenuContainer = QWidget(self.page_101)
         self.Spikeling_rightMenuContainer.setObjectName(u"Spikeling_rightMenuContainer")
         self.Spikeling_rightMenuContainer.setMinimumSize(QSize(40, 0))
         self.Spikeling_rightMenuContainer.setMaximumSize(QSize(40, 16777215))
@@ -2168,9 +2201,9 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_rightMenuSubContainer_pushButton = QPushButton(self.Spikeling_rightMenuSubContainer_frame)
         self.Spikeling_rightMenuSubContainer_pushButton.setObjectName(u"Spikeling_rightMenuSubContainer_pushButton")
         self.Spikeling_rightMenuSubContainer_pushButton.setStyleSheet(u"")
-        icon17 = QIcon()
-        icon17.addFile(u":/resources/resources/MenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.Spikeling_rightMenuSubContainer_pushButton.setIcon(icon17)
+        icon16 = QIcon()
+        icon16.addFile(u":/resources/resources/MenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Spikeling_rightMenuSubContainer_pushButton.setIcon(icon16)
         self.Spikeling_rightMenuSubContainer_pushButton.setIconSize(QSize(30, 30))
 
         self.horizontalLayout_79.addWidget(self.Spikeling_rightMenuSubContainer_pushButton)
@@ -2524,9 +2557,9 @@ class Ui_MainWindow(QWidget):
         self.DataAnalysis_Oscilloscope_widget1_2_2.setSizePolicy(sizePolicy1)
         self.DataAnalysis_Oscilloscope_widget1_2_2.setMinimumSize(QSize(0, 150))
         self.DataAnalysis_Oscilloscope_widget1_2_2.setMaximumSize(QSize(16777215, 150))
-        font5 = QFont()
-        font5.setPointSize(11)
-        self.DataAnalysis_Oscilloscope_widget1_2_2.setFont(font5)
+        font4 = QFont()
+        font4.setPointSize(11)
+        self.DataAnalysis_Oscilloscope_widget1_2_2.setFont(font4)
         self.DataAnalysis_Oscilloscope_widget1_2_2.setStyleSheet(u"background-color: rgb(0, 30, 38);")
 
         self.verticalLayout_49.addWidget(self.DataAnalysis_Oscilloscope_widget1_2_2)
@@ -3264,7 +3297,7 @@ class Ui_MainWindow(QWidget):
         self.DataAnalysis_groupBox.setMaximumSize(QSize(250, 16777215))
         self.DataAnalysis_groupBox.setStyleSheet(u"")
         self.verticalLayout_34 = QVBoxLayout(self.DataAnalysis_groupBox)
-        self.verticalLayout_34.setSpacing(0)
+        self.verticalLayout_34.setSpacing(5)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
         self.verticalLayout_34.setContentsMargins(0, 0, 0, 1)
         self.DataAnalysis_LoadData_frame = QFrame(self.DataAnalysis_groupBox)
@@ -3273,6 +3306,7 @@ class Ui_MainWindow(QWidget):
         self.DataAnalysis_LoadData_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_36 = QVBoxLayout(self.DataAnalysis_LoadData_frame)
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.verticalLayout_36.setContentsMargins(15, -1, 15, -1)
         self.DataAnalysis_LoadData_subframe = QFrame(self.DataAnalysis_LoadData_frame)
         self.DataAnalysis_LoadData_subframe.setObjectName(u"DataAnalysis_LoadData_subframe")
         self.DataAnalysis_LoadData_subframe.setFrameShape(QFrame.StyledPanel)
@@ -3291,6 +3325,7 @@ class Ui_MainWindow(QWidget):
 
         self.DataAnalysis_LoadData_pushButton = QPushButton(self.DataAnalysis_LoadData_subframe)
         self.DataAnalysis_LoadData_pushButton.setObjectName(u"DataAnalysis_LoadData_pushButton")
+        self.DataAnalysis_LoadData_pushButton.setIconSize(QSize(14, 16))
 
         self.horizontalLayout_62.addWidget(self.DataAnalysis_LoadData_pushButton)
 
@@ -3319,14 +3354,15 @@ class Ui_MainWindow(QWidget):
 
         self.DataAnalysis_Spike_frame = QFrame(self.DataAnalysis_groupBox)
         self.DataAnalysis_Spike_frame.setObjectName(u"DataAnalysis_Spike_frame")
-        self.DataAnalysis_Spike_frame.setStyleSheet(u"background-color: rgb(47,60,63);\n"
-"")
+        self.DataAnalysis_Spike_frame.setStyleSheet(u"")
         self.DataAnalysis_Spike_frame.setFrameShape(QFrame.StyledPanel)
         self.DataAnalysis_Spike_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_41 = QVBoxLayout(self.DataAnalysis_Spike_frame)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
+        self.verticalLayout_41.setContentsMargins(15, -1, 15, -1)
         self.DataAnalysis_Spike_label = QLabel(self.DataAnalysis_Spike_frame)
         self.DataAnalysis_Spike_label.setObjectName(u"DataAnalysis_Spike_label")
+        self.DataAnalysis_Spike_label.setFont(font2)
 
         self.verticalLayout_41.addWidget(self.DataAnalysis_Spike_label, 0, Qt.AlignHCenter)
 
@@ -3366,7 +3402,7 @@ class Ui_MainWindow(QWidget):
 
         self.DataAnalysis_Spike_result_label = QLabel(self.DataAnalysis_Spike_frame)
         self.DataAnalysis_Spike_result_label.setObjectName(u"DataAnalysis_Spike_result_label")
-        self.DataAnalysis_Spike_result_label.setFont(font3)
+        self.DataAnalysis_Spike_result_label.setFont(font2)
         self.DataAnalysis_Spike_result_label.setStyleSheet(u"")
         self.DataAnalysis_Spike_result_label.setAlignment(Qt.AlignCenter)
 
@@ -3391,31 +3427,33 @@ class Ui_MainWindow(QWidget):
 
         self.verticalLayout_34.addWidget(self.DataAnalysis_Spike_frame)
 
-        self.DataAnalysis_Average_frame = QFrame(self.DataAnalysis_groupBox)
-        self.DataAnalysis_Average_frame.setObjectName(u"DataAnalysis_Average_frame")
-        self.DataAnalysis_Average_frame.setStyleSheet(u"background-color: rgb(47,60,63);\n"
-"")
-        self.DataAnalysis_Average_frame.setFrameShape(QFrame.StyledPanel)
-        self.DataAnalysis_Average_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_40 = QVBoxLayout(self.DataAnalysis_Average_frame)
-        self.verticalLayout_40.setSpacing(5)
-        self.verticalLayout_40.setObjectName(u"verticalLayout_40")
-        self.verticalLayout_40.setContentsMargins(0, 0, 0, 5)
-        self.DataAnalysis_Spike_line = QFrame(self.DataAnalysis_Average_frame)
+        self.DataAnalysis_Spike_line = QFrame(self.DataAnalysis_groupBox)
         self.DataAnalysis_Spike_line.setObjectName(u"DataAnalysis_Spike_line")
         self.DataAnalysis_Spike_line.setFrameShape(QFrame.HLine)
         self.DataAnalysis_Spike_line.setFrameShadow(QFrame.Sunken)
 
-        self.verticalLayout_40.addWidget(self.DataAnalysis_Spike_line)
+        self.verticalLayout_34.addWidget(self.DataAnalysis_Spike_line)
 
+        self.DataAnalysis_Average_frame = QFrame(self.DataAnalysis_groupBox)
+        self.DataAnalysis_Average_frame.setObjectName(u"DataAnalysis_Average_frame")
+        self.DataAnalysis_Average_frame.setStyleSheet(u"")
+        self.DataAnalysis_Average_frame.setFrameShape(QFrame.StyledPanel)
+        self.DataAnalysis_Average_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_40 = QVBoxLayout(self.DataAnalysis_Average_frame)
+        self.verticalLayout_40.setSpacing(6)
+        self.verticalLayout_40.setObjectName(u"verticalLayout_40")
+        self.verticalLayout_40.setContentsMargins(15, 9, 15, 5)
         self.DataAnalysis_Average_result_label = QLabel(self.DataAnalysis_Average_frame)
         self.DataAnalysis_Average_result_label.setObjectName(u"DataAnalysis_Average_result_label")
+        self.DataAnalysis_Average_result_label.setFont(font2)
+        self.DataAnalysis_Average_result_label.setScaledContents(False)
+        self.DataAnalysis_Average_result_label.setWordWrap(True)
 
         self.verticalLayout_40.addWidget(self.DataAnalysis_Average_result_label, 0, Qt.AlignHCenter)
 
         self.DataAnalysis_Average_label = QLabel(self.DataAnalysis_Average_frame)
         self.DataAnalysis_Average_label.setObjectName(u"DataAnalysis_Average_label")
-        self.DataAnalysis_Average_label.setFont(font3)
+        self.DataAnalysis_Average_label.setFont(font2)
         self.DataAnalysis_Average_label.setStyleSheet(u"")
         self.DataAnalysis_Average_label.setAlignment(Qt.AlignCenter)
 
@@ -3756,7 +3794,7 @@ class Ui_MainWindow(QWidget):
         self.a_value.setSizePolicy(sizePolicy6)
         self.a_value.setMinimumSize(QSize(75, 0))
         self.a_value.setMaximumSize(QSize(50, 16777215))
-        self.a_value.setFont(font4)
+        self.a_value.setFont(font3)
         self.a_value.setStyleSheet(u"")
         self.a_value.setFrame(True)
         self.a_value.setAlignment(Qt.AlignCenter)
@@ -3819,7 +3857,7 @@ class Ui_MainWindow(QWidget):
         self.b_value.setSizePolicy(sizePolicy6)
         self.b_value.setMinimumSize(QSize(75, 0))
         self.b_value.setMaximumSize(QSize(75, 16777215))
-        self.b_value.setFont(font4)
+        self.b_value.setFont(font3)
         self.b_value.setStyleSheet(u"")
         self.b_value.setAlignment(Qt.AlignCenter)
 
@@ -3880,7 +3918,7 @@ class Ui_MainWindow(QWidget):
         self.c_value.setSizePolicy(sizePolicy6)
         self.c_value.setMinimumSize(QSize(75, 0))
         self.c_value.setMaximumSize(QSize(75, 16777215))
-        self.c_value.setFont(font4)
+        self.c_value.setFont(font3)
         self.c_value.setStyleSheet(u"")
         self.c_value.setAlignment(Qt.AlignCenter)
 
@@ -3941,7 +3979,7 @@ class Ui_MainWindow(QWidget):
         self.d_value.setSizePolicy(sizePolicy6)
         self.d_value.setMinimumSize(QSize(75, 0))
         self.d_value.setMaximumSize(QSize(75, 16777215))
-        self.d_value.setFont(font4)
+        self.d_value.setFont(font3)
         self.d_value.setStyleSheet(u"")
         self.d_value.setAlignment(Qt.AlignCenter)
 
@@ -3998,7 +4036,7 @@ class Ui_MainWindow(QWidget):
         self.DisplayNeuronPushButton = QPushButton(self.DisplayNeuron_frame)
         self.DisplayNeuronPushButton.setObjectName(u"DisplayNeuronPushButton")
         self.DisplayNeuronPushButton.setEnabled(True)
-        self.DisplayNeuronPushButton.setFont(font3)
+        self.DisplayNeuronPushButton.setFont(font2)
         self.DisplayNeuronPushButton.setMouseTracking(True)
         self.DisplayNeuronPushButton.setFocusPolicy(Qt.NoFocus)
         self.DisplayNeuronPushButton.setAutoFillBackground(False)
@@ -4021,11 +4059,11 @@ class Ui_MainWindow(QWidget):
         self.SaveNeuronPushButton = QPushButton(self.SaveNeuron_frame)
         self.SaveNeuronPushButton.setObjectName(u"SaveNeuronPushButton")
         self.SaveNeuronPushButton.setEnabled(True)
-        font6 = QFont()
-        font6.setPointSize(10)
-        font6.setBold(True)
-        font6.setStrikeOut(False)
-        self.SaveNeuronPushButton.setFont(font6)
+        font5 = QFont()
+        font5.setPointSize(10)
+        font5.setBold(True)
+        font5.setStrikeOut(False)
+        self.SaveNeuronPushButton.setFont(font5)
         self.SaveNeuronPushButton.setStyleSheet(u"color: rgb(147, 161, 161);")
         self.SaveNeuronPushButton.setCheckable(False)
 
@@ -4059,7 +4097,7 @@ class Ui_MainWindow(QWidget):
         self.footer_widget.setMaximumSize(QSize(16777215, 30))
         self.footer_widget.setStyleSheet(u"")
         self.horizontalLayout_3 = QHBoxLayout(self.footer_widget)
-        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setSpacing(20)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.license_frame = QFrame(self.footer_widget)
@@ -4129,8 +4167,21 @@ class Ui_MainWindow(QWidget):
 
         self.sizegrip = QFrame(self.footer_widget)
         self.sizegrip.setObjectName(u"sizegrip")
+        self.sizegrip.setMinimumSize(QSize(20, 20))
+        self.sizegrip.setMaximumSize(QSize(20, 20))
         self.sizegrip.setFrameShape(QFrame.StyledPanel)
         self.sizegrip.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.sizegrip)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.sizegrip)
+        self.label.setObjectName(u"label")
+        self.label.setPixmap(QPixmap(u":/resources/resources/SizeGrip.png"))
+        self.label.setScaledContents(True)
+
+        self.horizontalLayout_6.addWidget(self.label)
+
 
         self.horizontalLayout_3.addWidget(self.sizegrip)
 
@@ -4148,9 +4199,9 @@ class Ui_MainWindow(QWidget):
         self.retranslateUi(MainWindow)
 
         self.centerMenuSubContainer_menu_stackedwidget.setCurrentIndex(2)
-        self.mainbody_stackedWidget.setCurrentIndex(7)
+        self.mainbody_stackedWidget.setCurrentIndex(1)
         self.Spikeling_parameter_stackedwidget.setCurrentIndex(0)
-        self.DataAnalysis_Display_StackedWidget.setCurrentIndex(3)
+        self.DataAnalysis_Display_StackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4188,8 +4239,7 @@ class Ui_MainWindow(QWidget):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
-        self.appTitle_pushButton.setText("")
-        self.appTitle_label.setText(QCoreApplication.translate("MainWindow", u"Spikeling V2.2 GUI", None))
+        self.appTitle_pushButton.setText(QCoreApplication.translate("MainWindow", u"Spikeling V2.2", None))
         self.reduce_pushButton.setText("")
         self.expand_pushButton.setText("")
         self.exit_pushButton.setText("")
@@ -4327,7 +4377,7 @@ class Ui_MainWindow(QWidget):
         self.DataAnalysis_Neuron1Vm_pushButton32.setText(QCoreApplication.translate("MainWindow", u"Aux Neuron 1", None))
         self.DataAnalysis_Neuron2Vm_pushButton32.setText(QCoreApplication.translate("MainWindow", u"Aux Neuron 2", None))
         self.DataAnalysis_LoadData_label.setText("")
-        self.DataAnalysis_LoadData_pushButton.setText(QCoreApplication.translate("MainWindow", u"Load Data", None))
+        self.DataAnalysis_LoadData_pushButton.setText(QCoreApplication.translate("MainWindow", u"   Load Data   ", None))
         self.DataAnalysis_LoadData_Display_pushButton.setText(QCoreApplication.translate("MainWindow", u"Display Raw Data", None))
         self.DataAnalysis_SaveImage_pushButton.setText(QCoreApplication.translate("MainWindow", u"Save Image", None))
         self.DataAnalysis_Spike_label.setText(QCoreApplication.translate("MainWindow", u"Find Spikes along the Vm trace(s)", None))
@@ -4381,5 +4431,6 @@ class Ui_MainWindow(QWidget):
         self.badenlab_logo.setText("")
         self.ON_logo.setText("")
         self.trend_logo.setText("")
+        self.label.setText("")
     # retranslateUi
 

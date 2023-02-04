@@ -28,7 +28,7 @@ class Spikeling103():
     def LoadData(self):
         FileName = QFileDialog.getOpenFileName(self,
                                                caption='Select recording file to load',
-                                               directory="./Recordings",
+                                               dir="./Recordings",
                                                filter='csv files (*.csv)')
         self.DataAnalysis_LoadData_label.setText(FileName[0])
         Df = pd.read_csv(FileName[0])
@@ -134,7 +134,6 @@ class Spikeling103():
         self.ui.DataAnalysis_Oscilloscope_widget1_2_2.setLabel('left', 'Intensity')
         self.ui.DataAnalysis_Oscilloscope_widget1_2_2.setLabel('bottom', 'Time (ms)')
 
-        self.ui.DataAnalysis_Spike_frame.setStyleSheet("background-color: rgb(7,54,66)")
         self.ui.DataAnalysis_Spike_lineEdit.setEnabled(True)
         self.ui.DataAnalysis_Spike_Display_pushButton.setEnabled(True)
 
@@ -296,7 +295,6 @@ class Spikeling103():
         self.ui.DataAnalysis_Oscilloscope_widget2_2_3.setLabel('left', 'Intensity')
         self.ui.DataAnalysis_Oscilloscope_widget2_2_3.setLabel('bottom', 'Time (ms)')
 
-        self.ui.DataAnalysis_Average_frame.setStyleSheet("background-color: rgb(7,54,66)")
         self.ui.DataAnalysis_Average_Display_pushButton.setEnabled(True)
         self.ui.DataAnalysis_Average_Save_pushButton.setEnabled(True)
 

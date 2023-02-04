@@ -76,6 +76,18 @@
 	background-color: rgb(7, 54, 66);
 }
 
+#Spikeling_DataRecording_box{
+	border: 2px solid rgb(147,161,161);
+}
+#Spikeling_DataRecording_box QLineEdit{
+	border: 2px solid rgb(147,161,161);
+    background-color: rgb(7, 54, 66);
+}
+#Spikeling_DataRecording_box QComboBox{
+	border: 2px solid rgb(147,161,161);
+	background-color: rgb(7, 54, 66);
+}
+
 
 #Spikeling_rightMenuSubContainer QPushButton{
 	text-align: left;
@@ -114,6 +126,34 @@
 	background-color: rgb(7, 54, 66);
 	border: 2px solid rgb(147,161,161);
 }
+
+
+
+
+
+#DataAnalysis_groupBox{
+	background-color: rgb(7,54,66);
+    border: 2px solid rgb(147,161,161);
+}
+#DataAnalysis_groupBox QPushButton{
+	background-color: rgb(0, 43, 54);
+	border: 2px solid rgb(147,161,161);
+	border-radius: 10px;
+	padding: 2px;
+}
+#DataAnalysis_groupBox QLineEdit{
+    border: 2px solid rgb(147,161,161);
+}
+#DataAnalysis_groupBox Line{
+    border: 1px solid rgb(147,161,161);
+}
+
+#DataAnalysis_Display_frame QPushButton{
+	background-color: rgb(7,54,66);
+	border: 2px solid rgb(147,161,161);
+	border-radius: 10px;
+	padding: 2px;
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -140,7 +180,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QCustomSlideMenu" name="leftMenuContainer" native="true">
+     <widget class="QWidget" name="leftMenuContainer" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -535,7 +575,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QCustomSlideMenu" name="centerMenuContainer" native="true">
+     <widget class="QWidget" name="centerMenuContainer" native="true">
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1376,19 +1416,19 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="spacing">
-           <number>6</number>
+           <number>5</number>
           </property>
           <property name="leftMargin">
-           <number>9</number>
+           <number>2</number>
           </property>
           <property name="topMargin">
-           <number>9</number>
+           <number>2</number>
           </property>
           <property name="rightMargin">
-           <number>9</number>
+           <number>2</number>
           </property>
           <property name="bottomMargin">
-           <number>9</number>
+           <number>2</number>
           </property>
           <item alignment="Qt::AlignLeft">
            <widget class="QFrame" name="app_ID_frame">
@@ -1417,33 +1457,17 @@
              <item alignment="Qt::AlignLeft">
               <widget class="QPushButton" name="appTitle_pushButton">
                <property name="text">
-                <string/>
+                <string>Spikeling V2.2</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/Images/Icons/Spikeling.png</normaloff>:/Images/Icons/Spikeling.png</iconset>
+                <iconset resource="resources.qrc">
+                 <normaloff>:/resources/resources/Neuron.png</normaloff>:/resources/resources/Neuron.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>24</width>
                  <height>24</height>
                 </size>
-               </property>
-              </widget>
-             </item>
-             <item alignment="Qt::AlignTop">
-              <widget class="QLabel" name="appTitle_label">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                 <italic>true</italic>
-                 <bold>false</bold>
-                 <underline>true</underline>
-                 <kerning>false</kerning>
-                </font>
-               </property>
-               <property name="text">
-                <string>Spikeling V2.2 GUI</string>
                </property>
               </widget>
              </item>
@@ -1576,7 +1600,7 @@
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>7</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_000">
              <layout class="QVBoxLayout" name="verticalLayout_30">
@@ -2280,19 +2304,19 @@ p, li { white-space: pre-wrap; }
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_52">
                           <property name="spacing">
-                           <number>0</number>
+                           <number>20</number>
                           </property>
                           <property name="leftMargin">
-                           <number>0</number>
+                           <number>5</number>
                           </property>
                           <property name="topMargin">
-                           <number>0</number>
+                           <number>5</number>
                           </property>
                           <property name="rightMargin">
-                           <number>0</number>
+                           <number>5</number>
                           </property>
                           <property name="bottomMargin">
-                           <number>0</number>
+                           <number>5</number>
                           </property>
                           <item>
                            <widget class="QFrame" name="Spikeling_DataRecording_left_frame">
@@ -2635,10 +2659,10 @@ background-color: rgb(220, 50, 47);</string>
                </widget>
               </item>
               <item>
-               <widget class="QCustomSlideMenu" name="Spikeling_CenterMenuContainer" native="true">
+               <widget class="QWidget" name="Spikeling_CenterMenuContainer" native="true">
                 <property name="minimumSize">
                  <size>
-                  <width>175</width>
+                  <width>0</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -4773,7 +4797,7 @@ background-color: rgb(220, 50, 47);</string>
                </widget>
               </item>
               <item>
-               <widget class="QCustomSlideMenu" name="Spikeling_rightMenuContainer" native="true">
+               <widget class="QWidget" name="Spikeling_rightMenuContainer" native="true">
                 <property name="minimumSize">
                  <size>
                   <width>40</width>
@@ -5068,7 +5092,7 @@ background-color: rgb(220, 50, 47);</string>
                     <item>
                      <widget class="QStackedWidget" name="DataAnalysis_Display_StackedWidget">
                       <property name="currentIndex">
-                       <number>3</number>
+                       <number>6</number>
                       </property>
                       <widget class="QWidget" name="page_103_1_0">
                        <layout class="QVBoxLayout" name="verticalLayout_39">
@@ -7188,7 +7212,7 @@ background-color: rgb(220, 50, 47);</string>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_34">
                     <property name="spacing">
-                     <number>0</number>
+                     <number>5</number>
                     </property>
                     <property name="leftMargin">
                      <number>0</number>
@@ -7211,6 +7235,12 @@ background-color: rgb(220, 50, 47);</string>
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_36">
+                       <property name="leftMargin">
+                        <number>15</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>15</number>
+                       </property>
                        <item>
                         <widget class="QFrame" name="DataAnalysis_LoadData_subframe">
                          <property name="frameShape">
@@ -7254,7 +7284,13 @@ background-color: rgb(220, 50, 47);</string>
                           <item>
                            <widget class="QPushButton" name="DataAnalysis_LoadData_pushButton">
                             <property name="text">
-                             <string>Load Data</string>
+                             <string>   Load Data   </string>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>14</width>
+                              <height>16</height>
+                             </size>
                             </property>
                            </widget>
                           </item>
@@ -7288,8 +7324,7 @@ background-color: rgb(220, 50, 47);</string>
                     <item>
                      <widget class="QFrame" name="DataAnalysis_Spike_frame">
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(47,60,63);
-</string>
+                       <string notr="true"/>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -7298,8 +7333,20 @@ background-color: rgb(220, 50, 47);</string>
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_41">
+                       <property name="leftMargin">
+                        <number>15</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>15</number>
+                       </property>
                        <item alignment="Qt::AlignHCenter">
                         <widget class="QLabel" name="DataAnalysis_Spike_label">
+                         <property name="font">
+                          <font>
+                           <pointsize>10</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
                          <property name="text">
                           <string>Find Spikes along the Vm trace(s)</string>
                          </property>
@@ -7430,10 +7477,16 @@ background-color: rgb(220, 50, 47);</string>
                      </widget>
                     </item>
                     <item>
+                     <widget class="Line" name="DataAnalysis_Spike_line">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
                      <widget class="QFrame" name="DataAnalysis_Average_frame">
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(47,60,63);
-</string>
+                       <string notr="true"/>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -7443,31 +7496,36 @@ background-color: rgb(220, 50, 47);</string>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_40">
                        <property name="spacing">
-                        <number>5</number>
+                        <number>6</number>
                        </property>
                        <property name="leftMargin">
-                        <number>0</number>
+                        <number>15</number>
                        </property>
                        <property name="topMargin">
-                        <number>0</number>
+                        <number>9</number>
                        </property>
                        <property name="rightMargin">
-                        <number>0</number>
+                        <number>15</number>
                        </property>
                        <property name="bottomMargin">
                         <number>5</number>
                        </property>
-                       <item>
-                        <widget class="Line" name="DataAnalysis_Spike_line">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
-                         </property>
-                        </widget>
-                       </item>
                        <item alignment="Qt::AlignHCenter">
                         <widget class="QLabel" name="DataAnalysis_Average_result_label">
+                         <property name="font">
+                          <font>
+                           <pointsize>10</pointsize>
+                           <bold>true</bold>
+                          </font>
+                         </property>
                          <property name="text">
                           <string>Average traces based on stimulus cycles</string>
+                         </property>
+                         <property name="scaledContents">
+                          <bool>false</bool>
+                         </property>
+                         <property name="wordWrap">
+                          <bool>true</bool>
                          </property>
                         </widget>
                        </item>
@@ -8984,7 +9042,7 @@ p, li { white-space: pre-wrap; }
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
-           <number>0</number>
+           <number>20</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -9152,12 +9210,54 @@ p, li { white-space: pre-wrap; }
           </item>
           <item>
            <widget class="QFrame" name="sizegrip">
+            <property name="minimumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="resources.qrc">:/resources/resources/SizeGrip.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -9177,12 +9277,6 @@ p, li { white-space: pre-wrap; }
    <class>PlotWidget</class>
    <extends>QWidget</extends>
    <header>pyqtgraph</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QCustomSlideMenu</class>
-   <extends>QWidget</extends>
-   <header location="global">Custom_Widgets.Widgets.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
