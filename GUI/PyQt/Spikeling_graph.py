@@ -188,12 +188,12 @@ def ReadSerial(self):
             SerialTx[3] = "F"
 
         if self.ui.Spikeling_PR_Decay_checkBox.isChecked():
-            SerialTx[4] = str(self.ui.Spikeling_PR_Decay_value.text())
+            SerialTx[4] = str(self.ui.Spikeling_PR_Decay_slider.value()/100000)
         else:
             SerialTx[4] = "F"
 
         if self.ui.Spikeling_PR_Recovery_checkBox.isChecked():
-            SerialTx[5] = str(self.ui.Spikeling_PR_Recovery_value.text())
+            SerialTx[5] = str(self.ui.Spikeling_PR_Recovery_slider.value()/1000)
         else:
             SerialTx[5] = "F"
 
@@ -213,7 +213,7 @@ def ReadSerial(self):
             SerialTx[8] = "F"
 
         if self.ui.Spikeling_Synapse1_Decay_checkBox.isChecked():
-            SerialTx[9] = str(self.ui.Spikeling_Synapse1_Decay_value.text())
+            SerialTx[9] = str(self.ui.Spikeling_Synapse1_Decay_value.text()/1000)
         else:
             SerialTx[9] = "F"
 
@@ -223,7 +223,7 @@ def ReadSerial(self):
             SerialTx[10] = "F"
 
         if self.ui.Spikeling_Synapse2_Decay_checkBox.isChecked():
-            SerialTx[11] = str(self.ui.Spikeling_Synapse2_Decay_value.text())
+            SerialTx[11] = str(self.ui.Spikeling_Synapse2_Decay_value.text()/1000)
         else:
             SerialTx[11] = "F"
 

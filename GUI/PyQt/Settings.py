@@ -24,11 +24,11 @@ def COM():
     return ports
 
 
-DarkSolarized = [[11, 30, 38], [0, 43, 54], [7, 54, 66],                                           # 0:DarkBase01, 1:DarkBase02, 2:DarkBase03
+DarkSolarized = [[0, 30, 38], [0, 43, 54], [7, 54, 66],                                           # 0:DarkBase01, 1:DarkBase02, 2:DarkBase03
                  [220, 50, 47], [133, 153, 0], [38, 139, 210],                                     # 3:Red, 4:Green, 5:Blue
                  [203, 75, 22], [42, 161, 152], [181, 137, 0], [108, 113, 196], [211, 54, 130],    # 6:Orange, 7:Cyan, 8:Yellow, 9:Violet, 10:Magenta
                  [88, 110, 117], [101, 123, 131], [131, 148, 150], [147, 161, 161],                # 11:Content01, 12:Content02, 13:Content03, 14:Content04
-                 [238, 232, 213],[253, 246, 227]]                                                  # 15:LightBase01, LightBase02              # 15:LightBase01, LightBase02
+                 [238, 232, 213],[253, 246, 227]]                                                  # 15:LightBase01, 16:LightBase02
 
 
 
@@ -38,7 +38,7 @@ leftMenu_max = 180
 centerMenu_min = 0
 centerMenu_max = 200
 spikecenterMenu_min = 0
-spikecenterMenu_max = 175
+spikecenterMenu_max = 200
 spikerightMenu_min = 40
 spikerightMenu_max = 200
 
@@ -98,10 +98,11 @@ class UIFunctions(MainWindow):
                         #Get width
                         width = menu.width()
 
-                        #Extend / Retract
+                        #Extend
                         if width == standard:
                                 widthExtended = maxWidth
                                 pushButton.setIcon(icon_max)
+                        #Retract
                         else:
                                 widthExtended = standard
                                 pushButton.setIcon(icon_min)

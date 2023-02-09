@@ -81,6 +81,7 @@ class MainWindow(QMainWindow):
         self.icon_MenuLeft = QIcon()
         self.icon_MenuLeft.addFile(u":/resources/resources/MenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ui.centerMenuContainer.setMaximumSize(QSize(0, 16777215))
+        self.ui.leftMenuContainer.setMinimumSize(QSize(leftMenu_max, 16777215))
         self.ui.menu_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.leftMenuContainer, leftMenu_min, leftMenu_max, animation_speed,
                                                                                self.ui.menu_pushButton, self.icon_MenuLeft, self.icon_DropMenuLeft, True))
 
@@ -113,6 +114,7 @@ class MainWindow(QMainWindow):
         self.icon_SpikelingMenuRight = QIcon()
         self.icon_SpikelingMenuRight.addFile(u":/resources/resources/MenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ui.Spikeling_CenterMenuContainer.setMaximumSize(QSize(0, 16777215))
+        self.ui.Spikeling_rightMenuContainer.setMinimumSize(QSize(spikerightMenu_max, 16777215))
         self.ui.Spikeling_rightMenuSubContainer_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.Spikeling_rightMenuContainer, spikerightMenu_min, spikerightMenu_max, animation_speed,
                                                                                                           self.ui.Spikeling_rightMenuSubContainer_pushButton, self.icon_SpikelingMenuRight, self.icon_SpikelingDropMenuRight, True))
         self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
@@ -164,18 +166,27 @@ class MainWindow(QMainWindow):
         self.ui.Spikeling_StimStrSlider.valueChanged.connect(lambda: Page101.Spikeling101.GetStimStrSliderValue(self))
         self.ui.Spikeling_CustomStimulus_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateCustomStimulus(self))
         self.ui.Spikeling_PR_PhotoGain_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePhotoGain(self))
+        self.ui.Spikeling_PR_PhotoGain_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPhotoGain(self))
         self.ui.Spikeling_PR_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePRDecay(self))
+        self.ui.Spikeling_PR_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPRDecay(self))
         self.ui.Spikeling_PR_Recovery_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePRRecovery(self))
+        self.ui.Spikeling_PR_Recovery_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPRRecovery(self))
 
         # Neuron parameters
         # Display neuron parameter page when NeuronParameter button is clicked
         self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_parameter_stackedwidget.setCurrentWidget(self.ui.NeuronParameter_page))
-        self.ui.Spikeling_PatchClamp_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateMembranePotential(self))
+        self.ui.Spikeling_PatchClamp_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateInjectedCurrent(self))
+        self.ui.Spikeling_PatchClamp_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetInjectedCurrent(self))
         self.ui.Spikeling_Noise_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateNoiseLevel(self))
+        self.ui.Spikeling_Noise_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetNoiseLevel(self))
         self.ui.Spikeling_Synapse1_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain1(self))
-        self.ui.Spikeling_Synapse1_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapse1Decay(self))
+        self.ui.Spikeling_Synapse1_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticGain1(self))
+        self.ui.Spikeling_Synapse1_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay1(self))
+        self.ui.Spikeling_Synapse1_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticDecay1(self))
         self.ui.Spikeling_Synapse2_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain2(self))
-        self.ui.Spikeling_Synapse2_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapse2Decay(self))
+        self.ui.Spikeling_Synapse2_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticGain2(self))
+        self.ui.Spikeling_Synapse2_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay2(self))
+        self.ui.Spikeling_Synapse2_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticDecay2(self))
 
     # Spikeling Tutorial - page 102
         # Display page102 when tutorial button is clicked
@@ -248,6 +259,7 @@ class MainWindow(QMainWindow):
 ########################################################################
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon(u":/resources/resources/Neuron.png"))
     window = MainWindow()
     sys.exit(app.exec())
 ########################################################################

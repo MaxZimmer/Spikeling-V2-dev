@@ -23,6 +23,8 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
 
 from pyqtgraph import PlotWidget
 import resources_rc
+import resources_rc
+import resources_rc
 
 class Ui_MainWindow(QWidget):
     def setupUi(self, MainWindow):
@@ -31,22 +33,26 @@ class Ui_MainWindow(QWidget):
         MainWindow.resize(1280, 720)
         MainWindow.setMinimumSize(QSize(1280, 720))
         MainWindow.setStyleSheet(u"*{\n"
-"	border: none;\n"
+"	border:none;\n"
 "	background-color: transparent;\n"
 "	background: transparent;\n"
 "	padding: 0;\n"
-"	margin: 0;\n"
+"	margin:0;\n"
 "	color: rgb(147,161,161);\n"
+"}\n"
+"\n"
+"#app_ID_frame QPushButton:hover{\n"
+"	background-color: rgb(0, 43, 54);\n"
 "}\n"
 "\n"
 "#centralwidget{\n"
 "	background-color:  rgb(0, 43, 54);\n"
 "}\n"
 "\n"
+"\n"
 "#leftMenuSubContainer{\n"
 "	background-color: rgb(11, 30, 38);\n"
 "}\n"
-"\n"
 "#leftMenuSubContainer QPushButton{\n"
 "	text-align: left;\n"
 "	padding: 10px 5px;\n"
@@ -54,6 +60,11 @@ class Ui_MainWindow(QWidget):
 "	border-bottom-left-radius: 15px;\n"
 "	background-color: rgb(0, 43, 54);\n"
 "}\n"
+"#leftMenuSubContainer QPushButton:hover{\n"
+"	background-color: rgb(11, 30, 38);\n"
+"}\n"
+"\n"
+"\n"
 "\n"
 "#centerMenuSubContainer{\n"
 "	background-color: rgb(0, 43, 54);\n"
@@ -61,14 +72,18 @@ class Ui_MainWindow(QWidget):
 "\n"
 "#centerMenuSubContainer_exit_frame{\n"
 "	background-color: rgb(11, 30, 38);\n"
-"	border-radius: 10px;\n"
 "}\n"
-"\n"
+"centerMenuSubContainer_menu_stackedwidget{\n"
+"}\n"
 "#centerMenuSubContainer_menu_stackedwidget QPushButton{\n"
 "	text-align: center;\n"
-"	padding: 10px 0px;\n"
+"	padding: 10p"
+                        "x 0px;\n"
 "	border-radius:20px;\n"
 "	background-color: rgb(7, 54, 66);\n"
+"}\n"
+"#centerMenuSubContainer_menu_stackedwidget QPushButton:hover{\n"
+"	background-color: rgb(0, 43, 54);\n"
 "}\n"
 "\n"
 "#header_widget{\n"
@@ -76,15 +91,21 @@ class Ui_MainWindow(QWidget):
 "}\n"
 "\n"
 "#footer_widget{\n"
-"	background-color: rgb(11, 30, "
-                        "38);\n"
+"	background-color: rgb(11, 30, 38);\n"
 "}\n"
 "\n"
 "#Spikeling_rightMenuSubContainer{\n"
 "	background-color: rgb(11, 30, 38);\n"
 "}\n"
 "#Spikeling_parameter_stackedwidget{\n"
-"	background-color: rgb(7, 54, 66);\n"
+"	background-color: rgb(0, 43, 54);\n"
+"}\n"
+"\n"
+"\n"
+"#StimulusParameter_page QComboBox{\n"
+"	border: 2px solid rgb(147,161,161);\n"
+"	background-color: rgb(0, 30, 38);\n"
+"	padding: 2px;\n"
 "}\n"
 "\n"
 "#Spikeling_DataRecording_box{\n"
@@ -100,26 +121,30 @@ class Ui_MainWindow(QWidget):
 "}\n"
 "\n"
 "\n"
-"#Spikeling_rightMenuSubContainer QPushButton{\n"
+"#Spi"
+                        "keling_rightMenuSubContainer QPushButton{\n"
 "	text-align: left;\n"
-"	padding: 10px 0px;\n"
-"	border-top-right-radius:15px;\n"
-"	border-bottom-right-radius: 15px;\n"
-"	background-color: rgb(7, 54, 66);\n"
+"	padding: 20px 0px;\n"
+"	border-top-right-radius:20px;\n"
+"	border-bottom-right-radius: 20px;\n"
+"	background-color: rgb(0, 43, 54);\n"
+"}\n"
+"#Spikeling_rightMenuSubContainer QPushButton:hover{\n"
+"	background-color: rgb(11, 30, 38);\n"
 "}\n"
 "#Spikeling_rightMenuSubContainer_frame QPushButton{\n"
 "	background-color: rgb(0, 43, 54);\n"
 "}\n"
-"\n"
+"#Spikeling_rightMenuSubContainer_frame QPushButton:hover{\n"
+"	background-color: rgb(11, 30, 38);\n"
+"}\n"
 "#Spikeling_CenterMenuContainer{\n"
 "	background-color: rgb(7, 54, 66)\n"
 "}\n"
 "\n"
 "#Spikeling_parameter_exit_frame{\n"
-"	background-color: rgb(11, 30, 38"
-                        ");\n"
-"	border-top-left-radius:10px;\n"
-"	border-bottom-left-radius: 10px;\n"
+"	background-color: rgb(11, 30, 38);\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -134,7 +159,8 @@ class Ui_MainWindow(QWidget):
 "	border-radius: 10px;\n"
 "	padding: 5px;\n"
 "}\n"
-"#NeuronGenerator_subframe1_Izhik_frame QTextBrowser{\n"
+"#NeuronGene"
+                        "rator_subframe1_Izhik_frame QTextBrowser{\n"
 "	background-color: rgb(7, 54, 66);\n"
 "	border: 2px solid rgb(147,161,161);\n"
 "}\n"
@@ -159,8 +185,7 @@ class Ui_MainWindow(QWidget):
 "#DataAnalysis_groupBox Line{\n"
 "    border: 1px solid rgb(147,161,161);\n"
 "}\n"
-""
-                        "\n"
+"\n"
 "#DataAnalysis_Display_frame QPushButton{\n"
 "	background-color: rgb(7,54,66);\n"
 "	border: 2px solid rgb(147,161,161);\n"
@@ -171,11 +196,99 @@ class Ui_MainWindow(QWidget):
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setMinimumSize(QSize(1280, 720))
-        self.horizontalLayout = QHBoxLayout(self.centralwidget)
-        self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.leftMenuContainer = QWidget(self.centralwidget)
+        self.verticalLayout_75 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_75.setSpacing(0)
+        self.verticalLayout_75.setObjectName(u"verticalLayout_75")
+        self.verticalLayout_75.setContentsMargins(0, 0, 0, 0)
+        self.TopMainFrame = QFrame(self.centralwidget)
+        self.TopMainFrame.setObjectName(u"TopMainFrame")
+        self.TopMainFrame.setFrameShape(QFrame.StyledPanel)
+        self.TopMainFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_113 = QHBoxLayout(self.TopMainFrame)
+        self.horizontalLayout_113.setSpacing(0)
+        self.horizontalLayout_113.setObjectName(u"horizontalLayout_113")
+        self.horizontalLayout_113.setContentsMargins(0, 0, 0, 0)
+        self.header_widget = QWidget(self.TopMainFrame)
+        self.header_widget.setObjectName(u"header_widget")
+        self.header_widget.setStyleSheet(u"")
+        self.horizontalLayout_2 = QHBoxLayout(self.header_widget)
+        self.horizontalLayout_2.setSpacing(5)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(2, 2, 2, 2)
+        self.app_ID_frame = QFrame(self.header_widget)
+        self.app_ID_frame.setObjectName(u"app_ID_frame")
+        self.app_ID_frame.setFrameShape(QFrame.StyledPanel)
+        self.app_ID_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_78 = QHBoxLayout(self.app_ID_frame)
+        self.horizontalLayout_78.setSpacing(0)
+        self.horizontalLayout_78.setObjectName(u"horizontalLayout_78")
+        self.horizontalLayout_78.setContentsMargins(0, 0, 0, 0)
+        self.appTitle_pushButton = QPushButton(self.app_ID_frame)
+        self.appTitle_pushButton.setObjectName(u"appTitle_pushButton")
+        icon = QIcon()
+        icon.addFile(u":/resources/resources/Neuron.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.appTitle_pushButton.setIcon(icon)
+        self.appTitle_pushButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_78.addWidget(self.appTitle_pushButton, 0, Qt.AlignLeft)
+
+
+        self.horizontalLayout_2.addWidget(self.app_ID_frame, 0, Qt.AlignLeft)
+
+        self.app_frame = QFrame(self.header_widget)
+        self.app_frame.setObjectName(u"app_frame")
+        self.app_frame.setFrameShape(QFrame.StyledPanel)
+        self.app_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.app_frame)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.reduce_pushButton = QPushButton(self.app_frame)
+        self.reduce_pushButton.setObjectName(u"reduce_pushButton")
+        icon1 = QIcon()
+        icon1.addFile(u":/resources/resources/Artboard 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.reduce_pushButton.setIcon(icon1)
+        self.reduce_pushButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_4.addWidget(self.reduce_pushButton)
+
+        self.expand_pushButton = QPushButton(self.app_frame)
+        self.expand_pushButton.setObjectName(u"expand_pushButton")
+        icon2 = QIcon()
+        icon2.addFile(u":/resources/resources/Expand.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.expand_pushButton.setIcon(icon2)
+        self.expand_pushButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_4.addWidget(self.expand_pushButton)
+
+        self.exit_pushButton = QPushButton(self.app_frame)
+        self.exit_pushButton.setObjectName(u"exit_pushButton")
+        icon3 = QIcon()
+        icon3.addFile(u":/resources/resources/Exit.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.exit_pushButton.setIcon(icon3)
+        self.exit_pushButton.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_4.addWidget(self.exit_pushButton)
+
+
+        self.horizontalLayout_2.addWidget(self.app_frame, 0, Qt.AlignRight|Qt.AlignTop)
+
+
+        self.horizontalLayout_113.addWidget(self.header_widget)
+
+
+        self.verticalLayout_75.addWidget(self.TopMainFrame)
+
+        self.CenterMainFrame = QFrame(self.centralwidget)
+        self.CenterMainFrame.setObjectName(u"CenterMainFrame")
+        self.CenterMainFrame.setMinimumSize(QSize(50, 0))
+        self.CenterMainFrame.setFrameShape(QFrame.StyledPanel)
+        self.CenterMainFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_112 = QHBoxLayout(self.CenterMainFrame)
+        self.horizontalLayout_112.setSpacing(0)
+        self.horizontalLayout_112.setObjectName(u"horizontalLayout_112")
+        self.horizontalLayout_112.setContentsMargins(0, 0, 0, 0)
+        self.leftMenuContainer = QWidget(self.CenterMainFrame)
         self.leftMenuContainer.setObjectName(u"leftMenuContainer")
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -212,9 +325,9 @@ class Ui_MainWindow(QWidget):
         font = QFont()
         font.setPointSize(12)
         self.menu_pushButton.setFont(font)
-        icon = QIcon()
-        icon.addFile(u":/resources/resources/MenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.menu_pushButton.setIcon(icon)
+        icon4 = QIcon()
+        icon4.addFile(u":/resources/resources/MenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.menu_pushButton.setIcon(icon4)
         self.menu_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_64.addWidget(self.menu_pushButton)
@@ -234,9 +347,7 @@ class Ui_MainWindow(QWidget):
         self.SpikelingMenu_pushButton = QPushButton(self.menus_frame)
         self.SpikelingMenu_pushButton.setObjectName(u"SpikelingMenu_pushButton")
         self.SpikelingMenu_pushButton.setFont(font)
-        icon1 = QIcon()
-        icon1.addFile(u":/resources/resources/Neuron.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.SpikelingMenu_pushButton.setIcon(icon1)
+        self.SpikelingMenu_pushButton.setIcon(icon)
         self.SpikelingMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_37.addWidget(self.SpikelingMenu_pushButton)
@@ -244,9 +355,9 @@ class Ui_MainWindow(QWidget):
         self.ImagingMenu_pushButton = QPushButton(self.menus_frame)
         self.ImagingMenu_pushButton.setObjectName(u"ImagingMenu_pushButton")
         self.ImagingMenu_pushButton.setFont(font)
-        icon2 = QIcon()
-        icon2.addFile(u":/resources/resources/Imaging.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.ImagingMenu_pushButton.setIcon(icon2)
+        icon5 = QIcon()
+        icon5.addFile(u":/resources/resources/Imaging.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ImagingMenu_pushButton.setIcon(icon5)
         self.ImagingMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_37.addWidget(self.ImagingMenu_pushButton)
@@ -254,9 +365,9 @@ class Ui_MainWindow(QWidget):
         self.NeuronGeneratorMenu_pushButton = QPushButton(self.menus_frame)
         self.NeuronGeneratorMenu_pushButton.setObjectName(u"NeuronGeneratorMenu_pushButton")
         self.NeuronGeneratorMenu_pushButton.setFont(font)
-        icon3 = QIcon()
-        icon3.addFile(u":/resources/resources/StimGen.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.NeuronGeneratorMenu_pushButton.setIcon(icon3)
+        icon6 = QIcon()
+        icon6.addFile(u":/resources/resources/StimGen.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.NeuronGeneratorMenu_pushButton.setIcon(icon6)
         self.NeuronGeneratorMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_37.addWidget(self.NeuronGeneratorMenu_pushButton)
@@ -264,9 +375,9 @@ class Ui_MainWindow(QWidget):
         self.StimuluGeneratorMenu_pushButton = QPushButton(self.menus_frame)
         self.StimuluGeneratorMenu_pushButton.setObjectName(u"StimuluGeneratorMenu_pushButton")
         self.StimuluGeneratorMenu_pushButton.setFont(font)
-        icon4 = QIcon()
-        icon4.addFile(u":/resources/resources/Stimulus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.StimuluGeneratorMenu_pushButton.setIcon(icon4)
+        icon7 = QIcon()
+        icon7.addFile(u":/resources/resources/Stimulus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.StimuluGeneratorMenu_pushButton.setIcon(icon7)
         self.StimuluGeneratorMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_37.addWidget(self.StimuluGeneratorMenu_pushButton)
@@ -274,9 +385,9 @@ class Ui_MainWindow(QWidget):
         self.ExercisesMenu_pushButton = QPushButton(self.menus_frame)
         self.ExercisesMenu_pushButton.setObjectName(u"ExercisesMenu_pushButton")
         self.ExercisesMenu_pushButton.setFont(font)
-        icon5 = QIcon()
-        icon5.addFile(u":/resources/resources/Exercices.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.ExercisesMenu_pushButton.setIcon(icon5)
+        icon8 = QIcon()
+        icon8.addFile(u":/resources/resources/Exercices.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.ExercisesMenu_pushButton.setIcon(icon8)
         self.ExercisesMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_37.addWidget(self.ExercisesMenu_pushButton)
@@ -300,9 +411,9 @@ class Ui_MainWindow(QWidget):
         self.SettingsMenu_pushButton = QPushButton(self.options_frame)
         self.SettingsMenu_pushButton.setObjectName(u"SettingsMenu_pushButton")
         self.SettingsMenu_pushButton.setFont(font)
-        icon6 = QIcon()
-        icon6.addFile(u":/resources/resources/Tutorial.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.SettingsMenu_pushButton.setIcon(icon6)
+        icon9 = QIcon()
+        icon9.addFile(u":/resources/resources/Tutorial.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.SettingsMenu_pushButton.setIcon(icon9)
         self.SettingsMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_5.addWidget(self.SettingsMenu_pushButton)
@@ -310,9 +421,9 @@ class Ui_MainWindow(QWidget):
         self.AboutMenu_pushButton = QPushButton(self.options_frame)
         self.AboutMenu_pushButton.setObjectName(u"AboutMenu_pushButton")
         self.AboutMenu_pushButton.setFont(font)
-        icon7 = QIcon()
-        icon7.addFile(u":/resources/resources/About.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.AboutMenu_pushButton.setIcon(icon7)
+        icon10 = QIcon()
+        icon10.addFile(u":/resources/resources/About.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.AboutMenu_pushButton.setIcon(icon10)
         self.AboutMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_5.addWidget(self.AboutMenu_pushButton)
@@ -320,9 +431,9 @@ class Ui_MainWindow(QWidget):
         self.HelpMenu_pushButton = QPushButton(self.options_frame)
         self.HelpMenu_pushButton.setObjectName(u"HelpMenu_pushButton")
         self.HelpMenu_pushButton.setFont(font)
-        icon8 = QIcon()
-        icon8.addFile(u":/resources/resources/Help.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.HelpMenu_pushButton.setIcon(icon8)
+        icon11 = QIcon()
+        icon11.addFile(u":/resources/resources/Help.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.HelpMenu_pushButton.setIcon(icon11)
         self.HelpMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_5.addWidget(self.HelpMenu_pushButton)
@@ -330,9 +441,9 @@ class Ui_MainWindow(QWidget):
         self.GitHubMenu_pushButton = QPushButton(self.options_frame)
         self.GitHubMenu_pushButton.setObjectName(u"GitHubMenu_pushButton")
         self.GitHubMenu_pushButton.setFont(font)
-        icon9 = QIcon()
-        icon9.addFile(u":/resources/resources/GitHub.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.GitHubMenu_pushButton.setIcon(icon9)
+        icon12 = QIcon()
+        icon12.addFile(u":/resources/resources/GitHub.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.GitHubMenu_pushButton.setIcon(icon12)
         self.GitHubMenu_pushButton.setIconSize(QSize(24, 24))
 
         self.verticalLayout_5.addWidget(self.GitHubMenu_pushButton)
@@ -344,9 +455,9 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout.addWidget(self.leftMenuSubContainer)
 
 
-        self.horizontalLayout.addWidget(self.leftMenuContainer)
+        self.horizontalLayout_112.addWidget(self.leftMenuContainer)
 
-        self.centerMenuContainer = QWidget(self.centralwidget)
+        self.centerMenuContainer = QWidget(self.CenterMainFrame)
         self.centerMenuContainer.setObjectName(u"centerMenuContainer")
         self.centerMenuContainer.setStyleSheet(u"")
         self.verticalLayout_7 = QVBoxLayout(self.centerMenuContainer)
@@ -361,25 +472,22 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.centerMenuSubContainer_exit_frame = QFrame(self.centerMenuSubContainer)
         self.centerMenuSubContainer_exit_frame.setObjectName(u"centerMenuSubContainer_exit_frame")
+        self.centerMenuSubContainer_exit_frame.setMinimumSize(QSize(0, 28))
         self.centerMenuSubContainer_exit_frame.setFrameShape(QFrame.StyledPanel)
         self.centerMenuSubContainer_exit_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.centerMenuSubContainer_exit_frame)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.centerMenuSubContainer_exit_label = QLabel(self.centerMenuSubContainer_exit_frame)
-        self.centerMenuSubContainer_exit_label.setObjectName(u"centerMenuSubContainer_exit_label")
-        self.centerMenuSubContainer_exit_label.setFont(font)
-
-        self.horizontalLayout_5.addWidget(self.centerMenuSubContainer_exit_label, 0, Qt.AlignRight)
-
         self.centerMenuSubContainer_exit_pushButton = QPushButton(self.centerMenuSubContainer_exit_frame)
         self.centerMenuSubContainer_exit_pushButton.setObjectName(u"centerMenuSubContainer_exit_pushButton")
-        icon10 = QIcon()
-        icon10.addFile(u":/resources/resources/DropMenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.centerMenuSubContainer_exit_pushButton.setIcon(icon10)
+        self.centerMenuSubContainer_exit_pushButton.setLayoutDirection(Qt.RightToLeft)
+        icon13 = QIcon()
+        icon13.addFile(u":/resources/resources/DropMenuLeft.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.centerMenuSubContainer_exit_pushButton.setIcon(icon13)
+        self.centerMenuSubContainer_exit_pushButton.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_5.addWidget(self.centerMenuSubContainer_exit_pushButton, 0, Qt.AlignRight)
+        self.horizontalLayout_5.addWidget(self.centerMenuSubContainer_exit_pushButton, 0, Qt.AlignLeft)
 
 
         self.verticalLayout_6.addWidget(self.centerMenuSubContainer_exit_frame, 0, Qt.AlignTop)
@@ -432,7 +540,7 @@ class Ui_MainWindow(QWidget):
         self.Neuron_pushButton = QPushButton(self.Spikeling_SubMenu_button_frame)
         self.Neuron_pushButton.setObjectName(u"Neuron_pushButton")
         self.Neuron_pushButton.setFont(font)
-        self.Neuron_pushButton.setIcon(icon1)
+        self.Neuron_pushButton.setIcon(icon)
         self.Neuron_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_19.addWidget(self.Neuron_pushButton)
@@ -444,7 +552,7 @@ class Ui_MainWindow(QWidget):
         self.NeuronTutorial_pushButton = QPushButton(self.Spikeling_SubMenu_button_frame)
         self.NeuronTutorial_pushButton.setObjectName(u"NeuronTutorial_pushButton")
         self.NeuronTutorial_pushButton.setFont(font)
-        self.NeuronTutorial_pushButton.setIcon(icon6)
+        self.NeuronTutorial_pushButton.setIcon(icon9)
         self.NeuronTutorial_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_19.addWidget(self.NeuronTutorial_pushButton)
@@ -456,9 +564,9 @@ class Ui_MainWindow(QWidget):
         self.NeuronDataAnalysis_pushButton = QPushButton(self.Spikeling_SubMenu_button_frame)
         self.NeuronDataAnalysis_pushButton.setObjectName(u"NeuronDataAnalysis_pushButton")
         self.NeuronDataAnalysis_pushButton.setFont(font)
-        icon11 = QIcon()
-        icon11.addFile(u":/resources/resources/DataAnalysis.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.NeuronDataAnalysis_pushButton.setIcon(icon11)
+        icon14 = QIcon()
+        icon14.addFile(u":/resources/resources/DataAnalysis.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.NeuronDataAnalysis_pushButton.setIcon(icon14)
         self.NeuronDataAnalysis_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_19.addWidget(self.NeuronDataAnalysis_pushButton)
@@ -506,7 +614,7 @@ class Ui_MainWindow(QWidget):
         self.ImagingIdeal_pushButton = QPushButton(self.Imaging_SubMenu_button_frame)
         self.ImagingIdeal_pushButton.setObjectName(u"ImagingIdeal_pushButton")
         self.ImagingIdeal_pushButton.setFont(font)
-        self.ImagingIdeal_pushButton.setIcon(icon2)
+        self.ImagingIdeal_pushButton.setIcon(icon5)
         self.ImagingIdeal_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_59.addWidget(self.ImagingIdeal_pushButton)
@@ -518,7 +626,7 @@ class Ui_MainWindow(QWidget):
         self.ImagingStimulation_pushButton = QPushButton(self.Imaging_SubMenu_button_frame)
         self.ImagingStimulation_pushButton.setObjectName(u"ImagingStimulation_pushButton")
         self.ImagingStimulation_pushButton.setFont(font)
-        self.ImagingStimulation_pushButton.setIcon(icon2)
+        self.ImagingStimulation_pushButton.setIcon(icon5)
         self.ImagingStimulation_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_59.addWidget(self.ImagingStimulation_pushButton)
@@ -530,7 +638,7 @@ class Ui_MainWindow(QWidget):
         self.ImagingTutorial_pushButton = QPushButton(self.Imaging_SubMenu_button_frame)
         self.ImagingTutorial_pushButton.setObjectName(u"ImagingTutorial_pushButton")
         self.ImagingTutorial_pushButton.setFont(font)
-        self.ImagingTutorial_pushButton.setIcon(icon6)
+        self.ImagingTutorial_pushButton.setIcon(icon9)
         self.ImagingTutorial_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_59.addWidget(self.ImagingTutorial_pushButton)
@@ -542,7 +650,7 @@ class Ui_MainWindow(QWidget):
         self.ImagingDataAnalysis_pushButton = QPushButton(self.Imaging_SubMenu_button_frame)
         self.ImagingDataAnalysis_pushButton.setObjectName(u"ImagingDataAnalysis_pushButton")
         self.ImagingDataAnalysis_pushButton.setFont(font)
-        self.ImagingDataAnalysis_pushButton.setIcon(icon11)
+        self.ImagingDataAnalysis_pushButton.setIcon(icon14)
         self.ImagingDataAnalysis_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_59.addWidget(self.ImagingDataAnalysis_pushButton)
@@ -690,94 +798,28 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_7.addWidget(self.centerMenuSubContainer, 0, Qt.AlignLeft)
 
 
-        self.horizontalLayout.addWidget(self.centerMenuContainer)
+        self.horizontalLayout_112.addWidget(self.centerMenuContainer)
 
-        self.main_window = QWidget(self.centralwidget)
-        self.main_window.setObjectName(u"main_window")
-        self.main_window.setStyleSheet(u"")
-        self.verticalLayout_2 = QVBoxLayout(self.main_window)
+        self.mainWindowContainer = QWidget(self.CenterMainFrame)
+        self.mainWindowContainer.setObjectName(u"mainWindowContainer")
+        self.mainWindowContainer.setStyleSheet(u"")
+        self.verticalLayout_2 = QVBoxLayout(self.mainWindowContainer)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.header_widget = QWidget(self.main_window)
-        self.header_widget.setObjectName(u"header_widget")
-        self.header_widget.setStyleSheet(u"")
-        self.horizontalLayout_2 = QHBoxLayout(self.header_widget)
-        self.horizontalLayout_2.setSpacing(5)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(2, 2, 2, 2)
-        self.app_ID_frame = QFrame(self.header_widget)
-        self.app_ID_frame.setObjectName(u"app_ID_frame")
-        self.app_ID_frame.setFrameShape(QFrame.StyledPanel)
-        self.app_ID_frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_78 = QHBoxLayout(self.app_ID_frame)
-        self.horizontalLayout_78.setSpacing(0)
-        self.horizontalLayout_78.setObjectName(u"horizontalLayout_78")
-        self.horizontalLayout_78.setContentsMargins(0, 0, 0, 0)
-        self.appTitle_pushButton = QPushButton(self.app_ID_frame)
-        self.appTitle_pushButton.setObjectName(u"appTitle_pushButton")
-        self.appTitle_pushButton.setIcon(icon1)
-        self.appTitle_pushButton.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_78.addWidget(self.appTitle_pushButton, 0, Qt.AlignLeft)
-
-
-        self.horizontalLayout_2.addWidget(self.app_ID_frame, 0, Qt.AlignLeft)
-
-        self.app_frame = QFrame(self.header_widget)
-        self.app_frame.setObjectName(u"app_frame")
-        self.app_frame.setFrameShape(QFrame.StyledPanel)
-        self.app_frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.app_frame)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.reduce_pushButton = QPushButton(self.app_frame)
-        self.reduce_pushButton.setObjectName(u"reduce_pushButton")
-        icon12 = QIcon()
-        icon12.addFile(u":/resources/resources/Artboard 1.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.reduce_pushButton.setIcon(icon12)
-        self.reduce_pushButton.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_4.addWidget(self.reduce_pushButton)
-
-        self.expand_pushButton = QPushButton(self.app_frame)
-        self.expand_pushButton.setObjectName(u"expand_pushButton")
-        icon13 = QIcon()
-        icon13.addFile(u":/resources/resources/Expand.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.expand_pushButton.setIcon(icon13)
-        self.expand_pushButton.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_4.addWidget(self.expand_pushButton)
-
-        self.exit_pushButton = QPushButton(self.app_frame)
-        self.exit_pushButton.setObjectName(u"exit_pushButton")
-        icon14 = QIcon()
-        icon14.addFile(u":/resources/resources/Exit.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.exit_pushButton.setIcon(icon14)
-        self.exit_pushButton.setIconSize(QSize(24, 24))
-
-        self.horizontalLayout_4.addWidget(self.exit_pushButton)
-
-
-        self.horizontalLayout_2.addWidget(self.app_frame, 0, Qt.AlignRight|Qt.AlignTop)
-
-
-        self.verticalLayout_2.addWidget(self.header_widget)
-
-        self.mainBodyContainer = QWidget(self.main_window)
-        self.mainBodyContainer.setObjectName(u"mainBodyContainer")
+        self.mainbodyContainer = QWidget(self.mainWindowContainer)
+        self.mainbodyContainer.setObjectName(u"mainbodyContainer")
         sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.mainBodyContainer.sizePolicy().hasHeightForWidth())
-        self.mainBodyContainer.setSizePolicy(sizePolicy2)
-        self.mainBodyContainer.setStyleSheet(u"")
-        self.horizontalLayout_7 = QHBoxLayout(self.mainBodyContainer)
+        sizePolicy2.setHeightForWidth(self.mainbodyContainer.sizePolicy().hasHeightForWidth())
+        self.mainbodyContainer.setSizePolicy(sizePolicy2)
+        self.mainbodyContainer.setStyleSheet(u"")
+        self.horizontalLayout_7 = QHBoxLayout(self.mainbodyContainer)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.mainbody_stackedWidget = QStackedWidget(self.mainBodyContainer)
+        self.mainbody_stackedWidget = QStackedWidget(self.mainbodyContainer)
         self.mainbody_stackedWidget.setObjectName(u"mainbody_stackedWidget")
         sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy3.setHorizontalStretch(0)
@@ -816,7 +858,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_76 = QHBoxLayout(self.mainbody_content_frame)
         self.horizontalLayout_76.setSpacing(20)
         self.horizontalLayout_76.setObjectName(u"horizontalLayout_76")
-        self.horizontalLayout_76.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_76.setContentsMargins(5, 0, 5, 0)
         self.mainbody_content_text = QLabel(self.mainbody_content_frame)
         self.mainbody_content_text.setObjectName(u"mainbody_content_text")
         sizePolicy5.setHeightForWidth(self.mainbody_content_text.sizePolicy().hasHeightForWidth())
@@ -1209,16 +1251,27 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_34.addWidget(self.Spikeling_widget)
 
+        self.line_41 = QFrame(self.page_101)
+        self.line_41.setObjectName(u"line_41")
+        self.line_41.setAutoFillBackground(False)
+        self.line_41.setStyleSheet(u"background-color: rgb(0, 30, 38);")
+        self.line_41.setFrameShape(QFrame.VLine)
+        self.line_41.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_34.addWidget(self.line_41)
+
         self.Spikeling_CenterMenuContainer = QWidget(self.page_101)
         self.Spikeling_CenterMenuContainer.setObjectName(u"Spikeling_CenterMenuContainer")
         self.Spikeling_CenterMenuContainer.setMinimumSize(QSize(0, 0))
-        self.Spikeling_CenterMenuContainer.setMaximumSize(QSize(175, 16777215))
+        self.Spikeling_CenterMenuContainer.setMaximumSize(QSize(200, 16777215))
         self.verticalLayout_54 = QVBoxLayout(self.Spikeling_CenterMenuContainer)
         self.verticalLayout_54.setSpacing(0)
         self.verticalLayout_54.setObjectName(u"verticalLayout_54")
         self.verticalLayout_54.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_parameter_exit_frame = QFrame(self.Spikeling_CenterMenuContainer)
         self.Spikeling_parameter_exit_frame.setObjectName(u"Spikeling_parameter_exit_frame")
+        self.Spikeling_parameter_exit_frame.setMinimumSize(QSize(200, 0))
+        self.Spikeling_parameter_exit_frame.setMaximumSize(QSize(200, 16777215))
         self.Spikeling_parameter_exit_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_parameter_exit_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_86 = QHBoxLayout(self.Spikeling_parameter_exit_frame)
@@ -1232,29 +1285,23 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_parameter_exit_pushButton.setIcon(icon15)
         self.Spikeling_parameter_exit_pushButton.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_86.addWidget(self.Spikeling_parameter_exit_pushButton)
-
-        self.Spikeling_parameter_exit_label = QLabel(self.Spikeling_parameter_exit_frame)
-        self.Spikeling_parameter_exit_label.setObjectName(u"Spikeling_parameter_exit_label")
-        self.Spikeling_parameter_exit_label.setFont(font)
-
-        self.horizontalLayout_86.addWidget(self.Spikeling_parameter_exit_label, 0, Qt.AlignRight)
+        self.horizontalLayout_86.addWidget(self.Spikeling_parameter_exit_pushButton, 0, Qt.AlignLeft)
 
 
         self.verticalLayout_54.addWidget(self.Spikeling_parameter_exit_frame)
 
         self.Spikeling_parameter_stackedwidget = QStackedWidget(self.Spikeling_CenterMenuContainer)
         self.Spikeling_parameter_stackedwidget.setObjectName(u"Spikeling_parameter_stackedwidget")
-        self.Spikeling_parameter_stackedwidget.setMinimumSize(QSize(175, 0))
-        self.Spikeling_parameter_stackedwidget.setMaximumSize(QSize(175, 16777215))
+        self.Spikeling_parameter_stackedwidget.setMinimumSize(QSize(200, 0))
+        self.Spikeling_parameter_stackedwidget.setMaximumSize(QSize(200, 16777215))
         self.StimulusParameter_page = QWidget()
         self.StimulusParameter_page.setObjectName(u"StimulusParameter_page")
-        self.StimulusParameter_page.setMinimumSize(QSize(175, 0))
+        self.StimulusParameter_page.setMinimumSize(QSize(200, 0))
         self.StimulusParameter_page.setMaximumSize(QSize(175, 16777215))
         self.verticalLayout_58 = QVBoxLayout(self.StimulusParameter_page)
-        self.verticalLayout_58.setSpacing(5)
+        self.verticalLayout_58.setSpacing(0)
         self.verticalLayout_58.setObjectName(u"verticalLayout_58")
-        self.verticalLayout_58.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_58.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_Stimulus_label_frame = QFrame(self.StimulusParameter_page)
         self.Spikeling_Stimulus_label_frame.setObjectName(u"Spikeling_Stimulus_label_frame")
         self.Spikeling_Stimulus_label_frame.setFrameShape(QFrame.StyledPanel)
@@ -1281,7 +1328,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_22 = QVBoxLayout(self.Spikeling_StimFre_frame)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
-        self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_22.setContentsMargins(5, 0, 5, 5)
         self.Spikeling_StimFre_checkBox_frame = QFrame(self.Spikeling_StimFre_frame)
         self.Spikeling_StimFre_checkBox_frame.setObjectName(u"Spikeling_StimFre_checkBox_frame")
         self.Spikeling_StimFre_checkBox_frame.setFrameShape(QFrame.StyledPanel)
@@ -1295,8 +1342,25 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_38.addWidget(self.Spikeling_StimFre_checkBox)
 
+        self.Spikeling_StimFre_readings = QLabel(self.Spikeling_StimFre_checkBox_frame)
+        self.Spikeling_StimFre_readings.setObjectName(u"Spikeling_StimFre_readings")
+        self.Spikeling_StimFre_readings.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_38.addWidget(self.Spikeling_StimFre_readings)
+
 
         self.verticalLayout_22.addWidget(self.Spikeling_StimFre_checkBox_frame)
+
+        self.Spikeling_StimFre_readings_frame = QFrame(self.Spikeling_StimFre_frame)
+        self.Spikeling_StimFre_readings_frame.setObjectName(u"Spikeling_StimFre_readings_frame")
+        self.Spikeling_StimFre_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_StimFre_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_62 = QVBoxLayout(self.Spikeling_StimFre_readings_frame)
+        self.verticalLayout_62.setSpacing(0)
+        self.verticalLayout_62.setObjectName(u"verticalLayout_62")
+        self.verticalLayout_62.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_22.addWidget(self.Spikeling_StimFre_readings_frame)
 
         self.Spikeling_StimFre_slider_frame = QFrame(self.Spikeling_StimFre_frame)
         self.Spikeling_StimFre_slider_frame.setObjectName(u"Spikeling_StimFre_slider_frame")
@@ -1311,8 +1375,8 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_StimFre_slider.setEnabled(False)
         self.Spikeling_StimFre_slider.setMinimum(-100)
         self.Spikeling_StimFre_slider.setMaximum(100)
-        self.Spikeling_StimFre_slider.setSingleStep(10)
-        self.Spikeling_StimFre_slider.setPageStep(25)
+        self.Spikeling_StimFre_slider.setSingleStep(1)
+        self.Spikeling_StimFre_slider.setPageStep(10)
         self.Spikeling_StimFre_slider.setOrientation(Qt.Horizontal)
         self.Spikeling_StimFre_slider.setTickPosition(QSlider.TicksBelow)
         self.Spikeling_StimFre_slider.setTickInterval(20)
@@ -1375,6 +1439,15 @@ class Ui_MainWindow(QWidget):
 
         self.verticalLayout_58.addWidget(self.Spikeling_StimFre_frame)
 
+        self.Spikeling_parameter_top_line = QFrame(self.StimulusParameter_page)
+        self.Spikeling_parameter_top_line.setObjectName(u"Spikeling_parameter_top_line")
+        self.Spikeling_parameter_top_line.setAutoFillBackground(False)
+        self.Spikeling_parameter_top_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
+        self.Spikeling_parameter_top_line.setFrameShape(QFrame.HLine)
+        self.Spikeling_parameter_top_line.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_58.addWidget(self.Spikeling_parameter_top_line)
+
         self.Spikeling_StimStr_frame = QFrame(self.StimulusParameter_page)
         self.Spikeling_StimStr_frame.setObjectName(u"Spikeling_StimStr_frame")
         sizePolicy2.setHeightForWidth(self.Spikeling_StimStr_frame.sizePolicy().hasHeightForWidth())
@@ -1384,7 +1457,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_23 = QVBoxLayout(self.Spikeling_StimStr_frame)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_23.setContentsMargins(5, 5, 5, 5)
         self.Spikeling_StimStr_checkBox_frame = QFrame(self.Spikeling_StimStr_frame)
         self.Spikeling_StimStr_checkBox_frame.setObjectName(u"Spikeling_StimStr_checkBox_frame")
         self.Spikeling_StimStr_checkBox_frame.setFrameShape(QFrame.StyledPanel)
@@ -1392,14 +1465,31 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_42 = QHBoxLayout(self.Spikeling_StimStr_checkBox_frame)
         self.horizontalLayout_42.setSpacing(0)
         self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
-        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_42.setContentsMargins(0, 5, 0, 0)
         self.Spikeling_StimStr_checkBox = QCheckBox(self.Spikeling_StimStr_checkBox_frame)
         self.Spikeling_StimStr_checkBox.setObjectName(u"Spikeling_StimStr_checkBox")
 
         self.horizontalLayout_42.addWidget(self.Spikeling_StimStr_checkBox)
 
+        self.Spikeling_StimStr_readings = QLabel(self.Spikeling_StimStr_checkBox_frame)
+        self.Spikeling_StimStr_readings.setObjectName(u"Spikeling_StimStr_readings")
+        self.Spikeling_StimStr_readings.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_42.addWidget(self.Spikeling_StimStr_readings)
+
 
         self.verticalLayout_23.addWidget(self.Spikeling_StimStr_checkBox_frame)
+
+        self.Spikeling_StimStr_readings_frame = QFrame(self.Spikeling_StimStr_frame)
+        self.Spikeling_StimStr_readings_frame.setObjectName(u"Spikeling_StimStr_readings_frame")
+        self.Spikeling_StimStr_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_StimStr_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_63 = QVBoxLayout(self.Spikeling_StimStr_readings_frame)
+        self.verticalLayout_63.setSpacing(0)
+        self.verticalLayout_63.setObjectName(u"verticalLayout_63")
+        self.verticalLayout_63.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_23.addWidget(self.Spikeling_StimStr_readings_frame)
 
         self.Spikeling_StimStr_Slider_frame = QFrame(self.Spikeling_StimStr_frame)
         self.Spikeling_StimStr_Slider_frame.setObjectName(u"Spikeling_StimStr_Slider_frame")
@@ -1458,7 +1548,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_41 = QHBoxLayout(self.Spikeling_StimStr_image_frame)
         self.horizontalLayout_41.setSpacing(0)
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
-        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 5)
         self.Spikeling_StimStr_image = QLabel(self.Spikeling_StimStr_image_frame)
         self.Spikeling_StimStr_image.setObjectName(u"Spikeling_StimStr_image")
         sizePolicy1.setHeightForWidth(self.Spikeling_StimStr_image.sizePolicy().hasHeightForWidth())
@@ -1478,6 +1568,9 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_parameter_middle_line = QFrame(self.StimulusParameter_page)
         self.Spikeling_parameter_middle_line.setObjectName(u"Spikeling_parameter_middle_line")
+        self.Spikeling_parameter_middle_line.setAutoFillBackground(False)
+        self.Spikeling_parameter_middle_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
+        self.Spikeling_parameter_middle_line.setLineWidth(4)
         self.Spikeling_parameter_middle_line.setFrameShape(QFrame.HLine)
         self.Spikeling_parameter_middle_line.setFrameShadow(QFrame.Sunken)
 
@@ -1492,7 +1585,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_24 = QVBoxLayout(self.Spikeling_CustomStimulus_frame)
         self.verticalLayout_24.setSpacing(0)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.verticalLayout_24.setContentsMargins(0, 10, 0, 10)
+        self.verticalLayout_24.setContentsMargins(5, 0, 5, 5)
         self.Spikeling_CustomStimulus_checkBox_frame = QFrame(self.Spikeling_CustomStimulus_frame)
         self.Spikeling_CustomStimulus_checkBox_frame.setObjectName(u"Spikeling_CustomStimulus_checkBox_frame")
         self.Spikeling_CustomStimulus_checkBox_frame.setFrameShape(QFrame.StyledPanel)
@@ -1555,16 +1648,13 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_parameter_bottom_line = QFrame(self.StimulusParameter_page)
         self.Spikeling_parameter_bottom_line.setObjectName(u"Spikeling_parameter_bottom_line")
+        self.Spikeling_parameter_bottom_line.setAutoFillBackground(False)
+        self.Spikeling_parameter_bottom_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
+        self.Spikeling_parameter_bottom_line.setLineWidth(10)
         self.Spikeling_parameter_bottom_line.setFrameShape(QFrame.HLine)
         self.Spikeling_parameter_bottom_line.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_58.addWidget(self.Spikeling_parameter_bottom_line)
-
-        self.Spikeling_PR_label = QLabel(self.StimulusParameter_page)
-        self.Spikeling_PR_label.setObjectName(u"Spikeling_PR_label")
-        self.Spikeling_PR_label.setStyleSheet(u"")
-
-        self.verticalLayout_58.addWidget(self.Spikeling_PR_label)
 
         self.Spikeling_PR_frame = QFrame(self.StimulusParameter_page)
         self.Spikeling_PR_frame.setObjectName(u"Spikeling_PR_frame")
@@ -1573,9 +1663,26 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_PR_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_PR_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_31 = QVBoxLayout(self.Spikeling_PR_frame)
-        self.verticalLayout_31.setSpacing(0)
+        self.verticalLayout_31.setSpacing(2)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
-        self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_31.setContentsMargins(5, 5, 5, 0)
+        self.Spikeling_PR_label_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_label_frame.setObjectName(u"Spikeling_PR_label_frame")
+        self.Spikeling_PR_label_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_label_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_71 = QVBoxLayout(self.Spikeling_PR_label_frame)
+        self.verticalLayout_71.setSpacing(0)
+        self.verticalLayout_71.setObjectName(u"verticalLayout_71")
+        self.verticalLayout_71.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_label = QLabel(self.Spikeling_PR_label_frame)
+        self.Spikeling_PR_label.setObjectName(u"Spikeling_PR_label")
+        self.Spikeling_PR_label.setStyleSheet(u"")
+
+        self.verticalLayout_71.addWidget(self.Spikeling_PR_label)
+
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_label_frame)
+
         self.Spikeling_PR_PhotoGain_checkBox_frame = QFrame(self.Spikeling_PR_frame)
         self.Spikeling_PR_PhotoGain_checkBox_frame.setObjectName(u"Spikeling_PR_PhotoGain_checkBox_frame")
         self.Spikeling_PR_PhotoGain_checkBox_frame.setFrameShape(QFrame.StyledPanel)
@@ -1589,8 +1696,25 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_49.addWidget(self.Spikeling_PR_PhotoGain_checkBox)
 
+        self.Spikeling_PR_Photogain_readings = QLabel(self.Spikeling_PR_PhotoGain_checkBox_frame)
+        self.Spikeling_PR_Photogain_readings.setObjectName(u"Spikeling_PR_Photogain_readings")
+        self.Spikeling_PR_Photogain_readings.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_49.addWidget(self.Spikeling_PR_Photogain_readings)
+
 
         self.verticalLayout_31.addWidget(self.Spikeling_PR_PhotoGain_checkBox_frame)
+
+        self.Spikeling_PR_Photogain_readings_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Photogain_readings_frame.setObjectName(u"Spikeling_PR_Photogain_readings_frame")
+        self.Spikeling_PR_Photogain_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Photogain_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_65 = QVBoxLayout(self.Spikeling_PR_Photogain_readings_frame)
+        self.verticalLayout_65.setSpacing(0)
+        self.verticalLayout_65.setObjectName(u"verticalLayout_65")
+        self.verticalLayout_65.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Photogain_readings_frame)
 
         self.Spikeling_PR_PhotoGain_slider_frame = QFrame(self.Spikeling_PR_frame)
         self.Spikeling_PR_PhotoGain_slider_frame.setObjectName(u"Spikeling_PR_PhotoGain_slider_frame")
@@ -1605,8 +1729,8 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_PR_PhotoGain_slider.setEnabled(False)
         self.Spikeling_PR_PhotoGain_slider.setMinimum(-100)
         self.Spikeling_PR_PhotoGain_slider.setMaximum(100)
-        self.Spikeling_PR_PhotoGain_slider.setSingleStep(10)
-        self.Spikeling_PR_PhotoGain_slider.setPageStep(25)
+        self.Spikeling_PR_PhotoGain_slider.setSingleStep(1)
+        self.Spikeling_PR_PhotoGain_slider.setPageStep(10)
         self.Spikeling_PR_PhotoGain_slider.setOrientation(Qt.Horizontal)
         self.Spikeling_PR_PhotoGain_slider.setTickPosition(QSlider.TicksBelow)
         self.Spikeling_PR_PhotoGain_slider.setTickInterval(20)
@@ -1648,7 +1772,7 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_PR_Decay_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_PR_Decay_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_36 = QHBoxLayout(self.Spikeling_PR_Decay_frame)
-        self.horizontalLayout_36.setSpacing(21)
+        self.horizontalLayout_36.setSpacing(0)
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
         self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_PR_Decay_checkBox = QCheckBox(self.Spikeling_PR_Decay_frame)
@@ -1656,26 +1780,80 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_36.addWidget(self.Spikeling_PR_Decay_checkBox, 0, Qt.AlignLeft)
 
-        self.Spikeling_PR_Decay_value = QLineEdit(self.Spikeling_PR_Decay_frame)
-        self.Spikeling_PR_Decay_value.setObjectName(u"Spikeling_PR_Decay_value")
-        self.Spikeling_PR_Decay_value.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.Spikeling_PR_Decay_value.sizePolicy().hasHeightForWidth())
-        self.Spikeling_PR_Decay_value.setSizePolicy(sizePolicy4)
-        self.Spikeling_PR_Decay_value.setMinimumSize(QSize(75, 0))
-        self.Spikeling_PR_Decay_value.setMaximumSize(QSize(75, 16777215))
-        self.Spikeling_PR_Decay_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.Spikeling_PR_Decay_readings = QLabel(self.Spikeling_PR_Decay_frame)
+        self.Spikeling_PR_Decay_readings.setObjectName(u"Spikeling_PR_Decay_readings")
+        self.Spikeling_PR_Decay_readings.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_36.addWidget(self.Spikeling_PR_Decay_value)
+        self.horizontalLayout_36.addWidget(self.Spikeling_PR_Decay_readings)
 
 
         self.verticalLayout_31.addWidget(self.Spikeling_PR_Decay_frame)
+
+        self.Spikeling_PR_Decay_readings_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Decay_readings_frame.setObjectName(u"Spikeling_PR_Decay_readings_frame")
+        self.Spikeling_PR_Decay_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Decay_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_67 = QVBoxLayout(self.Spikeling_PR_Decay_readings_frame)
+        self.verticalLayout_67.setSpacing(0)
+        self.verticalLayout_67.setObjectName(u"verticalLayout_67")
+        self.verticalLayout_67.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Decay_readings_frame)
+
+        self.Spikeling_PR_Decay_slider_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Decay_slider_frame.setObjectName(u"Spikeling_PR_Decay_slider_frame")
+        self.Spikeling_PR_Decay_slider_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Decay_slider_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_66 = QVBoxLayout(self.Spikeling_PR_Decay_slider_frame)
+        self.verticalLayout_66.setSpacing(0)
+        self.verticalLayout_66.setObjectName(u"verticalLayout_66")
+        self.verticalLayout_66.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_Decay_slider = QSlider(self.Spikeling_PR_Decay_slider_frame)
+        self.Spikeling_PR_Decay_slider.setObjectName(u"Spikeling_PR_Decay_slider")
+        self.Spikeling_PR_Decay_slider.setEnabled(False)
+        self.Spikeling_PR_Decay_slider.setMinimum(10)
+        self.Spikeling_PR_Decay_slider.setMaximum(125)
+        self.Spikeling_PR_Decay_slider.setSingleStep(1)
+        self.Spikeling_PR_Decay_slider.setPageStep(10)
+        self.Spikeling_PR_Decay_slider.setValue(100)
+        self.Spikeling_PR_Decay_slider.setOrientation(Qt.Horizontal)
+        self.Spikeling_PR_Decay_slider.setTickPosition(QSlider.TicksBelow)
+        self.Spikeling_PR_Decay_slider.setTickInterval(10)
+
+        self.verticalLayout_66.addWidget(self.Spikeling_PR_Decay_slider)
+
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Decay_slider_frame)
+
+        self.Spikeling_PR_Decay_values_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Decay_values_frame.setObjectName(u"Spikeling_PR_Decay_values_frame")
+        self.Spikeling_PR_Decay_values_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Decay_values_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_87 = QHBoxLayout(self.Spikeling_PR_Decay_values_frame)
+        self.horizontalLayout_87.setSpacing(0)
+        self.horizontalLayout_87.setObjectName(u"horizontalLayout_87")
+        self.horizontalLayout_87.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_Decay_values_slow = QLabel(self.Spikeling_PR_Decay_values_frame)
+        self.Spikeling_PR_Decay_values_slow.setObjectName(u"Spikeling_PR_Decay_values_slow")
+        self.Spikeling_PR_Decay_values_slow.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_87.addWidget(self.Spikeling_PR_Decay_values_slow)
+
+        self.Spikeling_PR_Decay_values_fast = QLabel(self.Spikeling_PR_Decay_values_frame)
+        self.Spikeling_PR_Decay_values_fast.setObjectName(u"Spikeling_PR_Decay_values_fast")
+        self.Spikeling_PR_Decay_values_fast.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_87.addWidget(self.Spikeling_PR_Decay_values_fast)
+
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Decay_values_frame)
 
         self.Spikeling_PR_Recovery_frame = QFrame(self.Spikeling_PR_frame)
         self.Spikeling_PR_Recovery_frame.setObjectName(u"Spikeling_PR_Recovery_frame")
         self.Spikeling_PR_Recovery_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_PR_Recovery_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_37 = QHBoxLayout(self.Spikeling_PR_Recovery_frame)
-        self.horizontalLayout_37.setSpacing(5)
+        self.horizontalLayout_37.setSpacing(0)
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
         self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_PR_Recovery_checkBox = QCheckBox(self.Spikeling_PR_Recovery_frame)
@@ -1683,19 +1861,72 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_37.addWidget(self.Spikeling_PR_Recovery_checkBox, 0, Qt.AlignLeft)
 
-        self.Spikeling_PR_Recovery_value = QLineEdit(self.Spikeling_PR_Recovery_frame)
-        self.Spikeling_PR_Recovery_value.setObjectName(u"Spikeling_PR_Recovery_value")
-        self.Spikeling_PR_Recovery_value.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.Spikeling_PR_Recovery_value.sizePolicy().hasHeightForWidth())
-        self.Spikeling_PR_Recovery_value.setSizePolicy(sizePolicy4)
-        self.Spikeling_PR_Recovery_value.setMinimumSize(QSize(75, 0))
-        self.Spikeling_PR_Recovery_value.setMaximumSize(QSize(75, 16777215))
-        self.Spikeling_PR_Recovery_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.Spikeling_PR_Recovery_readings_frame = QFrame(self.Spikeling_PR_Recovery_frame)
+        self.Spikeling_PR_Recovery_readings_frame.setObjectName(u"Spikeling_PR_Recovery_readings_frame")
+        self.Spikeling_PR_Recovery_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Recovery_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_72 = QVBoxLayout(self.Spikeling_PR_Recovery_readings_frame)
+        self.verticalLayout_72.setSpacing(0)
+        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
+        self.verticalLayout_72.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_Recovery_readings = QLabel(self.Spikeling_PR_Recovery_readings_frame)
+        self.Spikeling_PR_Recovery_readings.setObjectName(u"Spikeling_PR_Recovery_readings")
+        self.Spikeling_PR_Recovery_readings.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_37.addWidget(self.Spikeling_PR_Recovery_value)
+        self.verticalLayout_72.addWidget(self.Spikeling_PR_Recovery_readings)
+
+
+        self.horizontalLayout_37.addWidget(self.Spikeling_PR_Recovery_readings_frame)
 
 
         self.verticalLayout_31.addWidget(self.Spikeling_PR_Recovery_frame)
+
+        self.Spikeling_PR_Recovery_slider_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Recovery_slider_frame.setObjectName(u"Spikeling_PR_Recovery_slider_frame")
+        self.Spikeling_PR_Recovery_slider_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Recovery_slider_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_68 = QVBoxLayout(self.Spikeling_PR_Recovery_slider_frame)
+        self.verticalLayout_68.setSpacing(0)
+        self.verticalLayout_68.setObjectName(u"verticalLayout_68")
+        self.verticalLayout_68.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_Recovery_slider = QSlider(self.Spikeling_PR_Recovery_slider_frame)
+        self.Spikeling_PR_Recovery_slider.setObjectName(u"Spikeling_PR_Recovery_slider")
+        self.Spikeling_PR_Recovery_slider.setEnabled(False)
+        self.Spikeling_PR_Recovery_slider.setMinimum(1)
+        self.Spikeling_PR_Recovery_slider.setMaximum(100)
+        self.Spikeling_PR_Recovery_slider.setSingleStep(1)
+        self.Spikeling_PR_Recovery_slider.setPageStep(10)
+        self.Spikeling_PR_Recovery_slider.setValue(25)
+        self.Spikeling_PR_Recovery_slider.setOrientation(Qt.Horizontal)
+        self.Spikeling_PR_Recovery_slider.setTickPosition(QSlider.TicksBelow)
+        self.Spikeling_PR_Recovery_slider.setTickInterval(10)
+
+        self.verticalLayout_68.addWidget(self.Spikeling_PR_Recovery_slider)
+
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Recovery_slider_frame)
+
+        self.Spikeling_PR_Recovery_values_frame = QFrame(self.Spikeling_PR_frame)
+        self.Spikeling_PR_Recovery_values_frame.setObjectName(u"Spikeling_PR_Recovery_values_frame")
+        self.Spikeling_PR_Recovery_values_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PR_Recovery_values_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_102 = QHBoxLayout(self.Spikeling_PR_Recovery_values_frame)
+        self.horizontalLayout_102.setSpacing(0)
+        self.horizontalLayout_102.setObjectName(u"horizontalLayout_102")
+        self.horizontalLayout_102.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PR_Recovery_values_slow = QLabel(self.Spikeling_PR_Recovery_values_frame)
+        self.Spikeling_PR_Recovery_values_slow.setObjectName(u"Spikeling_PR_Recovery_values_slow")
+
+        self.horizontalLayout_102.addWidget(self.Spikeling_PR_Recovery_values_slow)
+
+        self.Spikeling_PR_Recovery_values_fast = QLabel(self.Spikeling_PR_Recovery_values_frame)
+        self.Spikeling_PR_Recovery_values_fast.setObjectName(u"Spikeling_PR_Recovery_values_fast")
+        self.Spikeling_PR_Recovery_values_fast.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_102.addWidget(self.Spikeling_PR_Recovery_values_fast)
+
+
+        self.verticalLayout_31.addWidget(self.Spikeling_PR_Recovery_values_frame)
 
 
         self.verticalLayout_58.addWidget(self.Spikeling_PR_frame)
@@ -1703,7 +1934,7 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_parameter_stackedwidget.addWidget(self.StimulusParameter_page)
         self.NeuronParameter_page = QWidget()
         self.NeuronParameter_page.setObjectName(u"NeuronParameter_page")
-        self.NeuronParameter_page.setMinimumSize(QSize(175, 0))
+        self.NeuronParameter_page.setMinimumSize(QSize(200, 0))
         self.NeuronParameter_page.setMaximumSize(QSize(175, 16777215))
         self.verticalLayout_57 = QVBoxLayout(self.NeuronParameter_page)
         self.verticalLayout_57.setSpacing(0)
@@ -1713,14 +1944,14 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_NeuronParameter_frame.setObjectName(u"Spikeling_NeuronParameter_frame")
         sizePolicy3.setHeightForWidth(self.Spikeling_NeuronParameter_frame.sizePolicy().hasHeightForWidth())
         self.Spikeling_NeuronParameter_frame.setSizePolicy(sizePolicy3)
-        self.Spikeling_NeuronParameter_frame.setMinimumSize(QSize(175, 0))
+        self.Spikeling_NeuronParameter_frame.setMinimumSize(QSize(200, 0))
         self.Spikeling_NeuronParameter_frame.setMaximumSize(QSize(175, 16777215))
         self.Spikeling_NeuronParameter_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_NeuronParameter_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_17 = QVBoxLayout(self.Spikeling_NeuronParameter_frame)
         self.verticalLayout_17.setSpacing(5)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.verticalLayout_17.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_17.setContentsMargins(0, 5, 0, 5)
         self.Spikeling_PatchClamp_frame = QFrame(self.Spikeling_NeuronParameter_frame)
         self.Spikeling_PatchClamp_frame.setObjectName(u"Spikeling_PatchClamp_frame")
         self.Spikeling_PatchClamp_frame.setFrameShape(QFrame.StyledPanel)
@@ -1728,7 +1959,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_21 = QVBoxLayout(self.Spikeling_PatchClamp_frame)
         self.verticalLayout_21.setSpacing(0)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.verticalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_21.setContentsMargins(5, 0, 5, 0)
         self.Spikeling_PatchClamp_label_frame = QFrame(self.Spikeling_PatchClamp_frame)
         self.Spikeling_PatchClamp_label_frame.setObjectName(u"Spikeling_PatchClamp_label_frame")
         self.Spikeling_PatchClamp_label_frame.setFrameShape(QFrame.StyledPanel)
@@ -1760,6 +1991,23 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_PatchClamp_checkBox.setTristate(False)
 
         self.horizontalLayout_85.addWidget(self.Spikeling_PatchClamp_checkBox)
+
+        self.Spikeling_PatchClamp_reading_frame = QFrame(self.Spikeling_PatchClamp_checkBox_frame)
+        self.Spikeling_PatchClamp_reading_frame.setObjectName(u"Spikeling_PatchClamp_reading_frame")
+        self.Spikeling_PatchClamp_reading_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_PatchClamp_reading_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_69 = QVBoxLayout(self.Spikeling_PatchClamp_reading_frame)
+        self.verticalLayout_69.setSpacing(0)
+        self.verticalLayout_69.setObjectName(u"verticalLayout_69")
+        self.verticalLayout_69.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_PatchClamp_reading = QLabel(self.Spikeling_PatchClamp_reading_frame)
+        self.Spikeling_PatchClamp_reading.setObjectName(u"Spikeling_PatchClamp_reading")
+        self.Spikeling_PatchClamp_reading.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_69.addWidget(self.Spikeling_PatchClamp_reading)
+
+
+        self.horizontalLayout_85.addWidget(self.Spikeling_PatchClamp_reading_frame)
 
 
         self.verticalLayout_21.addWidget(self.Spikeling_PatchClamp_checkBox_frame)
@@ -1819,6 +2067,8 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_neuronparameters_top_line = QFrame(self.Spikeling_NeuronParameter_frame)
         self.Spikeling_neuronparameters_top_line.setObjectName(u"Spikeling_neuronparameters_top_line")
+        self.Spikeling_neuronparameters_top_line.setAutoFillBackground(False)
+        self.Spikeling_neuronparameters_top_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
         self.Spikeling_neuronparameters_top_line.setFrameShape(QFrame.HLine)
         self.Spikeling_neuronparameters_top_line.setFrameShadow(QFrame.Sunken)
 
@@ -1831,7 +2081,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_25 = QVBoxLayout(self.Spikeling_Noise_frame)
         self.verticalLayout_25.setSpacing(0)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_25.setContentsMargins(5, 0, 5, 0)
         self.Spikeling_Noise_label_frame = QFrame(self.Spikeling_Noise_frame)
         self.Spikeling_Noise_label_frame.setObjectName(u"Spikeling_Noise_label_frame")
         self.Spikeling_Noise_label_frame.setFrameShape(QFrame.StyledPanel)
@@ -1861,6 +2111,23 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_Noise_checkBox.setObjectName(u"Spikeling_Noise_checkBox")
 
         self.horizontalLayout_91.addWidget(self.Spikeling_Noise_checkBox)
+
+        self.Spikeling_Noise_readings_frame = QFrame(self.Spikeling_Noise_checkBox_frame)
+        self.Spikeling_Noise_readings_frame.setObjectName(u"Spikeling_Noise_readings_frame")
+        self.Spikeling_Noise_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Noise_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_74 = QVBoxLayout(self.Spikeling_Noise_readings_frame)
+        self.verticalLayout_74.setSpacing(0)
+        self.verticalLayout_74.setObjectName(u"verticalLayout_74")
+        self.verticalLayout_74.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Noise_readings = QLabel(self.Spikeling_Noise_readings_frame)
+        self.Spikeling_Noise_readings.setObjectName(u"Spikeling_Noise_readings")
+        self.Spikeling_Noise_readings.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_74.addWidget(self.Spikeling_Noise_readings)
+
+
+        self.horizontalLayout_91.addWidget(self.Spikeling_Noise_readings_frame)
 
 
         self.verticalLayout_25.addWidget(self.Spikeling_Noise_checkBox_frame)
@@ -1914,6 +2181,8 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_neuronparameters_middle_line = QFrame(self.Spikeling_NeuronParameter_frame)
         self.Spikeling_neuronparameters_middle_line.setObjectName(u"Spikeling_neuronparameters_middle_line")
+        self.Spikeling_neuronparameters_middle_line.setAutoFillBackground(False)
+        self.Spikeling_neuronparameters_middle_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
         self.Spikeling_neuronparameters_middle_line.setFrameShape(QFrame.HLine)
         self.Spikeling_neuronparameters_middle_line.setFrameShadow(QFrame.Sunken)
 
@@ -1926,7 +2195,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_32 = QVBoxLayout(self.Spikeling_Synapse1_frame)
         self.verticalLayout_32.setSpacing(0)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
-        self.verticalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_32.setContentsMargins(5, 0, 5, 0)
         self.Spikeling_Synapse1_label_frame = QFrame(self.Spikeling_Synapse1_frame)
         self.Spikeling_Synapse1_label_frame.setObjectName(u"Spikeling_Synapse1_label_frame")
         self.Spikeling_Synapse1_label_frame.setFrameShape(QFrame.StyledPanel)
@@ -1934,7 +2203,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_92 = QHBoxLayout(self.Spikeling_Synapse1_label_frame)
         self.horizontalLayout_92.setSpacing(0)
         self.horizontalLayout_92.setObjectName(u"horizontalLayout_92")
-        self.horizontalLayout_92.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_92.setContentsMargins(0, 0, 0, 5)
         self.Spikeling_Synapse1_label = QLabel(self.Spikeling_Synapse1_label_frame)
         self.Spikeling_Synapse1_label.setObjectName(u"Spikeling_Synapse1_label")
         self.Spikeling_Synapse1_label.setStyleSheet(u"color: rgb(147, 161, 161);")
@@ -1956,6 +2225,23 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_Synapse1_checkBox.setObjectName(u"Spikeling_Synapse1_checkBox")
 
         self.horizontalLayout_94.addWidget(self.Spikeling_Synapse1_checkBox)
+
+        self.Spikeling_Synapse1_readings_frame = QFrame(self.Spikeling_Synapse1_checkBox_frame)
+        self.Spikeling_Synapse1_readings_frame.setObjectName(u"Spikeling_Synapse1_readings_frame")
+        self.Spikeling_Synapse1_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse1_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_70 = QVBoxLayout(self.Spikeling_Synapse1_readings_frame)
+        self.verticalLayout_70.setSpacing(0)
+        self.verticalLayout_70.setObjectName(u"verticalLayout_70")
+        self.verticalLayout_70.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse1_readings = QLabel(self.Spikeling_Synapse1_readings_frame)
+        self.Spikeling_Synapse1_readings.setObjectName(u"Spikeling_Synapse1_readings")
+        self.Spikeling_Synapse1_readings.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_70.addWidget(self.Spikeling_Synapse1_readings)
+
+
+        self.horizontalLayout_94.addWidget(self.Spikeling_Synapse1_readings_frame)
 
 
         self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_checkBox_frame)
@@ -1989,7 +2275,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_96 = QHBoxLayout(self.Spikeling_Synapse1_values_frame)
         self.horizontalLayout_96.setSpacing(0)
         self.horizontalLayout_96.setObjectName(u"horizontalLayout_96")
-        self.horizontalLayout_96.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_96.setContentsMargins(0, 0, 0, 5)
         self.Spikeling_Synapse1_min = QLabel(self.Spikeling_Synapse1_values_frame)
         self.Spikeling_Synapse1_min.setObjectName(u"Spikeling_Synapse1_min")
 
@@ -2007,30 +2293,94 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_96.addWidget(self.Spikeling_Synapse1_max)
 
 
-        self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_values_frame, 0, Qt.AlignTop)
+        self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_values_frame)
+
+        self.Spikeling_Synapse1_Decay_checkBox_frame = QFrame(self.Spikeling_Synapse1_frame)
+        self.Spikeling_Synapse1_Decay_checkBox_frame.setObjectName(u"Spikeling_Synapse1_Decay_checkBox_frame")
+        self.Spikeling_Synapse1_Decay_checkBox_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse1_Decay_checkBox_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_104 = QHBoxLayout(self.Spikeling_Synapse1_Decay_checkBox_frame)
+        self.horizontalLayout_104.setSpacing(0)
+        self.horizontalLayout_104.setObjectName(u"horizontalLayout_104")
+        self.horizontalLayout_104.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse1_Decay_checkBox = QCheckBox(self.Spikeling_Synapse1_Decay_checkBox_frame)
+        self.Spikeling_Synapse1_Decay_checkBox.setObjectName(u"Spikeling_Synapse1_Decay_checkBox")
+
+        self.horizontalLayout_104.addWidget(self.Spikeling_Synapse1_Decay_checkBox)
+
+        self.Spikeling_Synapse1_Decay_readings_frame = QFrame(self.Spikeling_Synapse1_Decay_checkBox_frame)
+        self.Spikeling_Synapse1_Decay_readings_frame.setObjectName(u"Spikeling_Synapse1_Decay_readings_frame")
+        self.Spikeling_Synapse1_Decay_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse1_Decay_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_73 = QVBoxLayout(self.Spikeling_Synapse1_Decay_readings_frame)
+        self.verticalLayout_73.setSpacing(0)
+        self.verticalLayout_73.setObjectName(u"verticalLayout_73")
+        self.verticalLayout_73.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse1_Decay_readings = QLabel(self.Spikeling_Synapse1_Decay_readings_frame)
+        self.Spikeling_Synapse1_Decay_readings.setObjectName(u"Spikeling_Synapse1_Decay_readings")
+        self.Spikeling_Synapse1_Decay_readings.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_73.addWidget(self.Spikeling_Synapse1_Decay_readings)
+
+
+        self.horizontalLayout_104.addWidget(self.Spikeling_Synapse1_Decay_readings_frame)
+
+
+        self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_Decay_checkBox_frame)
+
+        self.Spikeling_Synapse1_Decay_slider_frame = QFrame(self.Spikeling_Synapse1_frame)
+        self.Spikeling_Synapse1_Decay_slider_frame.setObjectName(u"Spikeling_Synapse1_Decay_slider_frame")
+        self.Spikeling_Synapse1_Decay_slider_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse1_Decay_slider_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_78 = QVBoxLayout(self.Spikeling_Synapse1_Decay_slider_frame)
+        self.verticalLayout_78.setSpacing(0)
+        self.verticalLayout_78.setObjectName(u"verticalLayout_78")
+        self.verticalLayout_78.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse1_Decay_slider = QSlider(self.Spikeling_Synapse1_Decay_slider_frame)
+        self.Spikeling_Synapse1_Decay_slider.setObjectName(u"Spikeling_Synapse1_Decay_slider")
+        self.Spikeling_Synapse1_Decay_slider.setEnabled(False)
+        self.Spikeling_Synapse1_Decay_slider.setMinimum(975)
+        self.Spikeling_Synapse1_Decay_slider.setMaximum(1000)
+        self.Spikeling_Synapse1_Decay_slider.setSliderPosition(995)
+        self.Spikeling_Synapse1_Decay_slider.setOrientation(Qt.Horizontal)
+        self.Spikeling_Synapse1_Decay_slider.setTickPosition(QSlider.TicksBelow)
+        self.Spikeling_Synapse1_Decay_slider.setTickInterval(2)
+
+        self.verticalLayout_78.addWidget(self.Spikeling_Synapse1_Decay_slider)
+
+
+        self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_Decay_slider_frame)
+
+        self.Spikeling_Synapse1_Decay_values_frame = QFrame(self.Spikeling_Synapse1_frame)
+        self.Spikeling_Synapse1_Decay_values_frame.setObjectName(u"Spikeling_Synapse1_Decay_values_frame")
+        self.Spikeling_Synapse1_Decay_values_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse1_Decay_values_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_35 = QHBoxLayout(self.Spikeling_Synapse1_Decay_values_frame)
+        self.horizontalLayout_35.setSpacing(0)
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse1_Decay_values_slow = QLabel(self.Spikeling_Synapse1_Decay_values_frame)
+        self.Spikeling_Synapse1_Decay_values_slow.setObjectName(u"Spikeling_Synapse1_Decay_values_slow")
+
+        self.horizontalLayout_35.addWidget(self.Spikeling_Synapse1_Decay_values_slow)
+
+        self.Spikeling_Synapse1_Decay_values_fast = QLabel(self.Spikeling_Synapse1_Decay_values_frame)
+        self.Spikeling_Synapse1_Decay_values_fast.setObjectName(u"Spikeling_Synapse1_Decay_values_fast")
+        self.Spikeling_Synapse1_Decay_values_fast.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_35.addWidget(self.Spikeling_Synapse1_Decay_values_fast)
+
+
+        self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_Decay_values_frame)
 
         self.Spikeling_Synapse1_Decay_frame = QFrame(self.Spikeling_Synapse1_frame)
         self.Spikeling_Synapse1_Decay_frame.setObjectName(u"Spikeling_Synapse1_Decay_frame")
         self.Spikeling_Synapse1_Decay_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_Synapse1_Decay_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_93 = QHBoxLayout(self.Spikeling_Synapse1_Decay_frame)
-        self.horizontalLayout_93.setSpacing(21)
+        self.horizontalLayout_93.setSpacing(0)
         self.horizontalLayout_93.setObjectName(u"horizontalLayout_93")
         self.horizontalLayout_93.setContentsMargins(0, 0, 0, 0)
-        self.Spikeling_Synapse1_Decay_checkBox = QCheckBox(self.Spikeling_Synapse1_Decay_frame)
-        self.Spikeling_Synapse1_Decay_checkBox.setObjectName(u"Spikeling_Synapse1_Decay_checkBox")
-
-        self.horizontalLayout_93.addWidget(self.Spikeling_Synapse1_Decay_checkBox)
-
-        self.Spikeling_Synapse1_Decay_value = QLineEdit(self.Spikeling_Synapse1_Decay_frame)
-        self.Spikeling_Synapse1_Decay_value.setObjectName(u"Spikeling_Synapse1_Decay_value")
-        self.Spikeling_Synapse1_Decay_value.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.Spikeling_Synapse1_Decay_value.sizePolicy().hasHeightForWidth())
-        self.Spikeling_Synapse1_Decay_value.setSizePolicy(sizePolicy4)
-        self.Spikeling_Synapse1_Decay_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.horizontalLayout_93.addWidget(self.Spikeling_Synapse1_Decay_value)
-
 
         self.verticalLayout_32.addWidget(self.Spikeling_Synapse1_Decay_frame)
 
@@ -2039,6 +2389,8 @@ class Ui_MainWindow(QWidget):
 
         self.Spikeling_neuronparameters_bottom_line = QFrame(self.Spikeling_NeuronParameter_frame)
         self.Spikeling_neuronparameters_bottom_line.setObjectName(u"Spikeling_neuronparameters_bottom_line")
+        self.Spikeling_neuronparameters_bottom_line.setAutoFillBackground(False)
+        self.Spikeling_neuronparameters_bottom_line.setStyleSheet(u"background-color: rgb(0, 30, 38);")
         self.Spikeling_neuronparameters_bottom_line.setFrameShape(QFrame.HLine)
         self.Spikeling_neuronparameters_bottom_line.setFrameShadow(QFrame.Sunken)
 
@@ -2051,7 +2403,7 @@ class Ui_MainWindow(QWidget):
         self.verticalLayout_33 = QVBoxLayout(self.Spikeling_Synapse2_frame)
         self.verticalLayout_33.setSpacing(0)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_33.setContentsMargins(5, 0, 5, 0)
         self.Spikeling_Synapse2_label_frame = QFrame(self.Spikeling_Synapse2_frame)
         self.Spikeling_Synapse2_label_frame.setObjectName(u"Spikeling_Synapse2_label_frame")
         self.Spikeling_Synapse2_label_frame.setFrameShape(QFrame.StyledPanel)
@@ -2059,7 +2411,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_97 = QHBoxLayout(self.Spikeling_Synapse2_label_frame)
         self.horizontalLayout_97.setSpacing(0)
         self.horizontalLayout_97.setObjectName(u"horizontalLayout_97")
-        self.horizontalLayout_97.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_97.setContentsMargins(0, 0, 0, 5)
         self.Spikeling_Synapse2_label = QLabel(self.Spikeling_Synapse2_label_frame)
         self.Spikeling_Synapse2_label.setObjectName(u"Spikeling_Synapse2_label")
         self.Spikeling_Synapse2_label.setStyleSheet(u"color: rgb(147, 161, 161);")
@@ -2069,6 +2421,29 @@ class Ui_MainWindow(QWidget):
 
         self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_label_frame)
 
+        self.Spikeling_Synapse2_readings_frame = QFrame(self.Spikeling_Synapse2_frame)
+        self.Spikeling_Synapse2_readings_frame.setObjectName(u"Spikeling_Synapse2_readings_frame")
+        self.Spikeling_Synapse2_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse2_readings_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_106 = QHBoxLayout(self.Spikeling_Synapse2_readings_frame)
+        self.horizontalLayout_106.setSpacing(0)
+        self.horizontalLayout_106.setObjectName(u"horizontalLayout_106")
+        self.horizontalLayout_106.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse2_checkBox = QCheckBox(self.Spikeling_Synapse2_readings_frame)
+        self.Spikeling_Synapse2_checkBox.setObjectName(u"Spikeling_Synapse2_checkBox")
+        self.Spikeling_Synapse2_checkBox.setEnabled(True)
+
+        self.horizontalLayout_106.addWidget(self.Spikeling_Synapse2_checkBox)
+
+        self.Spikeling_Synapse2_readings = QLabel(self.Spikeling_Synapse2_readings_frame)
+        self.Spikeling_Synapse2_readings.setObjectName(u"Spikeling_Synapse2_readings")
+        self.Spikeling_Synapse2_readings.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_106.addWidget(self.Spikeling_Synapse2_readings)
+
+
+        self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_readings_frame)
+
         self.Spikeling_Synapse2_checkBox_frame = QFrame(self.Spikeling_Synapse2_frame)
         self.Spikeling_Synapse2_checkBox_frame.setObjectName(u"Spikeling_Synapse2_checkBox_frame")
         self.Spikeling_Synapse2_checkBox_frame.setFrameShape(QFrame.StyledPanel)
@@ -2077,12 +2452,6 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_99.setSpacing(0)
         self.horizontalLayout_99.setObjectName(u"horizontalLayout_99")
         self.horizontalLayout_99.setContentsMargins(0, 0, 0, 0)
-        self.Spikeling_Synapse2_checkBox = QCheckBox(self.Spikeling_Synapse2_checkBox_frame)
-        self.Spikeling_Synapse2_checkBox.setObjectName(u"Spikeling_Synapse2_checkBox")
-        self.Spikeling_Synapse2_checkBox.setEnabled(True)
-
-        self.horizontalLayout_99.addWidget(self.Spikeling_Synapse2_checkBox)
-
 
         self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_checkBox_frame)
 
@@ -2115,7 +2484,7 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_60 = QHBoxLayout(self.Spikeling_Synapse2_values_frame)
         self.horizontalLayout_60.setSpacing(0)
         self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
-        self.horizontalLayout_60.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_60.setContentsMargins(0, 0, 0, 5)
         self.Spikeling_Synapse2_min = QLabel(self.Spikeling_Synapse2_values_frame)
         self.Spikeling_Synapse2_min.setObjectName(u"Spikeling_Synapse2_min")
 
@@ -2143,7 +2512,7 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_Synapse2_Decay_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_Synapse2_Decay_frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_98 = QHBoxLayout(self.Spikeling_Synapse2_Decay_frame)
-        self.horizontalLayout_98.setSpacing(21)
+        self.horizontalLayout_98.setSpacing(0)
         self.horizontalLayout_98.setObjectName(u"horizontalLayout_98")
         self.horizontalLayout_98.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_Synapse2_Decay_checkBox = QCheckBox(self.Spikeling_Synapse2_Decay_frame)
@@ -2151,17 +2520,72 @@ class Ui_MainWindow(QWidget):
 
         self.horizontalLayout_98.addWidget(self.Spikeling_Synapse2_Decay_checkBox)
 
-        self.Spikeling_Synapse2_Decay_value = QLineEdit(self.Spikeling_Synapse2_Decay_frame)
-        self.Spikeling_Synapse2_Decay_value.setObjectName(u"Spikeling_Synapse2_Decay_value")
-        self.Spikeling_Synapse2_Decay_value.setEnabled(False)
-        sizePolicy4.setHeightForWidth(self.Spikeling_Synapse2_Decay_value.sizePolicy().hasHeightForWidth())
-        self.Spikeling_Synapse2_Decay_value.setSizePolicy(sizePolicy4)
-        self.Spikeling_Synapse2_Decay_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.Spikeling_Synapse2_Decay_readings = QLabel(self.Spikeling_Synapse2_Decay_frame)
+        self.Spikeling_Synapse2_Decay_readings.setObjectName(u"Spikeling_Synapse2_Decay_readings")
+        self.Spikeling_Synapse2_Decay_readings.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_98.addWidget(self.Spikeling_Synapse2_Decay_value)
+        self.horizontalLayout_98.addWidget(self.Spikeling_Synapse2_Decay_readings)
 
 
         self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_Decay_frame)
+
+        self.Spikeling_Synapse2_Decay_readings_frame = QFrame(self.Spikeling_Synapse2_frame)
+        self.Spikeling_Synapse2_Decay_readings_frame.setObjectName(u"Spikeling_Synapse2_Decay_readings_frame")
+        self.Spikeling_Synapse2_Decay_readings_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse2_Decay_readings_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_80 = QVBoxLayout(self.Spikeling_Synapse2_Decay_readings_frame)
+        self.verticalLayout_80.setSpacing(0)
+        self.verticalLayout_80.setObjectName(u"verticalLayout_80")
+        self.verticalLayout_80.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_Decay_readings_frame)
+
+        self.Spikeling_Synapse2_Decay_slider_frame = QFrame(self.Spikeling_Synapse2_frame)
+        self.Spikeling_Synapse2_Decay_slider_frame.setObjectName(u"Spikeling_Synapse2_Decay_slider_frame")
+        self.Spikeling_Synapse2_Decay_slider_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse2_Decay_slider_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_81 = QVBoxLayout(self.Spikeling_Synapse2_Decay_slider_frame)
+        self.verticalLayout_81.setSpacing(0)
+        self.verticalLayout_81.setObjectName(u"verticalLayout_81")
+        self.verticalLayout_81.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse2_Decay_slider = QSlider(self.Spikeling_Synapse2_Decay_slider_frame)
+        self.Spikeling_Synapse2_Decay_slider.setObjectName(u"Spikeling_Synapse2_Decay_slider")
+        self.Spikeling_Synapse2_Decay_slider.setEnabled(False)
+        self.Spikeling_Synapse2_Decay_slider.setMinimum(975)
+        self.Spikeling_Synapse2_Decay_slider.setMaximum(1000)
+        self.Spikeling_Synapse2_Decay_slider.setPageStep(10)
+        self.Spikeling_Synapse2_Decay_slider.setValue(995)
+        self.Spikeling_Synapse2_Decay_slider.setSliderPosition(995)
+        self.Spikeling_Synapse2_Decay_slider.setOrientation(Qt.Horizontal)
+        self.Spikeling_Synapse2_Decay_slider.setTickPosition(QSlider.TicksBelow)
+        self.Spikeling_Synapse2_Decay_slider.setTickInterval(2)
+
+        self.verticalLayout_81.addWidget(self.Spikeling_Synapse2_Decay_slider)
+
+
+        self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_Decay_slider_frame)
+
+        self.Spikeling_Synapse2_Decay_values_frame = QFrame(self.Spikeling_Synapse2_frame)
+        self.Spikeling_Synapse2_Decay_values_frame.setObjectName(u"Spikeling_Synapse2_Decay_values_frame")
+        self.Spikeling_Synapse2_Decay_values_frame.setFrameShape(QFrame.StyledPanel)
+        self.Spikeling_Synapse2_Decay_values_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_47 = QHBoxLayout(self.Spikeling_Synapse2_Decay_values_frame)
+        self.horizontalLayout_47.setSpacing(0)
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
+        self.Spikeling_Synapse2_Decay_values_slow = QLabel(self.Spikeling_Synapse2_Decay_values_frame)
+        self.Spikeling_Synapse2_Decay_values_slow.setObjectName(u"Spikeling_Synapse2_Decay_values_slow")
+
+        self.horizontalLayout_47.addWidget(self.Spikeling_Synapse2_Decay_values_slow)
+
+        self.Spikeling_Synapse2_Decay_values_fast = QLabel(self.Spikeling_Synapse2_Decay_values_frame)
+        self.Spikeling_Synapse2_Decay_values_fast.setObjectName(u"Spikeling_Synapse2_Decay_values_fast")
+        self.Spikeling_Synapse2_Decay_values_fast.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_47.addWidget(self.Spikeling_Synapse2_Decay_values_fast)
+
+
+        self.verticalLayout_33.addWidget(self.Spikeling_Synapse2_Decay_values_frame)
 
 
         self.verticalLayout_17.addWidget(self.Spikeling_Synapse2_frame)
@@ -2197,9 +2621,11 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_79 = QHBoxLayout(self.Spikeling_rightMenuSubContainer_frame)
         self.horizontalLayout_79.setSpacing(0)
         self.horizontalLayout_79.setObjectName(u"horizontalLayout_79")
-        self.horizontalLayout_79.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_79.setContentsMargins(0, 22, 0, 0)
         self.Spikeling_rightMenuSubContainer_pushButton = QPushButton(self.Spikeling_rightMenuSubContainer_frame)
         self.Spikeling_rightMenuSubContainer_pushButton.setObjectName(u"Spikeling_rightMenuSubContainer_pushButton")
+        self.Spikeling_rightMenuSubContainer_pushButton.setMinimumSize(QSize(0, 0))
+        self.Spikeling_rightMenuSubContainer_pushButton.setFont(font)
         self.Spikeling_rightMenuSubContainer_pushButton.setStyleSheet(u"")
         icon16 = QIcon()
         icon16.addFile(u":/resources/resources/MenuRight.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -2216,13 +2642,13 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_rightMenuParameterContainer_frame.setFrameShape(QFrame.StyledPanel)
         self.Spikeling_rightMenuParameterContainer_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_56 = QVBoxLayout(self.Spikeling_rightMenuParameterContainer_frame)
-        self.verticalLayout_56.setSpacing(0)
+        self.verticalLayout_56.setSpacing(50)
         self.verticalLayout_56.setObjectName(u"verticalLayout_56")
         self.verticalLayout_56.setContentsMargins(0, 0, 0, 0)
         self.Spikeling_StimulusParameter_pushButton = QPushButton(self.Spikeling_rightMenuParameterContainer_frame)
         self.Spikeling_StimulusParameter_pushButton.setObjectName(u"Spikeling_StimulusParameter_pushButton")
         self.Spikeling_StimulusParameter_pushButton.setFont(font)
-        self.Spikeling_StimulusParameter_pushButton.setIcon(icon4)
+        self.Spikeling_StimulusParameter_pushButton.setIcon(icon7)
         self.Spikeling_StimulusParameter_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_56.addWidget(self.Spikeling_StimulusParameter_pushButton)
@@ -2230,7 +2656,7 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_NeuronParameter_pushButton = QPushButton(self.Spikeling_rightMenuParameterContainer_frame)
         self.Spikeling_NeuronParameter_pushButton.setObjectName(u"Spikeling_NeuronParameter_pushButton")
         self.Spikeling_NeuronParameter_pushButton.setFont(font)
-        self.Spikeling_NeuronParameter_pushButton.setIcon(icon1)
+        self.Spikeling_NeuronParameter_pushButton.setIcon(icon)
         self.Spikeling_NeuronParameter_pushButton.setIconSize(QSize(30, 30))
 
         self.verticalLayout_56.addWidget(self.Spikeling_NeuronParameter_pushButton)
@@ -4089,9 +4515,23 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_7.addWidget(self.mainbody_stackedWidget)
 
 
-        self.verticalLayout_2.addWidget(self.mainBodyContainer)
+        self.verticalLayout_2.addWidget(self.mainbodyContainer)
 
-        self.footer_widget = QWidget(self.main_window)
+
+        self.horizontalLayout_112.addWidget(self.mainWindowContainer)
+
+
+        self.verticalLayout_75.addWidget(self.CenterMainFrame)
+
+        self.BottomMainFrame = QFrame(self.centralwidget)
+        self.BottomMainFrame.setObjectName(u"BottomMainFrame")
+        self.BottomMainFrame.setFrameShape(QFrame.StyledPanel)
+        self.BottomMainFrame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.BottomMainFrame)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.footer_widget = QWidget(self.BottomMainFrame)
         self.footer_widget.setObjectName(u"footer_widget")
         self.footer_widget.setMinimumSize(QSize(0, 30))
         self.footer_widget.setMaximumSize(QSize(16777215, 30))
@@ -4186,21 +4626,18 @@ class Ui_MainWindow(QWidget):
         self.horizontalLayout_3.addWidget(self.sizegrip)
 
 
-        self.verticalLayout_2.addWidget(self.footer_widget)
+        self.horizontalLayout.addWidget(self.footer_widget)
 
-        self.footer_widget.raise_()
-        self.header_widget.raise_()
-        self.mainBodyContainer.raise_()
 
-        self.horizontalLayout.addWidget(self.main_window)
+        self.verticalLayout_75.addWidget(self.BottomMainFrame)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
-        self.centerMenuSubContainer_menu_stackedwidget.setCurrentIndex(2)
-        self.mainbody_stackedWidget.setCurrentIndex(1)
-        self.Spikeling_parameter_stackedwidget.setCurrentIndex(0)
+        self.centerMenuSubContainer_menu_stackedwidget.setCurrentIndex(4)
+        self.mainbody_stackedWidget.setCurrentIndex(3)
+        self.Spikeling_parameter_stackedwidget.setCurrentIndex(1)
         self.DataAnalysis_Display_StackedWidget.setCurrentIndex(6)
 
 
@@ -4209,7 +4646,11 @@ class Ui_MainWindow(QWidget):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.menu_pushButton.setText("")
+        self.appTitle_pushButton.setText(QCoreApplication.translate("MainWindow", u"Spikeling V2.2", None))
+        self.reduce_pushButton.setText("")
+        self.expand_pushButton.setText("")
+        self.exit_pushButton.setText("")
+        self.menu_pushButton.setText(QCoreApplication.translate("MainWindow", u"Hide Menus", None))
         self.SpikelingMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"Spikeling", None))
         self.ImagingMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"Imaging", None))
         self.NeuronGeneratorMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"Neuron Generator", None))
@@ -4219,8 +4660,7 @@ class Ui_MainWindow(QWidget):
         self.AboutMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.HelpMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.GitHubMenu_pushButton.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
-        self.centerMenuSubContainer_exit_label.setText(QCoreApplication.translate("MainWindow", u"Sub-menus", None))
-        self.centerMenuSubContainer_exit_pushButton.setText("")
+        self.centerMenuSubContainer_exit_pushButton.setText(QCoreApplication.translate("MainWindow", u"Hide Sub-Menus   ", None))
         self.Spikeling_SubMenu_label.setText(QCoreApplication.translate("MainWindow", u"Spikeling Neuron Interface", None))
         self.Neuron_pushButton.setText(QCoreApplication.translate("MainWindow", u"Neuron Interface", None))
         self.NeuronTutorial_pushButton.setText(QCoreApplication.translate("MainWindow", u"Tutorial", None))
@@ -4239,10 +4679,6 @@ class Ui_MainWindow(QWidget):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"GitHub", None))
-        self.appTitle_pushButton.setText(QCoreApplication.translate("MainWindow", u"Spikeling V2.2", None))
-        self.reduce_pushButton.setText("")
-        self.expand_pushButton.setText("")
-        self.exit_pushButton.setText("")
         self.mainbody_header_text.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; color:#eee8d5;\">Spikeling</span></p><p align=\"center\"><span style=\" font-size:10pt;\">A hardware implementation of a spiking neuron for neursocience teaching and outreach</span></p><p align=\"right\"><span style=\" font-size:8pt;\">Conceived and developed by  M.J.Y. Zimmermann, A.M. Chagas, T. Baden</span></p></body></html>", None))
         self.mainbody_content_text.setText(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -4299,15 +4735,16 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_DataRecording_RecordFolderDir_pushButton.setText(QCoreApplication.translate("MainWindow", u"Dir.", None))
         self.Spikeling_SelectedFolderLabel.setText("")
         self.Spikeling_DataRecording_Record_pushButton.setText(QCoreApplication.translate("MainWindow", u"Record", None))
-        self.Spikeling_parameter_exit_pushButton.setText("")
-        self.Spikeling_parameter_exit_label.setText(QCoreApplication.translate("MainWindow", u"Parameters", None))
+        self.Spikeling_parameter_exit_pushButton.setText(QCoreApplication.translate("MainWindow", u"   Hide Parameters", None))
         self.StimulusLabel.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Stimulus</span></p></body></html>", None))
         self.Spikeling_StimFre_checkBox.setText(QCoreApplication.translate("MainWindow", u"Stimulus Frequency (Hz)", None))
+        self.Spikeling_StimFre_readings.setText("")
         self.Spikeling_StimFre_values_min.setText(QCoreApplication.translate("MainWindow", u"2.5", None))
         self.Spikeling_StimFre_values_0.setText(QCoreApplication.translate("MainWindow", u"5", None))
         self.Spikeling_StimFre_values_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
         self.Spikeling_StimFre_image.setText("")
         self.Spikeling_StimStr_checkBox.setText(QCoreApplication.translate("MainWindow", u"Stimulus Strenght (%)", None))
+        self.Spikeling_StimStr_readings.setText("")
         self.Spikeling_StimStr_values_min.setText(QCoreApplication.translate("MainWindow", u"-100", None))
         self.Spikeling_StimStr_values_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_StimStr_values_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
@@ -4315,37 +4752,50 @@ class Ui_MainWindow(QWidget):
         self.Spikeling_CustomStimulus_checkBox.setText(QCoreApplication.translate("MainWindow", u"Custom Stimulus", None))
         self.Spikeling_PR_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Photo-Receptor</span></p></body></html>", None))
         self.Spikeling_PR_PhotoGain_checkBox.setText(QCoreApplication.translate("MainWindow", u"Photo-Gain (%)", None))
+        self.Spikeling_PR_Photogain_readings.setText("")
         self.Spikeling_PR_PhotoGain_values_min.setText(QCoreApplication.translate("MainWindow", u"-100", None))
         self.Spikeling_PR_PhotoGain_values_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_PR_PhotoGain_values_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
-        self.Spikeling_PR_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay", None))
-        self.Spikeling_PR_Decay_value.setText(QCoreApplication.translate("MainWindow", u"0.001", None))
-        self.Spikeling_PR_Recovery_checkBox.setText(QCoreApplication.translate("MainWindow", u"Recovery", None))
-        self.Spikeling_PR_Recovery_value.setText(QCoreApplication.translate("MainWindow", u"0.025", None))
+        self.Spikeling_PR_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay: \u03bb (ms\u05bf \u00b9)", None))
+        self.Spikeling_PR_Decay_readings.setText("")
+        self.Spikeling_PR_Decay_values_slow.setText(QCoreApplication.translate("MainWindow", u"Slow", None))
+        self.Spikeling_PR_Decay_values_fast.setText(QCoreApplication.translate("MainWindow", u"Fast", None))
+        self.Spikeling_PR_Recovery_checkBox.setText(QCoreApplication.translate("MainWindow", u"Recovery: \u03bb (ms\u05bf \u00b9)", None))
+        self.Spikeling_PR_Recovery_readings.setText("")
+        self.Spikeling_PR_Recovery_values_slow.setText(QCoreApplication.translate("MainWindow", u"Slow", None))
+        self.Spikeling_PR_Recovery_values_fast.setText(QCoreApplication.translate("MainWindow", u"Fast", None))
         self.Spikeling_PatchClamp_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Patch Clamp</span></p></body></html>", None))
         self.Spikeling_PatchClamp_checkBox.setText(QCoreApplication.translate("MainWindow", u"Injected Current (a.u.)", None))
+        self.Spikeling_PatchClamp_reading.setText("")
         self.Spikeling_PatchClamp_values_min.setText(QCoreApplication.translate("MainWindow", u"-100", None))
         self.Spikeling_PatchClamp_values_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_PatchClamp_values_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
         self.Spikeling_Noise_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Noise</span></p></body></html>", None))
         self.Spikeling_Noise_checkBox.setText(QCoreApplication.translate("MainWindow", u"Noise Level", None))
+        self.Spikeling_Noise_readings.setText("")
         self.Spikeling_Noise_0_value.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_Noise_max_value.setText(QCoreApplication.translate("MainWindow", u"max", None))
         self.Spikeling_Synapse1_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Synapse 1</span></p></body></html>", None))
         self.Spikeling_Synapse1_checkBox.setText(QCoreApplication.translate("MainWindow", u"Synaptic Gain (%)", None))
+        self.Spikeling_Synapse1_readings.setText("")
         self.Spikeling_Synapse1_min.setText(QCoreApplication.translate("MainWindow", u"-100", None))
         self.Spikeling_Synapse1_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_Synapse1_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
-        self.Spikeling_Synapse1_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay", None))
-        self.Spikeling_Synapse1_Decay_value.setText(QCoreApplication.translate("MainWindow", u"0.995", None))
+        self.Spikeling_Synapse1_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay: \u03bb (ms\u05bf \u00b9)", None))
+        self.Spikeling_Synapse1_Decay_readings.setText("")
+        self.Spikeling_Synapse1_Decay_values_slow.setText(QCoreApplication.translate("MainWindow", u"Slow", None))
+        self.Spikeling_Synapse1_Decay_values_fast.setText(QCoreApplication.translate("MainWindow", u"Fast", None))
         self.Spikeling_Synapse2_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">Synapse 2</span></p></body></html>", None))
         self.Spikeling_Synapse2_checkBox.setText(QCoreApplication.translate("MainWindow", u"Synaptic Gain (%)", None))
+        self.Spikeling_Synapse2_readings.setText("")
         self.Spikeling_Synapse2_min.setText(QCoreApplication.translate("MainWindow", u"-100", None))
         self.Spikeling_Synapse2_0.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.Spikeling_Synapse2_max.setText(QCoreApplication.translate("MainWindow", u"100", None))
-        self.Spikeling_Synapse2_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay", None))
-        self.Spikeling_Synapse2_Decay_value.setText(QCoreApplication.translate("MainWindow", u"0.990", None))
-        self.Spikeling_rightMenuSubContainer_pushButton.setText("")
+        self.Spikeling_Synapse2_Decay_checkBox.setText(QCoreApplication.translate("MainWindow", u"Decay: \u03bb (ms\u05bf \u00b9)", None))
+        self.Spikeling_Synapse2_Decay_readings.setText("")
+        self.Spikeling_Synapse2_Decay_values_slow.setText(QCoreApplication.translate("MainWindow", u"Slow", None))
+        self.Spikeling_Synapse2_Decay_values_fast.setText(QCoreApplication.translate("MainWindow", u"Fast", None))
+        self.Spikeling_rightMenuSubContainer_pushButton.setText(QCoreApplication.translate("MainWindow", u"Hide Parameters", None))
         self.Spikeling_StimulusParameter_pushButton.setText(QCoreApplication.translate("MainWindow", u"Stimulus Parameters", None))
         self.Spikeling_NeuronParameter_pushButton.setText(QCoreApplication.translate("MainWindow", u"Neuron Parameters", None))
         self.label_2.setText("")
