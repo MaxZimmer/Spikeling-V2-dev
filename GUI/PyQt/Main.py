@@ -20,7 +20,7 @@ from Spikeling_UI import Ui_MainWindow
 from Settings import *
 
 # Import GUI page scripts
-import Page000, Page101, Page102, Page103, Page301
+import Page000, Page101, Page102, Page103, Page201, Page202, Page203, Page301, Page401, Page501, Page502, Page601, Page701, Page801, Page901
 import Spikeling_graph
 
 
@@ -72,7 +72,7 @@ class MainWindow(QMainWindow):
 
 
 
-        ########################################################################
+    ########################################################################
     # Set menu/navigation buttons
 
         # Main Menu Container
@@ -93,19 +93,15 @@ class MainWindow(QMainWindow):
         self.ui.ImagingMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Imaging_SubMenu_page))
         self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: Page301.ShowPage(self))
-        self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
+        self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: Page401.ShowPage(self))
         self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.StimulusGenerator_SubMenu_page))
         self.ui.ExercisesMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
         self.ui.ExercisesMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Exercises_SubMenu_page))
-        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
-        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Settings_SubMenu_page))
-        self.ui.AboutMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
-        self.ui.AboutMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.About_SubMenu_page))
-        self.ui.HelpMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
-        self.ui.HelpMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.Help_SubMenu_page))
-        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
-        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: self.ui.centerMenuSubContainer_menu_stackedwidget.setCurrentWidget(self.ui.GitHub_SubMenu_page))
         self.ui.centerMenuSubContainer_exit_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
+        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
+        self.ui.AboutMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
+        self.ui.HelpMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
+        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.centerMenuContainer, centerMenu_min, centerMenu_max, animation_speed, True))
 
 
         # Spikeling 101 parameters navigation button
@@ -121,6 +117,14 @@ class MainWindow(QMainWindow):
         self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
         self.ui.Spikeling_parameter_exit_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.Spikeling_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
 
+        # Imaging 201 parameters navigation button
+        self.ui.Imaging_CenterMenuContainer.setMaximumSize(QSize(0, 16777215))
+        self.ui.Imaging_rightMenuContainer.setMinimumSize(QSize(spikerightMenu_max, 16777215))
+        self.ui.Imaging_rightMenuSubContainer_pushButton.clicked.connect(lambda: UIFunctions.toggleMenu(self, self.ui.Imaging_rightMenuContainer, spikerightMenu_min, spikerightMenu_max, animation_speed,
+                                                                                                          self.ui.Imaging_rightMenuSubContainer_pushButton, self.icon_SpikelingMenuRight, self.icon_SpikelingDropMenuRight, True))
+        self.ui.Imaging_StimulusParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Imaging_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
+        self.ui.Imaging_NeuronParameter_pushButton.clicked.connect(lambda: UIFunctions.expandMenu(self, self.ui.Imaging_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
+        self.ui.Imaging_parameter_exit_pushButton.clicked.connect(lambda: UIFunctions.collapseMenu(self, self.ui.Imaging_CenterMenuContainer, spikecenterMenu_min, spikecenterMenu_max, animation_speed, True))
 
     ########################################################################
     # Home Page - page000
@@ -131,6 +135,7 @@ class MainWindow(QMainWindow):
         self.GifMovie.start()
         self.ui.appTitle_pushButton.clicked.connect(lambda: self.ui.mainbody_stackedWidget.setCurrentWidget(self.ui.page_000))
 
+    ########################################################################
     # Spikeling Page - page101
 
         # Display page101 when spikeling button is clicked
@@ -188,10 +193,14 @@ class MainWindow(QMainWindow):
         self.ui.Spikeling_Synapse2_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay2(self))
         self.ui.Spikeling_Synapse2_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticDecay2(self))
 
+
+    ########################################################################
     # Spikeling Tutorial - page 102
         # Display page102 when tutorial button is clicked
         self.ui.NeuronTutorial_pushButton.clicked.connect(lambda: Page102.Spikeling102.ShowPage(self))
 
+
+    ########################################################################
     # Spikeling Data Analysis - page 103
         # Display page103 when data analysis button is clicked
         self.ui.NeuronDataAnalysis_pushButton.clicked.connect(lambda: Page103.Spikeling103.ShowPage(self))
@@ -238,11 +247,73 @@ class MainWindow(QMainWindow):
         self.ui.DataAnalysis_Neuron2Vm_pushButton31.clicked.connect(lambda: self.ui.DataAnalysis_Display_StackedWidget.setCurrentWidget(self.ui.page_103_3_2))
         self.ui.DataAnalysis_Neuron2Vm_pushButton32.clicked.connect(lambda: self.ui.DataAnalysis_Display_StackedWidget.setCurrentWidget(self.ui.page_103_3_2))
 
+
+    ########################################################################
+    # Imaging Page - page201
+        # Display page201 when imaging button is clicked
+        self.ui.ImagingStimulation_pushButton.clicked.connect(lambda: Page201.Imaging201.ShowPage(self))
+
+
+    ########################################################################
+    # Imaging Tutorial - page202
+        # Display page201 when imaging button is clicked
+        self.ui.ImagingTutorial_pushButton.clicked.connect(lambda: Page202.Imaging202.ShowPage(self))
+
+
+    ########################################################################
+    # Imaging Data Analysis- page203
+        # Display page201 when imaging button is clicked
+        self.ui.ImagingDataAnalysis_pushButton.clicked.connect(lambda: Page203.Imaging203.ShowPage(self))
+
+
+    ########################################################################
     # Neuron Generator Page - page301
         # Display page301 when neuron button is clicked
         self.ui.NeuronGeneratorMenu_pushButton.clicked.connect(lambda: Page301.ShowPage(self))
         # Draw Neuron model based on parameters a, b, c & d
         self.ui.DisplayNeuronPushButton.clicked.connect(lambda: Page301.NeuronGenerator.DrawNeuron(self))
+
+
+    ########################################################################
+    # Stimulus Generator Page - page401
+        # Display page401
+        self.ui.StimuluGeneratorMenu_pushButton.clicked.connect(lambda: Page401.ShowPage(self))
+
+
+    ########################################################################
+    # Exercise-101 - page501
+        # Display page501
+        self.ui.Exercice101_pushButton.clicked.connect(lambda: Page501.ShowPage(self))
+
+
+    ########################################################################
+    # Exercise-102 - page502
+        # Display page502
+        self.ui.Exercice102_pushButton.clicked.connect(lambda: Page502.ShowPage(self))
+
+
+    ########################################################################
+    # Settings - page601
+        # Display Settings
+        self.ui.SettingsMenu_pushButton.clicked.connect(lambda: Page601.ShowPage(self))
+
+
+    ########################################################################
+    # About - page701
+        # Display Info page
+        self.ui.AboutMenu_pushButton.clicked.connect(lambda: Page701.ShowPage(self))
+
+
+    ########################################################################
+    # Help - page801
+        # Display Help page
+        self.ui.HelpMenu_pushButton.clicked.connect(lambda: Page801.ShowPage(self))
+
+
+    ########################################################################
+    # GitHub - page901
+        # Display Git page
+        self.ui.GitHubMenu_pushButton.clicked.connect(lambda: Page901.ShowPage(self))
 
         ########################################################################
     # Display

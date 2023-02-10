@@ -1,5 +1,10 @@
 <RCC>
   <qresource prefix="resources">
+    <file>resources/SoundOFF.png</file>
+    <file>resources/SoundON.png</file>
+    <file>resources/LogoLight3D.png</file>
+    <file>resources/LogoLight.png</file>
+    <file>resources/spikeling.gif</file>
     <file>resources/SizeGrip.png</file>
     <file>resources/StimGen.png</file>
     <file>resources/About.png</file>

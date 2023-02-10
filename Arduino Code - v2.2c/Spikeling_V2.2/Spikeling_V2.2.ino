@@ -58,7 +58,7 @@ void loop() {
     
     delay(Mode_delay);                            // Set a delay to prevent multi_push from the user
   }
-  if (RxMode != "None"){
+  if (RxMode != "F"){
       lightOff();
       a_Izhikevich = Rxa.toInt();  
       b_Izhikevich = Rxb.toInt(); 
@@ -70,20 +70,20 @@ void loop() {
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                               Setting Voltage membrane clamp value                                    */
   Vm_Clamp = ADC1.readADC(pinVmPot) - bits/2;       // Reads Vm potentiometer value and scales it to -2048 to 2048
-  if (RxVm == "None"){
+  if (RxVm == "F"){
     I_Vm = Vm_Clamp / VmPotScaling;                 // Generates "current" value from the reading and scales it from parameters
   }
-  else if (RxVm != "None"){
-    I_Vm = 70 + RxVm.toInt();  
+  else if (RxVm != "F"){
+    I_Vm = RxVm.toInt();  
   }
 
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                          Noise Generator                                              */
-  if (RxNoise == "None"){
+  if (RxNoise == "F"){
     Noise_Gain = ADC1.readADC(pinNoisePot);           // Reads Noise potentiometer value from 0 to 4095
   }
-  else if (RxNoise != "None"){
+  else if (RxNoise != "F"){
     Noise_Gain = RxNoise.toInt() * 25;
   }
   Noise_Amp = Noise_Gain / NoiseScaling;          // Generates current value from the reading and scales it from parameters
@@ -107,20 +107,20 @@ void loop() {
   }
   PD_Value_Average = PD_Value_Sum / PD_avg;       // ... then average them
 
-  if (RxPDGain == "None"){
+  if (RxPDGain == "F"){
     PD_PotValue = ADC1.readADC(pinPDPot) - bits/2 + bits/25; // Reads Photodiode Gain potentiometer value and scales it to -2048 to 2048
   }
-  else if(RxPDGain != "None"){
+  else if(RxPDGain != "F"){
     PD_PotValue = RxPDGain.toInt() * 25;
   }
   PD_Amp = PD_PotValue / PDPotScaling +1;                  // Generates an amplification value from the reading and scales it from parameters 
 
   I_PD = ( (PD_Value_Average * PD_Amp) / PD_Scaling ) * PD_Gain;  // Finally, generates a current input from the photodiode readings, amplified byt the PD_Gain readings
 
-  if (RxPDDecay == "None"){
+  if (RxPDDecay == "F"){
     PD_Decay = 0.001;
   }
-  else if (RxPDDecay != "None"){
+  else if (RxPDDecay != "F"){
     PD_Decay = RxPDDecay.toFloat();
   }
   
@@ -131,10 +131,10 @@ void loop() {
     }
   }
 
- if (RxPDRecovery == "None"){
+ if (RxPDRecovery == "F"){
     PD_Recovery = 0.025;
   }
-  else if (RxPDRecovery != "None"){
+  else if (RxPDRecovery != "F"){
     PD_Recovery = RxPDRecovery.toFloat();
   }
   if (PD_Gain < 1.0){
@@ -146,10 +146,10 @@ void loop() {
 /*                                             Synapse 1                                                 */
   SpikeIn1State = digitalRead(pinSyn1_D);         // Reads Synapse 1 digital input
 
-  if (RxSyn1Gain == "None"){
+  if (RxSyn1Gain == "F"){
     Syn1_Gain = ADC1.readADC(pinSyn1Pot) - bits/2 + Syn1_offset;    // Reads Synaptic Gain 1 potentiometer value and scales it to -2048 to 2048
   }
-  else if (RxSyn1Gain != "None"){
+  else if (RxSyn1Gain != "F"){
     Syn1_Gain = RxSyn1Gain.toInt() * 25;
   }
   Syn1_Amp = Syn1_Gain / Syn1PotScaling;          // Generates current value from the reading and scales it from parameters
@@ -158,10 +158,10 @@ void loop() {
     I_Synapse1 += Syn1_Amp;                         // Apply the synaptic current from Syn1 related to the synaptic gain 1
   }
   
-  if (RxSyn1Decay == "None"){
+  if (RxSyn1Decay == "F"){
     Synapse1_decay = 0.995;
   }
-  else if (RxSyn1Decay != "None"){
+  else if (RxSyn1Decay != "F"){
     Synapse1_decay = RxSyn1Decay.toFloat();
   }
   I_Synapse1 *= Synapse1_decay;                   // Decay synaptic current towards zero
@@ -174,10 +174,10 @@ void loop() {
 /*                                             Synapse 2                                                 */
   SpikeIn2State = digitalRead(pinSyn2_D);         // Reads Synapse 2 digital input
 
-  if (RxSyn2Gain == "None"){
+  if (RxSyn2Gain == "F"){
     Syn2_Gain = ADC1.readADC(pinSyn2Pot) - bits/2 + Syn2_offset;    // Reads Synaptic Gain 2 potentiometer value and scales it to -2048 to 2048
   }
-  else if (RxSyn2Gain != "None"){
+  else if (RxSyn2Gain != "F"){
     Syn2_Gain = RxSyn2Gain.toInt() * 25;
   }
   Syn2_Amp = Syn2_Gain / Syn2PotScaling ;          // Generates current value from the reading and scales it from parameters
@@ -186,10 +186,10 @@ void loop() {
     I_Synapse2 += Syn2_Amp;                         // Apply the synaptic current from Syn2 related to the synaptic gain 2
   }
 
-  if (RxSyn2Decay == "None"){
+  if (RxSyn2Decay == "F"){
     Synapse2_decay = 0.990;
   }
-  else if (RxSyn2Decay != "None"){
+  else if (RxSyn2Decay != "F"){
     Synapse2_decay = RxSyn2Decay.toFloat();
   }
   I_Synapse2 *= Synapse2_decay;                   // Decay synaptic current towards zero
@@ -200,7 +200,7 @@ void loop() {
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 /*                                        Stimulus generator                                             */
-  if (RxStimStr != "None"){
+  if (RxStimStr != "F"){
     StimStrD = abs(RxStimStr.toInt());
     StimStrA = RxStimStr.toInt();
   }
@@ -213,11 +213,11 @@ void loop() {
   Stim_val_A = StimStrA * Stim_CurrentScaling;        // The stimulus analog output value is proportional to the potentiometer reading and scaled to parameters
 
  
-  if (RxStimFre == "None"){
+  if (RxStimFre == "F"){
     StimFre_Value = ADC1.readADC(pinStimFrePot);          // Reads Stimulus Frequency potentiometer value
     StimFre = map(StimFre_Value, 0, bits, 100 , -100);  // Map this value from -100 to 100 
   }
-  else if(RxStimFre != "None"){
+  else if(RxStimFre != "F"){
     StimFre = RxStimFre.toInt();
   }
   

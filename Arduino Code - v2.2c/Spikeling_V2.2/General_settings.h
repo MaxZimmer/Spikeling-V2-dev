@@ -109,7 +109,7 @@ float PD_Gain=1.0;
 float PD_PotValue;
 float PD_Amp;
 float PD_Value;
-float PD_Scaling = 0.5;
+float PD_Scaling = 0.5; 
 int PD_Value_Array[] = {0,0,0,0,0,0,0,0,0,0};
 int PD_counter = 0;
 float PD_avg = 10;
