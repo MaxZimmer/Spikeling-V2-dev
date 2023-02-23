@@ -249,5 +249,3 @@ class Spikeling101():
             self.Synapse2Decay = self.ui.Spikeling_Synapse2_Decay_slider.value()
             self.ui.Spikeling_Synapse2_Decay_readings.setText(str(self.Synapse2Decay/1000))
             self.ui.Spikeling_Synapse2_Decay_readings.setStyleSheet("color: rgb(108, 113, 196); font: 700 10pt;")
-
-

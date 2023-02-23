@@ -1,5 +1,3 @@
-
-
 ########################################################################
 # Libraries import
 
@@ -17,6 +15,7 @@ from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
 
 # Import GUI .ui file
 from Spikeling_UI import Ui_MainWindow
+from Spikeling_SplashScreen import Ui_SplashScreen
 from Settings import *
 
 # Import GUI page scripts
@@ -35,6 +34,71 @@ for port in ports:
     else:
         portList.append(port.portName())
 
+## ==> GLOBALS
+counter = 0
+
+########################################################################
+## SplashScreen WINDOW CLASS
+########################################################################
+class SplashScreen(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_SplashScreen()
+        self.ui.setupUi(self)
+
+        ## REMOVE TITLE BAR
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        ## DROP SHADOW EFFECT
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 60))
+        self.ui.SplashFrame.setGraphicsEffect(self.shadow)
+
+        ## QTIMER ==> START
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.progress)
+        # TIMER IN MILLISECONDS
+        self.timer.start(20)
+
+        # CHANGE DESCRIPTION
+
+        # Change Texts
+        QtCore.QTimer.singleShot(1000, lambda: self.ui.Status_Label.setText("<strong>Loading</strong> Database"))
+        QtCore.QTimer.singleShot(2000, lambda: self.ui.Status_Label.setText("<strong>Loading</strong> User interface"))
+
+        ## SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+        ## ==> END ##
+
+
+    ## ==> APP FUNCTIONS
+    ########################################################################
+    def progress(self):
+
+        global counter
+
+        # SET VALUE TO PROGRESS BAR
+        self.ui.Loading_ProgressBar.setValue(counter)
+
+        # CLOSE SPLASH SCREE AND OPEN APP
+        if counter > 100:
+            # STOP TIMER
+            self.timer.stop()
+
+            # SHOW MAIN WINDOW
+            self.main = MainWindow()
+            self.main.show()
+
+            # CLOSE SPLASH SCREEN
+            self.close()
+
+        # INCREASE COUNTER
+        counter += 1
 
 ########################################################################
 ## MAIN WINDOW CLASS
@@ -331,7 +395,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QtGui.QIcon(u":/resources/resources/Neuron.png"))
-    window = MainWindow()
+    window = SplashScreen()#MainWindow()
     sys.exit(app.exec())
 ########################################################################
 ## END===>
