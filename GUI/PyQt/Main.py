@@ -214,7 +214,7 @@ class MainWindow(QMainWindow):
         self.ui.Spikeling_SelectPortComboBox.currentIndexChanged.connect(lambda: Page101.Spikeling101.ChangePort(self))
 
         # Start reading serial when connect button is clicked and plot the reading on the oscilloscope
-        self.ui.Spikeling_ConnectButton.clicked.connect(lambda: Spikeling_graph.ReadSerial(self))
+        self.ui.Spikeling_ConnectButton.clicked.connect(lambda: Spikeling_graph.SpikelingPlot(self))
 
         # Create buffer data record folder
         self.ui.Spikeling_FolderNameLabel = QtWidgets.QLabel(self.ui.Spikeling_DataRecording_box)
