@@ -317,12 +317,12 @@ centerMenuSubContainer_menu_stackedwidget{
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/resources/resources/Neuron.png</normaloff>:/resources/resources/Neuron.png</iconset>
+                 <normaloff>:/resources/resources/Spiky_Logo.png</normaloff>:/resources/resources/Spiky_Logo.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
-                 <width>24</width>
-                 <height>24</height>
+                 <width>60</width>
+                 <height>32</height>
                 </size>
                </property>
                <property name="checkable">
@@ -959,7 +959,7 @@ centerMenuSubContainer_menu_stackedwidget{
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="Spikeling_SubMenu_page">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1422,7 +1422,7 @@ centerMenuSubContainer_menu_stackedwidget{
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+                 <item>
                   <widget class="QFrame" name="Exercices_SubMenu_label_frame">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1720,7 +1720,7 @@ centerMenuSubContainer_menu_stackedwidget{
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>16</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_000">
                 <layout class="QVBoxLayout" name="verticalLayout_30">
@@ -2349,7 +2349,7 @@ p, li { white-space: pre-wrap; }
                               <bool>false</bool>
                              </property>
                              <property name="styleSheet">
-                              <string notr="true">color: rgb(108, 113, 196);</string>
+                              <string notr="true">color: rgb(211, 54, 130);</string>
                              </property>
                              <property name="text">
                               <string>Synapse 2 Input</string>
@@ -3033,7 +3033,7 @@ background-color: rgb(220, 50, 47);</string>
                        </size>
                       </property>
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <widget class="QWidget" name="StimulusParameter_page">
                        <property name="minimumSize">
@@ -3132,14 +3132,14 @@ background-color: rgb(220, 50, 47);</string>
                             <number>5</number>
                            </property>
                            <item>
-                            <widget class="QFrame" name="Spikeling_StimFre_checkBox_frame">
+                            <widget class="QFrame" name="Spikeling_StimFre_Title_frame">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_38">
+                             <layout class="QHBoxLayout" name="horizontalLayout_36">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -3147,7 +3147,7 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <property name="topMargin">
-                               <number>0</number>
+                               <number>5</number>
                               </property>
                               <property name="rightMargin">
                                <number>0</number>
@@ -3156,20 +3156,76 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QCheckBox" name="Spikeling_StimFre_checkBox">
-                                <property name="text">
-                                 <string>Stimulus Frequency (Hz)</string>
+                               <widget class="QFrame" name="Spikeling_StimFre_toggle_frame">
+                                <property name="sizePolicy">
+                                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                                  <horstretch>0</horstretch>
+                                  <verstretch>0</verstretch>
+                                 </sizepolicy>
                                 </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>45</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_StimFre_toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
                                </widget>
                               </item>
-                              <item>
-                               <widget class="QLabel" name="Spikeling_StimFre_readings">
-                                <property name="text">
-                                 <string/>
+                              <item alignment="Qt::AlignLeft">
+                               <widget class="QFrame" name="Spikeling_StimFre_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
                                 </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
                                 </property>
+                                <layout class="QHBoxLayout" name="Spikeling_StimFre_Layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item alignment="Qt::AlignLeft">
+                                  <widget class="QLabel" name="Spikeling_StimFre_Label">
+                                   <property name="text">
+                                    <string>Stimulus Frequency (Hz)</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
                                </widget>
                               </item>
                              </layout>
@@ -3199,6 +3255,16 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
+                              <item>
+                               <widget class="QLabel" name="Spikeling_StimFre_readings">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                                <property name="alignment">
+                                 <set>Qt::AlignCenter</set>
+                                </property>
+                               </widget>
+                              </item>
                              </layout>
                             </widget>
                            </item>
@@ -3284,14 +3350,14 @@ background-color: rgb(220, 50, 47);</string>
                               <item>
                                <widget class="QLabel" name="Spikeling_StimFre_values_min">
                                 <property name="text">
-                                 <string>2.5</string>
+                                 <string>10</string>
                                 </property>
                                </widget>
                               </item>
                               <item>
                                <widget class="QLabel" name="Spikeling_StimFre_values_0">
                                 <property name="text">
-                                 <string>5</string>
+                                 <string>20</string>
                                 </property>
                                 <property name="alignment">
                                  <set>Qt::AlignCenter</set>
@@ -3301,7 +3367,7 @@ background-color: rgb(220, 50, 47);</string>
                               <item>
                                <widget class="QLabel" name="Spikeling_StimFre_values_max">
                                 <property name="text">
-                                 <string>100</string>
+                                 <string>1000</string>
                                 </property>
                                 <property name="alignment">
                                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3416,14 +3482,14 @@ background-color: rgb(220, 50, 47);</string>
                             <number>5</number>
                            </property>
                            <item>
-                            <widget class="QFrame" name="Spikeling_StimStr_checkBox_frame">
+                            <widget class="QFrame" name="Spikeling_StimStr_Title_frame">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_42">
+                             <layout class="QHBoxLayout" name="horizontalLayout_37">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -3440,20 +3506,70 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QCheckBox" name="Spikeling_StimStr_checkBox">
-                                <property name="text">
-                                 <string>Stimulus Strenght (%)</string>
+                               <widget class="QFrame" name="Spikeling_StimStr_toggle_frame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>50</width>
+                                  <height>16777215</height>
+                                 </size>
                                 </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_StimStr_toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QLabel" name="Spikeling_StimStr_readings">
-                                <property name="text">
-                                 <string/>
+                               <widget class="QFrame" name="Spikeling_StimStr_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
                                 </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
                                 </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_38">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="Spikeling_StimStr_Label">
+                                   <property name="text">
+                                    <string>Stimulus Strength (%)</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
                                </widget>
                               </item>
                              </layout>
@@ -3467,7 +3583,7 @@ background-color: rgb(220, 50, 47);</string>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QVBoxLayout" name="verticalLayout_63">
+                             <layout class="QHBoxLayout" name="Spikeling_StimStr_Layout">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -3483,6 +3599,16 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
+                              <item>
+                               <widget class="QLabel" name="Spikeling_StimStr_readings">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                                <property name="alignment">
+                                 <set>Qt::AlignCenter</set>
+                                </property>
+                               </widget>
+                              </item>
                              </layout>
                             </widget>
                            </item>
@@ -3694,17 +3820,17 @@ background-color: rgb(220, 50, 47);</string>
                             <number>5</number>
                            </property>
                            <property name="bottomMargin">
-                            <number>5</number>
+                            <number>2</number>
                            </property>
                            <item>
-                            <widget class="QFrame" name="Spikeling_CustomStimulus_checkBox_frame">
+                            <widget class="QFrame" name="Spikeling_CustomStimulus_Title_frame">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_46">
+                             <layout class="QHBoxLayout" name="Spikeling_StimCus_Layout">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -3712,7 +3838,7 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <property name="topMargin">
-                               <number>0</number>
+                               <number>5</number>
                               </property>
                               <property name="rightMargin">
                                <number>0</number>
@@ -3721,10 +3847,70 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QCheckBox" name="Spikeling_CustomStimulus_checkBox">
-                                <property name="text">
-                                 <string>Custom Stimulus</string>
+                               <widget class="QFrame" name="Spikeling_CustomStimulus_toggle_frame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>50</width>
+                                  <height>16777215</height>
+                                 </size>
                                 </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_CustomStimulus_toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QFrame" name="Spikeling_CustomStimulus_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_42">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="Spikeling_CustomStimulus_Label">
+                                   <property name="text">
+                                    <string>Custom Stimulus</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
                                </widget>
                               </item>
                              </layout>
@@ -3808,7 +3994,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="minimumSize">
                                  <size>
                                   <width>0</width>
-                                  <height>50</height>
+                                  <height>40</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
@@ -3860,19 +4046,19 @@ background-color: rgb(220, 50, 47);</string>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_31">
                            <property name="spacing">
-                            <number>2</number>
+                            <number>1</number>
                            </property>
                            <property name="leftMargin">
                             <number>5</number>
                            </property>
                            <property name="topMargin">
-                            <number>5</number>
+                            <number>0</number>
                            </property>
                            <property name="rightMargin">
                             <number>5</number>
                            </property>
                            <property name="bottomMargin">
-                            <number>0</number>
+                            <number>1</number>
                            </property>
                            <item>
                             <widget class="QFrame" name="Spikeling_PR_label_frame">
@@ -3896,7 +4082,7 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <property name="bottomMargin">
-                               <number>0</number>
+                               <number>5</number>
                               </property>
                               <item>
                                <widget class="QLabel" name="Spikeling_PR_label">
@@ -3912,7 +4098,7 @@ background-color: rgb(220, 50, 47);</string>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QFrame" name="Spikeling_PR_PhotoGain_checkBox_frame">
+                            <widget class="QFrame" name="Spikeling_PR_Title_frame">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
@@ -3936,20 +4122,70 @@ background-color: rgb(220, 50, 47);</string>
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QCheckBox" name="Spikeling_PR_PhotoGain_checkBox">
-                                <property name="text">
-                                 <string>Photo-Gain (%)</string>
+                               <widget class="QFrame" name="Spikeling_PR_toggle_frame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>50</width>
+                                  <height>16777215</height>
+                                 </size>
                                 </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_PR_toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QLabel" name="Spikeling_PR_Photogain_readings">
-                                <property name="text">
-                                 <string/>
+                               <widget class="QFrame" name="Spikeling_PR_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
                                 </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
                                 </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_85">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="Spikeling_PR_Label">
+                                   <property name="text">
+                                    <string>Photo-Gain (%)</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
                                </widget>
                               </item>
                              </layout>
@@ -3963,7 +4199,7 @@ background-color: rgb(220, 50, 47);</string>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QVBoxLayout" name="verticalLayout_65">
+                             <layout class="QHBoxLayout" name="Spikeling_PR_PhotoGain_Layout">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -3979,6 +4215,16 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
+                              <item>
+                               <widget class="QLabel" name="Spikeling_PR_Photogain_readings">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                                <property name="alignment">
+                                 <set>Qt::AlignCenter</set>
+                                </property>
+                               </widget>
+                              </item>
                              </layout>
                             </widget>
                            </item>
@@ -4089,14 +4335,14 @@ background-color: rgb(220, 50, 47);</string>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QFrame" name="Spikeling_PR_Decay_frame">
+                            <widget class="QFrame" name="Spikeling_PRDecay_Title">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_36">
+                             <layout class="QHBoxLayout" name="horizontalLayout_94">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -4112,21 +4358,71 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
-                              <item alignment="Qt::AlignLeft">
-                               <widget class="QCheckBox" name="Spikeling_PR_Decay_checkBox">
-                                <property name="text">
-                                 <string>Decay: λ (msֿ ¹)</string>
+                              <item>
+                               <widget class="QFrame" name="Spikeling_PRDecay_Toggle_frame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>50</width>
+                                  <height>16777215</height>
+                                 </size>
                                 </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_PRDecay_Toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QLabel" name="Spikeling_PR_Decay_readings">
-                                <property name="text">
-                                 <string/>
+                               <widget class="QFrame" name="Spikeling_PRDecay_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
                                 </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
                                 </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_46">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="Spikeling_PRDecay_Label">
+                                   <property name="text">
+                                    <string>Photo Decay: λ (msֿ ¹)</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
                                </widget>
                               </item>
                              </layout>
@@ -4140,7 +4436,7 @@ background-color: rgb(220, 50, 47);</string>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QVBoxLayout" name="verticalLayout_67">
+                             <layout class="QHBoxLayout" name="Spikeling_PR_Decay_Layout">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -4156,6 +4452,16 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
+                              <item>
+                               <widget class="QLabel" name="Spikeling_PR_Decay_readings">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                                <property name="alignment">
+                                 <set>Qt::AlignCenter</set>
+                                </property>
+                               </widget>
+                              </item>
                              </layout>
                             </widget>
                            </item>
@@ -4265,14 +4571,14 @@ background-color: rgb(220, 50, 47);</string>
                             </widget>
                            </item>
                            <item>
-                            <widget class="QFrame" name="Spikeling_PR_Recovery_frame">
+                            <widget class="QFrame" name="Spikeling_PRRecovery_Title">
                              <property name="frameShape">
                               <enum>QFrame::StyledPanel</enum>
                              </property>
                              <property name="frameShadow">
                               <enum>QFrame::Raised</enum>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_37">
+                             <layout class="QHBoxLayout" name="horizontalLayout_99">
                               <property name="spacing">
                                <number>0</number>
                               </property>
@@ -4288,13 +4594,100 @@ background-color: rgb(220, 50, 47);</string>
                               <property name="bottomMargin">
                                <number>0</number>
                               </property>
-                              <item alignment="Qt::AlignLeft">
-                               <widget class="QCheckBox" name="Spikeling_PR_Recovery_checkBox">
-                                <property name="text">
-                                 <string>Recovery: λ (msֿ ¹)</string>
+                              <item>
+                               <widget class="QFrame" name="SpikelingPRRecovery_toggle_frame">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>50</width>
+                                  <height>16777215</height>
+                                 </size>
                                 </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="SpikelingPRRecovery_toggle_layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                </layout>
                                </widget>
                               </item>
+                              <item>
+                               <widget class="QFrame" name="SpikelingPRRecovery_Label_frame">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_98">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QLabel" name="SpikelingPRRecovery_Label">
+                                   <property name="text">
+                                    <string>Photo Recovery: λ (msֿ ¹)</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QFrame" name="Spikeling_PR_Recovery_frame">
+                             <property name="frameShape">
+                              <enum>QFrame::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <layout class="QHBoxLayout" name="Spikeling_PR_Recovery_Layout">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
                               <item>
                                <widget class="QFrame" name="Spikeling_PR_Recovery_readings_frame">
                                 <property name="frameShape">
@@ -4499,7 +4892,7 @@ background-color: rgb(220, 50, 47);</string>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_17" stretch="0,0,0,0,0,0,0">
                            <property name="spacing">
-                            <number>5</number>
+                            <number>2</number>
                            </property>
                            <property name="leftMargin">
                             <number>0</number>
@@ -4559,7 +4952,7 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <property name="bottomMargin">
-                                  <number>0</number>
+                                  <number>5</number>
                                  </property>
                                  <item>
                                   <widget class="QLabel" name="Spikeling_PatchClamp_label">
@@ -4582,7 +4975,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_85">
+                                <layout class="QVBoxLayout" name="verticalLayout_63">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -4599,18 +4992,97 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_PatchClamp_checkBox">
-                                   <property name="font">
-                                    <font>
-                                     <pointsize>10</pointsize>
-                                    </font>
+                                  <widget class="QFrame" name="Spikeling_PatchClamp_Title">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
                                    </property>
-                                   <property name="text">
-                                    <string>Injected Current (a.u.)</string>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
                                    </property>
-                                   <property name="tristate">
-                                    <bool>false</bool>
-                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_91">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_PatchClamp_toggle_frame">
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>50</width>
+                                        <height>16777215</height>
+                                       </size>
+                                      </property>
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="Spikeling_PatchClamp_toggle_layout">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_PatchClamp_Label_frame">
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="horizontalLayout_163">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <item>
+                                        <widget class="QLabel" name="Spikeling_PatchClamp_Label">
+                                         <property name="text">
+                                          <string>Injected Current (a.u.)</string>
+                                         </property>
+                                        </widget>
+                                       </item>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                   </layout>
                                   </widget>
                                  </item>
                                  <item>
@@ -4841,7 +5313,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_91">
+                                <layout class="QVBoxLayout" name="verticalLayout_65">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -4858,10 +5330,97 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_Noise_checkBox">
-                                   <property name="text">
-                                    <string>Noise Level</string>
+                                  <widget class="QFrame" name="Spikeling_Noise_Title_frame">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
                                    </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_164">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Noise_toggle_frame">
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>50</width>
+                                        <height>16777215</height>
+                                       </size>
+                                      </property>
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="Spikeling_Noise_toggle_layout">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Noise_Label_frame">
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="horizontalLayout_166">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <item>
+                                        <widget class="QLabel" name="Spikeling_Noise_Label">
+                                         <property name="text">
+                                          <string>Noise Level (%)</string>
+                                         </property>
+                                        </widget>
+                                       </item>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                   </layout>
                                   </widget>
                                  </item>
                                  <item>
@@ -4872,7 +5431,7 @@ background-color: rgb(220, 50, 47);</string>
                                    <property name="frameShadow">
                                     <enum>QFrame::Raised</enum>
                                    </property>
-                                   <layout class="QVBoxLayout" name="verticalLayout_74">
+                                   <layout class="QVBoxLayout" name="verticaLayout_74">
                                     <property name="spacing">
                                      <number>0</number>
                                     </property>
@@ -5059,7 +5618,7 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <property name="bottomMargin">
-                                  <number>5</number>
+                                  <number>10</number>
                                  </property>
                                  <item>
                                   <widget class="QLabel" name="Spikeling_Synapse1_label">
@@ -5082,7 +5641,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_94">
+                                <layout class="QVBoxLayout" name="verticalLayout_67">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -5099,10 +5658,97 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_Synapse1_checkBox">
-                                   <property name="text">
-                                    <string>Synaptic Gain (%)</string>
+                                  <widget class="QFrame" name="Spikeling_Synapse1_Title">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
                                    </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_104">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Synapse1_toggle_frame">
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>50</width>
+                                        <height>16777215</height>
+                                       </size>
+                                      </property>
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="Spikeling_Synapse1_toggle_layout">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Synapse1_Label_frame">
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="horizontalLayout_167">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <item>
+                                        <widget class="QLabel" name="Spikeling_Synapse1_Label">
+                                         <property name="text">
+                                          <string>Synaptic Gain (%)</string>
+                                         </property>
+                                        </widget>
+                                       </item>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                   </layout>
                                   </widget>
                                  </item>
                                  <item>
@@ -5253,7 +5899,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_104">
+                                <layout class="QVBoxLayout" name="verticalLayout_74">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -5270,10 +5916,97 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_Synapse1_Decay_checkBox">
-                                   <property name="text">
-                                    <string>Decay: λ (msֿ ¹)</string>
+                                  <widget class="QFrame" name="Spikeling_Synapse1_Decay_Title">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
                                    </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_165">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Synapse1_Decay_toggle_frame">
+                                      <property name="maximumSize">
+                                       <size>
+                                        <width>50</width>
+                                        <height>16777215</height>
+                                       </size>
+                                      </property>
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="Spikeling_Synapse1_Decay_toggle_layout">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <widget class="QFrame" name="Spikeling_Synapse1_Decay_Label_frame">
+                                      <property name="frameShape">
+                                       <enum>QFrame::StyledPanel</enum>
+                                      </property>
+                                      <property name="frameShadow">
+                                       <enum>QFrame::Raised</enum>
+                                      </property>
+                                      <layout class="QHBoxLayout" name="horizontalLayout_169">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <item>
+                                        <widget class="QLabel" name="Spikeling_Synapse1_Decay_Label">
+                                         <property name="text">
+                                          <string>Synaptic Decay: λ (msֿ ¹) </string>
+                                         </property>
+                                        </widget>
+                                       </item>
+                                      </layout>
+                                     </widget>
+                                    </item>
+                                   </layout>
                                   </widget>
                                  </item>
                                  <item>
@@ -5517,6 +6250,100 @@ background-color: rgb(220, 50, 47);</string>
                                </widget>
                               </item>
                               <item>
+                               <widget class="QFrame" name="Spikeling_Synapse2_Title">
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="horizontalLayout_168">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <item>
+                                  <widget class="QFrame" name="Spikeling_Synapse2_toggle_frame">
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>50</width>
+                                     <height>16777215</height>
+                                    </size>
+                                   </property>
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
+                                   </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="Spikeling_Synapse2_toggle_layout">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                   </layout>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QFrame" name="Spikeling_Synapse2_Label_frame">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
+                                   </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_171">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QLabel" name="Spikeling_Synapse2_Label">
+                                      <property name="text">
+                                       <string>Synaptic Gain (%)</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                   </layout>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                              <item>
                                <widget class="QFrame" name="Spikeling_Synapse2_readings_frame">
                                 <property name="frameShape">
                                  <enum>QFrame::StyledPanel</enum>
@@ -5541,16 +6368,6 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_Synapse2_checkBox">
-                                   <property name="enabled">
-                                    <bool>true</bool>
-                                   </property>
-                                   <property name="text">
-                                    <string>Synaptic Gain (%)</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
                                   <widget class="QLabel" name="Spikeling_Synapse2_readings">
                                    <property name="text">
                                     <string/>
@@ -5571,7 +6388,7 @@ background-color: rgb(220, 50, 47);</string>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_99">
+                                <layout class="QHBoxLayout" name="Spikeling_Synapse2_Layout">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -5694,20 +6511,14 @@ background-color: rgb(220, 50, 47);</string>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QFrame" name="Spikeling_Synapse2_Decay_frame">
-                                <property name="sizePolicy">
-                                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                                  <horstretch>0</horstretch>
-                                  <verstretch>0</verstretch>
-                                 </sizepolicy>
-                                </property>
+                               <widget class="QFrame" name="Spikeling_Synapse2_Decay_Title">
                                 <property name="frameShape">
                                  <enum>QFrame::StyledPanel</enum>
                                 </property>
                                 <property name="frameShadow">
                                  <enum>QFrame::Raised</enum>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_98">
+                                <layout class="QHBoxLayout" name="horizontalLayout_170">
                                  <property name="spacing">
                                   <number>0</number>
                                  </property>
@@ -5724,12 +6535,99 @@ background-color: rgb(220, 50, 47);</string>
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QCheckBox" name="Spikeling_Synapse2_Decay_checkBox">
-                                   <property name="text">
-                                    <string>Decay: λ (msֿ ¹)</string>
+                                  <widget class="QFrame" name="Spikeling_Synapse2_Decay_toggle_frame">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
                                    </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="Spikeling_Synapse2_Decay_toggle_layout">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                   </layout>
                                   </widget>
                                  </item>
+                                 <item>
+                                  <widget class="QFrame" name="Spikeling_Synapse2_Decay_Label_frame">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
+                                   </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_173">
+                                    <property name="spacing">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="leftMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="topMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="rightMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <property name="bottomMargin">
+                                     <number>0</number>
+                                    </property>
+                                    <item>
+                                     <widget class="QLabel" name="Spikeling_Synapse2_Decay_Label">
+                                      <property name="text">
+                                       <string>Synaptic Decay: λ (msֿ ¹) </string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                   </layout>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QFrame" name="Spikeling_Synapse2_Decay_frame">
+                                <property name="sizePolicy">
+                                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                                  <horstretch>0</horstretch>
+                                  <verstretch>0</verstretch>
+                                 </sizepolicy>
+                                </property>
+                                <property name="frameShape">
+                                 <enum>QFrame::StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Raised</enum>
+                                </property>
+                                <layout class="QHBoxLayout" name="Spikeling_Synapse2_Decay_Layout">
+                                 <property name="spacing">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="leftMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="topMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="rightMargin">
+                                  <number>0</number>
+                                 </property>
+                                 <property name="bottomMargin">
+                                  <number>0</number>
+                                 </property>
                                  <item>
                                   <widget class="QLabel" name="Spikeling_Synapse2_Decay_readings">
                                    <property name="text">
@@ -13707,7 +14605,7 @@ p, li { white-space: pre-wrap; }
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>30</height>
+           <height>50</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -13811,7 +14709,7 @@ p, li { white-space: pre-wrap; }
                <property name="maximumSize">
                 <size>
                  <width>125</width>
-                 <height>30</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="text">
@@ -13839,7 +14737,7 @@ p, li { white-space: pre-wrap; }
                <property name="maximumSize">
                 <size>
                  <width>160</width>
-                 <height>30</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="text">
@@ -13847,6 +14745,25 @@ p, li { white-space: pre-wrap; }
                </property>
                <property name="pixmap">
                 <pixmap resource="resources.qrc">:/resources/resources/ON-Logo.png</pixmap>
+               </property>
+               <property name="scaledContents">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="sussex_logo">
+               <property name="maximumSize">
+                <size>
+                 <width>90</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="pixmap">
+                <pixmap resource="resources.qrc">:/resources/resources/SN-Logo.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -13863,8 +14780,8 @@ p, li { white-space: pre-wrap; }
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>40</width>
-                 <height>16777215</height>
+                 <width>50</width>
+                 <height>50</height>
                 </size>
                </property>
                <property name="text">
@@ -13954,7 +14871,12 @@ p, li { white-space: pre-wrap; }
   <include location="resources.qrc"/>
   <include location="resources.qrc"/>
   <include location="resources.qrc"/>
-  <include location="../../../../../.designer/backup/resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>

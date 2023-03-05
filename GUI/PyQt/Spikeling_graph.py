@@ -23,13 +23,14 @@ SerialTx = [TxStimFre,TxStimStr,TxStimCus,
             TxSyn2Gain,TxSyn2Decay,
             TxMode, Txa, Txb, Txc, Txd]
 
-sampleinterval = 1.
-timewindow = 10000.
-timewindowdisplay = 2000
+downsampling = 5
+sampleinterval = 0.1
+timewindow = 300
+timewindowdisplay = 125
 min_range = -90
 max_range = 30
 stimrange = ((-min_range) + max_range) / 2
-downsampling = 5
+
 
 
 def SpikelingPlot(self):
@@ -48,7 +49,6 @@ def SpikelingPlot(self):
         self.ui.Spikeling_Oscilloscope_widget.getViewBox().sigResized.connect(UpdateViews(self))
         self.Data = GetData(self)                   # Read Serial and return data array
         BuffData(self)                              # Append latest serial data into buffer deque
-        WriteSerial(self)                           # Write Serial commands
         SavePlotData(self)                          # Create data array to be exported in .csv
         if self.i_downsampling == 0:                # Plot Data once every "downsampling" time
             PlotCurve(self)
@@ -60,7 +60,9 @@ def SpikelingPlot(self):
         self.rx = self.serial_port.readline()
         self.rx_serial = str(self.rx, 'utf8').strip()
         self.data = self.rx_serial.split(',')
+        #print(self.data)
         return self.data
+
 
     def BuffData(self):                               # Append latest serial data point into buffer deque
         self.databuffer0.append(self.Data[0])
@@ -115,71 +117,6 @@ def SpikelingPlot(self):
             self.curve6.clear()
 
 
-def WriteSerial(self):     # Write Serial commands
-    if self.ui.Spikeling_StimFre_checkBox.isChecked():
-        SerialTx[0] = str(-(self.ui.Spikeling_StimFre_slider.value()))
-    else:
-        SerialTx[0] = "F"
-
-    if self.ui.Spikeling_StimStr_checkBox.isChecked():
-        SerialTx[1] = str((self.ui.Spikeling_StimStrSlider.value()))
-    else:
-        SerialTx[1] = "F"
-
-    if self.ui.Spikeling_CustomStimulus_checkBox.isChecked():
-        SerialTx[2] = "F"
-    else:
-        SerialTx[2] = "F"
-
-    if self.ui.Spikeling_PR_PhotoGain_checkBox.isChecked():
-        SerialTx[3] = str(self.ui.Spikeling_PR_PhotoGain_slider.value())
-    else:
-        SerialTx[3] = "F"
-
-    if self.ui.Spikeling_PR_Decay_checkBox.isChecked():
-        SerialTx[4] = str(self.ui.Spikeling_PR_Decay_slider.value()/100000)
-    else:
-        SerialTx[4] = "F"
-
-    if self.ui.Spikeling_PR_Recovery_checkBox.isChecked():
-        SerialTx[5] = str(self.ui.Spikeling_PR_Recovery_slider.value()/1000)
-    else:
-        SerialTx[5] = "F"
-
-    if self.ui.Spikeling_PatchClamp_checkBox.isChecked():
-        SerialTx[6] = str(self.ui.Spikeling_PatchClamp_slider.value())
-    else:
-        SerialTx[6] = "F"
-
-    if self.ui.Spikeling_Noise_checkBox.isChecked():
-        SerialTx[7] = str(self.ui.Spikeling_Noise_slider.value())
-    else:
-        SerialTx[7] = "F"
-
-    if self.ui.Spikeling_Synapse1_checkBox.isChecked():
-        SerialTx[8] = str(self.ui.Spikeling_Synapse1_slider.value())
-    else:
-        SerialTx[8] = "F"
-
-    if self.ui.Spikeling_Synapse1_Decay_checkBox.isChecked():
-        SerialTx[9] = str(self.ui.Spikeling_Synapse1_Decay_value.text()/1000)
-    else:
-        SerialTx[9] = "F"
-
-    if self.ui.Spikeling_Synapse2_checkBox.isChecked():
-        SerialTx[10] = str(self.ui.Spikeling_Synapse2_slider.value())
-    else:
-        SerialTx[10] = "F"
-
-    if self.ui.Spikeling_Synapse2_Decay_checkBox.isChecked():
-        SerialTx[11] = str(self.ui.Spikeling_Synapse2_Decay_value.text()/1000)
-    else:
-        SerialTx[11] = "F"
-
-    Tx = SerialTx[0] + ';' + SerialTx[1] + ';' + SerialTx[2] + ';' + SerialTx[3] + ';' + SerialTx[4] + ';' + SerialTx[5] + ';' + SerialTx[6] + ';' + SerialTx[7] + ';' + SerialTx[8] + ';' + SerialTx[9] + ';' + SerialTx[10] + ';' + SerialTx[11] + ';' + SerialTx[12] + ';' + SerialTx[13] + ';' + SerialTx[14] + ';' + SerialTx[15] + ';' + SerialTx[16]
-    self.serial_port.write(Tx.encode())
-
-
 def SavePlotData(self):                              # Save latest buffer data and export them as csv
     if self.ui.Spikeling_DataRecording_Record_pushButton.isChecked() == False and self.recordflag == True:
         self.Dataset = np.empty([7, len(self.Dataset0)], dtype=float)
@@ -229,10 +166,10 @@ def SetSerial(self):
 
 
 def SetPlotCurve(self):
-    self._interval = int(sampleinterval)
+    self._interval = sampleinterval
     self._bufsize = int(timewindow / sampleinterval)
 
-    self.databuffer0 = collections.deque([0.0] * self._bufsize, self._bufsize)
+    self.databuffer0 = collections.deque([0.0] * self._bufsize, self._bufsize)    # Set a double-ended queue 0.0 floats to self._bufsize entries, for a self._bufsize max length
     self.databuffer1 = collections.deque([0.0] * self._bufsize, self._bufsize)
     self.databuffer2 = collections.deque([0.0] * self._bufsize, self._bufsize)
     self.databuffer3 = collections.deque([0.0] * self._bufsize, self._bufsize)
@@ -240,7 +177,7 @@ def SetPlotCurve(self):
     self.databuffer5 = collections.deque([0.0] * self._bufsize, self._bufsize)
     self.databuffer6 = collections.deque([0.0] * self._bufsize, self._bufsize)
 
-    self.x = np.linspace(-timewindow, 0.0, self._bufsize)
+    self.x = np.linspace(-timewindow, 0.0, self._bufsize)            # Create arrays of self._bufsize length
     self.y0 = np.zeros(self._bufsize, dtype=float)
     self.y1 = np.zeros(self._bufsize, dtype=float)
     self.y2 = np.zeros(self._bufsize, dtype=float)
@@ -249,7 +186,7 @@ def SetPlotCurve(self):
     self.y5 = np.zeros(self._bufsize, dtype=float)
     self.y6 = np.zeros(self._bufsize, dtype=float)
 
-    self.Dataset0 = Data_recording.DynamicArray()
+    self.Dataset0 = Data_recording.DynamicArray()                                 # Create dynamic arrays for storing latest data point to be further exported as csv
     self.Dataset1 = Data_recording.DynamicArray()
     self.Dataset2 = Data_recording.DynamicArray()
     self.Dataset3 = Data_recording.DynamicArray()
@@ -263,7 +200,7 @@ def SetPlot(self):
     self.ui.Spikeling_Oscilloscope_widget.setRange(xRange=[-timewindowdisplay, 0])
     self.ui.Spikeling_Oscilloscope_widget.setRange(yRange=[-90, 30])
     self.ui.Spikeling_Oscilloscope_widget.plotItem.setMouseEnabled(y=False)
-    self.ui.Spikeling_Oscilloscope_widget.plotItem.vb.setLimits(xMax=0)
+    self.ui.Spikeling_Oscilloscope_widget.plotItem.vb.setLimits(xMin=-timewindow,xMax=0)
     self.ui.Spikeling_Oscilloscope_widget.setLabel('left', 'Membrane potential', 'mV')
     self.ui.Spikeling_Oscilloscope_widget.setLabel('bottom', 'time', 'ms')
     self.ui.Spikeling_Oscilloscope_widget.setLabel('right', 'Current Input', 'a.u.')
@@ -289,7 +226,7 @@ def SetPlot(self):
     self.curve2.clear()
     self.curve4 = pg.PlotCurveItem(self.x, self.y4, pen=(Settings.DarkSolarized[7]))
     self.curve4.clear()
-    self.curve6 = pg.PlotCurveItem(self.x, self.y6, pen=(Settings.DarkSolarized[9]))
+    self.curve6 = pg.PlotCurveItem(self.x, self.y6, pen=(Settings.DarkSolarized[10]))
     self.curve6.clear()
 
     self.CurrentPlots.addItem(self.curve2)

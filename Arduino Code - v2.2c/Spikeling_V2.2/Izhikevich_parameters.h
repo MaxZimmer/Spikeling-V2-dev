@@ -37,7 +37,7 @@ prior to the spike, the threshold potential can be as low as -55 mV or as high a
 */
 
 
-float timestep_ms     = 0.2;  // default 0.1. This is the "intended" refresh rate of the model.
+float timestep_ms     = 0.1;  // default 0.1. This is the "intended" refresh rate of the model.
 float a_Izhikevich;   // time scale of recovery variable u. Smaller a gives slower recovery
 float b_Izhikevich;   // recovery variable associated with u. greater b coules it more strongly 
 float c_Izhikevich;   // after spike reset value

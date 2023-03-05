@@ -26,7 +26,7 @@ int pinADC_MISO    =  33;
 int pinADC_CS1     =  0;
 int pinADC_CS2     =  4;
 
-int pinVmPot       =   0;        // ADC 1.0: Voltage clamp potentiometer pin
+int pinICPot       =   0;        // ADC 1.0: Inject Current potentiometer pin
 int pinSpike       =   13;       // Buzzer pin
 
 int pinSyn1_D      =  35;        // Input Digital pin for Synapse 1
@@ -61,14 +61,14 @@ int      Vm_min    = -90;        // Minimum voltage value the v variable from Iz
 int      Vm_spike  = -30;        // Voltage value above which the neuron will spike
 int      Vm_peak   =  30;        // Voltage peak value from which the v variable will start its recovery
 boolean  spike     = false;      // Boolean used for registrating spike events
-float    I_Total;                // Sum of all applied current to the neuron (I_Vm, I_PD, I_Synapse1, I_Synapse2, I_Stim, I_Noise) 
+float    I_Total;                // Sum of all applied current to the neuron (I_IC, I_PD, I_Synapse1, I_Synapse2, I_Stim, I_Noise) 
 
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                     Voltage Clamp parameters                      */
-int   Vm_Clamp;                  // Vm potentiometer value
-int   VmPotScaling =  bits/100;  // Vm_Clamp value scaling - The lower, the stronger the impact of the Vm potentiometer
-float I_Vm;                      // "Current" value generated from the two previous variables in order to modify the holding voltage value
+int   IC_value;                  // Inject Current potentiometer value
+int   IC_PotScaling =  bits/100;  // Inject Current value scaling - The lower, the stronger the impact of the IC potentiometer
+float I_IC;                      // "Current" value generated from the two previous variables in order to modify the holding voltage value
 
 
 // // // // // // // // // // // // // // // // // // // // // // // //
@@ -109,7 +109,7 @@ float PD_Gain=1.0;
 float PD_PotValue;
 float PD_Amp;
 float PD_Value;
-float PD_Scaling = 0.5; 
+float PD_Scaling = 0.5;
 int PD_Value_Array[] = {0,0,0,0,0,0,0,0,0,0};
 int PD_counter = 0;
 float PD_avg = 10;
@@ -131,7 +131,7 @@ int Stim_minStr         = 2;     // Minimum stength value percentage below which
 int Stim_val_D          = 0;     // Stimulus Digital output for stimulating LED
 int Stim_val_A          = 0;     // Stimulus Analog output ofr Current in pin
 float Stim_state;                  // Status of the stimulus (ON or OFF / 1 or 0);
-float StimLED_scaling     = 2.5;    // Scaling applied to the digital out value
+float StimLED_scaling     = 5.12;    // Scaling applied to the digital out value
 int StimLED_offset = 10;
 float Stim_CurrentScaling = 1.5;  // Scaling applied to the analog out value
 float I_Stim_mini = 0.1;
@@ -140,7 +140,7 @@ int StimFre_Value;               // Stimulus Frequency potentiometer value
 int StimFre;                     // Scaled stimulus frequency
 int Stim_counter = 0;            // Stimulus step counter (number of void loops)
 int Stim_steps = 0;              // Number of steps required for half a stimulus duty cycle
-int Stim_DutyCycle = 500;        // Default stinulus duty cycle value
+int Stim_DutyCycle = 500;        // Default stimulus duty cycle value
 int Stim_minDutyCycle = 10;      // Minimum loop steps the stimulus duty cycle cannot fall under
 
 int Stim_State;
@@ -158,24 +158,17 @@ float I_Noise;                   // Noise current
 
 // // // // // // // // // // // // // // // // // // // // // // // //
 /*                         Rx Tx parameters                          */
-  String RxStimFre = "None";
-  String RxStimStr = "None";
-  String RxStimCus = "None";
-  String RxPDGain = "None";
-  String RxPDDecay = "None";
-  String RxPDRecovery = "None";
-  String RxVm = "None";
-  String RxNoise = "None";
-  String RxSyn1Gain = "None";
-  String RxSyn1Decay = "None";
-  String RxSyn2Gain = "None";
-  String RxSyn2Decay = "None";
-  String RxMode = "None";
-  String Rxa = "None";
-  String Rxb = "None";
-  String Rxc = "None";
-  String Rxd = "None";
-  
+boolean StimFre_Flag = true;  
+boolean StimStr_Flag = true;  
+boolean PDGain_Flag = true;
+boolean PDDecay_Flag = true;
+boolean PDRecovery_Flag = true;
+boolean IC_Flag = true;
+boolean Noise_Flag = true;
+boolean Syn1Gain_Flag = true;
+boolean Syn1Decay_Flag = true;
+boolean Syn2Gain_Flag = true;
+boolean Syn2Decay_Flag = true;
 
 String   OutputStr;
 
@@ -202,15 +195,14 @@ void HardwareSettings(){
   pinMode(pinLEDSpike1, OUTPUT);
   pinMode(pinLEDSpike2, OUTPUT);
   
-  digitalWrite(pinLEDVm,LOW);
   digitalWrite(pinSpike,LOW);
   digitalWrite(pinAxon_D,LOW);
   digitalWrite(pinAxon_A,LOW);
   digitalWrite(pinStim_D,LOW);
   digitalWrite(pinStim_A,LOW);
-  digitalWrite(pinLEDVm,HIGH);
-  digitalWrite(pinLEDSpike1,HIGH);
-  digitalWrite(pinLEDSpike2,HIGH);
+  digitalWrite(pinLEDVm,LOW);
+  digitalWrite(pinLEDSpike1,LOW);
+  digitalWrite(pinLEDSpike2,LOW);
 
   ADC1.begin(pinADC_Sck, pinADC_MOSI, pinADC_MISO, pinADC_CS1);
   ADC2.begin(pinADC_Sck, pinADC_MOSI, pinADC_MISO, pinADC_CS2);

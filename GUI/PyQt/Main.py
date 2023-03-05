@@ -17,6 +17,7 @@ from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
 from Spikeling_UI import Ui_MainWindow
 from Spikeling_SplashScreen import Ui_SplashScreen
 from Settings import *
+from py_toggle import PyToggle
 
 # Import GUI page scripts
 import Page000, Page101, Page102, Page103, Page201, Page202, Page203, Page301, Page401, Page501, Page502, Page601, Page701, Page801, Page901
@@ -128,6 +129,82 @@ class MainWindow(QMainWindow):
                 event.accept()
 
 
+        self.ui.PatchClamp_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                   circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                   active_color='#%02x%02x%02x' % tuple(DarkSolarized[4])
+                                                   )
+        self.ui.Noise_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                              circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                              active_color='#%02x%02x%02x' % tuple(DarkSolarized[4])
+                                              )
+        self.ui.PhotoGain_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                  circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                  active_color='#%02x%02x%02x' % tuple(DarkSolarized[4])
+                                                  )
+        self.ui.PhotoDecay_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                   circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                   active_color='#%02x%02x%02x' % tuple(DarkSolarized[4])
+                                                   )
+        self.ui.PhotoRecovery_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                      circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                      active_color='#%02x%02x%02x' % tuple(DarkSolarized[4])
+                                                      )
+        self.ui.StimFre_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                active_color='#%02x%02x%02x' % tuple(DarkSolarized[5])
+                                                )
+        self.ui.StimStr_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                active_color='#%02x%02x%02x' % tuple(DarkSolarized[5])
+                                                )
+        self.ui.StimCus_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                active_color='#%02x%02x%02x' % tuple(DarkSolarized[5])
+                                                )
+        self.ui.Synapse1_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                 circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                 active_color='#%02x%02x%02x' % tuple(DarkSolarized[7])
+                                                 )
+        self.ui.Synapse1Decay_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                      circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                      active_color='#%02x%02x%02x' % tuple(DarkSolarized[7])
+                                                      )
+        self.ui.Synapse2_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                 circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                 active_color='#%02x%02x%02x' % tuple(DarkSolarized[10])
+                                                 )
+        self.ui.Synapse2Decay_toggleButton = PyToggle(bg_color='#%02x%02x%02x' % tuple(DarkSolarized[11]),
+                                                      circle_color='#%02x%02x%02x' % tuple(DarkSolarized[15]),
+                                                      active_color='#%02x%02x%02x' % tuple(DarkSolarized[10])
+                                                      )
+        self.ui.Spikeling_PatchClamp_toggle_layout.addWidget(self.ui.PatchClamp_toggleButton)
+        self.ui.Spikeling_PatchClamp_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_Noise_toggle_layout.addWidget(self.ui.Noise_toggleButton)
+        self.ui.Spikeling_Noise_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_Synapse1_toggle_layout.addWidget(self.ui.Synapse1_toggleButton)
+        self.ui.Spikeling_Synapse1_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_Synapse1_Decay_toggle_layout.addWidget(self.ui.Synapse1Decay_toggleButton)
+        self.ui.Spikeling_Synapse1_Decay_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_Synapse2_toggle_layout.addWidget(self.ui.Synapse2_toggleButton)
+        self.ui.Spikeling_Synapse2_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_Synapse2_Decay_toggle_layout.addWidget(self.ui.Synapse2Decay_toggleButton)
+        self.ui.Spikeling_Synapse2_Decay_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+        self.ui.Spikeling_StimFre_toggle_layout.addWidget(self.ui.StimFre_toggleButton)
+        self.ui.Spikeling_StimFre_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_StimStr_toggle_layout.addWidget(self.ui.StimStr_toggleButton)
+        self.ui.Spikeling_StimStr_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_CustomStimulus_toggle_layout.addWidget(self.ui.StimCus_toggleButton)
+        self.ui.Spikeling_CustomStimulus_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_PR_toggle_layout.addWidget(self.ui.PhotoGain_toggleButton)
+        self.ui.Spikeling_PR_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.Spikeling_PRDecay_Toggle_layout.addWidget(self.ui.PhotoDecay_toggleButton)
+        self.ui.Spikeling_PRDecay_Toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.ui.SpikelingPRRecovery_toggle_layout.addWidget(self.ui.PhotoRecovery_toggleButton)
+        self.ui.SpikelingPRRecovery_toggle_layout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
+
+
         # Custom Navigation bar movement
         self.ui.header_widget.mouseMoveEvent = moveWindow
 
@@ -229,32 +306,32 @@ class MainWindow(QMainWindow):
         # Stimulation parameters
         # Display stimulation parameter page when StimulusParameter button is clicked
         self.ui.Spikeling_StimulusParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_parameter_stackedwidget.setCurrentWidget(self.ui.StimulusParameter_page))
-        self.ui.Spikeling_StimFre_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateStimFre(self))
+        self.ui.StimFre_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateStimFre(self))
         self.ui.Spikeling_StimFre_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetStimFreSliderValue(self))
-        self.ui.Spikeling_StimStr_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateStimStr(self))
+        self.ui.StimStr_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateStimStr(self))
         self.ui.Spikeling_StimStrSlider.valueChanged.connect(lambda: Page101.Spikeling101.GetStimStrSliderValue(self))
-        self.ui.Spikeling_CustomStimulus_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateCustomStimulus(self))
-        self.ui.Spikeling_PR_PhotoGain_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePhotoGain(self))
+        self.ui.StimCus_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateCustomStimulus(self))
+        self.ui.PhotoGain_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivatePhotoGain(self))
         self.ui.Spikeling_PR_PhotoGain_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPhotoGain(self))
-        self.ui.Spikeling_PR_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePRDecay(self))
+        self.ui.PhotoDecay_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivatePRDecay(self))
         self.ui.Spikeling_PR_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPRDecay(self))
-        self.ui.Spikeling_PR_Recovery_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivatePRRecovery(self))
+        self.ui.PhotoRecovery_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivatePRRecovery(self))
         self.ui.Spikeling_PR_Recovery_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetPRRecovery(self))
 
         # Neuron parameters
         # Display neuron parameter page when NeuronParameter button is clicked
         self.ui.Spikeling_NeuronParameter_pushButton.clicked.connect(lambda: self.ui.Spikeling_parameter_stackedwidget.setCurrentWidget(self.ui.NeuronParameter_page))
-        self.ui.Spikeling_PatchClamp_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateInjectedCurrent(self))
+        self.ui.PatchClamp_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateInjectedCurrent(self))
         self.ui.Spikeling_PatchClamp_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetInjectedCurrent(self))
-        self.ui.Spikeling_Noise_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateNoiseLevel(self))
+        self.ui.Noise_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateNoiseLevel(self))
         self.ui.Spikeling_Noise_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetNoiseLevel(self))
-        self.ui.Spikeling_Synapse1_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain1(self))
+        self.ui.Synapse1_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain1(self))
         self.ui.Spikeling_Synapse1_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticGain1(self))
-        self.ui.Spikeling_Synapse1_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay1(self))
+        self.ui.Synapse1Decay_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay1(self))
         self.ui.Spikeling_Synapse1_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticDecay1(self))
-        self.ui.Spikeling_Synapse2_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain2(self))
+        self.ui.Synapse2_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapticGain2(self))
         self.ui.Spikeling_Synapse2_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticGain2(self))
-        self.ui.Spikeling_Synapse2_Decay_checkBox.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay2(self))
+        self.ui.Synapse2Decay_toggleButton.toggled.connect(lambda: Page101.Spikeling101.ActivateSynapseDecay2(self))
         self.ui.Spikeling_Synapse2_Decay_slider.valueChanged.connect(lambda: Page101.Spikeling101.GetSynapticDecay2(self))
 
 
